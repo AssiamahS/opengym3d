@@ -39,21 +39,28 @@ PARENTS = {
     "thigh.L": "pelvis", "shin.L": "thigh.L", "foot.L": "shin.L",
 }
 
-# Metaball skin: bone -> [(fraction along bone, radius)]. Tapers make the
-# silhouette read as a body instead of pipes; overlays add the muscle look.
-BODY_BALLS = {
-    "pelvis":      [(0.3, 0.105), (0.9, 0.10)],
-    "spine":       [(0.3, 0.095), (0.8, 0.10)],
-    "chest":       [(0.3, 0.115), (0.8, 0.12)],
-    "neck":        [(0.5, 0.048)],
-    "head":        [(0.55, 0.095)],
-    "upper_arm.L": [(0.15, 0.052), (0.55, 0.046), (0.9, 0.04)],
-    "forearm.L":   [(0.2, 0.042), (0.7, 0.034)],
-    "hand.L":      [(0.5, 0.034)],
-    "thigh.L":     [(0.15, 0.078), (0.55, 0.066), (0.9, 0.052)],
-    "shin.L":      [(0.15, 0.052), (0.5, 0.046), (0.9, 0.035)],
-    "foot.L":      [(0.4, 0.036), (0.9, 0.032)],
+# Metaball skin: bone -> (start radius, end radius). Dense ball chains are
+# generated along each bone so the influence fields always overlap and fuse
+# into one continuous body; overlays add the muscle look on top.
+BODY_RADII = {
+    "pelvis":      (0.100, 0.105),
+    "spine":       (0.090, 0.100),
+    "chest":       (0.105, 0.115),
+    "neck":        (0.050, 0.050),
+    "head":        (0.070, 0.095),
+    "upper_arm.L": (0.052, 0.042),
+    "forearm.L":   (0.042, 0.034),
+    "hand.L":      (0.034, 0.030),
+    "thigh.L":     (0.078, 0.055),
+    "shin.L":      (0.052, 0.036),
+    "foot.L":      (0.036, 0.032),
 }
+
+# connector balls that bridge chain junctions (shoulders, hips)
+BODY_EXTRA_BALLS = [
+    ((0.14, 0.0, 1.46), 0.060), ((-0.14, 0.0, 1.46), 0.060),
+    ((0.08, 0.0, 0.93), 0.070), ((-0.08, 0.0, 0.93), 0.070),
+]
 
 # Anatomical overlays: key -> [(bone, fraction, world offset, world scale)].
 # All are drawn (faint gray = definition); primary/secondary recolor them.
@@ -87,8 +94,8 @@ MUSCLE_ALIAS = {
     "traps": "traps",
 }
 
-SKIN_COLOR = (0.78, 0.80, 0.83, 1.0)
-MUSCLE_IDLE_COLOR = (0.62, 0.63, 0.66, 1.0)
+SKIN_COLOR = (0.70, 0.72, 0.76, 1.0)
+MUSCLE_IDLE_COLOR = (0.52, 0.53, 0.57, 1.0)
 PRIMARY_COLOR = (0.80, 0.08, 0.10, 1.0)
 SECONDARY_COLOR = (0.93, 0.50, 0.08, 1.0)
 
@@ -171,13 +178,21 @@ def build_smooth_body(arm_obj, bones, skin_mat):
     mball.resolution = 0.035
     meta_obj = bpy.data.objects.new("BodyMeta", mball)
     bpy.context.scene.collection.objects.link(meta_obj)
-    for name, placements in BODY_BALLS.items():
+    for name, (r_start, r_end) in BODY_RADII.items():
         names = [name, mirror_name(name)] if name.endswith(".L") else [name]
         for bone in names:
-            for frac, radius in placements:
+            head, tail = bones[bone]
+            length = (tail - head).length
+            steps = max(3, int(length / 0.04) + 1)
+            for i in range(steps):
+                frac = i / (steps - 1)
                 el = mball.elements.new()
                 el.co = point_on_bone(bones, bone, frac, (0, 0, 0))
-                el.radius = radius
+                el.radius = r_start + (r_end - r_start) * frac
+    for co, radius in BODY_EXTRA_BALLS:
+        el = mball.elements.new()
+        el.co = Vector(co)
+        el.radius = radius
 
     bpy.ops.object.select_all(action="DESELECT")
     meta_obj.select_set(True)
@@ -288,7 +303,7 @@ def setup_render(frame_end):
     scene.camera = cam
 
     sun_data = bpy.data.lights.new("Sun", "SUN")
-    sun_data.energy = 3.0
+    sun_data.energy = 4.5
     sun = bpy.data.objects.new("Sun", sun_data)
     sun.rotation_euler = (math.radians(50), math.radians(-15), math.radians(30))
     scene.collection.objects.link(sun)
