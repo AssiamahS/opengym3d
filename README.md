@@ -52,8 +52,8 @@ python3 -m http.server -d site 8000   # after copying website/* + assets into si
 
 | Version | What | Built on |
 |---|---|---|
-| **v0 (this)** | Procedural capsule figure, FK pose keyframes, GLB + viewer, full CI pipeline | Blender 4.5 LTS, Three.js r170 |
-| **v1** | Real human body (male/female, body types) replacing the capsule figure | [MPFB2](https://github.com/makehumancommunity/mpfb2) — the maintained successor to MB-Lab (MB-Lab is archived) |
+| v0 | Procedural capsule figure, FK pose keyframes, GLB + viewer, full CI pipeline | Blender 4.5 LTS, Three.js r170 |
+| **v1 (this)** | Real anatomical human (male, muscle 1.0), MakeHuman rig, muscles painted via skin-weight territories, A-pose-proof aim retargeting | [MPFB2](https://github.com/makehumancommunity/mpfb2) — the maintained successor to MB-Lab (MB-Lab is archived) |
 | **v2** | Record yourself doing a lift on your phone → animation, no hand-keying | [BlendArMocap](https://github.com/cgtinker/BlendArMocap) (MediaPipe → Rigify) or [freemocap](https://github.com/freemocap/freemocap) |
 | **v3** | Anatomical muscle visualization: per-muscle activation, contraction shading | [MuSkeMo](https://github.com/PashavanBijlert/MuSkeMo) + animated normal maps |
 | **v4** | Full library: hundreds of exercises, search/filter, MP4/GIF export, embed API | this pipeline, scaled |

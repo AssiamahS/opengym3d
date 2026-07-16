@@ -1,5 +1,10 @@
 # NOTES
 
+- MPFB2 headless (v0.4): install by unzipping the pinned sha256 zip from extensions.blender.org into `~/.config/blender/4.5/extensions/user_default/mpfb` + `addon_enable("bl_ext.user_default.mpfb")` — the site 403s python-urllib's UA, download with curl or a browser UA. API from official script_samples: `HumanService.create_human()`, `HumanObjectProperties.set_value("muscle", 1.0, entity_reference=...)` + `TargetService.reapply_macro_details()`, `HumanService.add_builtin_rig(mesh, "default")`.
+- MPFB rests in A-POSE, not T-pose — retarget by AIMING each MakeHuman bone at the driver bone's posed world direction (shortest arc), and aim BOTH segments of split limbs (upperarm01+02 etc.) or the second segment keeps its A-pose bend.
+- MakeHuman basemesh: strip HelperGeometry/JointCubes/eye.* vertices before export; when reading skin weights, ignore the meta groups (body/Left/Right/Mid) — they carry full weights everywhere and drown the bone territories.
+- breast.L/R bones = the pec territory for muscle painting.
+
 - Metaball bodies: elements only fuse when fields overlap — chain a ball every ~3.5cm along each bone, and remember the iso-surface sits well INSIDE the element radius at the default threshold (scale radii ~1.45x + threshold 0.45, or the figure comes out starved). Separate muscle-overlay meshes were a dead end (rigid-skinned eggs poke out at joints); painting face materials by bone territory on the one fused mesh is the right architecture.
 
 - Blender exits 0 even when a `-P` script raises — always pass `--python-exit-code 1` in CI or failures deploy empty sites silently.
