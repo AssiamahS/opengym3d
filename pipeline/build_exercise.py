@@ -58,10 +58,14 @@ RETARGET = [
     ("pelvis", "root"),
     ("spine", "spine03"), ("chest", "spine01"),
     ("neck", "neck01"), ("head", "head"),
-    ("thigh.L", "upperleg01.L"), ("shin.L", "lowerleg01.L"), ("foot.L", "foot.L"),
-    ("thigh.R", "upperleg01.R"), ("shin.R", "lowerleg01.R"), ("foot.R", "foot.R"),
-    ("upper_arm.L", "upperarm01.L"), ("forearm.L", "lowerarm01.L"), ("hand.L", "wrist.L"),
-    ("upper_arm.R", "upperarm01.R"), ("forearm.R", "lowerarm01.R"), ("hand.R", "wrist.R"),
+    ("thigh.L", "upperleg01.L"), ("thigh.L", "upperleg02.L"),
+    ("shin.L", "lowerleg01.L"), ("shin.L", "lowerleg02.L"), ("foot.L", "foot.L"),
+    ("thigh.R", "upperleg01.R"), ("thigh.R", "upperleg02.R"),
+    ("shin.R", "lowerleg01.R"), ("shin.R", "lowerleg02.R"), ("foot.R", "foot.R"),
+    ("upper_arm.L", "upperarm01.L"), ("upper_arm.L", "upperarm02.L"),
+    ("forearm.L", "lowerarm01.L"), ("forearm.L", "lowerarm02.L"), ("hand.L", "wrist.L"),
+    ("upper_arm.R", "upperarm01.R"), ("upper_arm.R", "upperarm02.R"),
+    ("forearm.R", "lowerarm01.R"), ("forearm.R", "lowerarm02.R"), ("hand.R", "wrist.R"),
 ]
 
 # exercise-metadata muscle names -> MakeHuman bones whose skin territory
@@ -127,7 +131,7 @@ def create_human():
                                            "HumanObjectProperties")
     TargetService = dynamic_import("mpfb.services.targetservice", "TargetService")
     basemesh = HumanService.create_human()
-    for prop, value in (("gender", 1.0), ("muscle", 0.9), ("weight", 0.55)):
+    for prop, value in (("gender", 1.0), ("muscle", 1.0), ("weight", 0.55)):
         HumanObjectProperties.set_value(prop, value, entity_reference=basemesh)
     TargetService.reapply_macro_details(basemesh)
     rig = HumanService.add_builtin_rig(basemesh, "default")
@@ -171,9 +175,11 @@ def highlight_sets(spec):
     return primary, secondary - primary
 
 
-def paint_muscles(basemesh, materials, primary, secondary):
+def paint_muscles(basemesh, materials, primary, secondary, bone_names):
     """Paint faces whose dominant skin-weight territory belongs to an active
-    muscle. The membership field is Laplacian-smoothed so borders curve."""
+    muscle. Only real rig-bone groups count — MakeHuman's meta groups
+    (body/Left/Right/Mid) carry full weights everywhere and must be
+    ignored. The membership field is Laplacian-smoothed so borders curve."""
     mesh = basemesh.data
     name_by_index = {g.index: g.name for g in basemesh.vertex_groups}
 
@@ -185,8 +191,9 @@ def paint_muscles(basemesh, materials, primary, secondary):
     for v in mesh.vertices:
         best, best_w = None, 0.0
         for ge in v.groups:
-            if ge.weight > best_w and name_by_index.get(ge.group):
-                best, best_w = name_by_index[ge.group], ge.weight
+            name = name_by_index.get(ge.group)
+            if name in bone_names and ge.weight > best_w:
+                best, best_w = name, ge.weight
         score_p.append(1.0 if best and in_set(primary, best) else 0.0)
         score_s.append(1.0 if best and in_set(secondary, best) else 0.0)
 
@@ -383,7 +390,8 @@ def main():
         "secondary": make_material("Secondary", SECONDARY_COLOR, emission=0.15),
     }
     primary, secondary = highlight_sets(spec)
-    paint_muscles(basemesh, materials, primary, secondary)
+    paint_muscles(basemesh, materials, primary, secondary,
+                  {b.name for b in rig.data.bones})
 
     bones, parents = full_skeleton()
     driver = build_driver(bones, parents)
