@@ -4,11 +4,11 @@ Runs headless inside Blender (no addons, no GPU needed):
 
     blender -b -noaudio -P pipeline/build_exercise.py -- exercises/squat.json site/assets
 
-Reads one exercise spec (metadata + pose keyframes), builds a smooth
-metaball-sculpted body over a procedural armature (distance-weighted
-skinning, so joints bend instead of breaking), lays anatomical muscle
-overlays on top (all groups faintly visible, active ones red/orange),
-keys the animation, then writes <id>.glb and <id>.png (mid-rep frame).
+Reads one exercise spec (metadata + pose keyframes), builds one smooth
+metaball-fused body over a procedural armature, skins it with distance
+weights (joints bend instead of breaking), paints active muscle regions
+straight onto the surface (primary red / secondary orange), keys the
+animation, then writes <id>.glb and <id>.png (mid-rep frame).
 """
 
 import json
@@ -39,63 +39,49 @@ PARENTS = {
     "thigh.L": "pelvis", "shin.L": "thigh.L", "foot.L": "shin.L",
 }
 
-# Metaball skin: bone -> (start radius, end radius). Dense ball chains are
-# generated along each bone so the influence fields always overlap and fuse
-# into one continuous body; overlays add the muscle look on top.
+# Metaball skin: bone -> (start radius, end radius). Dense chains along each
+# bone guarantee the fields overlap and fuse into one continuous body.
 BODY_RADII = {
-    "pelvis":      (0.100, 0.105),
-    "spine":       (0.090, 0.100),
-    "chest":       (0.105, 0.115),
-    "neck":        (0.050, 0.050),
-    "head":        (0.070, 0.095),
-    "upper_arm.L": (0.052, 0.042),
-    "forearm.L":   (0.042, 0.034),
-    "hand.L":      (0.034, 0.030),
-    "thigh.L":     (0.078, 0.055),
-    "shin.L":      (0.052, 0.036),
-    "foot.L":      (0.036, 0.032),
+    "pelvis":      (0.105, 0.105),
+    "spine":       (0.092, 0.102),
+    "chest":       (0.108, 0.122),
+    "neck":        (0.052, 0.052),
+    "upper_arm.L": (0.056, 0.046),
+    "forearm.L":   (0.046, 0.038),
+    "thigh.L":     (0.088, 0.060),
+    "shin.L":      (0.056, 0.042),
+    "foot.L":      (0.045, 0.040),
 }
 
-# connector balls that bridge chain junctions (shoulders, hips)
+# single placed balls: skull, jaw, shoulder caps, hip blend, hands
 BODY_EXTRA_BALLS = [
-    ((0.14, 0.0, 1.46), 0.060), ((-0.14, 0.0, 1.46), 0.060),
-    ((0.08, 0.0, 0.93), 0.070), ((-0.08, 0.0, 0.93), 0.070),
+    ((0.00, 0.00, 1.70), 0.100, "head"),
+    ((0.00, -0.015, 1.61), 0.072, "head"),
+    ((0.150, 0.0, 1.465), 0.068, "upper_arm.L"),
+    ((-0.150, 0.0, 1.465), 0.068, "upper_arm.R"),
+    ((0.085, 0.0, 0.94), 0.075, "thigh.L"),
+    ((-0.085, 0.0, 0.94), 0.075, "thigh.R"),
+    ((0.71, 0.0, 1.46), 0.044, "hand.L"),
+    ((-0.71, 0.0, 1.46), 0.044, "hand.R"),
 ]
 
-# Anatomical overlays: key -> [(bone, fraction, world offset, world scale)].
-# All are drawn (faint gray = definition); primary/secondary recolor them.
-# Forward is -Y. ".L" entries are mirrored to ".R" automatically.
-MUSCLE_SHAPES = {
-    "quads":      [("thigh.L", 0.5,  (0, -0.055, 0), (0.055, 0.05, 0.17))],
-    "hamstrings": [("thigh.L", 0.5,  (0, 0.055, 0),  (0.05, 0.045, 0.16))],
-    "glutes":     [("pelvis", 0.25,  (0.062, 0.075, 0), (0.062, 0.06, 0.07)),
-                   ("pelvis", 0.25,  (-0.062, 0.075, 0), (0.062, 0.06, 0.07))],
-    "calves":     [("shin.L", 0.3,   (0, 0.045, 0),  (0.042, 0.042, 0.11))],
-    "biceps":     [("upper_arm.L", 0.5, (0, -0.036, 0), (0.075, 0.032, 0.04))],
-    "triceps":    [("upper_arm.L", 0.5, (0, 0.036, 0),  (0.075, 0.032, 0.04))],
-    "forearms":   [("forearm.L", 0.4, (0, -0.03, 0),  (0.07, 0.026, 0.032))],
-    "delts":      [("upper_arm.L", 0.08, (0, 0, 0.035), (0.055, 0.05, 0.05))],
-    "pecs":       [("chest", 0.4,   (0.062, -0.095, 0), (0.058, 0.03, 0.06)),
-                   ("chest", 0.4,   (-0.062, -0.095, 0), (0.058, 0.03, 0.06))],
-    "abs":        [("spine", 0.5,   (0, -0.085, 0), (0.055, 0.028, 0.12))],
-    "lats":       [("chest", 0.15,  (0.09, 0.05, 0), (0.045, 0.06, 0.10)),
-                   ("chest", 0.15,  (-0.09, 0.05, 0), (0.045, 0.06, 0.10))],
-    "traps":      [("neck", 0.1,    (0.07, 0.03, 0), (0.06, 0.045, 0.035)),
-                   ("neck", 0.1,    (-0.07, 0.03, 0), (0.06, 0.045, 0.035))],
-}
-
-# exercise-metadata muscle names (lowercased) -> overlay keys
-MUSCLE_ALIAS = {
-    "quads": "quads", "hamstrings": "hamstrings", "glutes": "glutes",
-    "calves": "calves", "biceps": "biceps", "triceps": "triceps",
-    "forearms": "forearms", "shoulders": "delts", "front delts": "delts",
-    "delts": "delts", "chest": "pecs", "pecs": "pecs", "core": "abs",
-    "abs": "abs", "lats": "lats", "back": "lats", "lower back": "lats",
-    "traps": "traps",
+# exercise-metadata muscle names (lowercased) -> bones whose surface region
+# gets painted red/orange
+MUSCLE_BONES = {
+    "quads": ["thigh.L", "thigh.R"], "hamstrings": ["thigh.L", "thigh.R"],
+    "glutes": ["pelvis"], "calves": ["shin.L", "shin.R"],
+    "core": ["spine"], "abs": ["spine"], "lower back": ["spine"],
+    "chest": ["chest"], "lats": ["chest"], "back": ["chest"],
+    "traps": ["neck"],
+    "shoulders": ["upper_arm.L", "upper_arm.R"],
+    "front delts": ["upper_arm.L", "upper_arm.R"],
+    "delts": ["upper_arm.L", "upper_arm.R"],
+    "biceps": ["upper_arm.L", "upper_arm.R"],
+    "triceps": ["upper_arm.L", "upper_arm.R"],
+    "forearms": ["forearm.L", "forearm.R"],
 }
 
 SKIN_COLOR = (0.70, 0.72, 0.76, 1.0)
-MUSCLE_IDLE_COLOR = (0.52, 0.53, 0.57, 1.0)
 PRIMARY_COLOR = (0.80, 0.08, 0.10, 1.0)
 SECONDARY_COLOR = (0.93, 0.50, 0.08, 1.0)
 
@@ -146,14 +132,10 @@ def build_armature(bones, parents):
     return arm_obj
 
 
-def point_on_bone(bones, bone, frac, offset):
-    head, tail = bones[bone]
-    return head + (tail - head) * frac + Vector(offset)
-
-
 def skin_to_bones(mesh_obj, bones):
-    """Distance-based smooth skinning to the 2 nearest bone segments."""
+    """Distance-based smooth skinning; returns each vertex's dominant bone."""
     groups = {name: mesh_obj.vertex_groups.new(name=name) for name in bones}
+    dominant = {}
     for v in mesh_obj.data.vertices:
         dists = []
         for name, (head, tail) in bones.items():
@@ -163,6 +145,7 @@ def skin_to_bones(mesh_obj, bones):
             dists.append(((v.co - closest).length, name))
         dists.sort()
         (d1, b1), (d2, b2) = dists[0], dists[1]
+        dominant[v.index] = b1
         if d2 > d1 * 1.6:                       # clearly one bone's territory
             groups[b1].add([v.index], 1.0, "REPLACE")
         else:                                    # joint area: blend
@@ -171,9 +154,22 @@ def skin_to_bones(mesh_obj, bones):
             total = w1 + w2
             groups[b1].add([v.index], w1 / total, "REPLACE")
             groups[b2].add([v.index], w2 / total, "REPLACE")
+    return dominant
 
 
-def build_smooth_body(arm_obj, bones, skin_mat):
+def paint_muscles(body, dominant, primary_bones, secondary_bones):
+    """Assign red/orange material to faces whose region belongs to an
+    active muscle's bone. Materials: 0 skin, 1 primary, 2 secondary."""
+    for poly in body.data.polygons:
+        votes = [dominant[i] for i in poly.vertices]
+        top = max(set(votes), key=votes.count)
+        if top in primary_bones:
+            poly.material_index = 1
+        elif top in secondary_bones:
+            poly.material_index = 2
+
+
+def build_smooth_body(arm_obj, bones, materials, primary_bones, secondary_bones):
     mball = bpy.data.metaballs.new("BodyMeta")
     mball.resolution = 0.035
     meta_obj = bpy.data.objects.new("BodyMeta", mball)
@@ -183,13 +179,13 @@ def build_smooth_body(arm_obj, bones, skin_mat):
         for bone in names:
             head, tail = bones[bone]
             length = (tail - head).length
-            steps = max(3, int(length / 0.04) + 1)
+            steps = max(3, int(length / 0.035) + 1)
             for i in range(steps):
                 frac = i / (steps - 1)
                 el = mball.elements.new()
-                el.co = point_on_bone(bones, bone, frac, (0, 0, 0))
+                el.co = head + (tail - head) * frac
                 el.radius = r_start + (r_end - r_start) * frac
-    for co, radius in BODY_EXTRA_BALLS:
+    for co, radius, _bone in BODY_EXTRA_BALLS:
         el = mball.elements.new()
         el.co = Vector(co)
         el.radius = radius
@@ -206,43 +202,15 @@ def build_smooth_body(arm_obj, bones, skin_mat):
     bpy.ops.object.modifier_apply(modifier=dec.name)
     bpy.ops.object.shade_smooth()
 
-    body.data.materials.append(skin_mat)
-    skin_to_bones(body, bones)
+    body.data.materials.append(materials["skin"])
+    body.data.materials.append(materials["primary"])
+    body.data.materials.append(materials["secondary"])
+    dominant = skin_to_bones(body, bones)
+    paint_muscles(body, dominant, primary_bones, secondary_bones)
+
     body.parent = arm_obj
     body.modifiers.new("Armature", "ARMATURE").object = arm_obj
     return body
-
-
-def build_muscle_overlays(arm_obj, bones, materials, primary, secondary):
-    for key, placements in MUSCLE_SHAPES.items():
-        if key in primary:
-            mat = materials["primary"]
-        elif key in secondary:
-            mat = materials["secondary"]
-        else:
-            mat = materials["idle"]
-        expanded = []
-        for bone, frac, offset, scale in placements:
-            expanded.append((bone, frac, offset, scale))
-            if bone.endswith(".L"):
-                ox, oy, oz = offset
-                expanded.append((mirror_name(bone), frac, (-ox, oy, oz), scale))
-        for bone, frac, offset, scale in expanded:
-            bpy.ops.mesh.primitive_uv_sphere_add(
-                radius=1.0, segments=16, ring_count=12,
-                location=point_on_bone(bones, bone, frac, offset))
-            blob = bpy.context.object
-            blob.scale = scale
-            # arm bones run along X, so swap the long axis onto the bone
-            if bone.startswith(("upper_arm", "forearm", "hand")):
-                blob.scale = (scale[2] * 1.6, scale[1], scale[0] * 0.8)
-            bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
-            bpy.ops.object.shade_smooth()
-            group = blob.vertex_groups.new(name=bone)
-            group.add(list(range(len(blob.data.vertices))), 1.0, "REPLACE")
-            blob.data.materials.append(mat)
-            blob.parent = arm_obj
-            blob.modifiers.new("Armature", "ARMATURE").object = arm_obj
 
 
 def highlight_sets(spec):
@@ -250,9 +218,7 @@ def highlight_sets(spec):
     for group, out in ((spec.get("primary", []), primary),
                        (spec.get("secondary", []), secondary)):
         for muscle in group:
-            key = MUSCLE_ALIAS.get(muscle.lower())
-            if key:
-                out.add(key)
+            out.update(MUSCLE_BONES.get(muscle.lower(), []))
     return primary, secondary - primary
 
 
@@ -343,13 +309,11 @@ def main():
     arm_obj = build_armature(bones, parents)
     materials = {
         "skin": make_material("Skin", SKIN_COLOR),
-        "idle": make_material("MuscleIdle", MUSCLE_IDLE_COLOR, roughness=0.5),
-        "primary": make_material("Primary", PRIMARY_COLOR, emission=0.35),
-        "secondary": make_material("Secondary", SECONDARY_COLOR, emission=0.2),
+        "primary": make_material("Primary", PRIMARY_COLOR, emission=0.3),
+        "secondary": make_material("Secondary", SECONDARY_COLOR, emission=0.15),
     }
-    primary, secondary = highlight_sets(spec)
-    build_smooth_body(arm_obj, bones, materials["skin"])
-    build_muscle_overlays(arm_obj, bones, materials, primary, secondary)
+    primary_bones, secondary_bones = highlight_sets(spec)
+    build_smooth_body(arm_obj, bones, materials, primary_bones, secondary_bones)
     animate(arm_obj, spec, frame_end)
 
     setup_render(frame_end)
