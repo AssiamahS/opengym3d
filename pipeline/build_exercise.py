@@ -401,55 +401,84 @@ def animate(driver, rig, spec, frame_end):
 
 # -------------------------------------------------------------------- render
 
+def build_cyclorama():
+    """Studio infinity backdrop: floor sweeping up into a back wall through a
+    fillet, so there's no horizon seam behind the figure. Render-only —
+    stripped before GLB export."""
+    profile = [(-7.0, 0.0), (0.9, 0.0)]                  # floor
+    radius, steps = 1.4, 10
+    for i in range(1, steps + 1):                        # quarter-circle fillet
+        a = (math.pi / 2) * (i / steps)
+        profile.append((0.9 + radius * math.sin(a), radius * (1 - math.cos(a))))
+    profile.append((0.9 + radius, radius + 5.0))         # wall
+
+    mesh = bpy.data.meshes.new("Backdrop")
+    verts, faces = [], []
+    for x in (-7.0, 7.0):
+        for y, z in profile:
+            verts.append((x, y, z))
+    n = len(profile)
+    for i in range(n - 1):
+        faces.append((i, i + 1, n + i + 1, n + i))
+    mesh.from_pydata(verts, [], faces)
+    mesh.update()
+    backdrop = bpy.data.objects.new("Backdrop", mesh)
+    bpy.context.scene.collection.objects.link(backdrop)
+    backdrop.data.materials.append(
+        make_material("Backdrop", (0.92, 0.93, 0.95, 1.0), roughness=0.9))
+    for poly in backdrop.data.polygons:
+        poly.use_smooth = True
+    return backdrop
+
+
+def area_light(name, energy, size, location, look_at=Vector((0, 0, 1.0))):
+    data = bpy.data.lights.new(name, "AREA")
+    data.energy = energy
+    data.size = size
+    data.shape = "SQUARE"
+    obj = bpy.data.objects.new(name, data)
+    obj.location = location
+    direction = (look_at - Vector(location))
+    obj.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
+    bpy.context.scene.collection.objects.link(obj)
+    return obj
+
+
 def setup_render(frame_end):
     scene = bpy.context.scene
     target = bpy.data.objects.new("CamTarget", None)
-    target.location = (0, 0, 0.85)
+    target.location = (0, 0, 0.95)
     scene.collection.objects.link(target)
 
+    # 85mm from further back = portrait lens, no wide-angle limb distortion
     cam_data = bpy.data.cameras.new("Cam")
+    cam_data.lens = 85
     cam = bpy.data.objects.new("Cam", cam_data)
-    cam.location = (1.7, -2.6, 1.35)
+    cam.location = (2.9, -4.4, 1.7)
     scene.collection.objects.link(cam)
     cam.constraints.new("TRACK_TO").target = target
     scene.camera = cam
 
-    sun_data = bpy.data.lights.new("Sun", "SUN")
-    sun_data.energy = 4.5
-    sun_data.angle = 0.18            # soft-edged key shadow
-    sun = bpy.data.objects.new("Sun", sun_data)
-    sun.rotation_euler = (math.radians(50), math.radians(-15), math.radians(30))
-    scene.collection.objects.link(sun)
+    # softbox three-point rig (area lights wrap; sun lamps stamp hard edges)
+    area_light("Key", 900, 3.0, (2.6, -3.0, 3.4))
+    area_light("Fill", 220, 5.0, (-3.4, -2.2, 1.8))
+    area_light("Rim", 700, 2.0, (-1.6, 3.2, 2.8))
 
-    fill_data = bpy.data.lights.new("Fill", "SUN")
-    fill_data.energy = 1.2
-    fill = bpy.data.objects.new("Fill", fill_data)
-    fill.rotation_euler = (math.radians(60), math.radians(20), math.radians(-140))
-    scene.collection.objects.link(fill)
-
-    rim_data = bpy.data.lights.new("Rim", "SUN")
-    rim_data.energy = 2.0
-    rim = bpy.data.objects.new("Rim", rim_data)
-    rim.rotation_euler = (math.radians(-65), math.radians(-10), math.radians(160))
-    scene.collection.objects.link(rim)
-
-    # ground plane anchors the figure with a soft contact shadow (render
-    # only — removed before GLB export, the viewer has its own grid floor)
-    bpy.ops.mesh.primitive_plane_add(size=14, location=(0, 0, 0))
-    ground = bpy.context.object
-    ground.name = "Ground"
-    ground.data.materials.append(
-        make_material("Ground", (0.90, 0.91, 0.93, 1.0), roughness=0.95))
+    build_cyclorama()
 
     world = bpy.data.worlds.new("World")
     world.use_nodes = True
     bg = world.node_tree.nodes["Background"]
-    bg.inputs["Color"].default_value = (0.94, 0.95, 0.96, 1.0)
-    bg.inputs["Strength"].default_value = 1.0
+    bg.inputs["Color"].default_value = (0.85, 0.87, 0.90, 1.0)
+    bg.inputs["Strength"].default_value = 0.45   # ambient only; lights do the work
     scene.world = world
 
     scene.render.engine = "CYCLES"
-    scene.cycles.samples = 48
+    scene.cycles.samples = 64
+    scene.cycles.use_denoising = True            # few samples, clean output
+    scene.cycles.max_bounces = 6
+    scene.view_settings.view_transform = "AgX"   # filmic highlight rolloff
+    scene.view_settings.look = "AgX - Medium Contrast"
     scene.render.resolution_x = scene.render.resolution_y = 512
     scene.frame_set(1 + (frame_end - 1) // 2)  # mid-rep = most telling pose
 
@@ -497,9 +526,9 @@ def main():
     scene.render.filepath = f"{out_dir}/frames_{spec['id']}/"
     bpy.ops.render.render(animation=True)
 
-    ground = bpy.data.objects.get("Ground")
-    if ground:
-        bpy.data.objects.remove(ground, do_unlink=True)
+    backdrop = bpy.data.objects.get("Backdrop")
+    if backdrop:
+        bpy.data.objects.remove(backdrop, do_unlink=True)
     bpy.ops.export_scene.gltf(filepath=f"{out_dir}/{spec['id']}.glb")
     print(f"OK {spec['id']}: {frame_end} frames -> {out_dir}")
 
