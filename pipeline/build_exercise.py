@@ -158,14 +158,35 @@ def skin_to_bones(mesh_obj, bones):
 
 
 def paint_muscles(body, dominant, primary_bones, secondary_bones):
-    """Assign red/orange material to faces whose region belongs to an
-    active muscle's bone. Materials: 0 skin, 1 primary, 2 secondary."""
-    for poly in body.data.polygons:
-        votes = [dominant[i] for i in poly.vertices]
-        top = max(set(votes), key=votes.count)
-        if top in primary_bones:
+    """Assign red/orange material to faces in active muscles' bone regions.
+    The per-vertex membership field is Laplacian-smoothed before
+    thresholding so the painted border curves instead of sawtoothing
+    along triangle edges. Materials: 0 skin, 1 primary, 2 secondary."""
+    mesh = body.data
+    score_p = [1.0 if dominant[v.index] in primary_bones else 0.0
+               for v in mesh.vertices]
+    score_s = [1.0 if dominant[v.index] in secondary_bones else 0.0
+               for v in mesh.vertices]
+
+    neighbors = [[] for _ in mesh.vertices]
+    for edge in mesh.edges:
+        a, b = edge.vertices
+        neighbors[a].append(b)
+        neighbors[b].append(a)
+    for _ in range(4):
+        for score in (score_p, score_s):
+            snapshot = score[:]
+            for i, ns in enumerate(neighbors):
+                if ns:
+                    score[i] = 0.5 * snapshot[i] + \
+                        0.5 * sum(snapshot[j] for j in ns) / len(ns)
+
+    for poly in mesh.polygons:
+        p = sum(score_p[i] for i in poly.vertices) / len(poly.vertices)
+        s = sum(score_s[i] for i in poly.vertices) / len(poly.vertices)
+        if p > 0.45 and p >= s:
             poly.material_index = 1
-        elif top in secondary_bones:
+        elif s > 0.45:
             poly.material_index = 2
 
 
