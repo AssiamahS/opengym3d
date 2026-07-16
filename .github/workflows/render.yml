@@ -1,0 +1,70 @@
+name: render & deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  BLENDER_VERSION: 4.5.11
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Blender
+        id: blender-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/blender
+          key: blender-${{ env.BLENDER_VERSION }}-linux-x64
+
+      - name: Install Blender
+        if: steps.blender-cache.outputs.cache-hit != 'true'
+        run: |
+          curl -sL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}-linux-x64.tar.xz" | tar xJ -C "$HOME"
+          mv "$HOME/blender-${BLENDER_VERSION}-linux-x64" "$HOME/blender"
+
+      - name: Install runtime libs
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libxkbcommon0 libsm6
+
+      - name: Render exercises to GLB + thumbnails
+        run: |
+          mkdir -p site/assets
+          for spec in exercises/*.json; do
+            echo "=== $spec"
+            "$HOME/blender/blender" -b -noaudio -P pipeline/build_exercise.py -- "$spec" site/assets
+          done
+          ls -la site/assets
+
+      - name: Assemble site
+        run: |
+          cp -r website/* site/
+          python3 pipeline/make_manifest.py exercises site/exercises.json
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: render
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

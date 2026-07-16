@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenGym3D — open-source exercise animation library</title>
+<style>
+  :root {
+    --bg: #0b0d10; --panel: #14181d; --line: #232a32;
+    --text: #e8ecf1; --dim: #8b96a3;
+    --red: #d92b2f; --amber: #f28c1b; --accent: #3fa9f5;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font: 15px/1.5 -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { padding: 20px 24px; border-bottom: 1px solid var(--line); display: flex; align-items: baseline; gap: 14px; }
+  header h1 { font-size: 20px; letter-spacing: .3px; }
+  header span { color: var(--dim); font-size: 13px; }
+  #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; padding: 24px; max-width: 1200px; margin: 0 auto; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; cursor: pointer; transition: border-color .15s, transform .15s; }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: #101418; }
+  .card .meta { padding: 12px 14px; }
+  .card h3 { font-size: 15px; margin-bottom: 4px; }
+  .card small { color: var(--dim); }
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .chip { font-size: 11px; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line); color: var(--dim); }
+  .chip.primary { border-color: var(--red); color: #ff7a7d; }
+  .chip.secondary { border-color: var(--amber); color: var(--amber); }
+  #viewer { position: fixed; inset: 0; background: rgba(8,10,12,.96); display: none; flex-direction: column; z-index: 10; }
+  #viewer.open { display: flex; }
+  #viewer-bar { display: flex; align-items: center; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+  #viewer-bar h2 { font-size: 17px; flex: 1; }
+  #close { background: none; border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: 6px 14px; cursor: pointer; font-size: 14px; }
+  #canvas-wrap { flex: 1; position: relative; }
+  #canvas-wrap canvas { display: block; }
+  #controls { display: flex; align-items: center; gap: 14px; padding: 14px 20px; border-top: 1px solid var(--line); }
+  #play { width: 44px; height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text); cursor: pointer; font-size: 15px; }
+  #scrub { flex: 1; accent-color: var(--accent); }
+  #speed { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 5px 8px; }
+  #viewer-muscles { padding: 0 20px 14px; }
+  footer { text-align: center; color: var(--dim); font-size: 13px; padding: 30px 0 40px; }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<header>
+  <h1>OpenGym3D</h1>
+  <span>open-source 3D exercise library — rendered by Blender in CI, no server</span>
+</header>
+<div id="grid"></div>
+
+<div id="viewer">
+  <div id="viewer-bar">
+    <h2 id="viewer-title"></h2>
+    <button id="close">✕ Close</button>
+  </div>
+  <div id="canvas-wrap"></div>
+  <div class="chips" id="viewer-muscles"></div>
+  <div id="controls">
+    <button id="play">⏸</button>
+    <input id="scrub" type="range" min="0" max="1000" value="0">
+    <select id="speed">
+      <option value="0.5">0.5×</option>
+      <option value="1" selected>1×</option>
+      <option value="2">2×</option>
+    </select>
+  </div>
+</div>
+
+<footer>
+  Built with Blender + Three.js · <a href="https://github.com/AssiamahS/opengym3d">github.com/AssiamahS/opengym3d</a>
+</footer>
+<script type="module" src="main.js"></script>
+</body>
+</html>
