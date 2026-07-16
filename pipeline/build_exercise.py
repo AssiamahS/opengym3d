@@ -39,7 +39,7 @@ PARENTS = {
 }
 
 LIMB_RADIUS = {
-    "pelvis": 0.115, "spine": 0.11, "chest": 0.13, "neck": 0.05,
+    "pelvis": 0.115, "spine": 0.11, "chest": 0.13, "neck": 0.05, "head": 0.11,
     "upper_arm": 0.045, "forearm": 0.04, "hand": 0.035,
     "thigh": 0.07, "shin": 0.055, "foot": 0.04,
 }
@@ -125,7 +125,7 @@ def build_body(arm_obj, bones, materials, primary, secondary):
         axis = tail - head
         if name == "head":
             bpy.ops.mesh.primitive_uv_sphere_add(
-                radius=0.11, location=head + axis / 2, segments=16, ring_count=12)
+                radius=radius, location=head + axis / 2, segments=16, ring_count=12)
         else:
             bpy.ops.mesh.primitive_cylinder_add(
                 radius=radius, depth=axis.length * 0.98,

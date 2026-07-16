@@ -46,9 +46,14 @@ jobs:
           mkdir -p site/assets
           for spec in exercises/*.json; do
             echo "=== $spec"
-            "$HOME/blender/blender" -b -noaudio -P pipeline/build_exercise.py -- "$spec" site/assets
+            "$HOME/blender/blender" -b -noaudio --python-exit-code 1 -P pipeline/build_exercise.py -- "$spec" site/assets
           done
           ls -la site/assets
+          for spec in exercises/*.json; do
+            id=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['id'])" "$spec")
+            test -s "site/assets/$id.glb" || { echo "missing $id.glb"; exit 1; }
+            test -s "site/assets/$id.png" || { echo "missing $id.png"; exit 1; }
+          done
 
       - name: Assemble site
         run: |
