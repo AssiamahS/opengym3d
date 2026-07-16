@@ -80,20 +80,23 @@ RETARGET = [
 # (spine01 = 324 verts / 227 posterior = upper back, i.e. the lats' anchor).
 # Ranges are rest-pose metres: pelvis ~0.95, navel ~1.15, sternum ~1.30,
 # clavicle ~1.45, chin ~1.55.
+TORSO = ("spine01", "spine02", "spine03", "spine04", "spine05", "breast",
+         "clavicle", "neck01", "neck02", "neck03", "pelvis")
+TORSO_Y_SPLIT = 0.03    # rest-pose torso centreline; front/back either side
+
 MUSCLE_SPEC = {
     "quads": (("upperleg02",), "front", None),
     "hamstrings": (("upperleg02",), "back", None),
-    "glutes": (("pelvis", "upperleg01"), "back", (0.82, 1.00)),
+    "glutes": (TORSO + ("upperleg01",), "back", (0.82, 1.00)),
     "calves": (("lowerleg01",), "back", None),
-    "core": (("spine02", "spine03", "spine04"), "front", (0.98, 1.24)),
-    "abs": (("spine02", "spine03", "spine04"), "front", (0.98, 1.24)),
-    "lower back": (("spine03", "spine04", "spine05"), "back", (0.92, 1.14)),
-    "chest": (("spine01", "spine02", "breast"), "front", (1.24, 1.46)),
-    "pecs": (("spine01", "spine02", "breast"), "front", (1.24, 1.46)),
-    "lats": (("spine01", "spine02", "spine03"), "back", (1.08, 1.42)),
-    "back": (("spine01", "spine02", "spine03"), "back", (1.08, 1.42)),
-    "traps": (("neck01", "neck02", "neck03", "clavicle", "spine01"), "back",
-              (1.36, 1.56)),
+    "core": (TORSO, "front", (0.98, 1.24)),
+    "abs": (TORSO, "front", (0.98, 1.24)),
+    "lower back": (TORSO, "back", (0.92, 1.14)),
+    "chest": (TORSO, "front", (1.24, 1.46)),
+    "pecs": (TORSO, "front", (1.24, 1.46)),
+    "lats": (TORSO, "back", (1.08, 1.42)),
+    "back": (TORSO, "back", (1.08, 1.42)),
+    "traps": (TORSO, "back", (1.36, 1.56)),
     "shoulders": (("shoulder01", "upperarm01"), None, None),
     "front delts": (("shoulder01", "upperarm01"), "front", None),
     "delts": (("shoulder01", "upperarm01"), None, None),
@@ -213,8 +216,12 @@ def paint_muscles(basemesh, rig, materials, primary, secondary):
             return False
         if side is None:
             return True
-        # character faces -Y: anterior muscles sit in front of the bone axis
-        mid = axis_y.get(bone_name, 0.0)
+        # Character faces -Y. Limbs split against their own bone axis, but the
+        # torso must use one fixed centreline: which spine bone happens to own
+        # a patch of back skin is unpredictable (the census found spine02 owns
+        # 306 verts with 2 posterior, while spine01 owns the whole upper back),
+        # so per-bone axes left the lats unpainted three attempts running.
+        mid = TORSO_Y_SPLIT if z_range is not None else axis_y.get(bone_name, 0.0)
         return vert.co.y < mid if side == "front" else vert.co.y > mid
 
     score_p, score_s = [], []
