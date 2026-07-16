@@ -447,10 +447,11 @@ def animate(driver, rig, spec, frame_end):
 
 # -------------------------------------------------------------------- render
 
-def build_cyclorama():
+def build_cyclorama(flip=1.0):
     """Studio infinity backdrop: floor sweeping up into a back wall through a
-    fillet, so there's no horizon seam behind the figure. Render-only —
-    stripped before GLB export."""
+    fillet, so there's no horizon seam behind the figure. The wall follows the
+    camera to the far side (flip=-1) — otherwise a rear view is shot straight
+    through it. Render-only — stripped before GLB export."""
     profile = [(-7.0, 0.0), (0.9, 0.0)]                  # floor
     radius, steps = 1.4, 10
     for i in range(1, steps + 1):                        # quarter-circle fillet
@@ -462,7 +463,7 @@ def build_cyclorama():
     verts, faces = [], []
     for x in (-7.0, 7.0):
         for y, z in profile:
-            verts.append((x, y, z))
+            verts.append((x, y * flip, z))
     n = len(profile)
     for i in range(n - 1):
         faces.append((i, i + 1, n + i + 1, n + i))
@@ -490,7 +491,17 @@ def area_light(name, energy, size, location, look_at=Vector((0, 0, 1.0))):
     return obj
 
 
-def frame_subject(cam, target, basemesh, frames, margin=1.12):
+def camera_side(primary):
+    """Shoot posterior exercises from behind. A bent-over row paints its lats
+    correctly and still renders as a blank white back if the camera sits in
+    front of the figure — the muscles face away from the lens."""
+    sides = [MUSCLE_SPEC[m][1] for m in primary]
+    posterior = [s for s in sides if s == "back"]
+    anterior = [s for s in sides if s == "front"]
+    return "back" if posterior and not anterior else "front"
+
+
+def frame_subject(cam, target, basemesh, frames, side="front", margin=1.12):
     """Fit the camera to the figure across every keyframe pose, so the shot
     is tight but nothing clips mid-rep and the camera never drifts."""
     lo = Vector((1e9, 1e9, 1e9))
@@ -508,13 +519,16 @@ def frame_subject(cam, target, basemesh, frames, margin=1.12):
     center = (lo + hi) / 2
     radius = (hi - lo).length / 2
     target.location = center
-    view_dir = Vector((0.55, -0.80, 0.20)).normalized()   # keep the 3/4 angle
+    # 3/4 angle, from whichever side the working muscles are on (-Y is front)
+    y = -0.80 if side == "front" else 0.80
+    view_dir = Vector((0.55, y, 0.20)).normalized()
     distance = radius / math.tan(cam.data.angle / 2) * margin
     cam.location = center + view_dir * distance
 
 
-def setup_render():
+def setup_render(side="front"):
     scene = bpy.context.scene
+    flip = 1.0 if side == "front" else -1.0   # keep the rig relative to the lens
     target = bpy.data.objects.new("CamTarget", None)
     scene.collection.objects.link(target)
 
@@ -533,11 +547,11 @@ def setup_render():
     # albedo 0.6 from ~4 m, the key wants ≈450 W. Earlier rigs ran 900-1400 W
     # (~2-3 stops hot) which is what bleached the figure and turned the
     # muscle reds pink — blown channels desaturate.
-    area_light("Key", 450, 2.5, (2.6, -3.0, 3.4))
-    area_light("Fill", 90, 6.0, (-3.4, -2.2, 1.8))
-    area_light("Rim", 250, 2.0, (-1.6, 3.2, 2.8))
+    area_light("Key", 450, 2.5, (2.6, -3.0 * flip, 3.4))
+    area_light("Fill", 90, 6.0, (-3.4, -2.2 * flip, 1.8))
+    area_light("Rim", 250, 2.0, (-1.6, 3.2 * flip, 2.8))
 
-    build_cyclorama()
+    build_cyclorama(flip)
 
     world = bpy.data.worlds.new("World")
     world.use_nodes = True
@@ -587,19 +601,20 @@ def main():
     animate(driver, rig, spec, frame_end)
     bpy.data.objects.remove(driver, do_unlink=True)
 
-    cam, target = setup_render()
+    side = camera_side(primary)
+    cam, target = setup_render(side)
     key_frames = sorted({1 + round(kf["t"] * (frame_end - 1))
                          for kf in spec["keyframes"]})
     still_frame = 1 + (frame_end - 1) // 2      # mid-rep = most telling pose
 
     # thumbnail: frame that one pose tightly
-    frame_subject(cam, target, basemesh, [still_frame])
+    frame_subject(cam, target, basemesh, [still_frame], side)
     scene.frame_set(still_frame)
     scene.render.filepath = f"{out_dir}/{spec['id']}.png"
     bpy.ops.render.render(write_still=True)
 
     # animation: frame the whole rep so the camera never drifts or clips
-    frame_subject(cam, target, basemesh, key_frames)
+    frame_subject(cam, target, basemesh, key_frames, side)
 
     # small animation frames for GIF/MP4 (watch-sized); ffmpeg assembles in CI
     scene.render.resolution_x = scene.render.resolution_y = 240
