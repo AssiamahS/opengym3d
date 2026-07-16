@@ -68,20 +68,29 @@ RETARGET = [
     ("forearm.R", "lowerarm01.R"), ("forearm.R", "lowerarm02.R"), ("hand.R", "wrist.R"),
 ]
 
-# exercise-metadata muscle names -> MakeHuman bones whose skin territory
-# gets painted red/orange
-MUSCLE_BONES = {
-    "quads": ["upperleg01", "upperleg02"], "hamstrings": ["upperleg01", "upperleg02"],
-    "glutes": ["pelvis"], "calves": ["lowerleg01", "lowerleg02"],
-    "core": ["spine03", "spine02"], "abs": ["spine03", "spine02"],
-    "lower back": ["spine04", "spine05"],
-    "chest": ["breast"], "pecs": ["breast"],
-    "lats": ["spine02", "spine01"], "back": ["spine02", "spine01"],
-    "traps": ["neck01", "neck02", "neck03"],
-    "shoulders": ["shoulder01", "clavicle"], "front delts": ["shoulder01", "clavicle"],
-    "delts": ["shoulder01", "clavicle"],
-    "biceps": ["upperarm01", "upperarm02"], "triceps": ["upperarm01", "upperarm02"],
-    "forearms": ["lowerarm01", "lowerarm02"],
+# exercise-metadata muscle name -> (MakeHuman bone territories, side).
+# MakeHuman splits each limb into a short proximal segment and a long belly
+# segment: upperarm01 is the deltoid cap, upperarm02 the biceps/triceps
+# belly; upperleg01 the hip, upperleg02 the quad/ham belly; lowerleg01 the
+# calf belly. Side ("front"/"back", character faces -Y) separates antagonist
+# pairs that share a bone — biceps from triceps, quads from hamstrings.
+MUSCLE_SPEC = {
+    "quads": (("upperleg02",), "front"),
+    "hamstrings": (("upperleg02",), "back"),
+    "glutes": (("pelvis", "upperleg01"), "back"),
+    "calves": (("lowerleg01",), "back"),
+    "core": (("spine02", "spine03"), "front"),
+    "abs": (("spine02", "spine03"), "front"),
+    "lower back": (("spine03", "spine04", "spine05"), "back"),
+    "chest": (("breast",), None), "pecs": (("breast",), None),
+    "lats": (("spine01", "spine02"), "back"), "back": (("spine01", "spine02"), "back"),
+    "traps": (("neck01", "neck02", "neck03", "clavicle"), "back"),
+    "shoulders": (("shoulder01", "upperarm01"), None),
+    "front delts": (("shoulder01", "upperarm01"), "front"),
+    "delts": (("shoulder01", "upperarm01"), None),
+    "biceps": (("upperarm02",), "front"),
+    "triceps": (("upperarm02",), "back"),
+    "forearms": (("lowerarm01", "lowerarm02"), None),
 }
 
 HELPER_GROUPS = ("HelperGeometry", "JointCubes", "eye.L", "eye.R")
@@ -168,36 +177,44 @@ def make_material(name, color, emission=0.0, roughness=0.55, subsurface=0.0):
 
 
 def highlight_sets(spec):
-    """Muscle metadata -> sets of MakeHuman bone-territory prefixes."""
-    primary, secondary = set(), set()
-    for group, out in ((spec.get("primary", []), primary),
-                       (spec.get("secondary", []), secondary)):
-        for muscle in group:
-            out.update(MUSCLE_BONES.get(muscle.lower(), []))
-    return primary, secondary - primary
+    """Exercise metadata -> lists of muscle keys we know how to paint."""
+    def keys(names):
+        return [m.lower() for m in names if m.lower() in MUSCLE_SPEC]
+    primary = keys(spec.get("primary", []))
+    secondary = [m for m in keys(spec.get("secondary", [])) if m not in primary]
+    return primary, secondary
 
 
-def paint_muscles(basemesh, materials, primary, secondary, bone_names):
+def paint_muscles(basemesh, rig, materials, primary, secondary):
     """Paint faces whose dominant skin-weight territory belongs to an active
-    muscle. Only real rig-bone groups count — MakeHuman's meta groups
-    (body/Left/Right/Mid) carry full weights everywhere and must be
-    ignored. The membership field is Laplacian-smoothed so borders curve."""
+    muscle, split front/back so antagonists don't bleed into each other.
+    Only real rig-bone groups count — MakeHuman's meta groups (body/Left/
+    Right/Mid) carry full weights everywhere and must be ignored. The
+    membership field is Laplacian-smoothed so borders curve."""
     mesh = basemesh.data
     name_by_index = {g.index: g.name for g in basemesh.vertex_groups}
+    bones = {b.name: b for b in rig.data.bones}
+    axis_y = {name: (b.head_local.y + b.tail_local.y) / 2 for name, b in bones.items()}
 
-    def in_set(names_set, group_name):
-        base = group_name.split(".")[0]
-        return base in names_set
+    def matches(muscle_key, bone_name, vert):
+        territories, side = MUSCLE_SPEC[muscle_key]
+        if bone_name.split(".")[0] not in territories:
+            return False
+        if side is None:
+            return True
+        # character faces -Y: anterior muscles sit in front of the bone axis
+        mid = axis_y.get(bone_name, 0.0)
+        return vert.co.y < mid if side == "front" else vert.co.y > mid
 
     score_p, score_s = [], []
     for v in mesh.vertices:
         best, best_w = None, 0.0
         for ge in v.groups:
             name = name_by_index.get(ge.group)
-            if name in bone_names and ge.weight > best_w:
+            if name in bones and ge.weight > best_w:
                 best, best_w = name, ge.weight
-        score_p.append(1.0 if best and in_set(primary, best) else 0.0)
-        score_s.append(1.0 if best and in_set(secondary, best) else 0.0)
+        score_p.append(1.0 if best and any(matches(m, best, v) for m in primary) else 0.0)
+        score_s.append(1.0 if best and any(matches(m, best, v) for m in secondary) else 0.0)
 
     neighbors = [[] for _ in mesh.vertices]
     for edge in mesh.edges:
@@ -478,7 +495,7 @@ def setup_render(frame_end):
     scene.cycles.use_denoising = True            # few samples, clean output
     scene.cycles.max_bounces = 6
     scene.view_settings.view_transform = "AgX"   # filmic highlight rolloff
-    scene.view_settings.look = "AgX - Medium Contrast"
+    scene.view_settings.look = "AgX - Base Contrast"
     scene.render.resolution_x = scene.render.resolution_y = 512
     scene.frame_set(1 + (frame_end - 1) // 2)  # mid-rep = most telling pose
 
@@ -507,8 +524,7 @@ def main():
                                    subsurface=0.06),
     }
     primary, secondary = highlight_sets(spec)
-    paint_muscles(basemesh, materials, primary, secondary,
-                  {b.name for b in rig.data.bones})
+    paint_muscles(basemesh, rig, materials, primary, secondary)
 
     bones, parents = full_skeleton()
     driver = build_driver(bones, parents)
