@@ -4,10 +4,11 @@ Runs headless inside Blender (no addons, no GPU needed):
 
     blender -b -noaudio -P pipeline/build_exercise.py -- exercises/squat.json site/assets
 
-Reads one exercise spec (metadata + pose keyframes), builds a procedural
-humanoid armature with a rigid-skinned capsule body, keys the animation,
-then writes <id>.glb (skinned + animated) and <id>.png (Cycles thumbnail
-of the mid-rep frame).
+Reads one exercise spec (metadata + pose keyframes), builds a smooth
+metaball-sculpted body over a procedural armature (distance-weighted
+skinning, so joints bend instead of breaking), lays anatomical muscle
+overlays on top (all groups faintly visible, active ones red/orange),
+keys the animation, then writes <id>.glb and <id>.png (mid-rep frame).
 """
 
 import json
@@ -15,7 +16,7 @@ import math
 import sys
 
 import bpy
-from mathutils import Vector
+from mathutils import Vector, geometry
 
 # Rest skeleton, world coords, character faces -Y. name: (head, tail)
 BONES = {
@@ -38,29 +39,58 @@ PARENTS = {
     "thigh.L": "pelvis", "shin.L": "thigh.L", "foot.L": "shin.L",
 }
 
-LIMB_RADIUS = {
-    "pelvis": 0.115, "spine": 0.11, "chest": 0.13, "neck": 0.05, "head": 0.11,
-    "upper_arm": 0.045, "forearm": 0.04, "hand": 0.035,
-    "thigh": 0.07, "shin": 0.055, "foot": 0.04,
+# Metaball skin: bone -> [(fraction along bone, radius)]. Tapers make the
+# silhouette read as a body instead of pipes; overlays add the muscle look.
+BODY_BALLS = {
+    "pelvis":      [(0.3, 0.105), (0.9, 0.10)],
+    "spine":       [(0.3, 0.095), (0.8, 0.10)],
+    "chest":       [(0.3, 0.115), (0.8, 0.12)],
+    "neck":        [(0.5, 0.048)],
+    "head":        [(0.55, 0.095)],
+    "upper_arm.L": [(0.15, 0.052), (0.55, 0.046), (0.9, 0.04)],
+    "forearm.L":   [(0.2, 0.042), (0.7, 0.034)],
+    "hand.L":      [(0.5, 0.034)],
+    "thigh.L":     [(0.15, 0.078), (0.55, 0.066), (0.9, 0.052)],
+    "shin.L":      [(0.15, 0.052), (0.5, 0.046), (0.9, 0.035)],
+    "foot.L":      [(0.4, 0.036), (0.9, 0.032)],
 }
 
-# Muscle name (lowercased) -> bones whose body part gets highlighted
-MUSCLE_BONES = {
-    "quads": ["thigh.L", "thigh.R"], "hamstrings": ["thigh.L", "thigh.R"],
-    "glutes": ["pelvis"], "calves": ["shin.L", "shin.R"],
-    "core": ["spine"], "abs": ["spine"], "lower back": ["spine"],
-    "chest": ["chest"], "lats": ["chest"], "back": ["chest"],
-    "traps": ["neck"],
-    "shoulders": ["upper_arm.L", "upper_arm.R"],
-    "front delts": ["upper_arm.L", "upper_arm.R"],
-    "biceps": ["upper_arm.L", "upper_arm.R"],
-    "triceps": ["upper_arm.L", "upper_arm.R"],
-    "forearms": ["forearm.L", "forearm.R"],
+# Anatomical overlays: key -> [(bone, fraction, world offset, world scale)].
+# All are drawn (faint gray = definition); primary/secondary recolor them.
+# Forward is -Y. ".L" entries are mirrored to ".R" automatically.
+MUSCLE_SHAPES = {
+    "quads":      [("thigh.L", 0.5,  (0, -0.055, 0), (0.055, 0.05, 0.17))],
+    "hamstrings": [("thigh.L", 0.5,  (0, 0.055, 0),  (0.05, 0.045, 0.16))],
+    "glutes":     [("pelvis", 0.25,  (0.062, 0.075, 0), (0.062, 0.06, 0.07)),
+                   ("pelvis", 0.25,  (-0.062, 0.075, 0), (0.062, 0.06, 0.07))],
+    "calves":     [("shin.L", 0.3,   (0, 0.045, 0),  (0.042, 0.042, 0.11))],
+    "biceps":     [("upper_arm.L", 0.5, (0, -0.036, 0), (0.075, 0.032, 0.04))],
+    "triceps":    [("upper_arm.L", 0.5, (0, 0.036, 0),  (0.075, 0.032, 0.04))],
+    "forearms":   [("forearm.L", 0.4, (0, -0.03, 0),  (0.07, 0.026, 0.032))],
+    "delts":      [("upper_arm.L", 0.08, (0, 0, 0.035), (0.055, 0.05, 0.05))],
+    "pecs":       [("chest", 0.4,   (0.062, -0.095, 0), (0.058, 0.03, 0.06)),
+                   ("chest", 0.4,   (-0.062, -0.095, 0), (0.058, 0.03, 0.06))],
+    "abs":        [("spine", 0.5,   (0, -0.085, 0), (0.055, 0.028, 0.12))],
+    "lats":       [("chest", 0.15,  (0.09, 0.05, 0), (0.045, 0.06, 0.10)),
+                   ("chest", 0.15,  (-0.09, 0.05, 0), (0.045, 0.06, 0.10))],
+    "traps":      [("neck", 0.1,    (0.07, 0.03, 0), (0.06, 0.045, 0.035)),
+                   ("neck", 0.1,    (-0.07, 0.03, 0), (0.06, 0.045, 0.035))],
 }
 
-BODY_COLOR = (0.44, 0.47, 0.52, 1.0)
-PRIMARY_COLOR = (0.85, 0.10, 0.12, 1.0)
-SECONDARY_COLOR = (0.95, 0.55, 0.10, 1.0)
+# exercise-metadata muscle names (lowercased) -> overlay keys
+MUSCLE_ALIAS = {
+    "quads": "quads", "hamstrings": "hamstrings", "glutes": "glutes",
+    "calves": "calves", "biceps": "biceps", "triceps": "triceps",
+    "forearms": "forearms", "shoulders": "delts", "front delts": "delts",
+    "delts": "delts", "chest": "pecs", "pecs": "pecs", "core": "abs",
+    "abs": "abs", "lats": "lats", "back": "lats", "lower back": "lats",
+    "traps": "traps",
+}
+
+SKIN_COLOR = (0.78, 0.80, 0.83, 1.0)
+MUSCLE_IDLE_COLOR = (0.62, 0.63, 0.66, 1.0)
+PRIMARY_COLOR = (0.80, 0.08, 0.10, 1.0)
+SECONDARY_COLOR = (0.93, 0.50, 0.08, 1.0)
 
 
 def mirror_name(name):
@@ -82,12 +112,12 @@ def full_skeleton():
     return bones, parents
 
 
-def make_material(name, color, emission=0.0):
+def make_material(name, color, emission=0.0, roughness=0.55):
     mat = bpy.data.materials.new(name)
     mat.use_nodes = True
     bsdf = mat.node_tree.nodes["Principled BSDF"]
     bsdf.inputs["Base Color"].default_value = color
-    bsdf.inputs["Roughness"].default_value = 0.6
+    bsdf.inputs["Roughness"].default_value = roughness
     if emission:
         bsdf.inputs["Emission Color"].default_value = color
         bsdf.inputs["Emission Strength"].default_value = emission
@@ -109,51 +139,106 @@ def build_armature(bones, parents):
     return arm_obj
 
 
+def point_on_bone(bones, bone, frac, offset):
+    head, tail = bones[bone]
+    return head + (tail - head) * frac + Vector(offset)
+
+
+def skin_to_bones(mesh_obj, bones):
+    """Distance-based smooth skinning to the 2 nearest bone segments."""
+    groups = {name: mesh_obj.vertex_groups.new(name=name) for name in bones}
+    for v in mesh_obj.data.vertices:
+        dists = []
+        for name, (head, tail) in bones.items():
+            closest, t = geometry.intersect_point_line(v.co, head, tail)
+            t = max(0.0, min(1.0, t))
+            closest = head + (tail - head) * t
+            dists.append(((v.co - closest).length, name))
+        dists.sort()
+        (d1, b1), (d2, b2) = dists[0], dists[1]
+        if d2 > d1 * 1.6:                       # clearly one bone's territory
+            groups[b1].add([v.index], 1.0, "REPLACE")
+        else:                                    # joint area: blend
+            w1 = 1.0 / max(d1, 1e-4) ** 4
+            w2 = 1.0 / max(d2, 1e-4) ** 4
+            total = w1 + w2
+            groups[b1].add([v.index], w1 / total, "REPLACE")
+            groups[b2].add([v.index], w2 / total, "REPLACE")
+
+
+def build_smooth_body(arm_obj, bones, skin_mat):
+    mball = bpy.data.metaballs.new("BodyMeta")
+    mball.resolution = 0.035
+    meta_obj = bpy.data.objects.new("BodyMeta", mball)
+    bpy.context.scene.collection.objects.link(meta_obj)
+    for name, placements in BODY_BALLS.items():
+        names = [name, mirror_name(name)] if name.endswith(".L") else [name]
+        for bone in names:
+            for frac, radius in placements:
+                el = mball.elements.new()
+                el.co = point_on_bone(bones, bone, frac, (0, 0, 0))
+                el.radius = radius
+
+    bpy.ops.object.select_all(action="DESELECT")
+    meta_obj.select_set(True)
+    bpy.context.view_layer.objects.active = meta_obj
+    bpy.ops.object.convert(target="MESH")
+    body = bpy.context.object
+    body.name = "Body"
+
+    dec = body.modifiers.new("Decimate", "DECIMATE")
+    dec.ratio = 0.5
+    bpy.ops.object.modifier_apply(modifier=dec.name)
+    bpy.ops.object.shade_smooth()
+
+    body.data.materials.append(skin_mat)
+    skin_to_bones(body, bones)
+    body.parent = arm_obj
+    body.modifiers.new("Armature", "ARMATURE").object = arm_obj
+    return body
+
+
+def build_muscle_overlays(arm_obj, bones, materials, primary, secondary):
+    for key, placements in MUSCLE_SHAPES.items():
+        if key in primary:
+            mat = materials["primary"]
+        elif key in secondary:
+            mat = materials["secondary"]
+        else:
+            mat = materials["idle"]
+        expanded = []
+        for bone, frac, offset, scale in placements:
+            expanded.append((bone, frac, offset, scale))
+            if bone.endswith(".L"):
+                ox, oy, oz = offset
+                expanded.append((mirror_name(bone), frac, (-ox, oy, oz), scale))
+        for bone, frac, offset, scale in expanded:
+            bpy.ops.mesh.primitive_uv_sphere_add(
+                radius=1.0, segments=16, ring_count=12,
+                location=point_on_bone(bones, bone, frac, offset))
+            blob = bpy.context.object
+            blob.scale = scale
+            # arm bones run along X, so swap the long axis onto the bone
+            if bone.startswith(("upper_arm", "forearm", "hand")):
+                blob.scale = (scale[2] * 1.6, scale[1], scale[0] * 0.8)
+            bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+            bpy.ops.object.shade_smooth()
+            group = blob.vertex_groups.new(name=bone)
+            group.add(list(range(len(blob.data.vertices))), 1.0, "REPLACE")
+            blob.data.materials.append(mat)
+            blob.parent = arm_obj
+            blob.modifiers.new("Armature", "ARMATURE").object = arm_obj
+
+
 def highlight_sets(spec):
     primary, secondary = set(), set()
     for group, out in ((spec.get("primary", []), primary),
                        (spec.get("secondary", []), secondary)):
         for muscle in group:
-            out.update(MUSCLE_BONES.get(muscle.lower(), []))
+            key = MUSCLE_ALIAS.get(muscle.lower())
+            if key:
+                out.add(key)
     return primary, secondary - primary
-
-
-def build_body(arm_obj, bones, materials, primary, secondary):
-    pieces = []
-    for name, (head, tail) in bones.items():
-        radius = LIMB_RADIUS[name.split(".")[0]]
-        axis = tail - head
-        if name == "head":
-            bpy.ops.mesh.primitive_uv_sphere_add(
-                radius=radius, location=head + axis / 2, segments=16, ring_count=12)
-        else:
-            bpy.ops.mesh.primitive_cylinder_add(
-                radius=radius, depth=axis.length * 0.98,
-                location=head + axis / 2, vertices=12)
-            bpy.context.object.rotation_mode = "QUATERNION"
-            bpy.context.object.rotation_quaternion = axis.to_track_quat("Z", "Y")
-        piece = bpy.context.object
-        bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
-        group = piece.vertex_groups.new(name=name)
-        group.add(list(range(len(piece.data.vertices))), 1.0, "REPLACE")
-        if name in primary:
-            piece.data.materials.append(materials["primary"])
-        elif name in secondary:
-            piece.data.materials.append(materials["secondary"])
-        else:
-            piece.data.materials.append(materials["body"])
-        pieces.append(piece)
-
-    bpy.ops.object.select_all(action="DESELECT")
-    for piece in pieces:
-        piece.select_set(True)
-    bpy.context.view_layer.objects.active = pieces[0]
-    bpy.ops.object.join()
-    body = bpy.context.object
-    body.name = "Body"
-    body.parent = arm_obj
-    body.modifiers.new("Armature", "ARMATURE").object = arm_obj
-    return body
 
 
 def pose_targets(kf_bones):
@@ -197,21 +282,27 @@ def setup_render(frame_end):
 
     cam_data = bpy.data.cameras.new("Cam")
     cam = bpy.data.objects.new("Cam", cam_data)
-    cam.location = (1.9, -2.7, 1.5)
+    cam.location = (1.7, -2.6, 1.35)
     scene.collection.objects.link(cam)
     cam.constraints.new("TRACK_TO").target = target
     scene.camera = cam
 
     sun_data = bpy.data.lights.new("Sun", "SUN")
-    sun_data.energy = 3.5
+    sun_data.energy = 3.0
     sun = bpy.data.objects.new("Sun", sun_data)
     sun.rotation_euler = (math.radians(50), math.radians(-15), math.radians(30))
     scene.collection.objects.link(sun)
 
+    fill_data = bpy.data.lights.new("Fill", "SUN")
+    fill_data.energy = 1.2
+    fill = bpy.data.objects.new("Fill", fill_data)
+    fill.rotation_euler = (math.radians(60), math.radians(20), math.radians(-140))
+    scene.collection.objects.link(fill)
+
     world = bpy.data.worlds.new("World")
     world.use_nodes = True
     bg = world.node_tree.nodes["Background"]
-    bg.inputs["Color"].default_value = (0.09, 0.10, 0.12, 1.0)
+    bg.inputs["Color"].default_value = (0.94, 0.95, 0.96, 1.0)
     bg.inputs["Strength"].default_value = 1.0
     scene.world = world
 
@@ -236,12 +327,14 @@ def main():
     bones, parents = full_skeleton()
     arm_obj = build_armature(bones, parents)
     materials = {
-        "body": make_material("Body", BODY_COLOR),
-        "primary": make_material("Primary", PRIMARY_COLOR, emission=0.6),
-        "secondary": make_material("Secondary", SECONDARY_COLOR, emission=0.3),
+        "skin": make_material("Skin", SKIN_COLOR),
+        "idle": make_material("MuscleIdle", MUSCLE_IDLE_COLOR, roughness=0.5),
+        "primary": make_material("Primary", PRIMARY_COLOR, emission=0.35),
+        "secondary": make_material("Secondary", SECONDARY_COLOR, emission=0.2),
     }
     primary, secondary = highlight_sets(spec)
-    build_body(arm_obj, bones, materials, primary, secondary)
+    build_smooth_body(arm_obj, bones, materials["skin"])
+    build_muscle_overlays(arm_obj, bones, materials, primary, secondary)
     animate(arm_obj, spec, frame_end)
 
     setup_render(frame_end)
