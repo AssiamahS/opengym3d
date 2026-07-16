@@ -24,7 +24,7 @@ import zipfile
 
 import bmesh
 import bpy
-from mathutils import Matrix, Vector
+from mathutils import Matrix, Quaternion, Vector
 
 MPFB_URL = ("https://extensions.blender.org/download/"
             "sha256:b5cdc8b08147e0c6463e4faa01147491b13a0b062f73415363f029debd11c934/"
@@ -290,12 +290,77 @@ def pose_driver(driver, kf):
     return root_offset
 
 
+def driver_target_dir(syn_pb):
+    """World direction the driver bone points in its current pose."""
+    syn_rest_dir = (Vector(syn_pb.bone.tail_local) -
+                    Vector(syn_pb.bone.head_local)).normalized()
+    delta = (syn_pb.matrix @ syn_pb.bone.matrix_local.inverted()).to_quaternion()
+    return delta @ syn_rest_dir
+
+
+def aim_bone(mh_pb, target_dir, frame):
+    """Point an MH bone along target_dir in world space, keyframe it."""
+    mh_pb.rotation_mode = "QUATERNION"
+    mh_rest_dir = (Vector(mh_pb.bone.tail_local) -
+                   Vector(mh_pb.bone.head_local)).normalized()
+    aim = mh_rest_dir.rotation_difference(target_dir)
+    rest_rot = mh_pb.bone.matrix_local.to_quaternion()
+    keep_loc = mh_pb.matrix.to_translation()
+    mh_pb.matrix = (Matrix.Translation(keep_loc) @
+                    (aim @ rest_rot).to_matrix().to_4x4())
+    bpy.context.view_layer.update()
+    mh_pb.keyframe_insert("rotation_quaternion", frame=frame)
+    return aim
+
+
+def drive_shoulder_girdle(driver, rig, frame):
+    """Scapulohumeral rhythm: the shoulder girdle is not a hinge — past ~30°
+    of arm elevation the clavicle and scapula rotate too (~1° of girdle per
+    2° of arm). Without this the clavicle stays frozen while the humerus
+    swings overhead and the deltoid/shoulder mesh collapses. Girdle bones are
+    driven BEFORE the arm so the arm's world aim stays exact."""
+    for side in (".L", ".R"):
+        syn_pb = driver.pose.bones.get("upper_arm" + side)
+        arm_pb = rig.pose.bones.get("upperarm01" + side)
+        if syn_pb is None or arm_pb is None:
+            continue
+        target_dir = driver_target_dir(syn_pb)
+        arm_rest_dir = (Vector(arm_pb.bone.tail_local) -
+                        Vector(arm_pb.bone.head_local)).normalized()
+        arm_aim = arm_rest_dir.rotation_difference(target_dir)
+
+        elevation = math.degrees(arm_aim.angle)
+        if elevation <= 30.0:
+            follow = 0.0                      # setting phase: girdle stays put
+        else:
+            follow = min(1.0, (elevation - 30.0) / 120.0)
+
+        identity = Quaternion()
+        for bone_name, share in (("clavicle" + side, 0.22),
+                                 ("shoulder01" + side, 0.40)):
+            pb = rig.pose.bones.get(bone_name)
+            if pb is None:
+                continue
+            pb.rotation_mode = "QUATERNION"
+            partial = identity.slerp(arm_aim, share * follow)
+            keep_loc = pb.matrix.to_translation()
+            pb.matrix = (Matrix.Translation(keep_loc) @
+                         partial.to_matrix().to_4x4() @
+                         pb.bone.matrix_local.to_quaternion().to_matrix().to_4x4())
+            bpy.context.view_layer.update()
+            pb.keyframe_insert("rotation_quaternion", frame=frame)
+
+
 def transfer_pose(driver, rig, root_offset, frame):
     """Aim each MakeHuman bone at its driver bone's posed world direction."""
+    arm_entries = []
     for syn_name, mh_name in RETARGET:
         syn_pb = driver.pose.bones[syn_name]
         mh_pb = rig.pose.bones.get(mh_name)
         if mh_pb is None:
+            continue
+        if mh_name.startswith(("upperarm", "lowerarm", "wrist")):
+            arm_entries.append((syn_pb, mh_pb))     # deferred: needs the girdle
             continue
         mh_pb.rotation_mode = "QUATERNION"
 
@@ -313,21 +378,11 @@ def transfer_pose(driver, rig, root_offset, frame):
             mh_pb.keyframe_insert("rotation_quaternion", frame=frame)
             continue
 
-        syn_rest_dir = (Vector(syn_pb.bone.tail_local) -
-                        Vector(syn_pb.bone.head_local)).normalized()
-        delta = (syn_pb.matrix @ syn_pb.bone.matrix_local.inverted()).to_quaternion()
-        target_dir = delta @ syn_rest_dir
+        aim_bone(mh_pb, driver_target_dir(syn_pb), frame)
 
-        mh_rest_dir = (Vector(mh_pb.bone.tail_local) -
-                       Vector(mh_pb.bone.head_local)).normalized()
-        aim = mh_rest_dir.rotation_difference(target_dir)
-        rest_rot = mh_pb.bone.matrix_local.to_quaternion()
-
-        keep_loc = mh_pb.matrix.to_translation()
-        mh_pb.matrix = (Matrix.Translation(keep_loc) @
-                        (aim @ rest_rot).to_matrix().to_4x4())
-        bpy.context.view_layer.update()
-        mh_pb.keyframe_insert("rotation_quaternion", frame=frame)
+    drive_shoulder_girdle(driver, rig, frame)
+    for syn_pb, mh_pb in arm_entries:
+        aim_bone(mh_pb, driver_target_dir(syn_pb), frame)
 
 
 def animate(driver, rig, spec, frame_end):
