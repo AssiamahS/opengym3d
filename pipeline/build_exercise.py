@@ -300,7 +300,14 @@ def transfer_pose(driver, rig, root_offset, frame):
         mh_pb.rotation_mode = "QUATERNION"
 
         if syn_name == "pelvis":
-            mh_pb.matrix = Matrix.Translation(root_offset) @ mh_pb.bone.matrix_local
+            # full transform: world rotation recentered on the MH root head,
+            # so lying/leaning exercises (push-up, bridge) carry the legs too
+            delta_q = (syn_pb.matrix @
+                       syn_pb.bone.matrix_local.inverted()).to_quaternion()
+            h = Vector(mh_pb.bone.head_local)
+            mh_pb.matrix = (Matrix.Translation(root_offset + h) @
+                            delta_q.to_matrix().to_4x4() @
+                            Matrix.Translation(-h) @ mh_pb.bone.matrix_local)
             bpy.context.view_layer.update()
             mh_pb.keyframe_insert("location", frame=frame)
             mh_pb.keyframe_insert("rotation_quaternion", frame=frame)
