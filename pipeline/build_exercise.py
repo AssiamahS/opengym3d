@@ -95,9 +95,9 @@ MUSCLE_SPEC = {
 
 HELPER_GROUPS = ("HelperGeometry", "JointCubes", "eye.L", "eye.R")
 
-SKIN_COLOR = (0.70, 0.72, 0.76, 1.0)
-PRIMARY_COLOR = (0.80, 0.08, 0.10, 1.0)
-SECONDARY_COLOR = (0.93, 0.50, 0.08, 1.0)
+SKIN_COLOR = (0.62, 0.64, 0.68, 1.0)
+PRIMARY_COLOR = (0.62, 0.02, 0.03, 1.0)
+SECONDARY_COLOR = (0.80, 0.26, 0.02, 1.0)
 
 
 # ---------------------------------------------------------------- mpfb setup
@@ -461,33 +461,55 @@ def area_light(name, energy, size, location, look_at=Vector((0, 0, 1.0))):
     return obj
 
 
-def setup_render(frame_end):
+def frame_subject(cam, target, basemesh, frames, margin=1.12):
+    """Fit the camera to the figure across every keyframe pose, so the shot
+    is tight but nothing clips mid-rep and the camera never drifts."""
+    lo = Vector((1e9, 1e9, 1e9))
+    hi = Vector((-1e9, -1e9, -1e9))
+    for f in frames:
+        bpy.context.scene.frame_set(f)
+        deps = bpy.context.evaluated_depsgraph_get()
+        evaluated = basemesh.evaluated_get(deps)
+        matrix = basemesh.matrix_world
+        for v in evaluated.data.vertices:
+            co = matrix @ v.co
+            lo = Vector((min(lo.x, co.x), min(lo.y, co.y), min(lo.z, co.z)))
+            hi = Vector((max(hi.x, co.x), max(hi.y, co.y), max(hi.z, co.z)))
+
+    center = (lo + hi) / 2
+    radius = (hi - lo).length / 2
+    target.location = center
+    view_dir = Vector((0.55, -0.80, 0.20)).normalized()   # keep the 3/4 angle
+    distance = radius / math.tan(cam.data.angle / 2) * margin
+    cam.location = center + view_dir * distance
+
+
+def setup_render():
     scene = bpy.context.scene
     target = bpy.data.objects.new("CamTarget", None)
-    target.location = (0, 0, 0.95)
     scene.collection.objects.link(target)
 
-    # 85mm from further back = portrait lens, no wide-angle limb distortion
+    # 85mm = portrait lens, no wide-angle limb distortion; frame_subject
+    # positions it once the pose is known
     cam_data = bpy.data.cameras.new("Cam")
     cam_data.lens = 85
     cam = bpy.data.objects.new("Cam", cam_data)
-    cam.location = (2.9, -4.4, 1.7)
     scene.collection.objects.link(cam)
     cam.constraints.new("TRACK_TO").target = target
     scene.camera = cam
 
     # softbox three-point rig (area lights wrap; sun lamps stamp hard edges)
-    area_light("Key", 900, 3.0, (2.6, -3.0, 3.4))
-    area_light("Fill", 220, 5.0, (-3.4, -2.2, 1.8))
-    area_light("Rim", 700, 2.0, (-1.6, 3.2, 2.8))
+    area_light("Key", 1400, 2.5, (2.6, -3.0, 3.4))
+    area_light("Fill", 150, 6.0, (-3.4, -2.2, 1.8))
+    area_light("Rim", 600, 2.0, (-1.6, 3.2, 2.8))
 
     build_cyclorama()
 
     world = bpy.data.worlds.new("World")
     world.use_nodes = True
     bg = world.node_tree.nodes["Background"]
-    bg.inputs["Color"].default_value = (0.85, 0.87, 0.90, 1.0)
-    bg.inputs["Strength"].default_value = 0.45   # ambient only; lights do the work
+    bg.inputs["Color"].default_value = (0.70, 0.72, 0.75, 1.0)
+    bg.inputs["Strength"].default_value = 0.12   # ambient only; lights do the work
     scene.world = world
 
     scene.render.engine = "CYCLES"
@@ -495,9 +517,9 @@ def setup_render(frame_end):
     scene.cycles.use_denoising = True            # few samples, clean output
     scene.cycles.max_bounces = 6
     scene.view_settings.view_transform = "AgX"   # filmic highlight rolloff
-    scene.view_settings.look = "AgX - Base Contrast"
+    scene.view_settings.look = "AgX - Punchy"    # saturation back after AgX
     scene.render.resolution_x = scene.render.resolution_y = 512
-    scene.frame_set(1 + (frame_end - 1) // 2)  # mid-rep = most telling pose
+    return cam, target
 
 
 def main():
@@ -516,12 +538,12 @@ def main():
 
     basemesh, rig = create_human()
     strip_helpers(basemesh)
+    # no emission on the muscles — it fights the tonemapper and turns the
+    # highlight pastel; saturated base colour reads far stronger
     materials = {
-        "skin": make_material("Skin", SKIN_COLOR, subsurface=0.06),
-        "primary": make_material("Primary", PRIMARY_COLOR, emission=0.3,
-                                 subsurface=0.06),
-        "secondary": make_material("Secondary", SECONDARY_COLOR, emission=0.15,
-                                   subsurface=0.06),
+        "skin": make_material("Skin", SKIN_COLOR, subsurface=0.05),
+        "primary": make_material("Primary", PRIMARY_COLOR, subsurface=0.05),
+        "secondary": make_material("Secondary", SECONDARY_COLOR, subsurface=0.05),
     }
     primary, secondary = highlight_sets(spec)
     paint_muscles(basemesh, rig, materials, primary, secondary)
@@ -531,7 +553,12 @@ def main():
     animate(driver, rig, spec, frame_end)
     bpy.data.objects.remove(driver, do_unlink=True)
 
-    setup_render(frame_end)
+    cam, target = setup_render()
+    key_frames = sorted({1 + round(kf["t"] * (frame_end - 1))
+                         for kf in spec["keyframes"]})
+    frame_subject(cam, target, basemesh, key_frames)
+
+    scene.frame_set(1 + (frame_end - 1) // 2)   # mid-rep = most telling pose
     scene.render.filepath = f"{out_dir}/{spec['id']}.png"
     bpy.ops.render.render(write_still=True)
 
