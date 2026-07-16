@@ -29,8 +29,12 @@ def ensure_mpfb():
     if not os.path.isdir(dest):
         os.makedirs(ext_root, exist_ok=True)
         zpath = "/tmp/mpfb.zip"
-        print("downloading mpfb…")
-        urllib.request.urlretrieve(MPFB_URL, zpath)
+        if not os.path.exists(zpath):
+            print("downloading mpfb…")
+            req = urllib.request.Request(          # site 403s python's default UA
+                MPFB_URL, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64)"})
+            with urllib.request.urlopen(req) as resp, open(zpath, "wb") as f:
+                f.write(resp.read())
         with zipfile.ZipFile(zpath) as z:
             names = z.namelist()
             if any(n.split("/")[0] == "blender_manifest.toml" for n in names):
