@@ -79,10 +79,14 @@ MUSCLE_SPEC = {
     "hamstrings": (("upperleg02",), "back"),
     "glutes": (("pelvis", "upperleg01"), "back"),
     "calves": (("lowerleg01",), "back"),
-    "core": (("spine02", "spine03"), "front"),
-    "abs": (("spine02", "spine03"), "front"),
-    "lower back": (("spine03", "spine04", "spine05"), "back"),
-    "chest": (("breast",), None), "pecs": (("breast",), None),
+    # MakeHuman's spine chain runs bottom-up: spine05 pelvis, spine04 lower
+    # abdomen, spine03 abdomen, spine02 upper abdomen, spine01 chest. The
+    # breast bones alone never win a dominant weight, so pecs must claim
+    # spine01's anterior territory or chest exercises paint nothing at all.
+    "core": (("spine02", "spine03", "spine04"), "front"),
+    "abs": (("spine02", "spine03", "spine04"), "front"),
+    "lower back": (("spine04", "spine05"), "back"),
+    "chest": (("spine01", "breast"), "front"), "pecs": (("spine01", "breast"), "front"),
     "lats": (("spine01", "spine02"), "back"), "back": (("spine01", "spine02"), "back"),
     "traps": (("neck01", "neck02", "neck03", "clavicle"), "back"),
     "shoulders": (("shoulder01", "upperarm01"), None),
