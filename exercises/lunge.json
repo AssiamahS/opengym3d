@@ -1,0 +1,60 @@
+{
+  "id": "lunge",
+  "name": "Forward Lunge",
+  "equipment": "None",
+  "difficulty": "Beginner",
+  "primary": ["Quads", "Glutes"],
+  "secondary": ["Hamstrings", "Calves", "Core"],
+  "fps": 30,
+  "duration": 2.6,
+  "keyframes": [
+    {
+      "t": 0.0,
+      "bones": {
+        "pelvis": {"rot": [0, 0, 0], "loc": [0, 0, 0]},
+        "spine": {"rot": [0, 0, 0]},
+        "head": {"rot": [0, 0, 0]},
+        "thigh.L": {"rot": [0, 0, 0]},
+        "shin.L": {"rot": [0, 0, 0]},
+        "foot.L": {"rot": [0, 0, 0]},
+        "thigh.R": {"rot": [0, 0, 0]},
+        "shin.R": {"rot": [0, 0, 0]},
+        "foot.R": {"rot": [0, 0, 0]},
+        "upper_arm.*": {"rot": [-75, 0, 0]},
+        "forearm.*": {"rot": [0, 0, -5]}
+      }
+    },
+    {
+      "t": 0.5,
+      "bones": {
+        "pelvis": {"rot": [0, 0, 0], "loc": [0, -0.10, -0.32]},
+        "spine": {"rot": [8, 0, 0]},
+        "head": {"rot": [-8, 0, 0]},
+        "thigh.L": {"rot": [-70, 0, 0]},
+        "shin.L": {"rot": [75, 0, 0]},
+        "foot.L": {"rot": [-8, 0, 0]},
+        "thigh.R": {"rot": [30, 0, 0]},
+        "shin.R": {"rot": [95, 0, 0]},
+        "foot.R": {"rot": [-60, 0, 0]},
+        "upper_arm.*": {"rot": [-75, 0, 0]},
+        "forearm.*": {"rot": [0, 0, -5]}
+      }
+    },
+    {
+      "t": 1.0,
+      "bones": {
+        "pelvis": {"rot": [0, 0, 0], "loc": [0, 0, 0]},
+        "spine": {"rot": [0, 0, 0]},
+        "head": {"rot": [0, 0, 0]},
+        "thigh.L": {"rot": [0, 0, 0]},
+        "shin.L": {"rot": [0, 0, 0]},
+        "foot.L": {"rot": [0, 0, 0]},
+        "thigh.R": {"rot": [0, 0, 0]},
+        "shin.R": {"rot": [0, 0, 0]},
+        "foot.R": {"rot": [0, 0, 0]},
+        "upper_arm.*": {"rot": [-75, 0, 0]},
+        "forearm.*": {"rot": [0, 0, -5]}
+      }
+    }
+  ]
+}
