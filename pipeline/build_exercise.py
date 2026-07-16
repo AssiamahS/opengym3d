@@ -87,7 +87,9 @@ MUSCLE_SPEC = {
     "abs": (("spine02", "spine03", "spine04"), "front"),
     "lower back": (("spine04", "spine05"), "back"),
     "chest": (("spine01", "breast"), "front"), "pecs": (("spine01", "breast"), "front"),
-    "lats": (("spine01", "spine02"), "back"), "back": (("spine01", "spine02"), "back"),
+    # lats sweep armpit to mid-back — spine01+02 alone paints a postage stamp
+    "lats": (("spine01", "spine02", "spine03"), "back"),
+    "back": (("spine01", "spine02", "spine03"), "back"),
     "traps": (("neck01", "neck02", "neck03", "clavicle"), "back"),
     "shoulders": (("shoulder01", "upperarm01"), None),
     "front delts": (("shoulder01", "upperarm01"), "front"),
