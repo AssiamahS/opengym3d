@@ -213,14 +213,25 @@ def paint_muscles(basemesh, rig, materials, primary, secondary):
         return vert.co.y < mid if side == "front" else vert.co.y > mid
 
     score_p, score_s = [], []
+    census = {}
     for v in mesh.vertices:
         best, best_w = None, 0.0
         for ge in v.groups:
             name = name_by_index.get(ge.group)
             if name in bones and ge.weight > best_w:
                 best, best_w = name, ge.weight
+        if best:
+            slot = census.setdefault(best.split(".")[0], [0, 0])
+            slot[0] += 1
+            slot[1] += 1 if v.co.y > axis_y.get(best, 0.0) else 0
         score_p.append(1.0 if best and any(matches(m, best, v) for m in primary) else 0.0)
         score_s.append(1.0 if best and any(matches(m, best, v) for m in secondary) else 0.0)
+
+    # which bones actually own skin (and how much of it is posterior) — the
+    # muscle map is only as good as this census, so it goes in the CI log
+    top = sorted(census.items(), key=lambda kv: -kv[1][0])[:14]
+    print("CENSUS " + " ".join(f"{n}:{c[0]}/{c[1]}b" for n, c in top))
+    print(f"CENSUS painted primary={sum(score_p):.0f} secondary={sum(score_s):.0f}")
 
     neighbors = [[] for _ in mesh.vertices]
     for edge in mesh.edges:
