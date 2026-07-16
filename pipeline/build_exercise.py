@@ -172,6 +172,10 @@ def paint_muscles(body, dominant, primary_bones, secondary_bones):
 def build_smooth_body(arm_obj, bones, materials, primary_bones, secondary_bones):
     mball = bpy.data.metaballs.new("BodyMeta")
     mball.resolution = 0.035
+    # the iso-surface sits well inside the element radius at the default
+    # threshold — scale up + lower threshold or the figure comes out starved
+    mball.threshold = 0.45
+    RADIUS_SCALE = 1.45
     meta_obj = bpy.data.objects.new("BodyMeta", mball)
     bpy.context.scene.collection.objects.link(meta_obj)
     for name, (r_start, r_end) in BODY_RADII.items():
@@ -184,11 +188,11 @@ def build_smooth_body(arm_obj, bones, materials, primary_bones, secondary_bones)
                 frac = i / (steps - 1)
                 el = mball.elements.new()
                 el.co = head + (tail - head) * frac
-                el.radius = r_start + (r_end - r_start) * frac
+                el.radius = (r_start + (r_end - r_start) * frac) * RADIUS_SCALE
     for co, radius, _bone in BODY_EXTRA_BALLS:
         el = mball.elements.new()
         el.co = Vector(co)
-        el.radius = radius
+        el.radius = radius * RADIUS_SCALE
 
     bpy.ops.object.select_all(action="DESELECT")
     meta_obj.select_set(True)
