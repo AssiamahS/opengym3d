@@ -68,35 +68,38 @@ RETARGET = [
     ("forearm.R", "lowerarm01.R"), ("forearm.R", "lowerarm02.R"), ("hand.R", "wrist.R"),
 ]
 
-# exercise-metadata muscle name -> (MakeHuman bone territories, side).
-# MakeHuman splits each limb into a short proximal segment and a long belly
-# segment: upperarm01 is the deltoid cap, upperarm02 the biceps/triceps
-# belly; upperleg01 the hip, upperleg02 the quad/ham belly; lowerleg01 the
-# calf belly. Side ("front"/"back", character faces -Y) separates antagonist
-# pairs that share a bone — biceps from triceps, quads from hamstrings.
+# exercise-metadata muscle name -> (bone territories, side, rest z-range).
+#
+# Three filters, because no two of them suffice. Bone: MakeHuman splits each
+# limb into a short proximal segment and a long belly (upperarm01 = deltoid
+# cap, upperarm02 = biceps/triceps belly; upperleg02 = quad/ham belly;
+# lowerleg01 = calf). Side ("front"/"back", character faces -Y): separates
+# antagonists sharing a bone. Height: the torso census settles it — spine02
+# owns 306 skin verts and just 2 of them are posterior, so pecs and abs both
+# live on spine02's anterior skin and only a rest-pose z cut can part them
+# (spine01 = 324 verts / 227 posterior = upper back, i.e. the lats' anchor).
+# Ranges are rest-pose metres: pelvis ~0.95, navel ~1.15, sternum ~1.30,
+# clavicle ~1.45, chin ~1.55.
 MUSCLE_SPEC = {
-    "quads": (("upperleg02",), "front"),
-    "hamstrings": (("upperleg02",), "back"),
-    "glutes": (("pelvis", "upperleg01"), "back"),
-    "calves": (("lowerleg01",), "back"),
-    # MakeHuman's spine chain runs bottom-up: spine05 pelvis, spine04 lower
-    # abdomen, spine03 abdomen, spine02 upper abdomen, spine01 chest. The
-    # breast bones alone never win a dominant weight, so pecs must claim
-    # spine01's anterior territory or chest exercises paint nothing at all.
-    "core": (("spine02", "spine03", "spine04"), "front"),
-    "abs": (("spine02", "spine03", "spine04"), "front"),
-    "lower back": (("spine04", "spine05"), "back"),
-    "chest": (("spine01", "breast"), "front"), "pecs": (("spine01", "breast"), "front"),
-    # lats sweep armpit to mid-back — spine01+02 alone paints a postage stamp
-    "lats": (("spine01", "spine02", "spine03"), "back"),
-    "back": (("spine01", "spine02", "spine03"), "back"),
-    "traps": (("neck01", "neck02", "neck03", "clavicle"), "back"),
-    "shoulders": (("shoulder01", "upperarm01"), None),
-    "front delts": (("shoulder01", "upperarm01"), "front"),
-    "delts": (("shoulder01", "upperarm01"), None),
-    "biceps": (("upperarm02",), "front"),
-    "triceps": (("upperarm02",), "back"),
-    "forearms": (("lowerarm01", "lowerarm02"), None),
+    "quads": (("upperleg02",), "front", None),
+    "hamstrings": (("upperleg02",), "back", None),
+    "glutes": (("pelvis", "upperleg01"), "back", (0.82, 1.00)),
+    "calves": (("lowerleg01",), "back", None),
+    "core": (("spine02", "spine03", "spine04"), "front", (0.98, 1.24)),
+    "abs": (("spine02", "spine03", "spine04"), "front", (0.98, 1.24)),
+    "lower back": (("spine03", "spine04", "spine05"), "back", (0.92, 1.14)),
+    "chest": (("spine01", "spine02", "breast"), "front", (1.24, 1.46)),
+    "pecs": (("spine01", "spine02", "breast"), "front", (1.24, 1.46)),
+    "lats": (("spine01", "spine02", "spine03"), "back", (1.08, 1.42)),
+    "back": (("spine01", "spine02", "spine03"), "back", (1.08, 1.42)),
+    "traps": (("neck01", "neck02", "neck03", "clavicle", "spine01"), "back",
+              (1.36, 1.56)),
+    "shoulders": (("shoulder01", "upperarm01"), None, None),
+    "front delts": (("shoulder01", "upperarm01"), "front", None),
+    "delts": (("shoulder01", "upperarm01"), None, None),
+    "biceps": (("upperarm02",), "front", None),
+    "triceps": (("upperarm02",), "back", None),
+    "forearms": (("lowerarm01", "lowerarm02"), None, None),
 }
 
 HELPER_GROUPS = ("HelperGeometry", "JointCubes", "eye.L", "eye.R")
@@ -203,8 +206,10 @@ def paint_muscles(basemesh, rig, materials, primary, secondary):
     axis_y = {name: (b.head_local.y + b.tail_local.y) / 2 for name, b in bones.items()}
 
     def matches(muscle_key, bone_name, vert):
-        territories, side = MUSCLE_SPEC[muscle_key]
+        territories, side, z_range = MUSCLE_SPEC[muscle_key]
         if bone_name.split(".")[0] not in territories:
+            return False
+        if z_range is not None and not (z_range[0] <= vert.co.z <= z_range[1]):
             return False
         if side is None:
             return True
