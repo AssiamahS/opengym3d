@@ -3,51 +3,307 @@
   "name": "Romanian Deadlift",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
-  "primary": ["Hamstrings", "Glutes"],
-  "secondary": ["Lower Back", "Forearms"],
+  "primary": [
+    "Hamstrings",
+    "Glutes"
+  ],
+  "secondary": [
+    "Lower Back",
+    "Forearms"
+  ],
   "fps": 30,
-  "duration": 2.8,
+  "duration": 3.2,
   "keyframes": [
     {
       "t": 0.0,
       "bones": {
-        "pelvis": {"rot": [0, 0, 0], "loc": [0, 0, 0]},
-        "spine": {"rot": [0, 0, 0]},
-        "chest": {"rot": [0, 0, 0]},
-        "head": {"rot": [0, 0, 0]},
-        "thigh.*": {"rot": [0, 0, 0]},
-        "shin.*": {"rot": [0, 0, 0]},
-        "foot.*": {"rot": [0, 0, 0]},
-        "upper_arm.*": {"rot": [-75, 0, 0]},
-        "forearm.*": {"rot": [0, 0, -5]}
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "foot.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -75,
+            0,
+            0
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        }
       }
     },
     {
-      "t": 0.5,
+      "t": 0.52,
       "bones": {
-        "pelvis": {"rot": [0, 0, 0], "loc": [0, 0.16, -0.10]},
-        "spine": {"rot": [42, 0, 0]},
-        "chest": {"rot": [22, 0, 0]},
-        "head": {"rot": [-38, 0, 0]},
-        "thigh.*": {"rot": [-12, 0, 0]},
-        "shin.*": {"rot": [15, 0, 0]},
-        "foot.*": {"rot": [-3, 0, 0]},
-        "upper_arm.*": {"rot": [-75, 0, -50]},
-        "forearm.*": {"rot": [0, 0, -5]}
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0.16,
+            -0.1
+          ]
+        },
+        "spine": {
+          "rot": [
+            42,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            22,
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rot": [
+            -38,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            -12,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            15,
+            0,
+            0
+          ]
+        },
+        "foot.*": {
+          "rot": [
+            -3,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -75,
+            0,
+            -50
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        }
+      }
+    },
+    {
+      "t": 0.62,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0.16,
+            -0.1
+          ]
+        },
+        "spine": {
+          "rot": [
+            42,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            22,
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rot": [
+            -38,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            -12,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            15,
+            0,
+            0
+          ]
+        },
+        "foot.*": {
+          "rot": [
+            -3,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -75,
+            0,
+            -50
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        }
       }
     },
     {
       "t": 1.0,
       "bones": {
-        "pelvis": {"rot": [0, 0, 0], "loc": [0, 0, 0]},
-        "spine": {"rot": [0, 0, 0]},
-        "chest": {"rot": [0, 0, 0]},
-        "head": {"rot": [0, 0, 0]},
-        "thigh.*": {"rot": [0, 0, 0]},
-        "shin.*": {"rot": [0, 0, 0]},
-        "foot.*": {"rot": [0, 0, 0]},
-        "upper_arm.*": {"rot": [-75, 0, 0]},
-        "forearm.*": {"rot": [0, 0, -5]}
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "foot.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -75,
+            0,
+            0
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        }
       }
     }
   ]

@@ -153,7 +153,7 @@ def strip_helpers(basemesh):
 
 # ------------------------------------------------------------------ painting
 
-def make_material(name, color, emission=0.0, roughness=0.55):
+def make_material(name, color, emission=0.0, roughness=0.55, subsurface=0.0):
     mat = bpy.data.materials.new(name)
     mat.use_nodes = True
     bsdf = mat.node_tree.nodes["Principled BSDF"]
@@ -162,6 +162,8 @@ def make_material(name, color, emission=0.0, roughness=0.55):
     if emission:
         bsdf.inputs["Emission Color"].default_value = color
         bsdf.inputs["Emission Strength"].default_value = emission
+    if subsurface and "Subsurface Weight" in bsdf.inputs:
+        bsdf.inputs["Subsurface Weight"].default_value = subsurface
     return mat
 
 
@@ -326,6 +328,13 @@ def animate(driver, rig, spec, frame_end):
         frame = 1 + round(kf["t"] * (frame_end - 1))
         root_offset = pose_driver(driver, kf)
         transfer_pose(driver, rig, root_offset, frame)
+    # ease every curve without overshoot — reps settle instead of bouncing
+    action = rig.animation_data.action if rig.animation_data else None
+    if action:
+        for fcurve in action.fcurves:
+            for kp in fcurve.keyframe_points:
+                kp.interpolation = "BEZIER"
+                kp.handle_left_type = kp.handle_right_type = "AUTO_CLAMPED"
 
 
 # -------------------------------------------------------------------- render
@@ -345,6 +354,7 @@ def setup_render(frame_end):
 
     sun_data = bpy.data.lights.new("Sun", "SUN")
     sun_data.energy = 4.5
+    sun_data.angle = 0.18            # soft-edged key shadow
     sun = bpy.data.objects.new("Sun", sun_data)
     sun.rotation_euler = (math.radians(50), math.radians(-15), math.radians(30))
     scene.collection.objects.link(sun)
@@ -355,6 +365,20 @@ def setup_render(frame_end):
     fill.rotation_euler = (math.radians(60), math.radians(20), math.radians(-140))
     scene.collection.objects.link(fill)
 
+    rim_data = bpy.data.lights.new("Rim", "SUN")
+    rim_data.energy = 2.0
+    rim = bpy.data.objects.new("Rim", rim_data)
+    rim.rotation_euler = (math.radians(-65), math.radians(-10), math.radians(160))
+    scene.collection.objects.link(rim)
+
+    # ground plane anchors the figure with a soft contact shadow (render
+    # only — removed before GLB export, the viewer has its own grid floor)
+    bpy.ops.mesh.primitive_plane_add(size=14, location=(0, 0, 0))
+    ground = bpy.context.object
+    ground.name = "Ground"
+    ground.data.materials.append(
+        make_material("Ground", (0.90, 0.91, 0.93, 1.0), roughness=0.95))
+
     world = bpy.data.worlds.new("World")
     world.use_nodes = True
     bg = world.node_tree.nodes["Background"]
@@ -363,7 +387,7 @@ def setup_render(frame_end):
     scene.world = world
 
     scene.render.engine = "CYCLES"
-    scene.cycles.samples = 24
+    scene.cycles.samples = 48
     scene.render.resolution_x = scene.render.resolution_y = 512
     scene.frame_set(1 + (frame_end - 1) // 2)  # mid-rep = most telling pose
 
@@ -385,9 +409,11 @@ def main():
     basemesh, rig = create_human()
     strip_helpers(basemesh)
     materials = {
-        "skin": make_material("Skin", SKIN_COLOR),
-        "primary": make_material("Primary", PRIMARY_COLOR, emission=0.3),
-        "secondary": make_material("Secondary", SECONDARY_COLOR, emission=0.15),
+        "skin": make_material("Skin", SKIN_COLOR, subsurface=0.06),
+        "primary": make_material("Primary", PRIMARY_COLOR, emission=0.3,
+                                 subsurface=0.06),
+        "secondary": make_material("Secondary", SECONDARY_COLOR, emission=0.15,
+                                   subsurface=0.06),
     }
     primary, secondary = highlight_sets(spec)
     paint_muscles(basemesh, materials, primary, secondary,
@@ -402,6 +428,16 @@ def main():
     scene.render.filepath = f"{out_dir}/{spec['id']}.png"
     bpy.ops.render.render(write_still=True)
 
+    # small animation frames for GIF/MP4 (watch-sized); ffmpeg assembles in CI
+    scene.render.resolution_x = scene.render.resolution_y = 240
+    scene.cycles.samples = 12
+    scene.frame_step = 2                     # 15 fps effective
+    scene.render.filepath = f"{out_dir}/frames_{spec['id']}/"
+    bpy.ops.render.render(animation=True)
+
+    ground = bpy.data.objects.get("Ground")
+    if ground:
+        bpy.data.objects.remove(ground, do_unlink=True)
     bpy.ops.export_scene.gltf(filepath=f"{out_dir}/{spec['id']}.glb")
     print(f"OK {spec['id']}: {frame_end} frames -> {out_dir}")
 

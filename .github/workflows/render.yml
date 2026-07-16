@@ -39,7 +39,7 @@ jobs:
       - name: Install runtime libs
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libxkbcommon0 libsm6
+          sudo apt-get install -y -qq libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libxkbcommon0 libsm6 ffmpeg
 
       - name: Cache MPFB extension
         uses: actions/cache@v4
@@ -66,6 +66,20 @@ jobs:
             test -s "site/assets/$id.glb" || { echo "missing $id.glb"; exit 1; }
             test -s "site/assets/$id.png" || { echo "missing $id.png"; exit 1; }
           done
+
+      - name: Assemble watch GIFs + MP4s
+        run: |
+          for dir in site/assets/frames_*; do
+            id=$(basename "$dir" | sed 's/^frames_//')
+            ffmpeg -v error -framerate 15 -pattern_type glob -i "$dir/*.png" \
+              -vf "split[a][b];[a]palettegen=max_colors=128[p];[b][p]paletteuse=dither=bayer" \
+              "site/assets/$id.gif"
+            ffmpeg -v error -framerate 15 -pattern_type glob -i "$dir/*.png" \
+              -c:v libx264 -pix_fmt yuv420p -movflags +faststart "site/assets/$id.mp4"
+            rm -rf "$dir"
+            test -s "site/assets/$id.gif" || { echo "missing $id.gif"; exit 1; }
+          done
+          ls -la site/assets
 
       - name: Assemble site
         run: |

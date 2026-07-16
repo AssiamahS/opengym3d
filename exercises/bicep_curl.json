@@ -3,39 +3,173 @@
   "name": "Bicep Curl",
   "equipment": "Dumbbell",
   "difficulty": "Beginner",
-  "primary": ["Biceps"],
-  "secondary": ["Forearms"],
+  "primary": [
+    "Biceps"
+  ],
+  "secondary": [
+    "Forearms"
+  ],
   "fps": 30,
-  "duration": 2.2,
+  "duration": 2.6,
   "keyframes": [
     {
       "t": 0.0,
       "bones": {
-        "pelvis": {"rot": [0, 0, 0]},
-        "spine": {"rot": [0, 0, 0]},
-        "upper_arm.*": {"rot": [-80, 0, 0]},
-        "forearm.*": {"rot": [0, 0, -5]},
-        "hand.*": {"rot": [0, 0, 0]}
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -80,
+            0,
+            0
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        }
       }
     },
     {
-      "t": 0.5,
+      "t": 0.36,
       "bones": {
-        "pelvis": {"rot": [0, 0, 0]},
-        "spine": {"rot": [-4, 0, 0]},
-        "upper_arm.*": {"rot": [-80, 0, -12]},
-        "forearm.*": {"rot": [0, 0, -125]},
-        "hand.*": {"rot": [0, 0, -10]}
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            -4,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -80,
+            0,
+            -12
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -125
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            -10
+          ]
+        }
+      }
+    },
+    {
+      "t": 0.46,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            -4,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -80,
+            0,
+            -12
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -125
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            -10
+          ]
+        }
       }
     },
     {
       "t": 1.0,
       "bones": {
-        "pelvis": {"rot": [0, 0, 0]},
-        "spine": {"rot": [0, 0, 0]},
-        "upper_arm.*": {"rot": [-80, 0, 0]},
-        "forearm.*": {"rot": [0, 0, -5]},
-        "hand.*": {"rot": [0, 0, 0]}
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -80,
+            0,
+            0
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        }
       }
     }
   ]
