@@ -498,10 +498,15 @@ def setup_render():
     cam.constraints.new("TRACK_TO").target = target
     scene.camera = cam
 
-    # softbox three-point rig (area lights wrap; sun lamps stamp hard edges)
-    area_light("Key", 1400, 2.5, (2.6, -3.0, 3.4))
-    area_light("Fill", 150, 6.0, (-3.4, -2.2, 1.8))
-    area_light("Rim", 600, 2.0, (-1.6, 3.2, 2.8))
+    # Softbox three-point rig (area lights wrap; sun lamps stamp hard edges).
+    # Energies are exposure-solved, not eyeballed: irradiance E ≈ P/(4π·d²),
+    # and a diffuse surface reads L = E·albedo/π. For AgX mid-grey (~0.2) at
+    # albedo 0.6 from ~4 m, the key wants ≈450 W. Earlier rigs ran 900-1400 W
+    # (~2-3 stops hot) which is what bleached the figure and turned the
+    # muscle reds pink — blown channels desaturate.
+    area_light("Key", 450, 2.5, (2.6, -3.0, 3.4))
+    area_light("Fill", 90, 6.0, (-3.4, -2.2, 1.8))
+    area_light("Rim", 250, 2.0, (-1.6, 3.2, 2.8))
 
     build_cyclorama()
 
@@ -556,11 +561,16 @@ def main():
     cam, target = setup_render()
     key_frames = sorted({1 + round(kf["t"] * (frame_end - 1))
                          for kf in spec["keyframes"]})
-    frame_subject(cam, target, basemesh, key_frames)
+    still_frame = 1 + (frame_end - 1) // 2      # mid-rep = most telling pose
 
-    scene.frame_set(1 + (frame_end - 1) // 2)   # mid-rep = most telling pose
+    # thumbnail: frame that one pose tightly
+    frame_subject(cam, target, basemesh, [still_frame])
+    scene.frame_set(still_frame)
     scene.render.filepath = f"{out_dir}/{spec['id']}.png"
     bpy.ops.render.render(write_still=True)
+
+    # animation: frame the whole rep so the camera never drifts or clips
+    frame_subject(cam, target, basemesh, key_frames)
 
     # small animation frames for GIF/MP4 (watch-sized); ffmpeg assembles in CI
     scene.render.resolution_x = scene.render.resolution_y = 240
