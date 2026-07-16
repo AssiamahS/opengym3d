@@ -41,6 +41,18 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libxkbcommon0 libsm6
 
+      - name: Cache MPFB extension
+        uses: actions/cache@v4
+        with:
+          path: ~/.config/blender/4.5/extensions
+          key: mpfb-2.0.16
+
+      - name: Download MPFB zip
+        run: |
+          if [ ! -d "$HOME/.config/blender/4.5/extensions/user_default/mpfb" ]; then
+            curl -sL -o /tmp/mpfb.zip "https://extensions.blender.org/download/sha256:b5cdc8b08147e0c6463e4faa01147491b13a0b062f73415363f029debd11c934/add-on-mpfb-v2.0.16.zip?repository=%2Fapi%2Fv1%2Fextensions%2F&blender_version_min=4.2.0"
+          fi
+
       - name: Render exercises to GLB + thumbnails
         run: |
           mkdir -p site/assets
