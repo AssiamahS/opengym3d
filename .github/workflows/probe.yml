@@ -1,0 +1,50 @@
+name: probe mpfb
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - pipeline/probe_mpfb.py
+      - .github/workflows/probe.yml
+
+env:
+  BLENDER_VERSION: 4.5.11
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Blender
+        id: blender-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/blender
+          key: blender-${{ env.BLENDER_VERSION }}-linux-x64
+
+      - name: Install Blender
+        if: steps.blender-cache.outputs.cache-hit != 'true'
+        run: |
+          curl -sL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}-linux-x64.tar.xz" | tar xJ -C "$HOME"
+          mv "$HOME/blender-${BLENDER_VERSION}-linux-x64" "$HOME/blender"
+
+      - name: Cache MPFB extension
+        uses: actions/cache@v4
+        with:
+          path: ~/.config/blender/4.5/extensions
+          key: mpfb-2.0.16
+
+      - name: Install runtime libs
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libxkbcommon0 libsm6
+
+      - name: Run probe
+        run: |
+          "$HOME/blender/blender" -b -noaudio --python-exit-code 1 -P pipeline/probe_mpfb.py -- probe_out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: probe
+          path: probe_out
