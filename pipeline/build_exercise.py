@@ -252,7 +252,7 @@ def paint_muscles(basemesh, rig, materials, primary, secondary):
         a, b = edge.vertices
         neighbors[a].append(b)
         neighbors[b].append(a)
-    for _ in range(4):
+    for _ in range(8):      # more smoothing rounds = fewer ragged paint islands
         for score in (score_p, score_s):
             snapshot = score[:]
             for i, ns in enumerate(neighbors):
@@ -485,6 +485,25 @@ def driver_target_dir(syn_pb):
     return delta @ syn_rest_dir
 
 
+def aim_overrides(kf):
+    """Per-keyframe world-space aim targets: "aim_world": [x, y, z] on a bone
+    entry pins that bone's direction in WORLD coordinates (-Y = facing, +Z =
+    up), bypassing euler-sign guesswork and chest-parenting drift entirely.
+    A barbell hangs plumb from the shoulders no matter how far the torso
+    hinges — that's physics, and now it's data. Wildcards mirror x."""
+    out = {}
+    for name, xf in kf.get("bones", {}).items():
+        aw = xf.get("aim_world")
+        if not aw:
+            continue
+        if name.endswith(".*"):
+            out[name[:-2] + ".L"] = Vector(aw).normalized()
+            out[name[:-2] + ".R"] = Vector((-aw[0], aw[1], aw[2])).normalized()
+        else:
+            out[name] = Vector(aw).normalized()
+    return out
+
+
 def aim_bone(mh_pb, target_dir, frame):
     """Point an MH bone along target_dir in world space, keyframe it."""
     mh_pb.rotation_mode = "QUATERNION"
@@ -500,7 +519,7 @@ def aim_bone(mh_pb, target_dir, frame):
     return aim
 
 
-def drive_shoulder_girdle(driver, rig, frame):
+def drive_shoulder_girdle(driver, rig, frame, overrides=None):
     """Scapulohumeral rhythm: the shoulder girdle is not a hinge — past ~30°
     of arm elevation the clavicle and scapula rotate too (~1° of girdle per
     2° of arm). Without this the clavicle stays frozen while the humerus
@@ -511,7 +530,8 @@ def drive_shoulder_girdle(driver, rig, frame):
         arm_pb = rig.pose.bones.get("upperarm01" + side)
         if syn_pb is None or arm_pb is None:
             continue
-        target_dir = driver_target_dir(syn_pb)
+        target_dir = (overrides or {}).get("upper_arm" + side) \
+            or driver_target_dir(syn_pb)
         arm_rest_dir = (Vector(arm_pb.bone.tail_local) -
                         Vector(arm_pb.bone.head_local)).normalized()
         arm_aim = arm_rest_dir.rotation_difference(target_dir)
@@ -538,8 +558,10 @@ def drive_shoulder_girdle(driver, rig, frame):
             pb.keyframe_insert("rotation_quaternion", frame=frame)
 
 
-def transfer_pose(driver, rig, root_offset, frame):
-    """Aim each MakeHuman bone at its driver bone's posed world direction."""
+def transfer_pose(driver, rig, root_offset, frame, overrides=None):
+    """Aim each MakeHuman bone at its driver bone's posed world direction —
+    or at the keyframe's explicit aim_world direction when one is given."""
+    overrides = overrides or {}
     arm_entries = []
     for syn_name, mh_name in RETARGET:
         syn_pb = driver.pose.bones[syn_name]
@@ -547,7 +569,8 @@ def transfer_pose(driver, rig, root_offset, frame):
         if mh_pb is None:
             continue
         if mh_name.startswith(("upperarm", "lowerarm", "wrist")):
-            arm_entries.append((syn_pb, mh_pb))     # deferred: needs the girdle
+            target = overrides.get(syn_name) or driver_target_dir(syn_pb)
+            arm_entries.append((mh_pb, target))     # deferred: needs the girdle
             continue
         mh_pb.rotation_mode = "QUATERNION"
 
@@ -565,18 +588,19 @@ def transfer_pose(driver, rig, root_offset, frame):
             mh_pb.keyframe_insert("rotation_quaternion", frame=frame)
             continue
 
-        aim_bone(mh_pb, driver_target_dir(syn_pb), frame)
+        aim_bone(mh_pb, overrides.get(syn_name) or driver_target_dir(syn_pb),
+                 frame)
 
-    drive_shoulder_girdle(driver, rig, frame)
-    for syn_pb, mh_pb in arm_entries:
-        aim_bone(mh_pb, driver_target_dir(syn_pb), frame)
+    drive_shoulder_girdle(driver, rig, frame, overrides)
+    for mh_pb, target in arm_entries:
+        aim_bone(mh_pb, target, frame)
 
 
 def animate(driver, rig, spec, frame_end, prop_objs=()):
     for kf in spec["keyframes"]:
         frame = 1 + round(kf["t"] * (frame_end - 1))
         root_offset = pose_driver(driver, kf)
-        transfer_pose(driver, rig, root_offset, frame)
+        transfer_pose(driver, rig, root_offset, frame, aim_overrides(kf))
         place_props(rig, prop_objs, frame)
         grip_hands(rig, prop_objs, frame)
     # ease every curve without overshoot — reps settle instead of bouncing;
