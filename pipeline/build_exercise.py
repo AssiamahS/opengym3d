@@ -308,12 +308,19 @@ def paint_muscles(basemesh, rig, materials, primary, secondary):
 # rig (never eyeballed offsets), so they track the hands through the rep.
 
 def _cylinder(name, radius, depth, x, material):
-    """Cylinder along local X at x-offset — the building block of iron."""
+    """Cylinder along local X at x-offset — the building block of iron.
+
+    The rotation is baked into the MESH DATA, not left on the object: the
+    prop's axis is assigned to rotation_euler later, and an object-level
+    rotation there would be overwritten, snapping the bar back to Blender's
+    default Z and rendering barbells as vertical poles through the figure
+    (v0.20 shipped exactly that)."""
     bpy.ops.mesh.primitive_cylinder_add(
         radius=radius, depth=depth, vertices=24,
         rotation=(0, math.pi / 2, 0), location=(x, 0, 0))
     obj = bpy.context.active_object
     obj.name = name
+    bpy.ops.object.transform_apply(location=False, rotation=True, scale=False)
     obj.data.materials.append(material)
     return obj
 
