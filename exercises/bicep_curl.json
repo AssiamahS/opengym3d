@@ -3,11 +3,25 @@
   "name": "Bicep Curl",
   "equipment": "Dumbbell",
   "difficulty": "Beginner",
+  "prop": {
+    "type": "dumbbell",
+    "axis": [
+      1,
+      0,
+      0
+    ]
+  },
   "primary": [
     "Biceps"
   ],
   "secondary": [
     "Forearms"
+  ],
+  "steps": [
+    "Stand holding dumbbells at the sides, palms forward.",
+    "Curl the weights up, keeping elbows pinned to the ribs.",
+    "Squeeze the biceps at the top.",
+    "Lower under control to full extension."
   ],
   "fps": 30,
   "duration": 2.6,

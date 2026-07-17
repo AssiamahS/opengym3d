@@ -38,6 +38,9 @@
   #scrub { flex: 1; accent-color: var(--accent); }
   #speed { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 5px 8px; }
   #viewer-muscles { padding: 0 20px 14px; }
+  #viewer-steps { margin: 0 20px 14px; padding-left: 38px; color: var(--dim); font-size: 14px; max-width: 720px; }
+  #viewer-steps li { margin-bottom: 3px; }
+  #viewer-steps li::marker { color: var(--accent); }
   footer { text-align: center; color: var(--dim); font-size: 13px; padding: 30px 0 40px; }
   footer a { color: var(--accent); text-decoration: none; }
 </style>
@@ -64,6 +67,7 @@
   </div>
   <div id="canvas-wrap"></div>
   <div class="chips" id="viewer-muscles"></div>
+  <ol id="viewer-steps"></ol>
   <div id="controls">
     <button id="play">⏸</button>
     <input id="scrub" type="range" min="0" max="1000" value="0">

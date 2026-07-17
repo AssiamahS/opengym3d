@@ -10,6 +10,12 @@
     "Triceps",
     "Core"
   ],
+  "steps": [
+    "Start in a high plank, hands under shoulders.",
+    "Lower the chest to just above the floor, elbows ~45\u00b0 from the body.",
+    "Keep the body rigid from head to heels.",
+    "Press back up to full lockout."
+  ],
   "fps": 30,
   "duration": 2.8,
   "keyframes": [

@@ -110,6 +110,8 @@ HELPER_GROUPS = ("HelperGeometry", "JointCubes", "eye.L", "eye.R")
 SKIN_COLOR = (0.62, 0.64, 0.68, 1.0)
 PRIMARY_COLOR = (0.62, 0.02, 0.03, 1.0)
 SECONDARY_COLOR = (0.80, 0.26, 0.02, 1.0)
+STEEL_COLOR = (0.42, 0.44, 0.47, 1.0)
+IRON_COLOR = (0.055, 0.055, 0.06, 1.0)
 
 
 # ---------------------------------------------------------------- mpfb setup
@@ -273,6 +275,85 @@ def paint_muscles(basemesh, rig, materials, primary, secondary):
             poly.material_index = 0
 
 
+# --------------------------------------------------------------------- props
+#
+# The genre standard (gym-animations, MuscleWiki, Exercise Animatic) always
+# shows the implement — a curl without a dumbbell reads as mime. Props are
+# procedural meshes keyframed to the MEASURED wrist positions of the posed
+# rig (never eyeballed offsets), so they track the hands through the rep.
+
+def _cylinder(name, radius, depth, x, material):
+    """Cylinder along local X at x-offset — the building block of iron."""
+    bpy.ops.mesh.primitive_cylinder_add(
+        radius=radius, depth=depth, vertices=24,
+        rotation=(0, math.pi / 2, 0), location=(x, 0, 0))
+    obj = bpy.context.active_object
+    obj.name = name
+    obj.data.materials.append(material)
+    return obj
+
+
+def _join(parts, name):
+    bpy.ops.object.select_all(action="DESELECT")
+    for p in parts:
+        p.select_set(True)
+    bpy.context.view_layer.objects.active = parts[0]
+    bpy.ops.object.join()
+    obj = bpy.context.active_object
+    obj.name = name
+    return obj
+
+
+def build_dumbbell(name, steel, iron):
+    return _join([_cylinder(name + "_h", 0.017, 0.15, 0.0, steel),
+                  _cylinder(name + "_p1", 0.055, 0.055, -0.098, iron),
+                  _cylinder(name + "_p2", 0.055, 0.055, 0.098, iron)], name)
+
+
+def build_barbell(name, steel, iron):
+    return _join([_cylinder(name + "_bar", 0.014, 1.6, 0.0, steel),
+                  _cylinder(name + "_pL", 0.19, 0.05, -0.70, iron),
+                  _cylinder(name + "_pR", 0.19, 0.05, 0.70, iron),
+                  _cylinder(name + "_cL", 0.034, 0.04, -0.655, steel),
+                  _cylinder(name + "_cR", 0.034, 0.04, 0.655, steel)], name)
+
+
+def build_props(spec):
+    """Returns [(object, anchor)] — anchor '.L'/'.R' = that wrist, 'mid' =
+    the wrist midpoint (barbells, two-hand dumbbell holds). Orientation is a
+    fixed world axis from the spec (handle modelled along +X)."""
+    prop = spec.get("prop")
+    if not prop:
+        return []
+    steel = make_material("Steel", STEEL_COLOR, roughness=0.35)
+    iron = make_material("Iron", IRON_COLOR, roughness=0.6)
+    if prop["type"] == "barbell":
+        objs = [(build_barbell("Barbell", steel, iron), "mid")]
+    elif prop.get("hold") == "both":
+        objs = [(build_dumbbell("Dumbbell", steel, iron), "mid")]
+    else:
+        objs = [(build_dumbbell("Dumbbell.L", steel, iron), ".L"),
+                (build_dumbbell("Dumbbell.R", steel, iron), ".R")]
+    axis = Vector(prop.get("axis", [1, 0, 0])).normalized()
+    rot = Vector((1, 0, 0)).rotation_difference(axis).to_euler()
+    for obj, _ in objs:
+        obj.rotation_euler = rot
+    return objs
+
+
+def place_props(rig, prop_objs, frame):
+    """Keyframe each prop at the posed rig's wrist positions — measured from
+    the deformed skeleton, so grip stays exact through the whole rep."""
+    if not prop_objs:
+        return
+    def wrist(side):
+        return rig.matrix_world @ rig.pose.bones["wrist" + side].tail
+    mid = (wrist(".L") + wrist(".R")) / 2
+    for obj, anchor in prop_objs:
+        obj.location = wrist(anchor) if anchor in (".L", ".R") else mid
+        obj.keyframe_insert("location", frame=frame)
+
+
 # ---------------------------------------------------------------- retargeting
 
 def mirror_name(name):
@@ -431,14 +512,19 @@ def transfer_pose(driver, rig, root_offset, frame):
         aim_bone(mh_pb, driver_target_dir(syn_pb), frame)
 
 
-def animate(driver, rig, spec, frame_end):
+def animate(driver, rig, spec, frame_end, prop_objs=()):
     for kf in spec["keyframes"]:
         frame = 1 + round(kf["t"] * (frame_end - 1))
         root_offset = pose_driver(driver, kf)
         transfer_pose(driver, rig, root_offset, frame)
-    # ease every curve without overshoot — reps settle instead of bouncing
-    action = rig.animation_data.action if rig.animation_data else None
-    if action:
+        place_props(rig, prop_objs, frame)
+    # ease every curve without overshoot — reps settle instead of bouncing;
+    # props ride the same easing so they never drift off the hands mid-tween
+    animated = [rig] + [obj for obj, _ in prop_objs]
+    for owner in animated:
+        action = owner.animation_data.action if owner.animation_data else None
+        if not action:
+            continue
         for fcurve in action.fcurves:
             for kp in fcurve.keyframe_points:
                 kp.interpolation = "BEZIER"
@@ -501,9 +587,11 @@ def camera_side(primary):
     return "back" if posterior and not anterior else "front"
 
 
-def frame_subject(cam, target, basemesh, frames, side="front", margin=1.12):
+def frame_subject(cam, target, basemesh, frames, side="front", margin=1.12,
+                  prop_objs=()):
     """Fit the camera to the figure across every keyframe pose, so the shot
-    is tight but nothing clips mid-rep and the camera never drifts."""
+    is tight but nothing clips mid-rep and the camera never drifts. Props
+    count too — a barbell is wider than the body."""
     lo = Vector((1e9, 1e9, 1e9))
     hi = Vector((-1e9, -1e9, -1e9))
     for f in frames:
@@ -511,8 +599,10 @@ def frame_subject(cam, target, basemesh, frames, side="front", margin=1.12):
         deps = bpy.context.evaluated_depsgraph_get()
         evaluated = basemesh.evaluated_get(deps)
         matrix = basemesh.matrix_world
-        for v in evaluated.data.vertices:
-            co = matrix @ v.co
+        points = [matrix @ v.co for v in evaluated.data.vertices]
+        for obj, _ in prop_objs:
+            points += [obj.matrix_world @ Vector(c) for c in obj.bound_box]
+        for co in points:
             lo = Vector((min(lo.x, co.x), min(lo.y, co.y), min(lo.z, co.z)))
             hi = Vector((max(hi.x, co.x), max(hi.y, co.y), max(hi.z, co.z)))
 
@@ -598,7 +688,8 @@ def main():
 
     bones, parents = full_skeleton()
     driver = build_driver(bones, parents)
-    animate(driver, rig, spec, frame_end)
+    prop_objs = build_props(spec)
+    animate(driver, rig, spec, frame_end, prop_objs)
     bpy.data.objects.remove(driver, do_unlink=True)
 
     side = camera_side(primary)
@@ -608,13 +699,13 @@ def main():
     still_frame = 1 + (frame_end - 1) // 2      # mid-rep = most telling pose
 
     # thumbnail: frame that one pose tightly
-    frame_subject(cam, target, basemesh, [still_frame], side)
+    frame_subject(cam, target, basemesh, [still_frame], side, prop_objs=prop_objs)
     scene.frame_set(still_frame)
     scene.render.filepath = f"{out_dir}/{spec['id']}.png"
     bpy.ops.render.render(write_still=True)
 
     # animation: frame the whole rep so the camera never drifts or clips
-    frame_subject(cam, target, basemesh, key_frames, side)
+    frame_subject(cam, target, basemesh, key_frames, side, prop_objs=prop_objs)
 
     # small animation frames for GIF/MP4 (watch-sized); ffmpeg assembles in CI
     scene.render.resolution_x = scene.render.resolution_y = 240
@@ -626,7 +717,11 @@ def main():
     backdrop = bpy.data.objects.get("Backdrop")
     if backdrop:
         bpy.data.objects.remove(backdrop, do_unlink=True)
-    bpy.ops.export_scene.gltf(filepath=f"{out_dir}/{spec['id']}.glb")
+    # SCENE mode bakes every animated object into one glTF animation, so the
+    # prop motion ships in the same clip as the armature instead of a second
+    # clip the viewer would have to know about
+    bpy.ops.export_scene.gltf(filepath=f"{out_dir}/{spec['id']}.glb",
+                              export_animation_mode="SCENE")
     print(f"OK {spec['id']}: {frame_end} frames -> {out_dir}")
 
 

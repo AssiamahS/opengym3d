@@ -3,12 +3,21 @@
   "name": "Overhead Press",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
+  "prop": {
+    "type": "barbell"
+  },
   "primary": [
     "Shoulders"
   ],
   "secondary": [
     "Triceps",
     "Core"
+  ],
+  "steps": [
+    "Hold the bar at the front of the shoulders, grip just outside shoulder width.",
+    "Brace and press the bar straight overhead.",
+    "Lock out with the bar over the mid-foot, head through.",
+    "Lower with control back to the shoulders."
   ],
   "fps": 30,
   "duration": 2.8,

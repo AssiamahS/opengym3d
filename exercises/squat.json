@@ -11,6 +11,12 @@
     "Hamstrings",
     "Core"
   ],
+  "steps": [
+    "Stand with feet shoulder-width apart, toes slightly out, arms forward for balance.",
+    "Sit the hips back and down, chest up, until thighs reach parallel.",
+    "Keep knees tracking over the toes and heels planted.",
+    "Drive through the heels to stand tall."
+  ],
   "fps": 30,
   "duration": 3.0,
   "keyframes": [

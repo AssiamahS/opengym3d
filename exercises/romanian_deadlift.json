@@ -3,6 +3,9 @@
   "name": "Romanian Deadlift",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
+  "prop": {
+    "type": "barbell"
+  },
   "primary": [
     "Hamstrings",
     "Glutes"
@@ -10,6 +13,12 @@
   "secondary": [
     "Lower Back",
     "Forearms"
+  ],
+  "steps": [
+    "Hold the bar at the hips, feet hip-width, soft knees.",
+    "Hinge at the hips, pushing them back as the bar slides down the thighs.",
+    "Keep a flat back; feel the stretch in the hamstrings.",
+    "Drive the hips forward to stand, squeezing the glutes."
   ],
   "fps": 30,
   "duration": 3.2,

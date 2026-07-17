@@ -3,11 +3,26 @@
   "name": "Overhead Tricep Extension",
   "equipment": "Dumbbell",
   "difficulty": "Intermediate",
+  "prop": {
+    "type": "dumbbell",
+    "hold": "both",
+    "axis": [
+      0,
+      0,
+      1
+    ]
+  },
   "primary": [
     "Triceps"
   ],
   "secondary": [
     "Shoulders"
+  ],
+  "steps": [
+    "Hold one dumbbell overhead with both hands.",
+    "Lower it behind the head by bending the elbows.",
+    "Keep the elbows tight and pointing forward.",
+    "Extend the arms back to lockout."
   ],
   "fps": 30,
   "duration": 2.6,

@@ -18,6 +18,7 @@ for path in sorted(src.glob("*.json")):
         "difficulty": spec.get("difficulty", "Beginner"),
         "primary": spec.get("primary", []),
         "secondary": spec.get("secondary", []),
+        "steps": spec.get("steps", []),
         "glb": f"assets/{spec['id']}.glb",
         "thumb": f"assets/{spec['id']}.png",
     })

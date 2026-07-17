@@ -10,6 +10,12 @@
     "Calves",
     "Core"
   ],
+  "steps": [
+    "Stand tall, core braced.",
+    "Drive one knee to hip height, then the other, in a running rhythm.",
+    "Stay on the balls of the feet; pump the arms.",
+    "Keep the torso upright throughout."
+  ],
   "fps": 30,
   "duration": 0.9,
   "keyframes": [

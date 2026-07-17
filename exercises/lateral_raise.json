@@ -3,11 +3,25 @@
   "name": "Lateral Raise",
   "equipment": "Dumbbell",
   "difficulty": "Beginner",
+  "prop": {
+    "type": "dumbbell",
+    "axis": [
+      0,
+      1,
+      0
+    ]
+  },
   "primary": [
     "Shoulders"
   ],
   "secondary": [
     "Traps"
+  ],
+  "steps": [
+    "Stand with dumbbells at the sides, slight elbow bend.",
+    "Raise the arms out to shoulder height, leading with the elbows.",
+    "Pause briefly at the top.",
+    "Lower slowly \u2014 no swinging."
   ],
   "fps": 30,
   "duration": 2.4,

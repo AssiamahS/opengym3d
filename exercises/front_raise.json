@@ -3,11 +3,25 @@
   "name": "Front Raise",
   "equipment": "Dumbbell",
   "difficulty": "Beginner",
+  "prop": {
+    "type": "dumbbell",
+    "axis": [
+      1,
+      0,
+      0
+    ]
+  },
   "primary": [
     "Shoulders"
   ],
   "secondary": [
     "Core"
+  ],
+  "steps": [
+    "Hold dumbbells in front of the thighs, palms down.",
+    "Raise straight arms to shoulder height.",
+    "Keep the torso still; no leaning back.",
+    "Lower under control."
   ],
   "fps": 30,
   "duration": 2.4,

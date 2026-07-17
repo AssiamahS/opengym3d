@@ -81,6 +81,8 @@ function tick() {
 async function openViewer(ex) {
   document.getElementById('viewer-title').textContent = ex.name;
   document.getElementById('viewer-muscles').innerHTML = chips(ex);
+  document.getElementById('viewer-steps').innerHTML =
+    (ex.steps || []).map(s => `<li>${s}</li>`).join('');
   viewer.classList.add('open');
   if (!renderer) initThree();
   resize();
@@ -91,9 +93,17 @@ async function openViewer(ex) {
   scene.add(gltf.scene);
 
   mixer = new THREE.AnimationMixer(gltf.scene);
-  clip = gltf.animations[0];
-  action = mixer.clipAction(clip);
-  action.setLoop(THREE.LoopRepeat).play();
+  // play every clip — props (dumbbells/barbell) may export as their own
+  // animation alongside the armature's; the longest clip drives the scrubber
+  clip = gltf.animations.reduce((a, b) => (b.duration > a.duration ? b : a),
+    gltf.animations[0]);
+  let first;
+  for (const c of gltf.animations) {
+    const a = mixer.clipAction(c);
+    a.setLoop(THREE.LoopRepeat).play();
+    if (c === clip) first = a;
+  }
+  action = first;
   playing = true;
   playBtn.textContent = '⏸';
 }

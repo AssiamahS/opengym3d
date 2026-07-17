@@ -3,39 +3,155 @@
   "name": "Jumping Jack",
   "equipment": "None",
   "difficulty": "Beginner",
-  "primary": ["Shoulders"],
-  "secondary": ["Calves", "Core"],
+  "primary": [
+    "Shoulders"
+  ],
+  "secondary": [
+    "Calves",
+    "Core"
+  ],
+  "steps": [
+    "Stand tall, arms at the sides.",
+    "Jump the feet wide while sweeping the arms overhead.",
+    "Land softly on the balls of the feet.",
+    "Jump back to the start and repeat rhythmically."
+  ],
   "fps": 30,
   "duration": 1.6,
   "keyframes": [
     {
       "t": 0.0,
       "bones": {
-        "pelvis": {"rot": [0, 0, 0], "loc": [0, 0, 0]},
-        "thigh.*": {"rot": [0, 0, 0]},
-        "shin.*": {"rot": [0, 0, 0]},
-        "upper_arm.*": {"rot": [-75, 0, 0]},
-        "forearm.*": {"rot": [0, 0, -5]}
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -75,
+            0,
+            0
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        }
       }
     },
     {
       "t": 0.5,
       "bones": {
-        "pelvis": {"rot": [0, 0, 0], "loc": [0, 0, 0.06]},
-        "thigh.*": {"rot": [0, 0, -22]},
-        "shin.*": {"rot": [4, 0, 0]},
-        "upper_arm.*": {"rot": [85, 0, 0]},
-        "forearm.*": {"rot": [0, 0, -5]}
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0,
+            0.06
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            0,
+            0,
+            -22
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            4,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            85,
+            0,
+            0
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        }
       }
     },
     {
       "t": 1.0,
       "bones": {
-        "pelvis": {"rot": [0, 0, 0], "loc": [0, 0, 0]},
-        "thigh.*": {"rot": [0, 0, 0]},
-        "shin.*": {"rot": [0, 0, 0]},
-        "upper_arm.*": {"rot": [-75, 0, 0]},
-        "forearm.*": {"rot": [0, 0, -5]}
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -75,
+            0,
+            0
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        }
       }
     }
   ]

@@ -9,6 +9,12 @@
   "secondary": [
     "Core"
   ],
+  "steps": [
+    "Lie on your back, knees bent, hands by the head.",
+    "Curl the ribcage toward the pelvis, shoulder blades off the floor.",
+    "Exhale at the top; don't pull on the neck.",
+    "Lower slowly."
+  ],
   "fps": 30,
   "duration": 2.2,
   "keyframes": [

@@ -12,6 +12,12 @@
     "Calves",
     "Core"
   ],
+  "steps": [
+    "Step one leg forward into a split stance.",
+    "Lower straight down until both knees are near 90\u00b0.",
+    "Keep the front knee over the ankle and torso upright.",
+    "Push off the front heel to return."
+  ],
   "fps": 30,
   "duration": 3.0,
   "keyframes": [

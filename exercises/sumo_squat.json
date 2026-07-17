@@ -3,6 +3,15 @@
   "name": "Sumo Squat",
   "equipment": "Dumbbell",
   "difficulty": "Beginner",
+  "prop": {
+    "type": "dumbbell",
+    "hold": "both",
+    "axis": [
+      0,
+      0,
+      1
+    ]
+  },
   "primary": [
     "Quads",
     "Glutes"
@@ -10,6 +19,12 @@
   "secondary": [
     "Hamstrings",
     "Core"
+  ],
+  "steps": [
+    "Take a wide stance, toes out 30-45\u00b0, dumbbell hanging between the legs.",
+    "Squat down keeping the torso upright and knees pushed out.",
+    "Descend until thighs are parallel.",
+    "Squeeze the glutes and inner thighs to stand."
   ],
   "fps": 30,
   "duration": 3.0,

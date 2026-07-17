@@ -3,12 +3,21 @@
   "name": "Good Morning",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
+  "prop": {
+    "type": "barbell"
+  },
   "primary": [
     "Hamstrings"
   ],
   "secondary": [
     "Lower Back",
     "Glutes"
+  ],
+  "steps": [
+    "Rest the bar across the upper traps, hands securing it.",
+    "Brace the core and hinge at the hips, chest lowering toward the floor.",
+    "Keep knees soft and back flat throughout.",
+    "Extend the hips to return upright."
   ],
   "fps": 30,
   "duration": 3.0,

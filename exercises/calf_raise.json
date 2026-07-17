@@ -9,6 +9,12 @@
   "secondary": [
     "Core"
   ],
+  "steps": [
+    "Stand tall, feet hip-width apart.",
+    "Rise onto the balls of the feet as high as possible.",
+    "Pause at the top, squeezing the calves.",
+    "Lower slowly under control."
+  ],
   "fps": 30,
   "duration": 2.0,
   "keyframes": [

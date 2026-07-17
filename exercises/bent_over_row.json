@@ -3,12 +3,21 @@
   "name": "Bent-Over Row",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
+  "prop": {
+    "type": "barbell"
+  },
   "primary": [
     "Back"
   ],
   "secondary": [
     "Biceps",
     "Forearms"
+  ],
+  "steps": [
+    "Hinge to ~45\u00b0 with a flat back, bar hanging at arm's length.",
+    "Pull the bar to the lower ribs, elbows driving back.",
+    "Squeeze the shoulder blades together at the top.",
+    "Lower with control without losing the hinge."
   ],
   "fps": 30,
   "duration": 2.6,
