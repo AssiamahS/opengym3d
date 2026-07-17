@@ -18,7 +18,17 @@ env:
   BLENDER_VERSION: 4.5.11
 
 jobs:
+  # Fast gate: the spec/manifest bugs that waste a 40-minute render (a muscle
+  # the painter can't paint, an unsorted rep, equipment with no prop) are all
+  # plain data, so catch them in seconds before Blender is ever downloaded.
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest discover -s tests -v
+
   render:
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

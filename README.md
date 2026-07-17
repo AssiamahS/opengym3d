@@ -1,5 +1,7 @@
 # OpenGym3D
 
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Open-source interactive 3D exercise library — a [gym-animations.com](https://gym-animations.com)
 alternative where **Blender never runs on your machine**. Push a pose file to GitHub;
 CI runs headless Blender, exports an animated `.glb` + thumbnail, and deploys the
@@ -66,3 +68,14 @@ pipeline/     build_exercise.py (Blender headless), make_manifest.py
 website/      static Three.js viewer (no build step)
 .github/      render & deploy workflow
 ```
+
+## Tests
+
+```
+python3 -m unittest discover -s tests    # stdlib only, ~0.05s
+```
+
+The pose maths needs Blender, but the bugs that actually break the site are
+plain data — a muscle name the painter doesn't know, an unsorted rep, a
+"Dumbbell" exercise with no prop. CI runs these first and gates the render on
+them, so a typo fails in seconds instead of after a 40-minute Blender job.
