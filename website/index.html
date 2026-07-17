@@ -38,6 +38,15 @@
   #scrub { flex: 1; accent-color: var(--accent); }
   #speed { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 5px 8px; }
   #viewer-muscles { padding: 0 20px 14px; }
+  #viewer-body { display: flex; gap: 10px; padding: 0 20px 6px; }
+  .bodymap { margin: 0; }
+  .bodymap svg { height: 150px; width: auto; }
+  .bodymap figcaption { text-align: center; color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .6px; }
+  .silhouette { fill: #1e242b; stroke: var(--line); stroke-width: 1.5; }
+  .rg { stroke: none; }
+  .rg.rest { fill: #2b333c; }
+  .rg.primary { fill: var(--red); }
+  .rg.secondary { fill: var(--amber); }
   #viewer-steps { margin: 0 20px 14px; padding-left: 38px; color: var(--dim); font-size: 14px; max-width: 720px; }
   #viewer-steps li { margin-bottom: 3px; }
   #viewer-steps li::marker { color: var(--accent); }
@@ -67,6 +76,7 @@
   </div>
   <div id="canvas-wrap"></div>
   <div class="chips" id="viewer-muscles"></div>
+  <div id="viewer-body"></div>
   <ol id="viewer-steps"></ol>
   <div id="controls">
     <button id="play">⏸</button>

@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { renderBodymap } from './bodymap.js';
 
 const grid = document.getElementById('grid');
 const viewer = document.getElementById('viewer');
@@ -83,6 +84,7 @@ async function openViewer(ex) {
   document.getElementById('viewer-muscles').innerHTML = chips(ex);
   document.getElementById('viewer-steps').innerHTML =
     (ex.steps || []).map(s => `<li>${s}</li>`).join('');
+  renderBodymap(document.getElementById('viewer-body'), ex);
   viewer.classList.add('open');
   if (!renderer) initThree();
   resize();

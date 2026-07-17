@@ -176,7 +176,8 @@ def strip_helpers(basemesh):
 
 # ------------------------------------------------------------------ painting
 
-def make_material(name, color, emission=0.0, roughness=0.55, subsurface=0.0):
+def make_material(name, color, emission=0.0, roughness=0.55, subsurface=0.0,
+                  fiber=False):
     mat = bpy.data.materials.new(name)
     mat.use_nodes = True
     bsdf = mat.node_tree.nodes["Principled BSDF"]
@@ -187,7 +188,31 @@ def make_material(name, color, emission=0.0, roughness=0.55, subsurface=0.0):
         bsdf.inputs["Emission Strength"].default_value = emission
     if subsurface and "Subsurface Weight" in bsdf.inputs:
         bsdf.inputs["Subsurface Weight"].default_value = subsurface
+    if fiber:
+        add_fiber_striation(mat, bsdf)
     return mat
+
+
+def add_fiber_striation(mat, bsdf):
+    """Muscle fibre striation as a procedural bump — the technique anatomical
+    Blender artists use for the ecorché look (BlenderArtists: 'bake a
+    parametric material'; NOTES: separate overlay meshes were a dead end, so
+    this stays material-level). A high-frequency Wave texture reads as the
+    parallel fascicle striae; it drives a subtle Bump so the highlighted
+    muscle catches light in bands instead of as a flat red patch."""
+    nt = mat.node_tree
+    tex_coord = nt.nodes.new("ShaderNodeTexCoord")
+    wave = nt.nodes.new("ShaderNodeTexWave")
+    wave.wave_type = "BANDS"
+    wave.inputs["Scale"].default_value = 42.0      # fine parallel striae
+    wave.inputs["Distortion"].default_value = 1.5  # fibres aren't ruler-straight
+    if "Detail" in wave.inputs:
+        wave.inputs["Detail"].default_value = 2.0
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.18   # relief, not corrugation
+    nt.links.new(tex_coord.outputs["Object"], wave.inputs["Vector"])
+    nt.links.new(wave.outputs["Color"], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
 
 
 def highlight_sets(spec):
@@ -794,8 +819,10 @@ def main():
     # highlight pastel; saturated base colour reads far stronger
     materials = {
         "skin": make_material("Skin", SKIN_COLOR, subsurface=0.05),
-        "primary": make_material("Primary", PRIMARY_COLOR, subsurface=0.05),
-        "secondary": make_material("Secondary", SECONDARY_COLOR, subsurface=0.05),
+        "primary": make_material("Primary", PRIMARY_COLOR, subsurface=0.05,
+                                 fiber=True),
+        "secondary": make_material("Secondary", SECONDARY_COLOR,
+                                   subsurface=0.05, fiber=True),
     }
     primary, secondary = highlight_sets(spec)
     paint_muscles(basemesh, rig, materials, primary, secondary)
