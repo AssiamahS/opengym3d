@@ -354,6 +354,66 @@ def place_props(rig, prop_objs, frame):
         obj.keyframe_insert("location", frame=frame)
 
 
+# MakeHuman default rig: finger1 = thumb, finger2-5 = index..pinky, three
+# segments each. Curl per segment approximates a working grip.
+FINGER_CURL = {1: 38, 2: 52, 3: 38}
+THUMB_CURL = {1: 18, 2: 30, 3: 25}
+
+
+def _rotate_bone_world(pb, quat, frame):
+    loc = pb.matrix.to_translation()
+    rot = pb.matrix.to_quaternion()
+    pb.rotation_mode = "QUATERNION"
+    pb.matrix = Matrix.Translation(loc) @ (quat @ rot).to_matrix().to_4x4()
+    bpy.context.view_layer.update()
+    pb.keyframe_insert("rotation_quaternion", frame=frame)
+
+
+def _curl_sign(rig, bone_name, axis, deg, center):
+    """Measure, don't eyeball: whichever rotation sign moves the fingertip
+    toward the grip center is the curl direction. Bone-local axis signs on
+    this rig are a coin flip (see NOTES) — so test both and keep the winner."""
+    pb = rig.pose.bones.get(bone_name)
+    if pb is None:
+        return None
+    d = (pb.tail - pb.head).normalized()
+    length = (pb.tail - pb.head).length
+    best, best_dist = 1, None
+    for sign in (1, -1):
+        q = Quaternion(axis, math.radians(sign * deg))
+        tip = rig.matrix_world @ (pb.head + (q @ d) * length)
+        dist = (tip - center).length
+        if best_dist is None or dist < best_dist:
+            best, best_dist = sign, dist
+    return best
+
+
+def grip_hands(rig, prop_objs, frame):
+    """Close the fingers around the held implement. Every competitor grips;
+    flat fingers through a barbell are the genre's biggest amateur tell."""
+    if not prop_objs:
+        return
+    axis = (prop_objs[0][0].matrix_world.to_3x3() @ Vector((1, 0, 0))).normalized()
+    for side in (".L", ".R"):
+        center = rig.matrix_world @ rig.pose.bones["wrist" + side].tail
+        finger_sign = _curl_sign(rig, "finger2-1" + side, axis, 50, center)
+        thumb_sign = _curl_sign(rig, "finger1-1" + side, axis, 30, center)
+        applied = 0
+        for f in range(1, 6):
+            curls = THUMB_CURL if f == 1 else FINGER_CURL
+            sign = thumb_sign if f == 1 else finger_sign
+            if sign is None:
+                continue
+            for seg in (1, 2, 3):                # proximal first: children inherit
+                pb = rig.pose.bones.get(f"finger{f}-{seg}{side}")
+                if pb is None:
+                    continue
+                q = Quaternion(axis, math.radians(sign * curls[seg]))
+                _rotate_bone_world(pb, q, frame)
+                applied += 1
+        print(f"GRIP {side}: {applied} finger bones, sign={finger_sign}/{thumb_sign}")
+
+
 # ---------------------------------------------------------------- retargeting
 
 def mirror_name(name):
@@ -518,6 +578,7 @@ def animate(driver, rig, spec, frame_end, prop_objs=()):
         root_offset = pose_driver(driver, kf)
         transfer_pose(driver, rig, root_offset, frame)
         place_props(rig, prop_objs, frame)
+        grip_hands(rig, prop_objs, frame)
     # ease every curve without overshoot — reps settle instead of bouncing;
     # props ride the same easing so they never drift off the hands mid-tween
     animated = [rig] + [obj for obj, _ in prop_objs]
@@ -529,6 +590,35 @@ def animate(driver, rig, spec, frame_end, prop_objs=()):
             for kp in fcurve.keyframe_points:
                 kp.interpolation = "BEZIER"
                 kp.handle_left_type = kp.handle_right_type = "AUTO_CLAMPED"
+    add_life(rig, spec.get("fps", 30))
+
+
+LIFE_BONES = ("spine01", "spine03", "neck01", "head")
+
+
+def add_life(rig, fps):
+    """Breathing-scale noise on the torso/neck/head rotation channels so the
+    figure never stands mannequin-still between keyframes. ~0.6° amplitude,
+    ~2 s period, phases decorrelated per channel; the competitors' hand-keyed
+    'alive' quality is mostly this. Bakes into GLB/GIF because both the glTF
+    SCENE exporter and the renderer sample the evaluated curves per frame."""
+    action = rig.animation_data.action if rig.animation_data else None
+    if not action:
+        return
+    added = 0
+    for fcurve in action.fcurves:
+        if not fcurve.data_path.endswith("rotation_quaternion"):
+            continue
+        if not any(f'"{b}"' in fcurve.data_path for b in LIFE_BONES):
+            continue
+        if fcurve.array_index == 0:          # leave w alone; x/y/z wobble is enough
+            continue
+        mod = fcurve.modifiers.new("NOISE")
+        mod.strength = 0.011                 # quaternion units ≈ 0.6°
+        mod.scale = fps * 2.0                # one wander every ~2 s
+        mod.phase = float(hash(fcurve.data_path) % 97 + fcurve.array_index * 13)
+        added += 1
+    print(f"LIFE: noise on {added} channels")
 
 
 # -------------------------------------------------------------------- render
