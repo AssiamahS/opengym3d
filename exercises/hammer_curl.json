@@ -1,0 +1,190 @@
+{
+  "id": "hammer_curl",
+  "name": "Hammer Curl",
+  "equipment": "Dumbbell",
+  "difficulty": "Beginner",
+  "prop": {
+    "type": "dumbbell",
+    "axis": [
+      0,
+      1,
+      0
+    ]
+  },
+  "primary": [
+    "Biceps"
+  ],
+  "secondary": [
+    "Forearms"
+  ],
+  "steps": [
+    "Stand holding dumbbells at the sides, palms facing each other.",
+    "Curl the weights up without rotating the wrists.",
+    "Keep elbows pinned to the ribs.",
+    "Lower under control."
+  ],
+  "fps": 30,
+  "duration": 2.6,
+  "keyframes": [
+    {
+      "t": 0.0,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -80,
+            0,
+            0
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "t": 0.36,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            -4,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -80,
+            0,
+            -12
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -125
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            -10
+          ]
+        }
+      }
+    },
+    {
+      "t": 0.46,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            -4,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -80,
+            0,
+            -12
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -125
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            -10
+          ]
+        }
+      }
+    },
+    {
+      "t": 1.0,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -80,
+            0,
+            0
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -5
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": "wall_sit",
+  "name": "Wall Sit",
+  "equipment": "None",
+  "difficulty": "Beginner",
+  "primary": [
+    "Quads"
+  ],
+  "secondary": [
+    "Glutes",
+    "Core"
+  ],
+  "fps": 30,
+  "duration": 3.0,
+  "steps": [
+    "Slide down a wall until thighs are parallel to the floor.",
+    "Knees at 90\u00b0, directly over the ankles.",
+    "Press the whole back flat against the wall.",
+    "Breathe and hold."
+  ],
+  "keyframes": [
+    {
+      "t": 0.0,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0.06,
+            -0.44
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            -72,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            118,
+            0,
+            0
+          ]
+        },
+        "foot.*": {
+          "rot": [
+            -35,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "aim_world": [
+            0.1,
+            -0.06,
+            -0.99
+          ]
+        },
+        "forearm.*": {
+          "aim_world": [
+            0.1,
+            -0.06,
+            -0.99
+          ]
+        }
+      }
+    },
+    {
+      "t": 1.0,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0.06,
+            -0.44
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            -72,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            118,
+            0,
+            0
+          ]
+        },
+        "foot.*": {
+          "rot": [
+            -35,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "aim_world": [
+            0.1,
+            -0.06,
+            -0.99
+          ]
+        },
+        "forearm.*": {
+          "aim_world": [
+            0.1,
+            -0.06,
+            -0.99
+          ]
+        }
+      }
+    }
+  ]
+}

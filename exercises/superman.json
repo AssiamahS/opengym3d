@@ -1,0 +1,314 @@
+{
+  "id": "superman",
+  "name": "Superman",
+  "equipment": "None",
+  "difficulty": "Beginner",
+  "primary": [
+    "Lower Back"
+  ],
+  "secondary": [
+    "Glutes"
+  ],
+  "fps": 30,
+  "duration": 2.8,
+  "steps": [
+    "Lie face down, arms extended overhead.",
+    "Lift arms, chest, and legs off the floor together.",
+    "Squeeze the lower back and glutes at the top.",
+    "Lower slowly without dropping."
+  ],
+  "keyframes": [
+    {
+      "t": 0.0,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            88,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0,
+            -0.85
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rot": [
+            -6,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            2,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            2,
+            0,
+            0
+          ]
+        },
+        "foot.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "aim_world": [
+            0.12,
+            -0.98,
+            -0.05
+          ]
+        },
+        "forearm.*": {
+          "aim_world": [
+            0.12,
+            -0.98,
+            -0.05
+          ]
+        }
+      }
+    },
+    {
+      "t": 0.4,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            88,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0,
+            -0.85
+          ]
+        },
+        "spine": {
+          "rot": [
+            -16,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            -10,
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rot": [
+            6,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            14,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            4,
+            0,
+            0
+          ]
+        },
+        "foot.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "aim_world": [
+            0.12,
+            -0.95,
+            0.28
+          ]
+        },
+        "forearm.*": {
+          "aim_world": [
+            0.12,
+            -0.95,
+            0.28
+          ]
+        }
+      }
+    },
+    {
+      "t": 0.55,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            88,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0,
+            -0.85
+          ]
+        },
+        "spine": {
+          "rot": [
+            -16,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            -10,
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rot": [
+            6,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            14,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            4,
+            0,
+            0
+          ]
+        },
+        "foot.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "aim_world": [
+            0.12,
+            -0.95,
+            0.28
+          ]
+        },
+        "forearm.*": {
+          "aim_world": [
+            0.12,
+            -0.95,
+            0.28
+          ]
+        }
+      }
+    },
+    {
+      "t": 1.0,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            88,
+            0,
+            0
+          ],
+          "loc": [
+            0,
+            0,
+            -0.85
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "head": {
+          "rot": [
+            -6,
+            0,
+            0
+          ]
+        },
+        "thigh.*": {
+          "rot": [
+            2,
+            0,
+            0
+          ]
+        },
+        "shin.*": {
+          "rot": [
+            2,
+            0,
+            0
+          ]
+        },
+        "foot.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "aim_world": [
+            0.12,
+            -0.98,
+            -0.05
+          ]
+        },
+        "forearm.*": {
+          "aim_world": [
+            0.12,
+            -0.98,
+            -0.05
+          ]
+        }
+      }
+    }
+  ]
+}

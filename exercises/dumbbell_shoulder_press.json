@@ -1,0 +1,219 @@
+{
+  "id": "dumbbell_shoulder_press",
+  "name": "Dumbbell Shoulder Press",
+  "equipment": "Dumbbell",
+  "difficulty": "Intermediate",
+  "prop": {
+    "type": "dumbbell",
+    "axis": [
+      1,
+      0,
+      0
+    ]
+  },
+  "primary": [
+    "Shoulders"
+  ],
+  "secondary": [
+    "Triceps",
+    "Core"
+  ],
+  "steps": [
+    "Hold dumbbells at shoulder height, palms forward.",
+    "Press both weights straight overhead.",
+    "Lock out without shrugging; keep the core braced.",
+    "Lower with control back to the shoulders."
+  ],
+  "fps": 30,
+  "duration": 2.8,
+  "keyframes": [
+    {
+      "t": 0.0,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -55,
+            0,
+            -35
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -125
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "t": 0.36,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            -5,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            -4,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            80,
+            0,
+            -8
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -8
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "t": 0.46,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            -5,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            -4,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            80,
+            0,
+            -8
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -8
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "t": 1.0,
+      "bones": {
+        "pelvis": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "spine": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "chest": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        },
+        "upper_arm.*": {
+          "rot": [
+            -55,
+            0,
+            -35
+          ]
+        },
+        "forearm.*": {
+          "rot": [
+            0,
+            0,
+            -125
+          ]
+        },
+        "hand.*": {
+          "rot": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    }
+  ]
+}
