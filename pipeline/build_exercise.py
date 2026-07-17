@@ -176,8 +176,7 @@ def strip_helpers(basemesh):
 
 # ------------------------------------------------------------------ painting
 
-def make_material(name, color, emission=0.0, roughness=0.55, subsurface=0.0,
-                  fiber=False):
+def make_material(name, color, emission=0.0, roughness=0.55, subsurface=0.0):
     mat = bpy.data.materials.new(name)
     mat.use_nodes = True
     bsdf = mat.node_tree.nodes["Principled BSDF"]
@@ -188,31 +187,43 @@ def make_material(name, color, emission=0.0, roughness=0.55, subsurface=0.0,
         bsdf.inputs["Emission Strength"].default_value = emission
     if subsurface and "Subsurface Weight" in bsdf.inputs:
         bsdf.inputs["Subsurface Weight"].default_value = subsurface
-    if fiber:
-        add_fiber_striation(mat, bsdf)
     return mat
 
 
-def add_fiber_striation(mat, bsdf):
-    """Muscle fibre striation as a procedural bump — the technique anatomical
-    Blender artists use for the ecorché look (BlenderArtists: 'bake a
-    parametric material'; NOTES: separate overlay meshes were a dead end, so
-    this stays material-level). A high-frequency Wave texture reads as the
-    parallel fascicle striae; it drives a subtle Bump so the highlighted
-    muscle catches light in bands instead of as a flat red patch."""
+def make_body_material():
+    """One material for the whole figure: base colour comes from the
+    MuscleHeat vertex-colour attribute (smooth muscle borders), and the fibre
+    striation bump is masked by its alpha so striae appear only on active
+    muscle. glTF exports the attribute as COLOR_0, which multiplies base
+    colour in any standards-compliant viewer — so the web GLB keeps the
+    highlights too."""
+    mat = bpy.data.materials.new("Body")
+    mat.use_nodes = True
     nt = mat.node_tree
+    bsdf = nt.nodes["Principled BSDF"]
+    bsdf.inputs["Roughness"].default_value = 0.55
+    if "Subsurface Weight" in bsdf.inputs:
+        bsdf.inputs["Subsurface Weight"].default_value = 0.05
+
+    heat = nt.nodes.new("ShaderNodeVertexColor")
+    heat.layer_name = "MuscleHeat"
+    nt.links.new(heat.outputs["Color"], bsdf.inputs["Base Color"])
+
     tex_coord = nt.nodes.new("ShaderNodeTexCoord")
     wave = nt.nodes.new("ShaderNodeTexWave")
     wave.wave_type = "BANDS"
-    wave.inputs["Scale"].default_value = 42.0      # fine parallel striae
-    wave.inputs["Distortion"].default_value = 1.5  # fibres aren't ruler-straight
-    if "Detail" in wave.inputs:
-        wave.inputs["Detail"].default_value = 2.0
+    wave.inputs["Scale"].default_value = 42.0
+    wave.inputs["Distortion"].default_value = 1.5
+    masked = nt.nodes.new("ShaderNodeMath")
+    masked.operation = "MULTIPLY"
     bump = nt.nodes.new("ShaderNodeBump")
-    bump.inputs["Strength"].default_value = 0.18   # relief, not corrugation
+    bump.inputs["Strength"].default_value = 0.18
     nt.links.new(tex_coord.outputs["Object"], wave.inputs["Vector"])
-    nt.links.new(wave.outputs["Color"], bump.inputs["Height"])
+    nt.links.new(wave.outputs["Fac"], masked.inputs[0])
+    nt.links.new(heat.outputs["Alpha"], masked.inputs[1])
+    nt.links.new(masked.outputs["Value"], bump.inputs["Height"])
     nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    return mat
 
 
 def highlight_sets(spec):
@@ -285,19 +296,27 @@ def paint_muscles(basemesh, rig, materials, primary, secondary):
                     score[i] = 0.5 * snapshot[i] + \
                         0.5 * sum(snapshot[j] for j in ns) / len(ns)
 
+    # Per-VERTEX colours, not per-face material slots: face assignment gave
+    # every muscle border a hard stairstep at mesh resolution (the ragged red
+    # bib / holes in the glutes on the v0.20 renders). A colour attribute
+    # interpolates across faces, so borders become smooth gradients at zero
+    # geometry cost. Alpha carries the highlight mask so the fibre striation
+    # only appears on active muscle, not the whole body.
+    def smoothstep(x, lo=0.28, hi=0.55):
+        t = min(1.0, max(0.0, (x - lo) / (hi - lo)))
+        return t * t * (3 - 2 * t)
+
+    attr = mesh.color_attributes.new(name="MuscleHeat", type="FLOAT_COLOR",
+                                     domain="POINT")
+    for i in range(len(mesh.vertices)):
+        p, s = smoothstep(score_p[i]), smoothstep(score_s[i])
+        col = [SKIN_COLOR[c] + (SECONDARY_COLOR[c] - SKIN_COLOR[c]) * s
+               for c in range(3)]
+        col = [col[c] + (PRIMARY_COLOR[c] - col[c]) * p for c in range(3)]
+        attr.data[i].color = (*col, max(p, s))
+
     mesh.materials.clear()
-    mesh.materials.append(materials["skin"])
-    mesh.materials.append(materials["primary"])
-    mesh.materials.append(materials["secondary"])
-    for poly in mesh.polygons:
-        p = sum(score_p[i] for i in poly.vertices) / len(poly.vertices)
-        s = sum(score_s[i] for i in poly.vertices) / len(poly.vertices)
-        if p > 0.45 and p >= s:
-            poly.material_index = 1
-        elif s > 0.45:
-            poly.material_index = 2
-        else:
-            poly.material_index = 0
+    mesh.materials.append(materials["body"])
 
 
 # --------------------------------------------------------------------- props
@@ -626,6 +645,15 @@ def transfer_pose(driver, rig, root_offset, frame, overrides=None):
     drive_shoulder_girdle(driver, rig, frame, overrides)
     for mh_pb, target in arm_entries:
         aim_bone(mh_pb, target, frame)
+        # Probe, not assumption: v0.20's bent-over row rendered arms splayed
+        # sideways while every other aim landed. Print any bone whose achieved
+        # world direction misses its target so the CI log names the culprit.
+        achieved = (mh_pb.tail - mh_pb.head).normalized()
+        dot = achieved.dot(target.normalized())
+        if dot < 0.99:
+            print(f"AIM MISS {mh_pb.name} f{frame} dot={dot:.3f} "
+                  f"target={tuple(round(c, 2) for c in target)} "
+                  f"got={tuple(round(c, 2) for c in achieved)}")
 
 
 def animate(driver, rig, spec, frame_end, prop_objs=()):
@@ -824,13 +852,7 @@ def main():
     strip_helpers(basemesh)
     # no emission on the muscles — it fights the tonemapper and turns the
     # highlight pastel; saturated base colour reads far stronger
-    materials = {
-        "skin": make_material("Skin", SKIN_COLOR, subsurface=0.05),
-        "primary": make_material("Primary", PRIMARY_COLOR, subsurface=0.05,
-                                 fiber=True),
-        "secondary": make_material("Secondary", SECONDARY_COLOR,
-                                   subsurface=0.05, fiber=True),
-    }
+    materials = {"body": make_body_material()}
     primary, secondary = highlight_sets(spec)
     paint_muscles(basemesh, rig, materials, primary, secondary)
 
