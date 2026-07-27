@@ -26,7 +26,11 @@ import bpy
 
 ZANATOMY_URL = ("https://github.com/Z-Anatomy/Models-of-human-anatomy/"
                 "raw/master/Z-Anatomy.zip")
-MUSCLE_COLLECTION = ".Muscular system"
+# The atlas ships 1944 collections — one per anatomical structure — with the
+# ten body systems numbered at the top ("4: Muscular system"). The addon
+# renames them to dot-prefixed at runtime, so match on the suffix instead of
+# either literal.
+MUSCLE_COLLECTION_SUFFIX = "muscular system"
 
 # What an exercise spec calls a muscle -> TA2 substrings we expect to find.
 # Only used here to report coverage; the build gets the real names from the
@@ -82,11 +86,18 @@ def list_collections(blend):
     return sorted(names)
 
 
+def find_muscle_collection(names):
+    """The whole-system collection, not 'Abdominal part of muscular system'
+    and not 'Muscular insertions' — shortest suffix match wins."""
+    hits = [n for n in names if n.lower().endswith(MUSCLE_COLLECTION_SUFFIX)]
+    if not hits:
+        raise SystemExit(f"no muscular-system collection; have: "
+                         f"{sorted(names)[:40]}")
+    return min(hits, key=len)
+
+
 def append_muscles(blend, collection_name):
     with bpy.data.libraries.load(blend, link=False) as (src, dst):
-        if collection_name not in src.collections:
-            raise SystemExit(f"{collection_name!r} not in atlas; have: "
-                             f"{sorted(src.collections)[:40]}")
         dst.collections = [collection_name]
     collection = bpy.data.collections[collection_name]
     bpy.context.scene.collection.children.link(collection)
@@ -134,10 +145,13 @@ def main():
 
     collections = list_collections(blend)
     print(f"\n=== {len(collections)} collections in the atlas ===")
-    for name in collections[:60]:
-        print("  ", name)
+    for name in collections:
+        if name[0].isdigit():        # the ten body systems
+            print("  ", name)
 
-    collection = append_muscles(blend, MUSCLE_COLLECTION)
+    muscle_collection = find_muscle_collection(collections)
+    print(f"\nusing collection: {muscle_collection!r}")
+    collection = append_muscles(blend, muscle_collection)
     rows = census(collection)
     total_tris = sum(r["tris"] for r in rows)
     print(f"\n=== {len(rows)} muscle meshes, {total_tris:,} tris total ===")
@@ -159,7 +173,8 @@ def main():
             print(f"               {hit}")
 
     report = {
-        "collections": collections,
+        "muscle_collection": muscle_collection,
+        "systems": [c for c in collections if c[0].isdigit()],
         "muscle_count": len(rows),
         "total_tris": total_tris,
         "body_extents": body,

@@ -113,6 +113,12 @@ SECONDARY_COLOR = (0.80, 0.26, 0.02, 1.0)
 STEEL_COLOR = (0.42, 0.44, 0.47, 1.0)
 IRON_COLOR = (0.055, 0.055, 0.06, 1.0)
 
+# Iron is off. The subject of these clips is the body — which muscle is
+# working, through what range — and floating steel next to a figure whose
+# anatomy isn't finished yet only draws the eye away from it. The prop code
+# stays; flip this back on once the écorché figure is the good part.
+SHOW_PROPS = False
+
 
 # ---------------------------------------------------------------- mpfb setup
 
@@ -374,7 +380,7 @@ def build_props(spec):
     the wrist midpoint (barbells, two-hand dumbbell holds). Orientation is a
     fixed world axis from the spec (handle modelled along +X)."""
     prop = spec.get("prop")
-    if not prop:
+    if not prop or not SHOW_PROPS:
         return []
     steel = make_material("Steel", STEEL_COLOR, roughness=0.35)
     iron = make_material("Iron", IRON_COLOR, roughness=0.6)
