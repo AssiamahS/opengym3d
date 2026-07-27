@@ -37,8 +37,9 @@ async function buildGrid() {
 }
 
 function initThree() {
-  renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer = new THREE.WebGLRenderer({ antialias: window.devicePixelRatio < 2 });
+  // full Retina ratio quadruples fragment work and drags the Air below 30fps
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
   wrap.appendChild(renderer.domElement);
 
   scene = new THREE.Scene();

@@ -62,3 +62,12 @@ When something looks wrong twice, stop adjusting numbers and go measure.
 - ActorCore is the wrong store for this: 2,200 motions, themed around city
   life / stunts / parkour, no fitness library. Unity Asset Store has real
   gym mocap in FBX for $10-20 a pack.
+
+## 2026-07-27 — site restore + écorché diagnosis
+- github-pages environment only allows `main` deploys: a workflow_dispatch from a
+  tag renders fine then dies at deploy. Added v0.22.0 as an allowed tag via
+  `gh api .../deployment-branch-policies -f type=tag`. Remember for future tag deploys.
+- The écorché blank-render bug: the Z-Anatomy figure exports LYING ON ITS BACK
+  (atlas Z-up vs pipeline Y-up), so the standing-figure camera frames empty air.
+  Confirmed by loading the spike GLB in three.js. Also: the atlas's text-label
+  meshes (FASCIAE etc.) leak into the export — strip them pre-export.

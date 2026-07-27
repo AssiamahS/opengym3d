@@ -16,6 +16,9 @@ concurrency:
 
 env:
   BLENDER_VERSION: 4.5.11
+  # écorché exports the atlas lying flat (Z-up vs Y-up, see NOTES.md 2026-07-27)
+  # and ships blank renders. Pin the v0.22 figure until the axis fix lands.
+  FITX_ECORCHE: "0"
 
 jobs:
   # Fast gate: the spec/manifest bugs that waste a 40-minute render (a muscle
