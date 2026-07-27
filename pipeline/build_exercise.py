@@ -868,6 +868,7 @@ def setup_render(side="front"):
 def main():
     argv = sys.argv[sys.argv.index("--") + 1:]
     spec_path, out_dir = argv[0], argv[1]
+    os.makedirs(out_dir, exist_ok=True)
     with open(spec_path) as f:
         spec = json.load(f)
 

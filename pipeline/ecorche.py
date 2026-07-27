@@ -106,6 +106,10 @@ def load_muscles(blend=None):
         dst.collections = [name]
     collection = bpy.data.collections[name]
     bpy.context.scene.collection.children.link(collection)
+    # Freshly appended objects report an identity matrix_world until the view
+    # layer evaluates. Skip this and every world-space measurement below reads
+    # a 0.66-metre-tall human with its left and right sides in the same place.
+    bpy.context.view_layer.update()
     objs = {o.name: o for o in collection.all_objects if o.type == "MESH"}
     print(f"  {len(objs)} muscle meshes")
     return collection, objs
