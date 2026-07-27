@@ -41,3 +41,24 @@ When something looks wrong twice, stop adjusting numbers and go measure.
 - FK squats need the chain SOLVED, not eyeballed: pick thigh angle, then shin angle + pelvis drop follow from "ankle returns to its rest point" (shin ≈ +130 for thigh −75, pelvis −0.51).
 - The mid-rep Cycles thumbnail doubles as the pose-debugging tool: tune JSON → push → look at the PNG. No local Blender needed.
 - GitHub Pages must be enabled with `build_type=workflow` (`gh api -X POST repos/.../pages -f build_type=workflow`) before the first deploy-pages run.
+
+## v0.23 research — the 3D character pipeline decision (2026-07-27)
+
+- Z-Anatomy IS usable: 731 muscle meshes, 2.14M tris, every exercise muscle
+  key resolves, all TA2-named (`Rectus femoris muscle.l`). CC-BY-SA 4.0 =
+  share-alike, so exported assets can NOT be MIT — code stays MIT, renders
+  don't. Collection is `4: Muscular system` (numeric prefix; the addon
+  renames to dot-prefixed at runtime — match on suffix, never a literal).
+- **Appended objects have identity matrix_world until `view_layer.update()`.**
+  Cost a full probe round: the census reported the whole body spanning 0.66
+  units with left/right sharing a bbox. After the update Frontalis sits at
+  z=1.64 — a correctly scaled human all along. Any census that reads
+  matrix_world straight after `libraries.load` is reading a lie.
+- Character Creator 5 is **Windows-only** (Win 10/11, NVIDIA GTX 10+, 8 GB
+  VRAM, 30 GB install + 200 GB DDS cache). Not an option from the Mac.
+- **RealityKit collapses a multi-animation USDZ into one clip** (SO 79907762,
+  Mar 2026; Apple forum 131463). Ship one USDZ per exercise — which is what
+  this repo already does per GLB, so the layout survives the port.
+- ActorCore is the wrong store for this: 2,200 motions, themed around city
+  life / stunts / parkour, no fitness library. Unity Asset Store has real
+  gym mocap in FBX for $10-20 a pack.
