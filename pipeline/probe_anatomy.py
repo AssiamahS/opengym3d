@@ -104,6 +104,26 @@ def append_muscles(blend, collection_name):
     return collection
 
 
+def transform_diagnostic(collection):
+    """Why do 'Rectus femoris.l' and '.r' come back with the SAME bounding
+    box, and why is the whole musculature 0.66 units tall when a human is
+    1.7? Either the depsgraph hasn't evaluated the freshly-appended objects
+    (matrix_world still identity) or the placement lives on a parent that
+    didn't come across. Ask, don't guess."""
+    samples = [o for o in collection.all_objects if o.type == "MESH"][:6]
+    for label in ("before update", "after update"):
+        if label == "after update":
+            bpy.context.view_layer.update()
+        print(f"\n--- transforms {label} ---")
+        for obj in samples:
+            loc = tuple(round(v, 4) for v in obj.location)
+            scale = tuple(round(v, 4) for v in obj.scale)
+            translation = tuple(round(v, 4) for v in obj.matrix_world.translation)
+            print(f"  {obj.name[:46]:<46} loc={loc} scale={scale} "
+                  f"mw.t={translation} parent={obj.parent.name if obj.parent else None} "
+                  f"mesh_users={obj.data.users}")
+
+
 def census(collection):
     rows = []
     for obj in collection.all_objects:
@@ -152,6 +172,7 @@ def main():
     muscle_collection = find_muscle_collection(collections)
     print(f"\nusing collection: {muscle_collection!r}")
     collection = append_muscles(blend, muscle_collection)
+    transform_diagnostic(collection)
     rows = census(collection)
     total_tris = sum(r["tris"] for r in rows)
     print(f"\n=== {len(rows)} muscle meshes, {total_tris:,} tris total ===")
