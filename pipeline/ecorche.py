@@ -27,6 +27,7 @@ import urllib.request
 import zipfile
 
 import bpy
+from mathutils import Vector
 
 ZANATOMY_URL = ("https://github.com/Z-Anatomy/Models-of-human-anatomy/"
                 "raw/master/Z-Anatomy.zip")
@@ -142,7 +143,7 @@ def body_extents(objs):
     hi = [float("-inf")] * 3
     for obj in objs.values():
         for corner in obj.bound_box:
-            world = obj.matrix_world @ __import__("mathutils").Vector(corner)
+            world = obj.matrix_world @ Vector(corner)
             for axis in range(3):
                 lo[axis] = min(lo[axis], world[axis])
                 hi[axis] = max(hi[axis], world[axis])
@@ -198,6 +199,68 @@ def decimate(objs, target_tris):
         mod = obj.modifiers.new("Decimate", "DECIMATE")
         mod.ratio = ratio
     return ratio
+
+
+def build_figure(collection, objs, index, primary, secondary, colors,
+                 target_tris=180_000, floor_z=0.0, head_z=1.76):
+    """The whole écorché in one call: import, colour by activation, fit to
+    the driver rig's frame, decimate to budget, and join into a single mesh.
+
+    Joining matters. Bone-heat weighting on 731 loose meshes is a coin flip
+    per mesh — one failure and a muscle sticks to the world while the body
+    moves. One mesh with per-muscle *materials* takes a single heat solve and
+    still lets us recolour any muscle independently, which is the only thing
+    the separate objects were buying us.
+    """
+    active = {name: "primary" for key in primary for name in index.get(key, [])}
+    for key in secondary:
+        for name in index.get(key, []):
+            active.setdefault(name, "secondary")
+    print(f"  {len(active)} muscle meshes activated")
+
+    # The atlas shares mesh data between the .l and .r of a pair (the probe
+    # reported mesh_users=2). Shared data means a material assigned to the
+    # left biceps also paints the right one, and modifiers refuse to apply to
+    # multi-user data at all — so break the link first.
+    for obj in objs.values():
+        if obj.data.users > 1:
+            obj.data = obj.data.copy()
+
+    for obj in objs.values():
+        obj.data.materials.clear()
+        obj.data.materials.append(colors[active.get(obj.name, "resting")])
+
+    parent, scale = fit_to_rig(collection, objs, floor_z, head_z)
+    decimate(objs, target_tris)
+
+    bpy.ops.object.select_all(action="DESELECT")
+    meshes = list(objs.values())
+    for obj in meshes:
+        obj.select_set(True)
+    bpy.context.view_layer.objects.active = meshes[0]
+    bpy.ops.object.convert(target="MESH")      # bakes the decimate modifiers
+    bpy.ops.object.join()
+    figure = bpy.context.active_object
+    figure.name = "Ecorche"
+    bpy.data.objects.remove(parent, do_unlink=True)
+    print(f"  joined -> {len(figure.data.polygons):,} faces")
+    return figure
+
+
+def skin(figure, rig):
+    """Bone-heat the figure to the driver rig. Falls back to envelopes rather
+    than dying: a slightly stiff joint still renders, a failed solve does not."""
+    bpy.ops.object.select_all(action="DESELECT")
+    figure.select_set(True)
+    rig.select_set(True)
+    bpy.context.view_layer.objects.active = rig
+    try:
+        bpy.ops.object.parent_set(type="ARMATURE_AUTO")
+        print("  skinned with automatic (bone heat) weights")
+    except RuntimeError as exc:
+        print(f"  bone heat failed ({exc}) — falling back to envelopes")
+        bpy.ops.object.parent_set(type="ARMATURE_ENVELOPE")
+    return figure
 
 
 def write_attribution(path):

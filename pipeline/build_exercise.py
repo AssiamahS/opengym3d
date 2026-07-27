@@ -119,6 +119,11 @@ IRON_COLOR = (0.055, 0.055, 0.06, 1.0)
 # stays; flip this back on once the écorché figure is the good part.
 SHOW_PROPS = False
 
+# Écorché: real Z-Anatomy muscle geometry instead of paint on a MakeHuman
+# mannequin. Set FITX_ECORCHE=0 to fall back to the v0.22 figure.
+ECORCHE = os.environ.get("FITX_ECORCHE", "1") != "0"
+ECORCHE_RESTING = (0.42, 0.13, 0.12, 1.0)   # resting muscle, not grey plastic
+
 
 # ---------------------------------------------------------------- mpfb setup
 
@@ -683,6 +688,26 @@ def animate(driver, rig, spec, frame_end, prop_objs=()):
     add_life(rig, spec.get("fps", 30))
 
 
+def animate_driver(driver, spec, frame_end):
+    """Écorché mode keyframes the driver rig itself. The pose JSONs were
+    authored against these exact bones, so with the muscles skinned straight
+    to them there is no retarget layer at all — and with it goes every
+    aim-transfer bug this repo has spent versions chasing."""
+    for kf in spec["keyframes"]:
+        frame = 1 + round(kf["t"] * (frame_end - 1))
+        root_offset = pose_driver(driver, kf)
+        driver.location = root_offset
+        driver.keyframe_insert("location", frame=frame)
+        for pb in driver.pose.bones:
+            pb.keyframe_insert("rotation_euler", frame=frame)
+    action = driver.animation_data.action if driver.animation_data else None
+    if action:
+        for fcurve in action.fcurves:
+            for kp in fcurve.keyframe_points:
+                kp.interpolation = "BEZIER"
+                kp.handle_left_type = kp.handle_right_type = "AUTO_CLAMPED"
+
+
 LIFE_BONES = ("spine01", "spine03", "neck01", "head")
 
 
@@ -846,7 +871,6 @@ def main():
     with open(spec_path) as f:
         spec = json.load(f)
 
-    ensure_mpfb()
     for obj in list(bpy.data.objects):     # drop the default cube/camera/light
         bpy.data.objects.remove(obj, do_unlink=True)
     scene = bpy.context.scene
@@ -854,19 +878,41 @@ def main():
     frame_end = round(spec.get("duration", 2.0) * scene.render.fps)
     scene.frame_start, scene.frame_end = 1, frame_end
 
-    basemesh, rig = create_human()
-    strip_helpers(basemesh)
-    # no emission on the muscles — it fights the tonemapper and turns the
-    # highlight pastel; saturated base colour reads far stronger
-    materials = {"body": make_body_material()}
     primary, secondary = highlight_sets(spec)
-    paint_muscles(basemesh, rig, materials, primary, secondary)
-
     bones, parents = full_skeleton()
     driver = build_driver(bones, parents)
-    prop_objs = build_props(spec)
-    animate(driver, rig, spec, frame_end, prop_objs)
-    bpy.data.objects.remove(driver, do_unlink=True)
+
+    if ECORCHE:
+        # Real muscles, skinned to the pose rig directly.
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import ecorche
+        collection, atlas_objs = ecorche.load_muscles()
+        index = ecorche.build_muscle_index(atlas_objs)
+        basemesh = ecorche.build_figure(
+            collection, atlas_objs, index, primary, secondary,
+            colors={
+                "resting": make_material("Resting", ECORCHE_RESTING, roughness=0.42,
+                                         subsurface=0.15),
+                "primary": make_material("Primary", PRIMARY_COLOR, roughness=0.40,
+                                         subsurface=0.10),
+                "secondary": make_material("Secondary", SECONDARY_COLOR,
+                                           roughness=0.42, subsurface=0.10),
+            })
+        ecorche.skin(basemesh, driver)
+        prop_objs = build_props(spec)
+        animate_driver(driver, spec, frame_end)
+        ecorche.write_attribution(f"{out_dir}/ASSET-LICENSE.md")
+    else:
+        ensure_mpfb()
+        basemesh, rig = create_human()
+        strip_helpers(basemesh)
+        # no emission on the muscles — it fights the tonemapper and turns the
+        # highlight pastel; saturated base colour reads far stronger
+        materials = {"body": make_body_material()}
+        paint_muscles(basemesh, rig, materials, primary, secondary)
+        prop_objs = build_props(spec)
+        animate(driver, rig, spec, frame_end, prop_objs)
+        bpy.data.objects.remove(driver, do_unlink=True)
 
     side = camera_side(primary)
     cam, target = setup_render(side)

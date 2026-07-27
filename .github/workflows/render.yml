@@ -57,6 +57,13 @@ jobs:
           path: ~/.config/blender/4.5/extensions
           key: mpfb-2.0.16
 
+      # 87 MB zip -> 307 MB .blend. Cached, it costs one download ever.
+      - name: Cache Z-Anatomy atlas
+        uses: actions/cache@v4
+        with:
+          path: ~/z-anatomy
+          key: z-anatomy-master-2024-01-18
+
       - name: Download MPFB zip
         run: |
           if [ ! -d "$HOME/.config/blender/4.5/extensions/user_default/mpfb" ]; then
