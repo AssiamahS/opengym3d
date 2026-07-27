@@ -237,6 +237,15 @@ def build_figure(collection, objs, index, primary, secondary, colors,
     parent, scale = fit_to_rig(collection, objs, floor_z, head_z)
     decimate(objs, target_tris)
 
+    # An atlas ships most of itself hidden — you look at one system at a time.
+    # Those flags survive the append, and a joined object inherits the active
+    # object's, which renders a scene containing a perfectly good 192k-face
+    # figure as an empty grey backdrop.
+    for obj in objs.values():
+        obj.hide_render = False
+        obj.hide_viewport = False
+        obj.hide_set(False)
+
     bpy.ops.object.select_all(action="DESELECT")
     meshes = list(objs.values())
     for obj in meshes:
@@ -246,8 +255,15 @@ def build_figure(collection, objs, index, primary, secondary, colors,
     bpy.ops.object.join()
     figure = bpy.context.active_object
     figure.name = "Ecorche"
+    figure.hide_render = False
+    figure.hide_viewport = False
     bpy.data.objects.remove(parent, do_unlink=True)
-    print(f"  joined -> {len(figure.data.polygons):,} faces")
+    lo, hi = body_extents({figure.name: figure})
+    print(f"  joined -> {len(figure.data.polygons):,} faces, "
+          f"hide_render={figure.hide_render}, "
+          f"world z {lo[2]:.3f}..{hi[2]:.3f}")
+    if figure.hide_render or len(figure.data.polygons) == 0:
+        raise RuntimeError("figure would render empty — refusing to continue")
     return figure
 
 
