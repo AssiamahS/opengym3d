@@ -392,18 +392,62 @@ def skin(figure, rig):
     except RuntimeError as exc:
         print(f"  bone heat failed ({exc}) — falling back to envelopes")
         bpy.ops.object.parent_set(type="ARMATURE_ENVELOPE")
-    # Census, not faith: the last GLB exported with skins=0 even though bone
-    # heat reported success. Count what actually got weighted so the log
-    # convicts the right suspect next time.
+    # Census, not faith: bone heat "fails to find solution" as a mere console
+    # Warning and leaves every vertex unweighted — the GLB then exports with
+    # skins=0 and the figure never moves. Count, and if it came back empty,
+    # weight the verts ourselves.
     weighted = sum(1 for v in figure.data.vertices if v.groups)
     print(f"  skin census: {len(figure.vertex_groups)} vertex groups, "
           f"{weighted}/{len(figure.data.vertices)} vertices weighted, "
           f"modifiers: {[m.type for m in figure.modifiers]}, "
           f"parent: {figure.parent.name if figure.parent else None}")
     if weighted == 0:
+        weighted = nearest_bone_weights(figure, rig)
+        print(f"  fallback skin: {weighted}/{len(figure.data.vertices)} "
+              f"vertices weighted by nearest-bone blend")
+    if weighted == 0:
         raise RuntimeError("skinning produced zero weighted vertices — "
                            "the figure would export unrigged")
     return figure
+
+
+def _closest_point_on_segment(p, a, b):
+    ab = b - a
+    denom = ab.length_squared
+    if denom == 0:
+        return a
+    t = max(0.0, min(1.0, (p - a).dot(ab) / denom))
+    return a + ab * t
+
+
+def nearest_bone_weights(figure, rig):
+    """Deterministic replacement for bone heat: every vertex takes the two
+    nearest bone segments, weighted by inverse square distance. Coarser than
+    a heat solve at the joints, but it always produces a deformable, glTF-
+    exportable skin — a slightly stiff elbow beats a statue."""
+    segments = []
+    for bone in rig.data.bones:
+        if not bone.use_deform:
+            continue
+        head = rig.matrix_world @ bone.head_local
+        tail = rig.matrix_world @ bone.tail_local
+        group = figure.vertex_groups.get(bone.name) \
+            or figure.vertex_groups.new(name=bone.name)
+        segments.append((group, head, tail))
+    if not segments:
+        return 0
+    count = 0
+    for v in figure.data.vertices:
+        p = figure.matrix_world @ v.co
+        dists = sorted(
+            ((_closest_point_on_segment(p, h, t) - p).length_squared, g)
+            for g, h, t in segments)[:2]
+        eps = 1e-6
+        total = sum(1.0 / (d + eps) for d, _g in dists)
+        for d, g in dists:
+            g.add([v.index], (1.0 / (d + eps)) / total, "REPLACE")
+        count += 1
+    return count
 
 
 def write_attribution(path):
