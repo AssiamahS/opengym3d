@@ -12,6 +12,8 @@ on:
   push:
     paths:
       - pipeline/ecorche.py
+      - pipeline/build_exercise.py
+      - exercises/**
       - .github/workflows/spike.yml
 
 env:
