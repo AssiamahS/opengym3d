@@ -440,8 +440,8 @@ def nearest_bone_weights(figure, rig):
     for v in figure.data.vertices:
         p = figure.matrix_world @ v.co
         dists = sorted(
-            ((_closest_point_on_segment(p, h, t) - p).length_squared, g)
-            for g, h, t in segments)[:2]
+            (((_closest_point_on_segment(p, h, t) - p).length_squared, g)
+             for g, h, t in segments), key=lambda pair: pair[0])[:2]
         eps = 1e-6
         total = sum(1.0 / (d + eps) for d, _g in dists)
         for d, g in dists:
