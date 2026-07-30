@@ -22,6 +22,7 @@ data-derived one has worked first try.
 """
 
 import json
+import math
 import os
 import urllib.request
 import zipfile
@@ -111,8 +112,77 @@ def load_muscles(blend=None):
     # a 0.66-metre-tall human with its left and right sides in the same place.
     bpy.context.view_layer.update()
     objs = {o.name: o for o in collection.all_objects if o.type == "MESH"}
-    print(f"  {len(objs)} muscle meshes")
+    # The atlas ships text-label meshes (FASCIAE, MUSCLES OF THE HEAD, …)
+    # alongside the anatomy. They join into the figure and render as floating
+    # words. Labels are the all-caps names; muscles are TA2 title-case.
+    labels = [n for n in objs if n.upper() == n and n.lower() != n]
+    for name in labels:
+        del objs[name]
+    print(f"  {len(objs)} muscle meshes ({len(labels)} label meshes stripped"
+          + (f", e.g. {labels[0]}" if labels else "") + ")")
+    stand_up(objs)
     return collection, objs
+
+
+HEAD_LANDMARKS = ("frontalis", "temporalis", "occipito")
+
+
+def _roots(objs):
+    """Topmost ancestors of the meshes — rotating these carries every child,
+    including meshes parented to empties that aren't in the mesh dict."""
+    roots = set()
+    for obj in objs.values():
+        while obj.parent is not None:
+            obj = obj.parent
+        roots.add(obj)
+    return roots
+
+
+def _long_axis(lo, hi):
+    spans = [hi[i] - lo[i] for i in range(3)]
+    return spans.index(max(spans)), spans
+
+
+def stand_up(objs):
+    """Make the figure stand in the pipeline's Z-up frame, derived from
+    measurement rather than assumption: the body's long axis must be Z and a
+    head muscle must sit at the top. The atlas arrives lying on its back
+    (long axis Y), which left the standing-figure camera framing empty air.
+    A no-op when the figure already stands."""
+    lo, hi = body_extents(objs)
+    axis, spans = _long_axis(lo, hi)
+    print(f"  extents before stand_up: spans {[round(s, 3) for s in spans]}, "
+          f"long axis {'XYZ'[axis]}")
+    if axis != 2:
+        from mathutils import Matrix
+        # rotate about the axis that is neither the long axis nor Z:
+        # long axis Y -> pivot X (+90° maps +Y to +Z), long axis X -> pivot Y
+        pivot = 1 - axis
+        rot = Matrix.Rotation(math.radians(90), 4, "XYZ"[pivot])
+        for obj in _roots(objs):
+            obj.matrix_world = rot @ obj.matrix_world
+        bpy.context.view_layer.update()
+        lo, hi = body_extents(objs)
+        axis, spans = _long_axis(lo, hi)
+        if axis != 2:
+            raise RuntimeError(f"stand_up failed: long axis still {'XYZ'[axis]}")
+    # head must be at +Z, not -Z — check a landmark, flip if upside down
+    heads = [o for n, o in objs.items()
+             if any(t in n.lower() for t in HEAD_LANDMARKS)]
+    if heads:
+        head_z = sum((o.matrix_world @ Vector(c))[2]
+                     for o in heads for c in o.bound_box) / (8 * len(heads))
+        rel = (head_z - lo[2]) / (hi[2] - lo[2])
+        print(f"  head landmark at {rel:.0%} of body height")
+        if rel < 0.5:
+            from mathutils import Matrix
+            flip = Matrix.Rotation(math.radians(180), 4, "X")
+            for obj in _roots(objs):
+                obj.matrix_world = flip @ obj.matrix_world
+            bpy.context.view_layer.update()
+            print("  figure was upside down — flipped")
+    else:
+        print("  *** no head landmark matched — orientation sign unverified ***")
 
 
 def resolve(objs, queries):

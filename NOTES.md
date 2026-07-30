@@ -71,3 +71,4 @@ When something looks wrong twice, stop adjusting numbers and go measure.
   (atlas Z-up vs pipeline Y-up), so the standing-figure camera frames empty air.
   Confirmed by loading the spike GLB in three.js. Also: the atlas's text-label
   meshes (FASCIAE etc.) leak into the export — strip them pre-export.
+- 2026-07-30: github-pages CI artifacts expire in days — to recover built GLBs without re-running Blender CI, pull them straight off the live Pages site via exercises.json manifest URLs.
