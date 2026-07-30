@@ -122,7 +122,10 @@ SHOW_PROPS = False
 # Écorché: real Z-Anatomy muscle geometry instead of paint on a MakeHuman
 # mannequin. Set FITX_ECORCHE=0 to fall back to the v0.22 figure.
 ECORCHE = os.environ.get("FITX_ECORCHE", "1") != "0"
-ECORCHE_RESTING = (0.42, 0.13, 0.12, 1.0)   # resting muscle, not grey plastic
+# Resting muscle. Saturation is the whole read here — an écorché that renders
+# pale reads as plastic, so the base sits deep and saturated (S=0.90) and the
+# render is allowed to lift it, rather than starting light and washing out.
+ECORCHE_RESTING = (0.30, 0.030, 0.028, 1.0)
 
 
 # ---------------------------------------------------------------- mpfb setup
@@ -198,6 +201,13 @@ def make_material(name, color, emission=0.0, roughness=0.55, subsurface=0.0):
         bsdf.inputs["Emission Strength"].default_value = emission
     if subsurface and "Subsurface Weight" in bsdf.inputs:
         bsdf.inputs["Subsurface Weight"].default_value = subsurface
+        # Tissue scatters red furthest — that wavelength-dependent depth is
+        # what separates flesh from painted plastic. Radius is per-channel in
+        # metres; the scale keeps it at muscle-belly depth, not wax-block.
+        if "Subsurface Radius" in bsdf.inputs:
+            bsdf.inputs["Subsurface Radius"].default_value = (0.036, 0.007, 0.004)
+        if "Subsurface Scale" in bsdf.inputs:
+            bsdf.inputs["Subsurface Scale"].default_value = 0.018
     return mat
 
 
@@ -766,6 +776,14 @@ def build_cyclorama(flip=1.0):
         make_material("Backdrop", (0.92, 0.93, 0.95, 1.0), roughness=0.9))
     for poly in backdrop.data.polygons:
         poly.use_smooth = True
+    # A 14 m sweep at albedo 0.92 is a giant neutral bounce card, and neutral
+    # light is a saturation solvent: adding Δ to every channel takes
+    # S = (max-min)/max to (max-min)/(max+Δ). Measured on the v0.23 spike the
+    # figure rendered at S=0.336 from a material of S=0.71, so Δ ≈ 1.1·max —
+    # the bounce was outshining the key. Hide the sweep from diffuse rays and
+    # it still reads white to the camera while contributing no fill at all.
+    backdrop.visible_diffuse = False
+    backdrop.visible_glossy = False
     return backdrop
 
 
@@ -852,7 +870,8 @@ def setup_render(side="front"):
     world.use_nodes = True
     bg = world.node_tree.nodes["Background"]
     bg.inputs["Color"].default_value = (0.70, 0.72, 0.75, 1.0)
-    bg.inputs["Strength"].default_value = 0.12   # ambient only; lights do the work
+    # also neutral, so also a desaturator — the rig's own fill now does this job
+    bg.inputs["Strength"].default_value = 0.04
     scene.world = world
 
     scene.render.engine = "CYCLES"
@@ -893,11 +912,11 @@ def main():
             collection, atlas_objs, index, primary, secondary,
             colors={
                 "resting": make_material("Resting", ECORCHE_RESTING, roughness=0.42,
-                                         subsurface=0.15),
+                                         subsurface=0.28),
                 "primary": make_material("Primary", PRIMARY_COLOR, roughness=0.40,
-                                         subsurface=0.10),
+                                         subsurface=0.22),
                 "secondary": make_material("Secondary", SECONDARY_COLOR,
-                                           roughness=0.42, subsurface=0.10),
+                                           roughness=0.42, subsurface=0.22),
             })
         ecorche.skin(basemesh, driver)
         prop_objs = build_props(spec)

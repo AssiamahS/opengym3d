@@ -437,14 +437,25 @@ def nearest_bone_weights(figure, rig):
     if not segments:
         return 0
     count = 0
+    eps = 1e-6
     for v in figure.data.vertices:
         p = figure.matrix_world @ v.co
-        dists = sorted(
-            (((_closest_point_on_segment(p, h, t) - p).length_squared, g)
-             for g, h, t in segments), key=lambda pair: pair[0])[:2]
-        eps = 1e-6
-        total = sum(1.0 / (d + eps) for d, _g in dists)
-        for d, g in dists:
+        # glTF carries four influences per vertex, so take four candidates:
+        # two is enough for a limb mid-shaft but collapses at a joint, where
+        # the shoulder needs chest + upper arm + the clavicle between them.
+        ranked = sorted(
+            (((_closest_point_on_segment(p, h, t) - p).length, g)
+             for g, h, t in segments), key=lambda pair: pair[0])[:4]
+        # Drop anything far outside the nearest bone's neighbourhood, or the
+        # opposite thigh bleeds into this one and the legs fuse when they pass.
+        nearest = ranked[0][0]
+        cutoff = nearest * 2.0 + 0.02
+        kept = [(d, g) for d, g in ranked if d <= cutoff]
+        # Inverse distance, not inverse square: squared falloff is so peaky
+        # that the nearest bone takes ~all the weight and the joint creases
+        # instead of bending. The blend width is what makes an elbow read.
+        total = sum(1.0 / (d + eps) for d, _g in kept)
+        for d, g in kept:
             g.add([v.index], (1.0 / (d + eps)) / total, "REPLACE")
         count += 1
     return count
