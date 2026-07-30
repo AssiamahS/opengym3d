@@ -108,8 +108,12 @@ MUSCLE_SPEC = {
 HELPER_GROUPS = ("HelperGeometry", "JointCubes", "eye.L", "eye.R")
 
 SKIN_COLOR = (0.62, 0.64, 0.68, 1.0)
-PRIMARY_COLOR = (0.62, 0.02, 0.03, 1.0)
-SECONDARY_COLOR = (0.80, 0.26, 0.02, 1.0)
+# Activation reads as a ramp within one hue family: resting deep, secondary
+# mid, primary hot. The old secondary was a bright orange, which against deep
+# red muscle read as a rash rather than as "this one is working too" — the
+# eye sorts brightness inside a hue far more reliably than it sorts hues.
+PRIMARY_COLOR = (0.95, 0.16, 0.03, 1.0)
+SECONDARY_COLOR = (0.66, 0.075, 0.02, 1.0)
 STEEL_COLOR = (0.42, 0.44, 0.47, 1.0)
 IRON_COLOR = (0.055, 0.055, 0.06, 1.0)
 
