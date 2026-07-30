@@ -107,23 +107,49 @@ def load_muscles(blend=None):
         dst.collections = [name]
     collection = bpy.data.collections[name]
     bpy.context.scene.collection.children.link(collection)
+    # The atlas hides itself at every level, and object flags were only half
+    # of it: COLLECTIONS carry their own hide_render/hide_viewport, and the
+    # view layer can exclude them on top. Any one of these renders the whole
+    # figure as empty air while the glTF exporter happily ships it anyway.
+    def _unhide(coll):
+        coll.hide_render = False
+        coll.hide_viewport = False
+        for child in coll.children:
+            _unhide(child)
+    _unhide(collection)
+
+    def _include(layer_coll):
+        layer_coll.exclude = False
+        layer_coll.hide_viewport = False
+        for child in layer_coll.children:
+            _include(child)
+    for lc in bpy.context.view_layer.layer_collection.children:
+        if lc.collection == collection:
+            _include(lc)
     # Freshly appended objects report an identity matrix_world until the view
     # layer evaluates. Skip this and every world-space measurement below reads
     # a 0.66-metre-tall human with its left and right sides in the same place.
     bpy.context.view_layer.update()
     objs = {o.name: o for o in collection.all_objects if o.type == "MESH"}
-    # The atlas ships text-label meshes alongside the anatomy: names ending
-    # in ".g" (the spike GLB carried 9 of them as loose objects) plus all-caps
-    # group titles, all near-zero-thickness text outlines. Left in, they skip
-    # the join and export as floating words. Delete them from the blend, not
-    # just the dict, so nothing downstream can pick them up.
+    # The atlas ships text labels alongside the anatomy. The ".g" objects in
+    # the spike GLB were still there after a mesh-only sweep because they are
+    # FONT/CURVE objects in Blender — the exporter converts them to meshes on
+    # the way out. Strip every renderable non-mesh object, plus mesh labels:
+    # ".g" names, all-caps group titles, and sub-8-poly placeholders.
+    dropped = []
+    for obj in list(collection.all_objects):
+        if obj.type in ("FONT", "CURVE", "SURFACE", "META"):
+            dropped.append(obj.name)
+            bpy.data.objects.remove(obj, do_unlink=True)
     labels = [n for n in objs
               if n.endswith(".g") or (n.upper() == n and n.lower() != n)
               or len(objs[n].data.polygons) < 8]
     for name in labels:
         bpy.data.objects.remove(objs.pop(name), do_unlink=True)
-    print(f"  {len(objs)} muscle meshes ({len(labels)} label meshes stripped"
-          + (f", e.g. {labels[0]}" if labels else "") + ")")
+    print(f"  {len(objs)} muscle meshes "
+          f"({len(labels)} label meshes + {len(dropped)} text objects stripped"
+          + (f", e.g. {(labels + dropped)[0]}" if labels or dropped else "")
+          + ")")
     stand_up(objs)
     return collection, objs
 
@@ -366,6 +392,17 @@ def skin(figure, rig):
     except RuntimeError as exc:
         print(f"  bone heat failed ({exc}) — falling back to envelopes")
         bpy.ops.object.parent_set(type="ARMATURE_ENVELOPE")
+    # Census, not faith: the last GLB exported with skins=0 even though bone
+    # heat reported success. Count what actually got weighted so the log
+    # convicts the right suspect next time.
+    weighted = sum(1 for v in figure.data.vertices if v.groups)
+    print(f"  skin census: {len(figure.vertex_groups)} vertex groups, "
+          f"{weighted}/{len(figure.data.vertices)} vertices weighted, "
+          f"modifiers: {[m.type for m in figure.modifiers]}, "
+          f"parent: {figure.parent.name if figure.parent else None}")
+    if weighted == 0:
+        raise RuntimeError("skinning produced zero weighted vertices — "
+                           "the figure would export unrigged")
     return figure
 
 
