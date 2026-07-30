@@ -112,12 +112,16 @@ def load_muscles(blend=None):
     # a 0.66-metre-tall human with its left and right sides in the same place.
     bpy.context.view_layer.update()
     objs = {o.name: o for o in collection.all_objects if o.type == "MESH"}
-    # The atlas ships text-label meshes (FASCIAE, MUSCLES OF THE HEAD, …)
-    # alongside the anatomy. They join into the figure and render as floating
-    # words. Labels are the all-caps names; muscles are TA2 title-case.
-    labels = [n for n in objs if n.upper() == n and n.lower() != n]
+    # The atlas ships text-label meshes alongside the anatomy: names ending
+    # in ".g" (the spike GLB carried 9 of them as loose objects) plus all-caps
+    # group titles, all near-zero-thickness text outlines. Left in, they skip
+    # the join and export as floating words. Delete them from the blend, not
+    # just the dict, so nothing downstream can pick them up.
+    labels = [n for n in objs
+              if n.endswith(".g") or (n.upper() == n and n.lower() != n)
+              or len(objs[n].data.polygons) < 8]
     for name in labels:
-        del objs[name]
+        bpy.data.objects.remove(objs.pop(name), do_unlink=True)
     print(f"  {len(objs)} muscle meshes ({len(labels)} label meshes stripped"
           + (f", e.g. {labels[0]}" if labels else "") + ")")
     stand_up(objs)
@@ -327,7 +331,19 @@ def build_figure(collection, objs, index, primary, secondary, colors,
     figure.name = "Ecorche"
     figure.hide_render = False
     figure.hide_viewport = False
+    # The join keeps the ACTIVE object's transform — an arbitrary muscle whose
+    # origin sits wherever the atlas put it (the spike GLB shipped rotated,
+    # origin at head height, which is exactly "lying on its back, floating").
+    # Unparent keeping the fitted transform, then bake everything into the
+    # vertices so the object is identity: local bbox == world bbox for the
+    # camera, and the exporter has nothing left to misinterpret.
+    bpy.ops.object.select_all(action="DESELECT")
+    figure.select_set(True)
+    bpy.context.view_layer.objects.active = figure
+    bpy.ops.object.parent_clear(type="CLEAR_KEEP_TRANSFORM")
     bpy.data.objects.remove(parent, do_unlink=True)
+    bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+    bpy.context.view_layer.update()
     lo, hi = body_extents({figure.name: figure})
     print(f"  joined -> {len(figure.data.polygons):,} faces, "
           f"hide_render={figure.hide_render}, "
