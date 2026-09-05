@@ -1,0 +1,120 @@
+================================================================================
+GUMROAD LISTING — OpenGym3D 24 Animated Gym Exercise Pack
+Copy each block below into the matching Gumroad field. Plain text only —
+Gumroad's description box is rich-text, so markdown symbols are already stripped.
+================================================================================
+
+
+--------------------------------------------------------------------------------
+[ NAME ]  → Gumroad field: "Name"
+--------------------------------------------------------------------------------
+24 Animated Gym Exercise 3D Models (GLB) — OpenGym3D Pack
+
+
+--------------------------------------------------------------------------------
+[ PRICE ]  → Gumroad field: "Price"  (then tick "Show original price")
+--------------------------------------------------------------------------------
+Price:          19
+Original price: 29
+Currency:       USD
+
+
+--------------------------------------------------------------------------------
+[ SLUG ]  → Gumroad field: the end of the product URL
+--------------------------------------------------------------------------------
+opengym3d-exercise-pack
+
+
+--------------------------------------------------------------------------------
+[ SUMMARY ]  → Gumroad field: "Summary" (the one-liner under the title)
+--------------------------------------------------------------------------------
+24 rigged, animated gym exercises as drop-in .glb files — squat, deadlift, push-up, plank and 20 more. Works in Three.js, Unity, Godot, Unreal, or a plain model-viewer tag. Includes a muscle-group manifest and form-cue steps for every exercise. MIT licensed — ship it in your commercial app.
+
+
+--------------------------------------------------------------------------------
+[ DESCRIPTION ]  → Gumroad field: "Description" (the big rich-text box)
+Paste everything between the START and END markers.
+--------------------------------------------------------------------------------
+--- START ---
+See all 24 animations running live before you buy: https://assiamahs.github.io/opengym3d/
+
+Building a fitness app, workout game, or exercise site? Skip weeks of 3D work.
+
+This pack gives you 24 looping exercise animations — one .glb per exercise — each with a matching PNG thumbnail and a JSON manifest carrying the name, equipment, difficulty, primary and secondary muscle groups, and step-by-step form cues for the movement. That means it powers your exercise cards, tooltips, and coaching UI, not just the visuals.
+
+WHAT YOU GET
+
+- 24 animated .glb files (glTF binary), one looping clip baked into each file
+- 24 matching 512x512 PNG thumbnails, muscle groups highlighted
+- 24 pose-definition JSONs, so you can retarget or retime any movement
+- exercises.json master manifest: name, equipment, difficulty, primary/secondary muscles, step-by-step form cues
+- MIT LICENSE file included in the download
+- About 2.7 MB per model, 43 MB total
+
+THE 24 EXERCISES
+
+Bent-Over Row, Bicep Curl, Calf Raise, Crunch, Deadlift, Dumbbell Shoulder Press, Front Raise, Glute Bridge, Good Morning, Hammer Curl, High Knees, Jumping Jack, Lateral Raise, Lunge, Overhead Press, Overhead Tricep Extension, Plank, Push-Up, Reverse Lunge, Romanian Deadlift, Squat, Sumo Squat, Superman, Wall Sit.
+
+WORKS EVERYWHERE glTF WORKS
+
+Three.js and React Three Fiber, Babylon.js, Unity (via glTFast or UnityGLTF), Godot 4, Unreal Engine's glTF importer, or a plain <model-viewer> tag on any web page. No proprietary format, no plugin to buy.
+
+SIX LINES TO A PLAYING ANIMATION (Three.js)
+
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const gltf = await new GLTFLoader().loadAsync('models/squat.glb');
+scene.add(gltf.scene);
+const mixer = new THREE.AnimationMixer(gltf.scene);
+mixer.clipAction(gltf.animations[0]).play();
+// call mixer.update(delta) in your render loop
+
+LICENSE
+
+MIT. Use it in commercial apps, games, and websites. No attribution required, though it is always appreciated. Figure generated with MPFB2; animations authored from the pose definitions included in the pack.
+
+Instant download, single zip, no account or subscription needed.
+--- END ---
+
+
+--------------------------------------------------------------------------------
+[ TAGS ]  → Gumroad field: "Tags" (type each, press Enter between them)
+--------------------------------------------------------------------------------
+3d model
+gltf
+glb
+fitness
+gym
+exercise
+animation
+unity
+threejs
+game assets
+
+
+--------------------------------------------------------------------------------
+[ FILE TO UPLOAD ]  → Gumroad: "Content" tab → Upload files
+--------------------------------------------------------------------------------
+/Users/djsly/opengym3d/dist/opengym3d-exercise-pack-v1.zip
+(43 MB, 79 entries: 24 .glb + 24 .png + 24 .json + exercises.json + LICENSE + README.md)
+
+
+--------------------------------------------------------------------------------
+[ COVER + GALLERY IMAGES ]  → Gumroad: product page → "Cover" → Upload
+Upload in this order; the first one becomes the thumbnail.
+--------------------------------------------------------------------------------
+1. /Users/djsly/opengym3d/dist/listing/cover.png    (1280x720 — hero)
+2. /Users/djsly/opengym3d/dist/listing/grid.png     (1400x1133 — all 24 labeled)
+3. /Users/djsly/opengym3d/dist/listing/inside.png   (1180x397 — what's in the zip)
+4. /Users/djsly/opengym3d/dist/listing/code.png     (1011x464 — Three.js quick start)
+
+
+--------------------------------------------------------------------------------
+[ OPTIONAL — "Call to action" button text ]
+--------------------------------------------------------------------------------
+I want this!
+
+
+--------------------------------------------------------------------------------
+[ OPTIONAL — receipt / post-purchase note ]
+--------------------------------------------------------------------------------
+Thanks for grabbing the pack. Unzip and start with pack/README.md — it has the Three.js and Unity quick starts. Every model is MIT licensed, so ship it commercially with no attribution required. Live demo of all 24 animations: https://assiamahs.github.io/opengym3d/
