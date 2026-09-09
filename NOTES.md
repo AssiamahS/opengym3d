@@ -76,3 +76,33 @@ When something looks wrong twice, stop adjusting numbers and go measure.
 - 2026-07-30 the pink écorché was never an exposure bug. Measured the render instead of adjusting lights: 0% of figure pixels near-clipped, brightest 244 — nothing blown. But saturation read 0.336 against a 0.71 material. Neutral light takes S=(max-min)/max to (max-min)/(max+Δ), so that ratio alone pins Δ≈1.1·max: the 14 m albedo-0.92 cyclorama was bouncing MORE onto the figure than the key light. `backdrop.visible_diffuse=False` keeps it white to camera and removes the fill entirely → sat 0.345 → 0.719 measured. Lesson holds: when something looks wrong twice, measure the output, don't tune the input. A white studio sweep is a saturation solvent.
 - 2026-07-30 skin weights: 4 influences (glTF's limit) beats 2, and inverse DISTANCE beats inverse square — squared falloff gives the nearest bone ~all the weight, which creases a joint instead of bending it. Relative cutoff (2x nearest + 2cm) stops the far leg bleeding in.
 - 2026-07-30 spike.yml only watched pipeline/ecorche.py, so look changes in build_exercise.py and pose changes in exercises/ rendered nothing. Widened. If a spike "passes" instantly, check it actually ran.
+
+## 2026-09-09 — the hand-keyed era ends (r/threejs: "brother these are so bad")
+- Every hand-keyed rep read robotic and the thread said so in 11 comments. The
+  fix was never another pose tweak: it was real capture. Mixamo has a proper
+  fitness set (Air Squat, Push Up, Jumping Jacks, Plank, Situps, Bicycle Crunch,
+  Bicep Curl, Front Raises, Burpee, Kettlebell Swing, Back/Overhead Squat,
+  Pistol, Snatch, Clean And Jerk, Sumo High Pull, Jump Push Up + fitness idle
+  and start/end transitions). No Mixamo clip exists for lunges, RDL/deadlift,
+  rows, lateral raises, calf raises, bridges, good mornings, hammer curls,
+  tricep extensions, wall sits, supermans or high knees — those specs are
+  drafts until we capture them (v2 phone mocap) or buy a pack.
+- Mixamo export API (logged-in browser session, Bearer token from
+  localStorage `access_token`, header `X-Api-Key: mixamo2`): GET
+  /api/v1/products/<id>?similar=0&character_id=<char> → details.gms_hash; POST
+  /api/v1/animations/export with the WHOLE gms_hash object (params joined as
+  a string, "0" not "0.0"), preferences {format:"fbx7", skin:"false",
+  fps:"30", reducekf:"0"}; then GET /api/v1/characters/<char>/monitor until
+  status=completed → job_result is the FBX URL. "Unknown error while
+  generating motion" = a malformed gms_hash (dropped keys / float params /
+  fbx7_2019). The monitor endpoint LONG-POLLS: never fire several in
+  parallel from one tab or the connection pool jams and every fetch hangs.
+- Mixamo terms: use inside a project yes, redistribute files no. FBX lives in
+  the private opengym3d-mocap repo (CI checkout via MOCAP_TOKEN); the Gumroad
+  pack stays the original hand-keyed v1 set.
+- Retarget: driver pelvis gets the Hips delta rotation (world space, via the
+  armature's matrix_world — the FBX importer leaves the cm→m scale on the
+  object), root offset = Hips travel × (MH root height / Hips rest height),
+  every other driver bone is an override direction into transfer_pose. Same
+  aim machinery as the JSON lane, so the shoulder-girdle rhythm and grip code
+  come for free. Sampled every frame, LINEAR, no life-noise.

@@ -28,6 +28,20 @@ Key insight: an interactive viewer needs **GLB exports, not renders**. Exporting
 geometry + baked animation takes seconds on CPU — no GPU cloud (RunPod/Vast.ai)
 required. Cycles is only used for the little thumbnail per exercise.
 
+## Motion: real capture, not hand-keyed poses
+
+Every live exercise is driven by motion capture. The `"mocap"` field of a
+spec names a Mixamo FBX (exported *Without Skin*, 30 fps); CI checks the
+private `opengym3d-mocap` repo out into `mocap/`, imports the clip headless,
+and retargets it onto the MakeHuman rig by aiming each bone at the mixamorig
+bone's posed world direction, frame by frame. Specs without a `mocap` field
+are `"status": "draft"`: kept for their muscle map and form steps, hidden from
+the render and the site until they get motion.
+
+Mixamo's terms allow the clips inside a project but not as redistributed
+files, so the FBX never enters this repo and the mocap-driven GLBs are not
+part of the sold pack.
+
 ## Add or tune an exercise — from your phone
 
 1. Open `exercises/` on github.com and edit any JSON (or copy one to a new file).
@@ -55,7 +69,8 @@ python3 -m http.server -d site 8000   # after copying website/* + assets into si
 | Version | What | Built on |
 |---|---|---|
 | v0 | Procedural capsule figure, FK pose keyframes, GLB + viewer, full CI pipeline | Blender 4.5 LTS, Three.js r170 |
-| **v1 (this)** | Real anatomical human (male, muscle 1.0), MakeHuman rig, muscles painted via skin-weight territories, A-pose-proof aim retargeting | [MPFB2](https://github.com/makehumancommunity/mpfb2) — the maintained successor to MB-Lab (MB-Lab is archived) |
+| v1 | Real anatomical human (male, muscle 1.0), MakeHuman rig, muscles painted via skin-weight territories, A-pose-proof aim retargeting | [MPFB2](https://github.com/makehumancommunity/mpfb2) — the maintained successor to MB-Lab (MB-Lab is archived) |
+| **v1.5 (this)** | Real mocap: Mixamo fitness clips retargeted onto the MakeHuman rig in CI; hand-keyed specs demoted to drafts | [Mixamo](https://www.mixamo.com/) |
 | **v2** | Record yourself doing a lift on your phone → animation, no hand-keying | [BlendArMocap](https://github.com/cgtinker/BlendArMocap) (MediaPipe → Rigify) or [freemocap](https://github.com/freemocap/freemocap) |
 | **v3** | Anatomical muscle visualization: per-muscle activation, contraction shading | [MuSkeMo](https://github.com/PashavanBijlert/MuSkeMo) + animated normal maps |
 | **v4** | Full library: hundreds of exercises, search/filter, MP4/GIF export, embed API | this pipeline, scaled |
