@@ -106,3 +106,11 @@ When something looks wrong twice, stop adjusting numbers and go measure.
   every other driver bone is an override direction into transfer_pose. Same
   aim machinery as the JSON lane, so the shoulder-girdle rhythm and grip code
   come for free. Sampled every frame, LINEAR, no life-noise.
+- 2026-09-09 polish pass (branch polish): the second thing a thread laughs at
+  after robotic motion is the mime — "Barbell Snatch" with empty hands. Props
+  were OFF (SHOW_PROPS=False) the whole time. Kettlebell prop hangs along the
+  forearm line, not gravity, or it dangles mid-swing. Thumbnail = the frame
+  furthest from frame 1 at hands/head/hips (peak_frame), never the mid frame.
+  One subdivision level (export_apply) turns the stairstep highlight borders
+  into gradients; GLBs grow 2.7 -> 5.8 MB, acceptable. "camera": "front" on
+  every live spec — the posterior rule shot the kettlebell swing from behind.
