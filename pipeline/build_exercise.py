@@ -722,6 +722,109 @@ def animate_driver(driver, spec, frame_end):
                 kp.handle_left_type = kp.handle_right_type = "AUTO_CLAMPED"
 
 
+# ---------------------------------------------------------------- mocap
+
+# Real motion capture beats every hand-keyed pose this repo ever shipped (the
+# r/threejs verdict, 2026-09-09). Mixamo's mixamorig skeleton is the lingua
+# franca of humanoid mocap, so retargeting it is a table, not a project: the
+# synthetic driver keeps carrying the pelvis, every other driver bone is
+# overridden with the mixamorig bone's posed world direction, and the same
+# aim transfer the pose JSONs use lands it on the MakeHuman rig.
+MOCAP_DIR = os.environ.get("FITX_MOCAP_DIR") or os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "mocap")
+
+MIXAMO_MAP = {
+    "pelvis": "Hips", "spine": "Spine", "chest": "Spine2",
+    "neck": "Neck", "head": "Head",
+    "thigh.L": "LeftUpLeg", "shin.L": "LeftLeg", "foot.L": "LeftFoot",
+    "upper_arm.L": "LeftArm", "forearm.L": "LeftForeArm", "hand.L": "LeftHand",
+    "thigh.R": "RightUpLeg", "shin.R": "RightLeg", "foot.R": "RightFoot",
+    "upper_arm.R": "RightArm", "forearm.R": "RightForeArm", "hand.R": "RightHand",
+}
+
+
+def load_mocap(rel_path, yaw_deg=0.0):
+    """Import a Mixamo FBX (exported Without Skin) and return its armature
+    plus the action's frame range. The importer applies the file's cm unit
+    scale to the object, so read everything through matrix_world."""
+    path = os.path.join(MOCAP_DIR, rel_path)
+    assert os.path.exists(path), f"mocap file missing: {path}"
+    before = set(bpy.data.objects)
+    bpy.ops.import_scene.fbx(filepath=path, ignore_leaf_bones=True,
+                             automatic_bone_orientation=False, use_anim=True)
+    new = [o for o in bpy.data.objects if o not in before]
+    arms = [o for o in new if o.type == "ARMATURE"]
+    assert arms, f"no armature in {path}"
+    arm = arms[0]
+    for o in new:
+        if o is not arm:
+            bpy.data.objects.remove(o, do_unlink=True)
+    arm.hide_render = True
+    arm.rotation_euler.z += math.radians(yaw_deg)
+    action = arm.animation_data.action if arm.animation_data else None
+    assert action, f"no animation in {path}"
+    f0, f1 = (int(round(v)) for v in action.frame_range)
+    bpy.context.view_layer.update()
+    names = [pb.name for pb in arm.pose.bones]
+    print(f"MOCAP {rel_path}: {len(names)} bones, frames {f0}-{f1}, "
+          f"scale={tuple(round(c, 3) for c in arm.scale)}")
+    return arm, f0, f1
+
+
+def mocap_bone(arm, name):
+    for pb in arm.pose.bones:
+        if pb.name == name or pb.name.endswith(":" + name):
+            return pb
+    raise KeyError(f"mixamorig bone {name} missing; have "
+                   f"{[pb.name for pb in arm.pose.bones][:24]}")
+
+
+def mocap_dir(arm, pb):
+    m = arm.matrix_world
+    return ((m @ pb.tail) - (m @ pb.head)).normalized()
+
+
+def animate_mocap(arm, driver, rig, f0, f1, prop_objs=()):
+    scene = bpy.context.scene
+    m = arm.matrix_world
+    hips = mocap_bone(arm, "Hips")
+    bones = {syn: mocap_bone(arm, mx) for syn, mx in MIXAMO_MAP.items()
+             if syn != "pelvis"}
+    rest = m @ hips.bone.matrix_local
+    mh_root = rig.matrix_world @ Vector(rig.pose.bones["root"].bone.head_local)
+    scale = mh_root.z / max(rest.to_translation().z, 1e-6)
+    syn = driver.pose.bones["pelvis"]
+    print(f"MOCAP hips rest z={rest.to_translation().z:.3f} "
+          f"mh root z={mh_root.z:.3f} height scale={scale:.3f}")
+    for i, f in enumerate(range(f0, f1 + 1)):
+        scene.frame_set(f)
+        frame = 1 + i
+        overrides = {syn_name: mocap_dir(arm, pb) for syn_name, pb in bones.items()}
+        posed = m @ hips.matrix
+        delta = (posed @ rest.inverted()).to_quaternion()
+        root_offset = (posed.to_translation() - rest.to_translation()) * scale
+        # driver pelvis carries only the rotation; transfer_pose reads the
+        # quaternion out of it and gets the offset separately
+        syn.matrix = delta.to_matrix().to_4x4() @ syn.bone.matrix_local
+        bpy.context.view_layer.update()
+        if i == 0:
+            print("MOCAP f0 dirs: " + ", ".join(
+                f"{k}={tuple(round(c, 2) for c in v)}"
+                for k, v in overrides.items() if k in ("spine", "thigh.L", "upper_arm.L", "foot.L")))
+        transfer_pose(driver, rig, root_offset, frame, overrides)
+        place_props(rig, prop_objs, frame)
+        grip_hands(rig, prop_objs, frame)
+    # sampled every frame already — linear between samples, no easing/overshoot
+    for owner in [rig] + [obj for obj, _ in prop_objs]:
+        action = owner.animation_data.action if owner.animation_data else None
+        if not action:
+            continue
+        for fcurve in action.fcurves:
+            for kp in fcurve.keyframe_points:
+                kp.interpolation = "LINEAR"
+    bpy.data.objects.remove(arm, do_unlink=True)
+
+
 LIFE_BONES = ("spine01", "spine03", "neck01", "head")
 
 
@@ -899,14 +1002,19 @@ def main():
         bpy.data.objects.remove(obj, do_unlink=True)
     scene = bpy.context.scene
     scene.render.fps = spec.get("fps", 30)
-    frame_end = round(spec.get("duration", 2.0) * scene.render.fps)
+    mocap = spec.get("mocap")
+    if mocap:
+        mocap_arm, f0, f1 = load_mocap(mocap, spec.get("mocap_yaw", 0.0))
+        frame_end = f1 - f0 + 1
+    else:
+        frame_end = round(spec.get("duration", 2.0) * scene.render.fps)
     scene.frame_start, scene.frame_end = 1, frame_end
 
     primary, secondary = highlight_sets(spec)
     bones, parents = full_skeleton()
     driver = build_driver(bones, parents)
 
-    if ECORCHE:
+    if ECORCHE and not mocap:
         # Real muscles, skinned to the pose rig directly.
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import ecorche
@@ -935,13 +1043,19 @@ def main():
         materials = {"body": make_body_material()}
         paint_muscles(basemesh, rig, materials, primary, secondary)
         prop_objs = build_props(spec)
-        animate(driver, rig, spec, frame_end, prop_objs)
+        if mocap:
+            animate_mocap(mocap_arm, driver, rig, f0, f1, prop_objs)
+        else:
+            animate(driver, rig, spec, frame_end, prop_objs)
         bpy.data.objects.remove(driver, do_unlink=True)
 
     side = camera_side(primary)
     cam, target = setup_render(side)
-    key_frames = sorted({1 + round(kf["t"] * (frame_end - 1))
-                         for kf in spec["keyframes"]})
+    if mocap:
+        key_frames = list(range(1, frame_end + 1, max(1, frame_end // 12)))
+    else:
+        key_frames = sorted({1 + round(kf["t"] * (frame_end - 1))
+                             for kf in spec["keyframes"]})
     still_frame = 1 + (frame_end - 1) // 2      # mid-rep = most telling pose
 
     # thumbnail: frame that one pose tightly

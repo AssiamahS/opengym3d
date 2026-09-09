@@ -1,0 +1,23 @@
+{
+  "id": "kettlebell_swing",
+  "name": "Kettlebell Swing",
+  "equipment": "Kettlebell",
+  "difficulty": "Intermediate",
+  "primary": [
+    "Glutes",
+    "Hamstrings"
+  ],
+  "secondary": [
+    "Lower Back",
+    "Core",
+    "Forearms"
+  ],
+  "steps": [
+    "Hinge at the hips and hike the bell back between the legs.",
+    "Snap the hips forward to float the bell to chest height.",
+    "Keep the arms relaxed; the hips do the work, not the shoulders.",
+    "Let the bell fall and hinge again as it passes the knees."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/kettlebell_swing.fbx"
+}

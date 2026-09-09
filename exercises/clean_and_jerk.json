@@ -1,0 +1,32 @@
+{
+  "id": "clean_and_jerk",
+  "name": "Clean and Jerk",
+  "equipment": "Barbell",
+  "difficulty": "Advanced",
+  "primary": [
+    "Quads",
+    "Glutes",
+    "Shoulders"
+  ],
+  "secondary": [
+    "Traps",
+    "Triceps",
+    "Core"
+  ],
+  "steps": [
+    "Pull the bar from the floor and extend the hips.",
+    "Drop under and rack the bar on the front of the shoulders.",
+    "Dip a few inches and drive the bar overhead.",
+    "Split or squat under, lock out, and recover to standing."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/clean_and_jerk.fbx",
+  "prop": {
+    "type": "barbell",
+    "axis": [
+      1,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "overhead_squat",
+  "name": "Overhead Squat",
+  "equipment": "Barbell",
+  "difficulty": "Advanced",
+  "primary": [
+    "Quads",
+    "Shoulders"
+  ],
+  "secondary": [
+    "Glutes",
+    "Core",
+    "Traps"
+  ],
+  "steps": [
+    "Press the bar overhead with a wide grip, arms locked.",
+    "Squat down while keeping the bar stacked over the mid-foot.",
+    "Keep the chest up and push the bar toward the ceiling throughout.",
+    "Stand up without letting the bar drift forward."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/overhead_squat.fbx",
+  "prop": {
+    "type": "barbell",
+    "axis": [
+      1,
+      0,
+      0
+    ]
+  }
+}

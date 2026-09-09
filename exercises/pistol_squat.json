@@ -1,0 +1,23 @@
+{
+  "id": "pistol_squat",
+  "name": "Pistol Squat",
+  "equipment": "None",
+  "difficulty": "Advanced",
+  "primary": [
+    "Quads",
+    "Glutes"
+  ],
+  "secondary": [
+    "Hamstrings",
+    "Core",
+    "Calves"
+  ],
+  "steps": [
+    "Stand on one leg, the other leg extended in front, arms forward.",
+    "Sit down slowly on the standing leg, keeping the heel planted.",
+    "Go as deep as balance allows without the knee caving in.",
+    "Drive back up through the whole foot."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/pistol_squat.fbx"
+}

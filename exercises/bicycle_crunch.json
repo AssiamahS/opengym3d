@@ -1,0 +1,20 @@
+{
+  "id": "bicycle_crunch",
+  "name": "Bicycle Crunch",
+  "equipment": "None",
+  "difficulty": "Beginner",
+  "primary": [
+    "Abs"
+  ],
+  "secondary": [
+    "Core"
+  ],
+  "steps": [
+    "Lie on your back, hands by your temples, legs lifted.",
+    "Drive one knee in while rotating the opposite elbow toward it.",
+    "Extend the other leg straight, hovering above the floor.",
+    "Alternate sides in a smooth pedalling rhythm."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/bicycle_crunch.fbx"
+}

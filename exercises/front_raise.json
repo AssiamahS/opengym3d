@@ -318,5 +318,6 @@
         }
       }
     }
-  ]
+  ],
+  "mocap": "mixamo/front_raises.fbx"
 }

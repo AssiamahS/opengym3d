@@ -11,6 +11,8 @@ src, dest = Path(sys.argv[1]), Path(sys.argv[2])
 manifest = []
 for path in sorted(src.glob("*.json")):
     spec = json.loads(path.read_text())
+    if spec.get("status") == "draft":
+        continue                      # not rendered, so not listed
     manifest.append({
         "id": spec["id"],
         "name": spec["name"],
@@ -21,6 +23,7 @@ for path in sorted(src.glob("*.json")):
         "steps": spec.get("steps", []),
         "glb": f"assets/{spec['id']}.glb",
         "thumb": f"assets/{spec['id']}.png",
+        "motion": "mocap" if spec.get("mocap") else "keyed",
     })
 dest.write_text(json.dumps(manifest, indent=2))
 print(f"manifest: {len(manifest)} exercises -> {dest}")

@@ -1,0 +1,23 @@
+{
+  "id": "burpee",
+  "name": "Burpee",
+  "equipment": "None",
+  "difficulty": "Intermediate",
+  "primary": [
+    "Quads",
+    "Chest"
+  ],
+  "secondary": [
+    "Core",
+    "Shoulders",
+    "Glutes"
+  ],
+  "steps": [
+    "From standing, squat down and plant both hands on the floor.",
+    "Jump the feet back into a plank and lower the chest to the floor.",
+    "Push up, jump the feet back under the hips.",
+    "Explode up into a jump, arms overhead, and land softly."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/burpee.fbx"
+}

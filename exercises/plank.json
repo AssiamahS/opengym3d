@@ -237,5 +237,6 @@
         }
       }
     }
-  ]
+  ],
+  "mocap": "mixamo/plank.fbx"
 }

@@ -1,0 +1,22 @@
+{
+  "id": "jump_push_up",
+  "name": "Plyometric Push-Up",
+  "equipment": "None",
+  "difficulty": "Advanced",
+  "primary": [
+    "Chest",
+    "Triceps"
+  ],
+  "secondary": [
+    "Shoulders",
+    "Core"
+  ],
+  "steps": [
+    "Start in a tight plank, hands under the shoulders.",
+    "Lower the chest to the floor with the elbows at about 45 degrees.",
+    "Drive explosively so the hands leave the floor.",
+    "Land with soft elbows and go straight into the next rep."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/jump_push_up.fbx"
+}

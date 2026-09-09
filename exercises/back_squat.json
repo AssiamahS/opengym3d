@@ -1,0 +1,31 @@
+{
+  "id": "back_squat",
+  "name": "Barbell Back Squat",
+  "equipment": "Barbell",
+  "difficulty": "Intermediate",
+  "primary": [
+    "Quads",
+    "Glutes"
+  ],
+  "secondary": [
+    "Hamstrings",
+    "Core",
+    "Lower Back"
+  ],
+  "steps": [
+    "Bar across the upper back, feet shoulder-width, toes slightly out.",
+    "Brace, then sit the hips back and down, chest tall.",
+    "Descend until the thighs are at least parallel, knees over toes.",
+    "Drive the floor away and stand tall without leaning forward."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/back_squat.fbx",
+  "prop": {
+    "type": "barbell",
+    "axis": [
+      1,
+      0,
+      0
+    ]
+  }
+}

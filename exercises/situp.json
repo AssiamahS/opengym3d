@@ -1,0 +1,20 @@
+{
+  "id": "situp",
+  "name": "Sit-Up",
+  "equipment": "None",
+  "difficulty": "Beginner",
+  "primary": [
+    "Abs"
+  ],
+  "secondary": [
+    "Core"
+  ],
+  "steps": [
+    "Lie on your back, knees bent, feet flat, hands by your temples.",
+    "Brace and curl the torso all the way up to the knees.",
+    "Keep the chin off the chest and avoid pulling on the neck.",
+    "Lower with control, one vertebra at a time."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/situps.fbx"
+}

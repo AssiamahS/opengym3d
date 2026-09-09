@@ -36,6 +36,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Mixamo motions (exported Without Skin) live in a private repo: Adobe's
+      # Mixamo terms allow them inside a project but not as redistributed
+      # files, so the public repo only carries the references.
+      - uses: actions/checkout@v4
+        with:
+          repository: AssiamahS/opengym3d-mocap
+          token: ${{ secrets.MOCAP_TOKEN }}
+          path: mocap
+
       - name: Cache Blender
         id: blender-cache
         uses: actions/cache@v4
@@ -76,12 +85,12 @@ jobs:
       - name: Render exercises to GLB + thumbnails
         run: |
           mkdir -p site/assets
-          for spec in exercises/*.json; do
+          for spec in $(python3 pipeline/list_specs.py exercises); do
             echo "=== $spec"
             "$HOME/blender/blender" -b -noaudio --python-exit-code 1 -P pipeline/build_exercise.py -- "$spec" site/assets
           done
           ls -la site/assets
-          for spec in exercises/*.json; do
+          for spec in $(python3 pipeline/list_specs.py exercises); do
             id=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['id'])" "$spec")
             test -s "site/assets/$id.glb" || { echo "missing $id.glb"; exit 1; }
             test -s "site/assets/$id.png" || { echo "missing $id.png"; exit 1; }

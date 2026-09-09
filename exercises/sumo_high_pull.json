@@ -1,0 +1,31 @@
+{
+  "id": "sumo_high_pull",
+  "name": "Sumo High Pull",
+  "equipment": "Barbell",
+  "difficulty": "Intermediate",
+  "primary": [
+    "Traps",
+    "Shoulders"
+  ],
+  "secondary": [
+    "Glutes",
+    "Hamstrings",
+    "Quads"
+  ],
+  "steps": [
+    "Wide stance, toes out, narrow grip on the bar.",
+    "Drive the hips forward and pull the elbows high and wide.",
+    "The bar travels close to the body up to chin height.",
+    "Lower under control back to the start."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/sumo_high_pull.fbx",
+  "prop": {
+    "type": "barbell",
+    "axis": [
+      1,
+      0,
+      0
+    ]
+  }
+}

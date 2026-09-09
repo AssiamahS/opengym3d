@@ -154,5 +154,6 @@
         }
       }
     }
-  ]
+  ],
+  "mocap": "mixamo/jumping_jacks.fbx"
 }

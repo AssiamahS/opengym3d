@@ -312,5 +312,6 @@
         }
       }
     }
-  ]
+  ],
+  "mocap": "mixamo/air_squat.fbx"
 }

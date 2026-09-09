@@ -54,8 +54,10 @@ class TestSpecs(unittest.TestCase):
     def test_required_fields(self):
         for stem, spec in specs():
             with self.subTest(stem):
-                for field in ("id", "name", "primary", "keyframes", "steps"):
+                for field in ("id", "name", "primary", "steps"):
                     self.assertIn(field, spec)
+                self.assertTrue(spec.get("keyframes") or spec.get("mocap"),
+                                "needs keyframes or a mocap file")
                 self.assertTrue(spec["primary"], "needs a primary muscle")
                 self.assertIn(spec.get("difficulty", "Beginner"),
                               VALID_DIFFICULTY)
@@ -70,8 +72,25 @@ class TestSpecs(unittest.TestCase):
                 with self.subTest(stem, muscle=muscle):
                     self.assertIn(muscle.lower(), known)
 
+    def test_mocap_paths_are_well_formed(self):
+        """Mocap files live in the private mocap/ checkout (Mixamo terms forbid
+        redistributing the raw FBX), so all the public repo can check is the
+        reference itself: a relative .fbx path under a known vendor folder."""
+        for stem, spec in specs():
+            mocap = spec.get("mocap")
+            if not mocap:
+                continue
+            with self.subTest(stem):
+                self.assertTrue(mocap.endswith(".fbx"))
+                self.assertFalse(mocap.startswith("/"))
+                self.assertIn(mocap.split("/")[0], {"mixamo"})
+                self.assertNotEqual(spec.get("status"), "draft",
+                                    "mocap specs are the live ones")
+
     def test_keyframes_are_a_full_normalised_rep(self):
         for stem, spec in specs():
+            if not spec.get("keyframes"):
+                continue
             with self.subTest(stem):
                 ts = [kf["t"] for kf in spec["keyframes"]]
                 self.assertEqual(ts, sorted(ts), "keyframes out of order")
@@ -83,7 +102,7 @@ class TestSpecs(unittest.TestCase):
 
     def test_bone_transforms_are_well_formed(self):
         for stem, spec in specs():
-            for kf in spec["keyframes"]:
+            for kf in spec.get("keyframes", []):
                 for bone, xf in kf["bones"].items():
                     with self.subTest(stem, bone=bone, t=kf["t"]):
                         self.assertTrue(
@@ -134,7 +153,9 @@ class TestManifest(unittest.TestCase):
                  str(REPO / "exercises"), str(dest)],
                 check=True, capture_output=True)
             manifest = json.loads(dest.read_text())
-            self.assertEqual(len(manifest), len(EXERCISES))
+            live = [s for _, s in specs() if s.get("status") != "draft"]
+            self.assertEqual(len(manifest), len(live))
+            self.assertGreaterEqual(len(live), 12)
             for entry in manifest:
                 self.assertTrue(entry["glb"].endswith(".glb"))
                 self.assertTrue(entry["thumb"].endswith(".png"))

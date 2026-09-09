@@ -1,4 +1,4 @@
-name: ecorche spike
+name: spike
 
 # One exercise, one picture, fast. The full render is 38 minutes across 24
 # exercises — far too slow a loop for "does the figure look right yet".
@@ -25,6 +25,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/checkout@v4
+        with:
+          repository: AssiamahS/opengym3d-mocap
+          token: ${{ secrets.MOCAP_TOKEN }}
+          path: mocap
+
       - name: Cache Blender
         id: blender-cache
         uses: actions/cache@v4
@@ -38,11 +44,17 @@ jobs:
           curl -sL "https://download.blender.org/release/Blender4.5/blender-${BLENDER_VERSION}-linux-x64.tar.xz" | tar xJ -C "$HOME"
           mv "$HOME/blender-${BLENDER_VERSION}-linux-x64" "$HOME/blender"
 
-      - name: Cache Z-Anatomy atlas
+      - name: Cache MPFB extension
         uses: actions/cache@v4
         with:
-          path: ~/z-anatomy
-          key: z-anatomy-master-2024-01-18
+          path: ~/.config/blender/4.5/extensions
+          key: mpfb-2.0.16
+
+      - name: Download MPFB zip
+        run: |
+          if [ ! -d "$HOME/.config/blender/4.5/extensions/user_default/mpfb" ]; then
+            curl -sL -o /tmp/mpfb.zip "https://extensions.blender.org/download/sha256:b5cdc8b08147e0c6463e4faa01147491b13a0b062f73415363f029debd11c934/add-on-mpfb-v2.0.16.zip?repository=%2Fapi%2Fv1%2Fextensions%2F&blender_version_min=4.2.0"
+          fi
 
       - name: Install runtime libs
         run: |
@@ -50,10 +62,13 @@ jobs:
           sudo apt-get install -y -qq libxi6 libxxf86vm1 libxfixes3 libxrender1 libgl1 libxkbcommon0 libsm6
 
       - name: Render one exercise
+        env:
+          FITX_ECORCHE: "0"
         run: |
           ex="${{ github.event.inputs.exercise || 'squat' }}"
           "$HOME/blender/blender" -b -noaudio --python-exit-code 1 \
             -P pipeline/build_exercise.py -- "exercises/$ex.json" spike_out
+          ls -la spike_out
 
       - uses: actions/upload-artifact@v4
         if: always()

@@ -1,0 +1,32 @@
+{
+  "id": "snatch",
+  "name": "Barbell Snatch",
+  "equipment": "Barbell",
+  "difficulty": "Advanced",
+  "primary": [
+    "Glutes",
+    "Quads",
+    "Traps"
+  ],
+  "secondary": [
+    "Hamstrings",
+    "Shoulders",
+    "Core"
+  ],
+  "steps": [
+    "Wide grip, hips low, chest over the bar.",
+    "Drive with the legs, then extend the hips violently.",
+    "Pull yourself under the bar and receive it overhead in a squat.",
+    "Stand up with the bar locked out overhead."
+  ],
+  "fps": 30,
+  "mocap": "mixamo/snatch.fbx",
+  "prop": {
+    "type": "barbell",
+    "axis": [
+      1,
+      0,
+      0
+    ]
+  }
+}
