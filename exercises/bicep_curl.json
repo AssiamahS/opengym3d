@@ -187,5 +187,6 @@
       }
     }
   ],
-  "mocap": "mixamo/bicep_curl.fbx"
+  "mocap": "mixamo/bicep_curl.fbx",
+  "camera": "front"
 }

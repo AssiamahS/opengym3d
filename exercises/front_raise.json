@@ -319,5 +319,6 @@
       }
     }
   ],
-  "mocap": "mixamo/front_raises.fbx"
+  "mocap": "mixamo/front_raises.fbx",
+  "camera": "front"
 }

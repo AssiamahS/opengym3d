@@ -18,5 +18,6 @@
     "Land with soft elbows and go straight into the next rep."
   ],
   "fps": 30,
-  "mocap": "mixamo/jump_push_up.fbx"
+  "mocap": "mixamo/jump_push_up.fbx",
+  "camera": "front"
 }

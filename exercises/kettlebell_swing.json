@@ -19,5 +19,9 @@
     "Let the bell fall and hinge again as it passes the knees."
   ],
   "fps": 30,
-  "mocap": "mixamo/kettlebell_swing.fbx"
+  "mocap": "mixamo/kettlebell_swing.fbx",
+  "camera": "front",
+  "prop": {
+    "type": "kettlebell"
+  }
 }

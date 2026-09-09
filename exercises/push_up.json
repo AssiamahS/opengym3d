@@ -312,5 +312,6 @@
       }
     }
   ],
-  "mocap": "mixamo/push_up.fbx"
+  "mocap": "mixamo/push_up.fbx",
+  "camera": "front"
 }

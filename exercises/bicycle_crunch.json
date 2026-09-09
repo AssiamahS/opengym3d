@@ -16,5 +16,6 @@
     "Alternate sides in a smooth pedalling rhythm."
   ],
   "fps": 30,
-  "mocap": "mixamo/bicycle_crunch.fbx"
+  "mocap": "mixamo/bicycle_crunch.fbx",
+  "camera": "front"
 }

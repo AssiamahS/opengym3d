@@ -16,5 +16,6 @@
     "Lower with control, one vertebra at a time."
   ],
   "fps": 30,
-  "mocap": "mixamo/situps.fbx"
+  "mocap": "mixamo/situps.fbx",
+  "camera": "front"
 }

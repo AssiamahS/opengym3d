@@ -238,5 +238,6 @@
       }
     }
   ],
-  "mocap": "mixamo/plank.fbx"
+  "mocap": "mixamo/plank.fbx",
+  "camera": "front"
 }

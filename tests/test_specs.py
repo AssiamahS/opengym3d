@@ -23,7 +23,7 @@ REPO = Path(__file__).resolve().parent.parent
 EXERCISES = sorted((REPO / "exercises").glob("*.json"))
 PIPELINE = REPO / "pipeline" / "build_exercise.py"
 
-VALID_PROPS = {"dumbbell", "barbell"}
+VALID_PROPS = {"dumbbell", "barbell", "kettlebell"}
 VALID_DIFFICULTY = {"Beginner", "Intermediate", "Advanced"}
 
 
@@ -119,6 +119,12 @@ class TestSpecs(unittest.TestCase):
                             self.assertNotIn("rot", xf,
                                              "aim_world overrides rot; drop it")
 
+    def test_camera_override_is_a_side(self):
+        for stem, spec in specs():
+            if "camera" in spec:
+                with self.subTest(stem):
+                    self.assertIn(spec["camera"], ("front", "back"))
+
     def test_props_are_buildable(self):
         for stem, spec in specs():
             prop = spec.get("prop")
@@ -136,7 +142,7 @@ class TestSpecs(unittest.TestCase):
         for stem, spec in specs():
             with self.subTest(stem):
                 equipment = spec.get("equipment", "None")
-                if equipment in ("Dumbbell", "Barbell"):
+                if equipment in ("Dumbbell", "Barbell", "Kettlebell"):
                     self.assertIsNotNone(spec.get("prop"),
                                          f"{equipment} exercise has no prop")
                     self.assertEqual(spec["prop"]["type"], equipment.lower())

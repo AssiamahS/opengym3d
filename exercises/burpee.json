@@ -19,5 +19,6 @@
     "Explode up into a jump, arms overhead, and land softly."
   ],
   "fps": 30,
-  "mocap": "mixamo/burpee.fbx"
+  "mocap": "mixamo/burpee.fbx",
+  "camera": "front"
 }

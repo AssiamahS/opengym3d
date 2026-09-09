@@ -121,7 +121,7 @@ IRON_COLOR = (0.055, 0.055, 0.06, 1.0)
 # working, through what range — and floating steel next to a figure whose
 # anatomy isn't finished yet only draws the eye away from it. The prop code
 # stays; flip this back on once the écorché figure is the good part.
-SHOW_PROPS = False
+SHOW_PROPS = True    # every implement exercise shows its implement (mime = the genre's #1 amateur tell)
 
 # Écorché: real Z-Anatomy muscle geometry instead of paint on a MakeHuman
 # mannequin. Set FITX_ECORCHE=0 to fall back to the v0.22 figure.
@@ -172,11 +172,28 @@ def create_human():
                                            "HumanObjectProperties")
     TargetService = dynamic_import("mpfb.services.targetservice", "TargetService")
     basemesh = HumanService.create_human()
-    for prop, value in (("gender", 1.0), ("muscle", 1.0), ("weight", 0.55)):
-        HumanObjectProperties.set_value(prop, value, entity_reference=basemesh)
+    for prop, value in (("gender", 1.0), ("muscle", 1.0), ("weight", 0.48),
+                        ("proportions", 0.85)):
+        try:
+            HumanObjectProperties.set_value(prop, value, entity_reference=basemesh)
+        except Exception as exc:                        # noqa: BLE001
+            print(f"MACRO {prop} not settable: {exc}")
     TargetService.reapply_macro_details(basemesh)
     rig = HumanService.add_builtin_rig(basemesh, "default")
+    for poly in basemesh.data.polygons:
+        poly.use_smooth = True
     return basemesh, rig
+
+
+def smooth_figure(basemesh, levels=1):
+    """One subdivision level after the armature: the 13k-vertex base mesh
+    shows its polygons at 512px and every muscle border stairsteps along
+    them. Subdivision interpolates the colour attribute too, so the highlight
+    edges go from jagged to a soft gradient at no painting cost. The glTF
+    exporter applies it (export_apply) so the web GLB gets the same surface."""
+    mod = basemesh.modifiers.new("Smooth", "SUBSURF")
+    mod.levels = mod.render_levels = levels
+    mod.subdivision_type = "CATMULL_CLARK"
 
 
 def strip_helpers(basemesh):
@@ -313,7 +330,7 @@ def paint_muscles(basemesh, rig, materials, primary, secondary):
         a, b = edge.vertices
         neighbors[a].append(b)
         neighbors[b].append(a)
-    for _ in range(8):      # more smoothing rounds = fewer ragged paint islands
+    for _ in range(12):     # more smoothing rounds = fewer ragged paint islands
         for score in (score_p, score_s):
             snapshot = score[:]
             for i, ns in enumerate(neighbors):
@@ -386,6 +403,28 @@ def build_dumbbell(name, steel, iron):
                   _cylinder(name + "_p2", 0.055, 0.055, 0.098, iron)], name)
 
 
+def build_kettlebell(name, steel, iron):
+    """Handle ring at the origin (where the hands meet), bell hanging down
+    local -Z. place_props orients -Z along the forearms so the bell swings
+    with the arms instead of dangling from gravity mid-swing."""
+    bpy.ops.mesh.primitive_torus_add(major_radius=0.062, minor_radius=0.014,
+                                     major_segments=32, minor_segments=12,
+                                     location=(0, 0, 0), rotation=(math.pi / 2, 0, 0))
+    handle = bpy.context.active_object
+    handle.name = name + "_handle"
+    bpy.ops.object.transform_apply(location=False, rotation=True, scale=False)
+    handle.data.materials.append(steel)
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.095, segments=32, ring_count=16,
+                                         location=(0, 0, -0.135))
+    bell = bpy.context.active_object
+    bell.name = name + "_bell"
+    bell.data.materials.append(iron)
+    obj = _join([handle, bell], name)
+    for poly in obj.data.polygons:
+        poly.use_smooth = True
+    return obj
+
+
 def build_barbell(name, steel, iron):
     return _join([_cylinder(name + "_bar", 0.014, 1.6, 0.0, steel),
                   _cylinder(name + "_pL", 0.19, 0.05, -0.70, iron),
@@ -405,6 +444,8 @@ def build_props(spec):
     iron = make_material("Iron", IRON_COLOR, roughness=0.6)
     if prop["type"] == "barbell":
         objs = [(build_barbell("Barbell", steel, iron), "mid")]
+    elif prop["type"] == "kettlebell":
+        objs = [(build_kettlebell("Kettlebell", steel, iron), "kb")]
     elif prop.get("hold") == "both":
         objs = [(build_dumbbell("Dumbbell", steel, iron), "mid")]
     else:
@@ -424,10 +465,20 @@ def place_props(rig, prop_objs, frame):
         return
     def wrist(side):
         return rig.matrix_world @ rig.pose.bones["wrist" + side].tail
+
+    def elbow(side):
+        return rig.matrix_world @ rig.pose.bones["lowerarm01" + side].head
     mid = (wrist(".L") + wrist(".R")) / 2
     for obj, anchor in prop_objs:
         obj.location = wrist(anchor) if anchor in (".L", ".R") else mid
         obj.keyframe_insert("location", frame=frame)
+        if anchor == "kb":
+            # bell continues the line of the forearms: elbows -> hands -> bell
+            arm_dir = ((wrist(".L") - elbow(".L")) + (wrist(".R") - elbow(".R")))
+            if arm_dir.length > 1e-6:
+                obj.rotation_euler = Vector((0, 0, -1)).rotation_difference(
+                    arm_dir.normalized()).to_euler()
+                obj.keyframe_insert("rotation_euler", frame=frame)
 
 
 # MakeHuman default rig: finger1 = thumb, finger2-5 = index..pinky, three
@@ -907,14 +958,46 @@ def area_light(name, energy, size, location, look_at=Vector((0, 0, 1.0))):
     return obj
 
 
-def camera_side(primary):
+def camera_side(primary, spec=None):
     """Shoot posterior exercises from behind. A bent-over row paints its lats
     correctly and still renders as a blank white back if the camera sits in
-    front of the figure — the muscles face away from the lens."""
+    front of the figure — the muscles face away from the lens. A spec can
+    override ("camera": "front"/"back"): a kettlebell swing is glute-primary
+    but a rear view of it reads as nothing but a backside."""
+    override = (spec or {}).get("camera")
+    if override in ("front", "back"):
+        return override
     sides = [MUSCLE_SPEC[m][1] for m in primary]
     posterior = [s for s in sides if s == "back"]
     anterior = [s for s in sides if s == "front"]
     return "back" if posterior and not anterior else "front"
+
+
+def peak_frame(rig, frame_end):
+    """The thumbnail frame: the pose furthest from the clip's first pose,
+    measured at the hands, head and hips. For a rep that starts at idle
+    that is the bottom of the squat, the top of the swing, the jump — the
+    frame that tells you what the exercise is. The mid frame did not."""
+    scene = bpy.context.scene
+    names = ("wrist.L", "wrist.R", "head", "root")
+
+    def sample():
+        out = []
+        for n in names:
+            pb = rig.pose.bones.get(n)
+            if pb is not None:
+                out.append(rig.matrix_world @ pb.tail)
+        return out
+    scene.frame_set(1)
+    base = sample()
+    best, best_d = 1, -1.0
+    for f in range(1, frame_end + 1):
+        scene.frame_set(f)
+        d = sum((a - b).length for a, b in zip(sample(), base))
+        if d > best_d:
+            best, best_d = f, d
+    print(f"PEAK frame {best}/{frame_end} (displacement {best_d:.2f} m)")
+    return best
 
 
 def frame_subject(cam, target, basemesh, frames, side="front", margin=1.12,
@@ -1042,6 +1125,7 @@ def main():
         # highlight pastel; saturated base colour reads far stronger
         materials = {"body": make_body_material()}
         paint_muscles(basemesh, rig, materials, primary, secondary)
+        smooth_figure(basemesh)
         prop_objs = build_props(spec)
         if mocap:
             animate_mocap(mocap_arm, driver, rig, f0, f1, prop_objs)
@@ -1049,14 +1133,17 @@ def main():
             animate(driver, rig, spec, frame_end, prop_objs)
         bpy.data.objects.remove(driver, do_unlink=True)
 
-    side = camera_side(primary)
+    side = camera_side(primary, spec)
     cam, target = setup_render(side)
     if mocap:
         key_frames = list(range(1, frame_end + 1, max(1, frame_end // 12)))
     else:
         key_frames = sorted({1 + round(kf["t"] * (frame_end - 1))
                              for kf in spec["keyframes"]})
-    still_frame = 1 + (frame_end - 1) // 2      # mid-rep = most telling pose
+    if mocap:
+        still_frame = peak_frame(rig, frame_end)
+    else:
+        still_frame = 1 + (frame_end - 1) // 2  # mid-rep = most telling pose
 
     # thumbnail: frame that one pose tightly
     frame_subject(cam, target, basemesh, [still_frame], side, prop_objs=prop_objs)
@@ -1081,7 +1168,8 @@ def main():
     # prop motion ships in the same clip as the armature instead of a second
     # clip the viewer would have to know about
     bpy.ops.export_scene.gltf(filepath=f"{out_dir}/{spec['id']}.glb",
-                              export_animation_mode="SCENE")
+                              export_animation_mode="SCENE",
+                              export_apply=True)
     print(f"OK {spec['id']}: {frame_end} frames -> {out_dir}")
 
 

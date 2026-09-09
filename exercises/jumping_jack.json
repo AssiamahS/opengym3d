@@ -155,5 +155,6 @@
       }
     }
   ],
-  "mocap": "mixamo/jumping_jacks.fbx"
+  "mocap": "mixamo/jumping_jacks.fbx",
+  "camera": "front"
 }

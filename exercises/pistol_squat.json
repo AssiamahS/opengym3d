@@ -19,5 +19,6 @@
     "Drive back up through the whole foot."
   ],
   "fps": 30,
-  "mocap": "mixamo/pistol_squat.fbx"
+  "mocap": "mixamo/pistol_squat.fbx",
+  "camera": "front"
 }
