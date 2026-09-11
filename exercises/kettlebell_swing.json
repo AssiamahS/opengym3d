@@ -20,7 +20,7 @@
   ],
   "fps": 30,
   "mocap": "mixamo/kettlebell_swing.fbx",
-  "camera": "front",
+  "camera": "side",
   "prop": {
     "type": "kettlebell"
   }

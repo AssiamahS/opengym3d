@@ -96,10 +96,25 @@ jobs:
             test -s "site/assets/$id.png" || { echo "missing $id.png"; exit 1; }
           done
 
-      - name: Assemble watch GIFs + MP4s
+      # The GLB is what the viewer plays, so grade the GLB: joint lengths,
+      # hinge angles, roll flips, pops, foot slide, implement contact, loop.
+      # Reports sit next to the assets for the inspector page; the manifest
+      # step reads them and drops any exercise with a critical failure.
+      - name: Joint-integrity QA
+        run: python3 pipeline/qa_glb.py site/assets/*.glb || echo "::warning::QA failures above — those exercises are excluded from the manifest"
+
+      - name: Assemble watch GIFs + MP4s + frame strips
         run: |
           for dir in site/assets/frames_*; do
             id=$(basename "$dir" | sed 's/^frames_//')
+            # 12-frame contact sheet across the whole rep: start, load,
+            # transition, peak, drive, finish, loop — the thumbnail alone hides
+            # every mid-rep failure
+            cnt=$(ls "$dir"/*.png | wc -l)
+            every=$(( (cnt + 11) / 12 ))
+            ffmpeg -v error -pattern_type glob -i "$dir/*.png" \
+              -vf "select='not(mod(n\,$every))',scale=180:-1,tile=12x1:padding=2:color=0x0b0d10" \
+              -frames:v 1 "site/assets/$id.strip.png"
             ffmpeg -v error -framerate 15 -pattern_type glob -i "$dir/*.png" \
               -vf "split[a][b];[a]palettegen=max_colors=128[p];[b][p]paletteuse=dither=bayer" \
               "site/assets/$id.gif"
@@ -107,13 +122,15 @@ jobs:
               -c:v libx264 -pix_fmt yuv420p -movflags +faststart "site/assets/$id.mp4"
             rm -rf "$dir"
             test -s "site/assets/$id.gif" || { echo "missing $id.gif"; exit 1; }
+            test -s "site/assets/$id.strip.png" || { echo "missing $id.strip.png"; exit 1; }
           done
           ls -la site/assets
 
       - name: Assemble site
         run: |
           cp -r website/* site/
-          python3 pipeline/make_manifest.py exercises site/exercises.json
+          python3 pipeline/make_manifest.py exercises site/exercises.json site/assets
+          cat site/qa_report.json
 
       - uses: actions/upload-pages-artifact@v3
         with:

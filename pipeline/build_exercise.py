@@ -631,12 +631,43 @@ def aim_overrides(kf):
     return out
 
 
-def aim_bone(mh_pb, target_dir, frame):
-    """Point an MH bone along target_dir in world space, keyframe it."""
+def twist_ref(rest_dir):
+    """The world vector a bone's roll is measured against: the figure's
+    forward (-Y) for anything that stands or hangs, up (+Z) for the feet,
+    which point forward themselves. Projected perpendicular to the bone so
+    the same rule yields matching references on both rigs."""
+    for ref in (Vector((0, -1, 0)), Vector((0, 0, 1)), Vector((1, 0, 0))):
+        side = ref - rest_dir * ref.dot(rest_dir)
+        if side.length > 0.3:
+            return side.normalized()
+    return Vector((0, -1, 0))
+
+
+def aim_bone(mh_pb, target_dir, frame, twist=None):
+    """Point an MH bone along target_dir in world space, keyframe it.
+
+    rotation_difference is the shortest arc, which leaves the bone's roll
+    wherever that arc happens to put it — and once a limb passes near its
+    rest direction's antipode that roll flips by up to 180° between two
+    adjacent frames (the QA twist check measured 110-177°/sample on the
+    bicycle crunch, 135° on the sit-up). `twist` is the source bone's posed
+    reference vector (its rest twist_ref carried through its own rotation);
+    when given, the MH bone is rolled about target_dir until its own
+    reference lines up, so pronation and humeral twist come from the
+    capture instead of from luck."""
     mh_pb.rotation_mode = "QUATERNION"
     mh_rest_dir = (Vector(mh_pb.bone.tail_local) -
                    Vector(mh_pb.bone.head_local)).normalized()
     aim = mh_rest_dir.rotation_difference(target_dir)
+    if twist is not None:
+        have = aim @ twist_ref(mh_rest_dir)
+        want = twist - target_dir * twist.dot(target_dir)
+        have = have - target_dir * have.dot(target_dir)
+        if want.length > 1e-4 and have.length > 1e-4:
+            have.normalize()
+            want.normalize()
+            ang = math.atan2(have.cross(want).dot(target_dir), have.dot(want))
+            aim = Quaternion(target_dir, ang) @ aim
     rest_rot = mh_pb.bone.matrix_local.to_quaternion()
     keep_loc = mh_pb.matrix.to_translation()
     mh_pb.matrix = (Matrix.Translation(keep_loc) @
@@ -685,10 +716,13 @@ def drive_shoulder_girdle(driver, rig, frame, overrides=None):
             pb.keyframe_insert("rotation_quaternion", frame=frame)
 
 
-def transfer_pose(driver, rig, root_offset, frame, overrides=None):
+def transfer_pose(driver, rig, root_offset, frame, overrides=None,
+                  twists=None):
     """Aim each MakeHuman bone at its driver bone's posed world direction —
-    or at the keyframe's explicit aim_world direction when one is given."""
+    or at the keyframe's explicit aim_world direction when one is given.
+    `twists` (mocap lane) carries each source bone's posed roll reference."""
     overrides = overrides or {}
+    twists = twists or {}
     arm_entries = []
     for syn_name, mh_name in RETARGET:
         syn_pb = driver.pose.bones[syn_name]
@@ -697,8 +731,8 @@ def transfer_pose(driver, rig, root_offset, frame, overrides=None):
             continue
         if mh_name.startswith(("upperarm", "lowerarm", "wrist")):
             target = overrides.get(syn_name) or driver_target_dir(syn_pb)
-            arm_entries.append((mh_pb, target))     # deferred: needs the girdle
-            continue
+            arm_entries.append((mh_pb, target, twists.get(syn_name)))
+            continue                                # deferred: needs the girdle
         mh_pb.rotation_mode = "QUATERNION"
 
         if syn_name == "pelvis":
@@ -716,11 +750,22 @@ def transfer_pose(driver, rig, root_offset, frame, overrides=None):
             continue
 
         aim_bone(mh_pb, overrides.get(syn_name) or driver_target_dir(syn_pb),
-                 frame)
+                 frame, twists.get(syn_name))
 
     drive_shoulder_girdle(driver, rig, frame, overrides)
-    for mh_pb, target in arm_entries:
-        aim_bone(mh_pb, target, frame)
+    for mh_pb, target, twist in arm_entries:
+        aim_bone(mh_pb, target, frame, twist)
+        if twist is not None:
+            # same probe for roll: the achieved reference must match the
+            # capture's, or the CI log names the bone that still flips
+            got = (mh_pb.matrix @ mh_pb.bone.matrix_local.inverted()).to_3x3() \
+                @ twist_ref((Vector(mh_pb.bone.tail_local) -
+                             Vector(mh_pb.bone.head_local)).normalized())
+            d = target.normalized()
+            got = (got - d * got.dot(d)).normalized()
+            want = (twist - d * twist.dot(d)).normalized()
+            if got.dot(want) < 0.95:
+                print(f"TWIST MISS {mh_pb.name} f{frame} dot={got.dot(want):.3f}")
         # Probe, not assumption: v0.20's bent-over row rendered arms splayed
         # sideways while every other aim landed. Print any bone whose achieved
         # world direction misses its target so the CI log names the culprit.
@@ -835,6 +880,17 @@ def mocap_dir(arm, pb):
     return ((m @ pb.tail) - (m @ pb.head)).normalized()
 
 
+def mocap_twist(arm, pb):
+    """The source bone's rest roll reference carried through its posed world
+    rotation — what the MH bone's own reference must line up with."""
+    m3 = arm.matrix_world.to_3x3()
+    rest = m3 @ pb.bone.matrix_local.to_3x3()
+    posed = m3 @ pb.matrix.to_3x3()
+    rest_dir = (rest @ Vector((0, 1, 0))).normalized()   # bone Y = its axis
+    delta = posed @ rest.inverted()
+    return (delta @ twist_ref(rest_dir)).normalized()
+
+
 def animate_mocap(arm, driver, rig, f0, f1, prop_objs=()):
     scene = bpy.context.scene
     m = arm.matrix_world
@@ -851,6 +907,7 @@ def animate_mocap(arm, driver, rig, f0, f1, prop_objs=()):
         scene.frame_set(f)
         frame = 1 + i
         overrides = {syn_name: mocap_dir(arm, pb) for syn_name, pb in bones.items()}
+        twists = {syn_name: mocap_twist(arm, pb) for syn_name, pb in bones.items()}
         posed = m @ hips.matrix
         delta = (posed @ rest.inverted()).to_quaternion()
         root_offset = (posed.to_translation() - rest.to_translation()) * scale
@@ -862,7 +919,7 @@ def animate_mocap(arm, driver, rig, f0, f1, prop_objs=()):
             print("MOCAP f0 dirs: " + ", ".join(
                 f"{k}={tuple(round(c, 2) for c in v)}"
                 for k, v in overrides.items() if k in ("spine", "thigh.L", "upper_arm.L", "foot.L")))
-        transfer_pose(driver, rig, root_offset, frame, overrides)
+        transfer_pose(driver, rig, root_offset, frame, overrides, twists)
         place_props(rig, prop_objs, frame)
         grip_hands(rig, prop_objs, frame)
     # sampled every frame already — linear between samples, no easing/overshoot
@@ -965,7 +1022,7 @@ def camera_side(primary, spec=None):
     override ("camera": "front"/"back"): a kettlebell swing is glute-primary
     but a rear view of it reads as nothing but a backside."""
     override = (spec or {}).get("camera")
-    if override in ("front", "back"):
+    if override in ("front", "back", "side"):
         return override
     sides = [MUSCLE_SPEC[m][1] for m in primary]
     posterior = [s for s in sides if s == "back"]
@@ -1022,16 +1079,22 @@ def frame_subject(cam, target, basemesh, frames, side="front", margin=1.12,
     center = (lo + hi) / 2
     radius = (hi - lo).length / 2
     target.location = center
-    # 3/4 angle, from whichever side the working muscles are on (-Y is front)
-    y = -0.80 if side == "front" else 0.80
-    view_dir = Vector((0.55, y, 0.20)).normalized()
+    # 3/4 angle, from whichever side the working muscles are on (-Y is front);
+    # "side" is the coach's view — hinges, bar path and depth read as lines.
+    # Not dead-on: from there a barbell's near plate sits end-on over the
+    # hands, so swing ~25° toward the front and keep the grip visible.
+    if side == "side":
+        view_dir = Vector((1.0, -0.45, 0.18)).normalized()
+    else:
+        y = -0.80 if side == "front" else 0.80
+        view_dir = Vector((0.55, y, 0.20)).normalized()
     distance = radius / math.tan(cam.data.angle / 2) * margin
     cam.location = center + view_dir * distance
 
 
 def setup_render(side="front"):
     scene = bpy.context.scene
-    flip = 1.0 if side == "front" else -1.0   # keep the rig relative to the lens
+    flip = -1.0 if side == "back" else 1.0    # keep the rig relative to the lens
     target = bpy.data.objects.new("CamTarget", None)
     scene.collection.objects.link(target)
 

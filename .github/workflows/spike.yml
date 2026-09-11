@@ -70,6 +70,23 @@ jobs:
             -P pipeline/build_exercise.py -- "exercises/$ex.json" spike_out
           ls -la spike_out
 
+      # Grade the spike the way the deploy would, and leave the frame strip
+      # in the artifact: a spike that "passes" is one whose joints pass.
+      - name: Joint-integrity QA + frame strip
+        if: always()
+        run: |
+          python3 pipeline/qa_glb.py spike_out/*.glb || echo "::warning::QA FAIL — see table above"
+          sudo apt-get install -y -qq ffmpeg
+          for dir in spike_out/frames_*; do
+            id=$(basename "$dir" | sed 's/^frames_//')
+            cnt=$(ls "$dir"/*.png | wc -l)
+            every=$(( (cnt + 11) / 12 ))
+            ffmpeg -v error -pattern_type glob -i "$dir/*.png" \
+              -vf "select='not(mod(n\,$every))',scale=180:-1,tile=12x1:padding=2:color=0x0b0d10" \
+              -frames:v 1 "spike_out/$id.strip.png"
+            rm -rf "$dir"
+          done
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:

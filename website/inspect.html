@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenGym3D — rig inspector</title>
+<style>
+  :root {
+    --bg: #0b0d10; --panel: #14181d; --line: #232a32;
+    --text: #e8ecf1; --dim: #8b96a3;
+    --red: #ff4d52; --amber: #f2a51b; --green: #3ecf7a; --accent: #3fa9f5;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { background: var(--bg); color: var(--text); font: 14px/1.45 -apple-system, "Segoe UI", Roboto, sans-serif; display: flex; flex-direction: column; }
+  header { display: flex; align-items: center; gap: 14px; padding: 10px 16px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  header h1 { font-size: 16px; }
+  header a { color: var(--accent); text-decoration: none; font-size: 13px; }
+  select, button { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font: inherit; cursor: pointer; }
+  button.on { border-color: var(--accent); color: var(--accent); }
+  .badge { font-weight: 600; font-size: 13px; padding: 4px 10px; border-radius: 999px; border: 1px solid; }
+  .badge.PASS { color: var(--green); border-color: var(--green); }
+  .badge.FAIL { color: var(--red); border-color: var(--red); }
+  .badge.MISSING, .badge.NONE { color: var(--dim); border-color: var(--line); }
+  #facts { color: var(--dim); font-size: 13px; }
+  main { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) 380px; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; }
+  #stage { position: relative; min-height: 0; grid-row: 1; grid-column: 1; }
+  #stage canvas { display: block; }
+  #labels { position: absolute; inset: 0; pointer-events: none; }
+  .lbl { font-size: 10px; padding: 1px 5px; border-radius: 4px; background: rgba(8,10,12,.75); color: var(--text); border: 1px solid var(--line); white-space: nowrap; }
+  .lbl.FAIL { border-color: var(--red); color: var(--red); }
+  .lbl.warn { border-color: var(--amber); color: var(--amber); }
+  #hud { position: absolute; top: 10px; left: 10px; display: flex; gap: 6px; flex-wrap: wrap; max-width: 70%; }
+  #hud button { padding: 4px 9px; font-size: 12px; }
+  #hud .sep { width: 8px; }
+  #readout { position: absolute; right: 10px; top: 10px; font: 12px/1.5 ui-monospace, Menlo, monospace; color: var(--dim); text-align: right; background: rgba(8,10,12,.6); padding: 6px 8px; border-radius: 6px; }
+  #readout b { color: var(--text); }
+  #side { grid-row: 1 / span 2; grid-column: 2; border-left: 1px solid var(--line); overflow: auto; padding: 12px 14px; }
+  #side h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--dim); margin: 12px 0 6px; }
+  #side h2:first-child { margin-top: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  td { padding: 3px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.st { width: 46px; font-weight: 600; }
+  tr.FAIL td.st { color: var(--red); }
+  tr.warn td.st { color: var(--amber); }
+  tr.PASS td.st { color: var(--green); }
+  tr.seek { cursor: pointer; }
+  tr.seek:hover td { background: #191f26; }
+  td.j { color: var(--text); white-space: nowrap; }
+  td.d { color: var(--dim); }
+  #controls { grid-row: 2; grid-column: 1; display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-top: 1px solid var(--line); }
+  #scrub { flex: 1; accent-color: var(--accent); }
+  #frame { font: 12px ui-monospace, Menlo, monospace; color: var(--dim); min-width: 150px; text-align: right; }
+  #strips { border-top: 1px solid var(--line); padding: 10px 14px; overflow-x: auto; }
+  #strips h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--dim); margin-bottom: 6px; display: flex; gap: 12px; align-items: center; }
+  #strips h2 button { font-size: 11px; padding: 2px 8px; }
+  .strip { display: flex; gap: 4px; margin-bottom: 8px; }
+  .strip img, .strip canvas { height: 150px; width: auto; background: #101418; border: 1px solid var(--line); border-radius: 4px; cursor: pointer; }
+  .strip .cell { position: relative; }
+  .strip .cell span { position: absolute; left: 4px; bottom: 4px; font: 10px ui-monospace, Menlo, monospace; color: var(--dim); background: rgba(8,10,12,.7); padding: 0 4px; border-radius: 3px; }
+  #ci-strip img { max-width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 4px; }
+  .muted { color: var(--dim); font-size: 12px; }
+  @media (max-width: 900px) {
+    main { grid-template-columns: 1fr; grid-template-rows: 55vh auto auto; }
+    #side { grid-row: 3; grid-column: 1; border-left: 0; border-top: 1px solid var(--line); }
+    #controls { grid-row: 2; }
+  }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<header>
+  <h1>Rig inspector</h1>
+  <select id="exercise"></select>
+  <span id="verdict" class="badge NONE">—</span>
+  <span id="facts"></span>
+  <a href="index.html" style="margin-left:auto">← library</a>
+</header>
+<main>
+  <div id="stage">
+    <div id="labels"></div>
+    <div id="hud">
+      <button data-view="front">Front</button>
+      <button data-view="side">Side</button>
+      <button data-view="three-quarter">3/4</button>
+      <button data-view="back">Back</button>
+      <button data-view="top">Top</button>
+      <span class="sep"></span>
+      <button id="t-mesh" class="on">Mesh</button>
+      <button id="t-xray">X-ray</button>
+      <button id="t-skel" class="on">Skeleton</button>
+      <button id="t-joints" class="on">Joints</button>
+      <button id="t-labels" class="on">Labels</button>
+      <button id="t-contact" class="on">Contacts</button>
+    </div>
+    <div id="readout"></div>
+  </div>
+  <div id="controls">
+    <button id="play">⏸</button>
+    <button id="step-back">◀</button>
+    <button id="step-fwd">▶</button>
+    <input id="scrub" type="range" min="0" max="1000" value="0">
+    <span id="frame">—</span>
+  </div>
+  <aside id="side">
+    <h2>Joint QA</h2>
+    <div id="qa"><p class="muted">Pick an exercise.</p></div>
+  </aside>
+</main>
+<div id="strips">
+  <h2>Frame strip <button id="restrip">re-shoot from this view</button> <span class="muted">click a frame to seek</span></h2>
+  <div class="strip" id="live-strip"></div>
+  <h2>CI render strip <span class="muted">what Blender shot, 12 frames across the rep</span></h2>
+  <div id="ci-strip"><p class="muted">—</p></div>
+</div>
+<script type="module" src="inspect.js"></script>
+</body>
+</html>

@@ -123,7 +123,7 @@ class TestSpecs(unittest.TestCase):
         for stem, spec in specs():
             if "camera" in spec:
                 with self.subTest(stem):
-                    self.assertIn(spec["camera"], ("front", "back"))
+                    self.assertIn(spec["camera"], ("front", "back", "side"))
 
     def test_props_are_buildable(self):
         for stem, spec in specs():
