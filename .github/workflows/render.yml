@@ -111,9 +111,9 @@ jobs:
             # transition, peak, drive, finish, loop — the thumbnail alone hides
             # every mid-rep failure
             cnt=$(ls "$dir"/*.png | wc -l)
-            every=$(( (cnt + 11) / 12 ))
+            pick=$(python3 -c "import sys; n=int(sys.argv[1]); print('+'.join('eq(n'+chr(92)+',%d)' % round(i*(n-1)/11) for i in range(12)))" "$cnt")
             ffmpeg -v error -pattern_type glob -i "$dir/*.png" \
-              -vf "select='not(mod(n\,$every))',scale=180:-1,tile=12x1:padding=2:color=0x0b0d10" \
+              -vf "select='$pick',scale=180:-1,tile=12x1:padding=2:color=0x0b0d10" \
               -frames:v 1 "site/assets/$id.strip.png"
             ffmpeg -v error -framerate 15 -pattern_type glob -i "$dir/*.png" \
               -vf "split[a][b];[a]palettegen=max_colors=128[p];[b][p]paletteuse=dither=bayer" \
