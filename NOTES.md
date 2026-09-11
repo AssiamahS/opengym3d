@@ -114,3 +114,30 @@ When something looks wrong twice, stop adjusting numbers and go measure.
   One subdivision level (export_apply) turns the stairstep highlight borders
   into gradients; GLBs grow 2.7 -> 5.8 MB, acceptable. "camera": "front" on
   every live spec — the posterior rule shot the kettlebell swing from behind.
+
+## 2026-09-11 — grade the GLB, not the thumbnail (rig inspector + QA gate)
+- The export already ships every MakeHuman bone as a node plus the baked
+  clip, so joint QA runs on the artefact the viewer plays, in 0.2 s, with no
+  Blender: pipeline/qa_glb.py rebuilds joint world positions per sample and
+  checks length drift, hinge range, roll flips, pops, foot slide, implement
+  contact, loop closure. website/inspect.html draws the same skeleton with
+  the same verdicts. Run it on the live assets before theorising.
+- What the numbers said about the "disconnected arms": bone lengths 0.0%
+  drift, hinges in range, bar on the hands, on all 17. The failure was ROLL:
+  rotation_difference is the shortest arc, and once a limb passes near its
+  rest direction's antipode the roll flips up to 177 deg between adjacent
+  frames (bicycle crunch 8 bones, sit-up forearm 135 deg). Fix = carry each
+  Mixamo bone's rest roll reference through its posed rotation and roll the
+  MH bone about its aim to match (aim_bone twist=). TWIST MISS in the log
+  means the sign convention is off — measure, don't flip signs blind.
+- Elbow hyperextension cannot be judged against a body axis: a sumo high
+  pull's flared elbows read "backwards" against the shoulder line while
+  being sound. Knees are fine against the hip line. Elbows = range only
+  until the humeral roll is read from the GLB rotations.
+- Position "pops" at 15 Hz are indistinguishable from jump landings (burpee,
+  jump push-up, split jerk all trip a 6 cm second-difference); root-relative
+  and a warning, never the gate. The retarget's real pops are direction
+  flips and those land in the twist check.
+- GLTFLoader strips "." from node names (wrist.L -> wristL): look up both.
+- A dead-side camera puts a barbell's near plate end-on over the hands;
+  "side" is 25 deg toward the front.
