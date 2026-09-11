@@ -42,6 +42,29 @@ Mixamo's terms allow the clips inside a project but not as redistributed
 files, so the FBX never enters this repo and the mocap-driven GLBs are not
 part of the sold pack.
 
+## Joint QA and the rig inspector
+
+A render finishing proves nothing about the rig. Every exported GLB carries
+the full skeleton and the baked clip, so CI grades the export itself with
+`pipeline/qa_glb.py` (stdlib, no Blender): bone-length drift along each limb,
+knee/elbow range, roll flips between adjacent frames, root-relative pops,
+planted-foot slide, implement-to-hand distance on every frame, and loop
+closure. Critical failures keep the exercise **out of the public manifest**
+— a barbell exercise never ships with empty hands, an arm whose forearm
+flips 150° mid-rep never reaches the grid. The report is printed in the run
+log and written next to the asset as `<id>.glb.qa.json`.
+
+`inspect.html` on the site is the same skeleton, drawn: joint markers
+coloured by verdict, hinge angles and hand-to-implement gaps live, front /
+side / 3-4 / back / top, frame stepping, a 12-frame strip shot from any
+angle, the CI contact sheet, and a QA table whose failing rows seek to the
+frame. Excluded exercises stay inspectable there.
+
+```
+python3 pipeline/qa_glb.py site/assets/*.glb     # grade, write reports, exit 1 on FAIL
+python3 pipeline/make_manifest.py exercises site/exercises.json site/assets
+```
+
 ## Add or tune an exercise — from your phone
 
 1. Open `exercises/` on github.com and edit any JSON (or copy one to a new file).
@@ -79,8 +102,8 @@ python3 -m http.server -d site 8000   # after copying website/* + assets into si
 
 ```
 exercises/    one JSON per exercise: metadata + pose keyframes
-pipeline/     build_exercise.py (Blender headless), make_manifest.py
-website/      static Three.js viewer (no build step)
+pipeline/     build_exercise.py (Blender headless), qa_glb.py (joint QA), make_manifest.py
+website/      static Three.js viewer + inspect.html rig inspector (no build step)
 .github/      render & deploy workflow
 ```
 
