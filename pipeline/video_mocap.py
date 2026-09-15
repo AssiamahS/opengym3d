@@ -74,6 +74,7 @@ SEGMENTS = {
 }
 TORSO_FRAME = {"upper_arm.L", "forearm.L", "hand.L", "upper_arm.R", "forearm.R",
                "hand.R", "neck", "head", "chest"}
+HAND_MIN_M = 0.06          # wrist->index shorter than this = no readable hand
 
 
 def ensure_model():
@@ -258,14 +259,56 @@ def torso_basis(pos_f):
     return left, fwd, up
 
 
+def perp(v, d):
+    """Component of v perpendicular to unit d."""
+    return v - d * np.dot(v, d)
+
+
 def twist_for(seg_dir, frame_fwd, frame_up, frame_left):
     """twist_ref's rule, carried by the body frame: forward unless the
     segment lies along it, then up, then left."""
     for ref in (frame_fwd, frame_up, frame_left):
-        side = ref - seg_dir * np.dot(ref, seg_dir)
+        side = perp(ref, seg_dir)
         if np.linalg.norm(side) > 0.3:
             return unit(side)
     return unit(frame_fwd)
+
+
+def hinge_twist(seg_dir, other_dir, sign, fallback):
+    """Roll reference for a hinged limb segment, read off the joint itself:
+    the front of a thigh is opposite to where the shin folds (knees bend
+    backward), the front of an upper arm is where the forearm folds (elbows
+    bend forward); for the distal segment the front is away from the
+    proximal one. Continuous: blends into the body-forward reference as the
+    joint straightens, because a straight joint has no bend plane. The
+    first spike (2026-09-15) flipped legs 178 deg mid-squat when the
+    body-forward rule switched from 'forward' to 'up' as the thigh came
+    horizontal; the bend plane never switches."""
+    side = perp(other_dir, seg_dir)
+    n = np.linalg.norm(side)                    # sin(bend angle)
+    if n < 1e-6:
+        return fallback
+    w = min(1.0, max(0.0, (n - 0.17) / 0.34))   # 0 at <10 deg, 1 past 30 deg
+    ref = unit(w * sign * side / n + (1.0 - w) * fallback)
+    return ref if np.linalg.norm(ref) > 1e-6 else fallback
+
+
+def limb_twists(dirs, fwd_legs, fwd_arms, up, left, tl, tu):
+    out = {}
+    for s in ("L", "R"):
+        thigh, shin = np.array(dirs[f"thigh.{s}"]), np.array(dirs[f"shin.{s}"])
+        ua, fa = np.array(dirs[f"upper_arm.{s}"]), np.array(dirs[f"forearm.{s}"])
+        hand = np.array(dirs[f"hand.{s}"])
+        out[f"thigh.{s}"] = hinge_twist(thigh, shin, -1.0, twist_for(thigh, fwd_legs, up, left))
+        out[f"shin.{s}"] = hinge_twist(shin, thigh, +1.0, twist_for(shin, fwd_legs, up, left))
+        out[f"upper_arm.{s}"] = hinge_twist(ua, fa, +1.0, twist_for(ua, fwd_arms, tu, tl))
+        out[f"forearm.{s}"] = hinge_twist(fa, ua, +1.0, twist_for(fa, fwd_arms, tu, tl))
+        # the hand follows the forearm's roll: a monocular estimate has no
+        # pronation, and wrist->index is the noisiest segment in the set
+        out[f"hand.{s}"] = unit(perp(out[f"forearm.{s}"], hand)) \
+            if np.linalg.norm(perp(out[f"forearm.{s}"], hand)) > 1e-6 \
+            else twist_for(hand, fwd_arms, tu, tl)
+    return out
 
 
 def build_frames(pos, fps):
@@ -279,6 +322,12 @@ def build_frames(pos, fps):
         dirs, twists = {}, {}
         for name, (a, b) in SEGMENTS.items():
             d = unit(centre(p, b) - centre(p, a))
+            if name.startswith("hand") and \
+                    np.linalg.norm(centre(p, b) - centre(p, a)) < HAND_MIN_M:
+                # index finger folded onto the wrist (fist, occlusion):
+                # no direction to read, keep the hand along the forearm
+                d = unit(centre(p, SEGMENTS[name.replace("hand", "forearm")][1]) -
+                         centre(p, SEGMENTS[name.replace("hand", "forearm")][0]))
             dirs[name] = [round(float(c), 5) for c in d]
             if name.startswith("foot"):
                 tw = twist_for(d, up, fwd, left)      # feet roll about up
@@ -286,6 +335,9 @@ def build_frames(pos, fps):
                 tw = twist_for(d, tf, tu, tl)
             else:
                 tw = twist_for(d, fwd, up, left)
+            twists[name] = [round(float(c), 5) for c in tw]
+        for name, tw in limb_twists({k: np.array(v) for k, v in dirs.items()},
+                                    fwd, tf, up, left, tl, tu).items():
             twists[name] = [round(float(c), 5) for c in tw]
         out.append({
             "hip_height": round(float(h[f]), 5),
