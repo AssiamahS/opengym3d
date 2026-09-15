@@ -190,5 +190,8 @@
       }
     }
   ],
-  "mocap": "mixamo/bicep_curl.fbx"
+  "status": "draft",
+  "mocap_rejected": {
+    "mixamo/bicep_curl.fbx": "spike 35000255151: both gates PASS, but it is the bicep curl clip with the same supinated grip \u2014 a hammer curl needs a neutral grip; capture it"
+  }
 }

@@ -210,3 +210,7 @@ When something looks wrong twice, stop adjusting numbers and go measure.
   mocap_rejected so resolve never re-offers it; deadlift needs a capture.
   crunch (circle_crunch) and hammer_curl (bicep_curl clip, same grip as the
   bicep curl — the rig has one dumbbell hold) passed both gates and went live.
+- Gate 3 overrules gates 1+2: hammer_curl on the bicep_curl clip PASSED both
+  gates and is still wrong — same supinated grip, so it is a mislabeled
+  bicep curl. Pulled back to draft (mocap_rejected). A pattern gate cannot
+  see grip; only the sheet/strip can. Read the strip before going live.
