@@ -1,287 +1,760 @@
 {
-  "format": "opengym3d-asset-library/1",
-  "updated": "2026-09-15",
-  "policy": {
-    "pack": "a rendered GLB may be sold or bundled only when its human, its motion and its props are all redistributable (licence in CC0-1.0 / CC-BY-4.0 / MIT / own, commercial_use true)",
-    "app": "everything here may drive the public viewer and the FitX app; 'app-only' assets never enter the pack",
-    "first_rule": "before any paid asset is considered, search: CC0 packs (motions/cc0/), own phone capture (pipeline/video_mocap.py), open datasets; paid options are listed only as rejected alternatives in docs/FREE_ASSET_RESEARCH.md"
+ "format": "opengym3d-asset-library/1",
+ "updated": "2026-09-15",
+ "policy": {
+  "pack": "a rendered GLB may be sold or bundled only when its human, its motion and its props are all redistributable (licence in CC0-1.0 / CC-BY-4.0 / MIT / own, commercial_use true)",
+  "app": "everything here may drive the public viewer and the FitX app; 'app-only' assets never enter the pack",
+  "first_rule": "before any paid asset is considered, search: CC0 packs (motions/cc0/), own phone capture (pipeline/video_mocap.py), open datasets; paid options are listed only as rejected alternatives in docs/FREE_ASSET_RESEARCH.md"
+ },
+ "assets": [
+  {
+   "id": "human/mpfb2-male-muscle",
+   "type": "human",
+   "name": "MPFB2 anatomical male, muscle 1.0, MakeHuman default rig",
+   "source": "https://extensions.blender.org/add-ons/mpfb/ (v2.0.16, pinned sha256 in .github/workflows/render.yml)",
+   "license": "CC0-1.0",
+   "license_note": "MakeHuman base mesh, targets and rigs are CC0; the MPFB add-on code is GPL-3.0 but generated characters carry no GPL obligation (makehumancommunity.org licensing FAQ)",
+   "commercial_use": true,
+   "format": "generated in Blender by pipeline/build_exercise.py create_human()",
+   "rig": "makehuman-default",
+   "compatible_rigs": [
+    "makehuman-default"
+   ],
+   "tags": [
+    "male",
+    "anatomical",
+    "muscle",
+    "hero"
+   ],
+   "quality": 8,
+   "notes": "163 bones exported as nodes; muscles painted from skin-weight territories; helper geometry stripped pre-export"
   },
-  "assets": [
-    {
-      "id": "human/mpfb2-male-muscle",
-      "type": "human",
-      "name": "MPFB2 anatomical male, muscle 1.0, MakeHuman default rig",
-      "source": "https://extensions.blender.org/add-ons/mpfb/ (v2.0.16, pinned sha256 in .github/workflows/render.yml)",
-      "license": "CC0-1.0",
-      "license_note": "MakeHuman base mesh, targets and rigs are CC0; the MPFB add-on code is GPL-3.0 but generated characters carry no GPL obligation (makehumancommunity.org licensing FAQ)",
-      "commercial_use": true,
-      "format": "generated in Blender by pipeline/build_exercise.py create_human()",
-      "rig": "makehuman-default",
-      "compatible_rigs": ["makehuman-default"],
-      "tags": ["male", "anatomical", "muscle", "hero"],
-      "quality": 8,
-      "notes": "163 bones exported as nodes; muscles painted from skin-weight territories; helper geometry stripped pre-export"
-    },
-    {
-      "id": "equipment/dumbbell",
-      "type": "equipment",
-      "name": "Procedural dumbbell",
-      "source": "pipeline/build_exercise.py build_props()",
-      "license": "MIT",
-      "commercial_use": true,
-      "format": "procedural mesh",
-      "tags": ["dumbbell", "free weight"],
-      "quality": 6
-    },
-    {
-      "id": "equipment/barbell",
-      "type": "equipment",
-      "name": "Procedural barbell with plates",
-      "source": "pipeline/build_exercise.py build_props()",
-      "license": "MIT",
-      "commercial_use": true,
-      "format": "procedural mesh",
-      "tags": ["barbell", "free weight"],
-      "quality": 6
-    },
-    {
-      "id": "equipment/kettlebell",
-      "type": "equipment",
-      "name": "Procedural kettlebell",
-      "source": "pipeline/build_exercise.py build_props()",
-      "license": "MIT",
-      "commercial_use": true,
-      "format": "procedural mesh",
-      "tags": ["kettlebell"],
-      "quality": 6
-    },
-
-    {
-      "id": "motion/cc0/pushup",
-      "type": "motion",
-      "name": "Push-up",
-      "source": "Mesh2Motion human animation pack (Quaternius Universal Animation Library retarget), github.com/Mesh2Motion/mesh2motion-app static/animations, commit 2d3d1ff 2026-09-04",
-      "license": "CC0-1.0",
-      "commercial_use": true,
-      "format": "glb",
-      "file": "cc0/mesh2motion/human-addon-animations.glb",
-      "clip": "Pushup",
-      "rig": "ue-mannequin",
-      "compatible_rigs": ["ue-mannequin", "makehuman-default (via M2M_MAP)"],
-      "tags": ["push_up", "pushup", "press", "bodyweight", "chest", "triceps"],
-      "quality": 6,
-      "duration_s": 1.54
-    },
-    {
-      "id": "motion/cc0/jumping-jacks",
-      "type": "motion",
-      "name": "Jumping jacks",
-      "source": "Mesh2Motion human animation pack, human-addon-animations.glb",
-      "license": "CC0-1.0",
-      "commercial_use": true,
-      "format": "glb",
-      "file": "cc0/mesh2motion/human-addon-animations.glb",
-      "clip": "Jumping Jacks",
-      "rig": "ue-mannequin",
-      "compatible_rigs": ["ue-mannequin", "makehuman-default (via M2M_MAP)"],
-      "tags": ["jumping_jack", "jumping_jacks", "cardio", "bodyweight"],
-      "quality": 6,
-      "duration_s": 1.25
-    },
-    {
-      "id": "motion/cc0/crawl",
-      "type": "motion",
-      "name": "Bear crawl",
-      "source": "Mesh2Motion human animation pack, human-addon-animations.glb",
-      "license": "CC0-1.0",
-      "commercial_use": true,
-      "format": "glb",
-      "file": "cc0/mesh2motion/human-addon-animations.glb",
-      "clip": "Crawl",
-      "rig": "ue-mannequin",
-      "compatible_rigs": ["ue-mannequin", "makehuman-default (via M2M_MAP)"],
-      "tags": ["bear_crawl", "crawl", "core", "bodyweight"],
-      "quality": 5,
-      "duration_s": 1.71
-    },
-    {
-      "id": "motion/cc0/meditate",
-      "type": "motion",
-      "name": "Seated meditation",
-      "source": "Mesh2Motion human animation pack, human-addon-animations.glb",
-      "license": "CC0-1.0",
-      "commercial_use": true,
-      "format": "glb",
-      "file": "cc0/mesh2motion/human-addon-animations.glb",
-      "clip": "Meditate",
-      "rig": "ue-mannequin",
-      "compatible_rigs": ["ue-mannequin", "makehuman-default (via M2M_MAP)"],
-      "tags": ["meditation", "recovery", "breathing", "cooldown"],
-      "quality": 5,
-      "duration_s": 1.5
-    },
-    {
-      "id": "motion/cc0/jog",
-      "type": "motion",
-      "name": "Jog in place",
-      "source": "Mesh2Motion human animation pack, human-base-animations.glb",
-      "license": "CC0-1.0",
-      "commercial_use": true,
-      "format": "glb",
-      "file": "cc0/mesh2motion/human-base-animations.glb",
-      "clip": "Jog",
-      "rig": "ue-mannequin",
-      "compatible_rigs": ["ue-mannequin", "makehuman-default (via M2M_MAP)"],
-      "tags": ["jog", "jogging", "cardio", "treadmill", "warmup"],
-      "quality": 6,
-      "duration_s": 1.17
-    },
-    {
-      "id": "motion/cc0/sprint",
-      "type": "motion",
-      "name": "Run / sprint",
-      "source": "Mesh2Motion human animation pack, human-base-animations.glb",
-      "license": "CC0-1.0",
-      "commercial_use": true,
-      "format": "glb",
-      "file": "cc0/mesh2motion/human-base-animations.glb",
-      "clip": "Sprint",
-      "rig": "ue-mannequin",
-      "compatible_rigs": ["ue-mannequin", "makehuman-default (via M2M_MAP)"],
-      "tags": ["run", "running", "sprint", "cardio", "treadmill", "hiit"],
-      "quality": 6,
-      "duration_s": 0.83
-    },
-    {
-      "id": "motion/cc0/walk",
-      "type": "motion",
-      "name": "Walk",
-      "source": "Mesh2Motion human animation pack, human-base-animations.glb",
-      "license": "CC0-1.0",
-      "commercial_use": true,
-      "format": "glb",
-      "file": "cc0/mesh2motion/human-base-animations.glb",
-      "clip": "Walk",
-      "rig": "ue-mannequin",
-      "compatible_rigs": ["ue-mannequin", "makehuman-default (via M2M_MAP)"],
-      "tags": ["walk", "walking", "cardio", "treadmill", "warmup", "cooldown"],
-      "quality": 6,
-      "duration_s": 1.67
-    },
-    {
-      "id": "motion/cc0/pack-index",
-      "type": "reference",
-      "name": "Mesh2Motion human packs — 162 CC0 clips available, 7 used",
-      "source": "motions/cc0/mesh2motion/human-base-animations.glb (87 clips) + human-addon-animations.glb (75 clips); list with `python3 -c` over the GLB JSON chunk or the Mesh2Motion app",
-      "license": "CC0-1.0",
-      "commercial_use": true,
-      "notes": "Fitness-relevant but unused: Chest_Open (stretch), Crouch_Idle, Jump_Start/Jump_air/Jump_Land (box jump), Roll, Swim_Fwd, Sitting_*, Idle_A (rest). Nothing for lunges, deadlifts, rows, raises, curls, bridges, wall sits, supermans, high knees — those go through the video lane."
-    },
-
-    {
-      "id": "motion/video/squat-demo",
-      "type": "motion",
-      "name": "Air squat (video capture, demo footage)",
-      "source": "pipeline/video_mocap.py over a public YouTube demonstration clip, seconds 26-44, auto-rep; MediaPipe Pose 0.10.21 on-device",
-      "license": "video-demo",
-      "license_note": "pose data extracted for pipeline testing; NOT for the pack — re-record with your own phone (side view, full body, 1 rep) and re-run video_mocap.py to make it 'own'",
-      "commercial_use": false,
-      "format": "opengym3d-motion/1",
-      "file": "video/squat_demo.json",
-      "rig": "driver-directions",
-      "compatible_rigs": ["makehuman-default (via animate_video)"],
-      "tags": ["squat", "air_squat", "bodyweight", "quads", "glutes"],
-      "quality": 5
-    },
-    {
-      "id": "motion/video/lunge-demo",
-      "type": "motion",
-      "name": "Forward lunge (video capture, demo footage)",
-      "source": "pipeline/video_mocap.py over a public YouTube demonstration clip, seconds 4-14, auto-rep; MediaPipe Pose 0.10.21 on-device",
-      "license": "video-demo",
-      "license_note": "pose data extracted for pipeline testing; NOT for the pack — re-record with your own phone to make it 'own'",
-      "commercial_use": false,
-      "format": "opengym3d-motion/1",
-      "file": "video/lunge_demo.json",
-      "rig": "driver-directions",
-      "compatible_rigs": ["makehuman-default (via animate_video)"],
-      "tags": ["lunge", "forward_lunge", "bodyweight", "quads", "glutes"],
-      "quality": 5
-    },
-
-    {
-      "id": "motion/mixamo/air-squat",
-      "type": "motion", "name": "Air Squat", "source": "Adobe Mixamo", "license": "Mixamo",
-      "license_note": "usable inside a project, raw or converted files may not be redistributed; FBX lives in the private AssiamahS/opengym3d-mocap checkout",
-      "commercial_use": true, "format": "fbx", "file": "mixamo/air_squat.fbx", "rig": "mixamorig",
-      "compatible_rigs": ["mixamorig", "makehuman-default (via MIXAMO_MAP)"], "tags": ["squat", "air_squat"], "quality": 8
-    },
-    {"id": "motion/mixamo/air-squat-bent-arms", "type": "motion", "name": "Air Squat (bent arms)", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/air_squat_bent_arms.fbx", "rig": "mixamorig", "tags": ["squat"], "quality": 8},
-    {"id": "motion/mixamo/back-squat", "type": "motion", "name": "Back Squat", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/back_squat.fbx", "rig": "mixamorig", "tags": ["back_squat", "barbell"], "quality": 8},
-    {"id": "motion/mixamo/bicep-curl", "type": "motion", "name": "Bicep Curl", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/bicep_curl.fbx", "rig": "mixamorig", "tags": ["bicep_curl", "dumbbell"], "quality": 8},
-    {"id": "motion/mixamo/bicycle-crunch", "type": "motion", "name": "Bicycle Crunch", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/bicycle_crunch.fbx", "rig": "mixamorig", "tags": ["bicycle_crunch", "core"], "quality": 8},
-    {"id": "motion/mixamo/burpee", "type": "motion", "name": "Burpee", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/burpee.fbx", "rig": "mixamorig", "tags": ["burpee", "hiit"], "quality": 8},
-    {"id": "motion/mixamo/circle-crunch", "type": "motion", "name": "Circle Crunch", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/circle_crunch.fbx", "rig": "mixamorig", "tags": ["crunch", "core"], "quality": 8},
-    {"id": "motion/mixamo/clean-and-jerk", "type": "motion", "name": "Clean And Jerk", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/clean_and_jerk.fbx", "rig": "mixamorig", "tags": ["clean_and_jerk", "barbell"], "quality": 8},
-    {"id": "motion/mixamo/fitness-idle", "type": "motion", "name": "Fitness Idle", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/fitness_idle.fbx", "rig": "mixamorig", "tags": ["idle", "rest"], "quality": 8},
-    {"id": "motion/mixamo/front-raises", "type": "motion", "name": "Front Raises", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/front_raises.fbx", "rig": "mixamorig", "tags": ["front_raise", "dumbbell"], "quality": 8},
-    {"id": "motion/mixamo/jump-push-up", "type": "motion", "name": "Jump Push Up", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/jump_push_up.fbx", "rig": "mixamorig", "tags": ["jump_push_up", "plyometric"], "quality": 8},
-    {"id": "motion/mixamo/jumping-jacks", "type": "motion", "name": "Jumping Jacks", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/jumping_jacks.fbx", "rig": "mixamorig", "tags": ["jumping_jack"], "quality": 8},
-    {"id": "motion/mixamo/kettlebell-swing", "type": "motion", "name": "Kettlebell Swing", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/kettlebell_swing.fbx", "rig": "mixamorig", "tags": ["kettlebell_swing"], "quality": 8},
-    {"id": "motion/mixamo/lifting-heavy-object", "type": "motion", "name": "Lifting Heavy Object", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/lifting_heavy_object.fbx", "rig": "mixamorig", "tags": ["lift", "deadlift_like"], "quality": 7},
-    {"id": "motion/mixamo/overhead-squat", "type": "motion", "name": "Overhead Squat", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/overhead_squat.fbx", "rig": "mixamorig", "tags": ["overhead_squat", "barbell"], "quality": 8},
-    {"id": "motion/mixamo/pistol-squat", "type": "motion", "name": "Pistol Squat", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/pistol_squat.fbx", "rig": "mixamorig", "tags": ["pistol_squat"], "quality": 8},
-    {"id": "motion/mixamo/plank", "type": "motion", "name": "Plank", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/plank.fbx", "rig": "mixamorig", "tags": ["plank", "core"], "quality": 8},
-    {"id": "motion/mixamo/push-up", "type": "motion", "name": "Push Up", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/push_up.fbx", "rig": "mixamorig", "tags": ["push_up"], "quality": 8},
-    {"id": "motion/mixamo/situps", "type": "motion", "name": "Situps", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/situps.fbx", "rig": "mixamorig", "tags": ["situp", "core"], "quality": 8},
-    {"id": "motion/mixamo/snatch", "type": "motion", "name": "Snatch", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/snatch.fbx", "rig": "mixamorig", "tags": ["snatch", "barbell"], "quality": 8},
-    {"id": "motion/mixamo/sumo-high-pull", "type": "motion", "name": "Sumo High Pull", "source": "Adobe Mixamo", "license": "Mixamo", "commercial_use": true, "format": "fbx", "file": "mixamo/sumo_high_pull.fbx", "rig": "mixamorig", "tags": ["sumo_high_pull", "barbell"], "quality": 8},
-
-    {
-      "id": "reference/cmu-mocap",
-      "type": "reference",
-      "name": "CMU Graphics Lab Motion Capture Database",
-      "source": "http://mocap.cs.cmu.edu/ (ASF/AMC, C3D; BVH conversions by cgspeed)",
-      "license": "CMU",
-      "license_note": "\"free for use in research projects; you may include this data in commercially-sold products, but you may not resell this data directly, even in converted form\" — app-only, same class as Mixamo; acknowledgement text required",
-      "commercial_use": true,
-      "notes": "squat-bearing trials: 13_29, 13_30, 14_06, 14_14 (jumping jacks / jog / squats / side twists / stretches), 22_14 + 23_14 (alternating squats), 86_02, 86_08. Not wired: needs an ASF/AMC importer and the clips are compound (trim by frame range)."
-    },
-    {
-      "id": "reference/z-anatomy",
-      "type": "reference",
-      "name": "Z-Anatomy (BodyParts3D derivative)",
-      "source": "https://github.com/Z-Anatomy/Models-of-human-anatomy, Zenodo 4953712",
-      "license": "CC-BY-SA-4.0",
-      "license_note": "share-alike is viral onto the distributed model — écorché lane only, kept behind FITX_ECORCHE=0",
-      "commercial_use": true
-    },
-    {
-      "id": "tool/mediapipe-pose",
-      "type": "reference",
-      "name": "Google MediaPipe Pose Landmarker (heavy)",
-      "source": "pip mediapipe==0.10.21 (1.0.x crashes on macOS Metal), model from storage.googleapis.com/mediapipe-models",
-      "license": "Apache-2.0",
-      "commercial_use": true,
-      "notes": "monocular 3D world landmarks, ~25 fps on an M-series CPU; no axial rotation, hip-centred (vertical travel recovered from the feet). Driven by pipeline/video_mocap.py."
-    },
-    {
-      "id": "tool/freemocap",
-      "type": "reference",
-      "name": "FreeMoCap (multi-camera, open source)",
-      "source": "https://github.com/freemocap/freemocap",
-      "license": "AGPL-3.0",
-      "commercial_use": true,
-      "notes": "upgrade path when the single-camera lane's depth is not enough: 2-3 phones, charuco board, exports BVH/CSV; data you record is yours"
-    },
-    {
-      "id": "tool/blendarmocap",
-      "type": "reference",
-      "name": "BlendArMocap (MediaPipe inside Blender)",
-      "source": "https://github.com/cgtinker/BlendArMocap",
-      "license": "GPL-3.0",
-      "commercial_use": true,
-      "notes": "same estimator as the video lane but needs the Blender UI; the headless pipeline uses MediaPipe directly instead"
-    }
-  ]
+  {
+   "id": "equipment/dumbbell",
+   "type": "equipment",
+   "name": "Procedural dumbbell",
+   "source": "pipeline/build_exercise.py build_props()",
+   "license": "MIT",
+   "commercial_use": true,
+   "format": "procedural mesh",
+   "tags": [
+    "dumbbell",
+    "free weight"
+   ],
+   "quality": 6
+  },
+  {
+   "id": "equipment/barbell",
+   "type": "equipment",
+   "name": "Procedural barbell with plates",
+   "source": "pipeline/build_exercise.py build_props()",
+   "license": "MIT",
+   "commercial_use": true,
+   "format": "procedural mesh",
+   "tags": [
+    "barbell",
+    "free weight"
+   ],
+   "quality": 6
+  },
+  {
+   "id": "equipment/kettlebell",
+   "type": "equipment",
+   "name": "Procedural kettlebell",
+   "source": "pipeline/build_exercise.py build_props()",
+   "license": "MIT",
+   "commercial_use": true,
+   "format": "procedural mesh",
+   "tags": [
+    "kettlebell"
+   ],
+   "quality": 6
+  },
+  {
+   "id": "motion/cc0/pushup",
+   "type": "motion",
+   "name": "Push-up",
+   "source": "Mesh2Motion human animation pack (Quaternius Universal Animation Library retarget), github.com/Mesh2Motion/mesh2motion-app static/animations, commit 2d3d1ff 2026-09-04",
+   "license": "CC0-1.0",
+   "commercial_use": true,
+   "format": "glb",
+   "file": "cc0/mesh2motion/human-addon-animations.glb",
+   "clip": "Pushup",
+   "rig": "ue-mannequin",
+   "compatible_rigs": [
+    "ue-mannequin",
+    "makehuman-default (via M2M_MAP)"
+   ],
+   "tags": [
+    "push_up",
+    "pushup",
+    "press",
+    "bodyweight",
+    "chest",
+    "triceps"
+   ],
+   "quality": 6,
+   "duration_s": 1.54
+  },
+  {
+   "id": "motion/cc0/jumping-jacks",
+   "type": "motion",
+   "name": "Jumping jacks",
+   "source": "Mesh2Motion human animation pack, human-addon-animations.glb",
+   "license": "CC0-1.0",
+   "commercial_use": true,
+   "format": "glb",
+   "file": "cc0/mesh2motion/human-addon-animations.glb",
+   "clip": "Jumping Jacks",
+   "rig": "ue-mannequin",
+   "compatible_rigs": [
+    "ue-mannequin",
+    "makehuman-default (via M2M_MAP)"
+   ],
+   "tags": [
+    "jumping_jack",
+    "jumping_jacks",
+    "cardio",
+    "bodyweight"
+   ],
+   "quality": 6,
+   "duration_s": 1.25
+  },
+  {
+   "id": "motion/cc0/crawl",
+   "type": "motion",
+   "name": "Bear crawl",
+   "source": "Mesh2Motion human animation pack, human-addon-animations.glb",
+   "license": "CC0-1.0",
+   "commercial_use": true,
+   "format": "glb",
+   "file": "cc0/mesh2motion/human-addon-animations.glb",
+   "clip": "Crawl",
+   "rig": "ue-mannequin",
+   "compatible_rigs": [
+    "ue-mannequin",
+    "makehuman-default (via M2M_MAP)"
+   ],
+   "tags": [
+    "bear_crawl",
+    "crawl",
+    "core",
+    "bodyweight"
+   ],
+   "quality": 5,
+   "duration_s": 1.71
+  },
+  {
+   "id": "motion/cc0/meditate",
+   "type": "motion",
+   "name": "Seated meditation",
+   "source": "Mesh2Motion human animation pack, human-addon-animations.glb",
+   "license": "CC0-1.0",
+   "commercial_use": true,
+   "format": "glb",
+   "file": "cc0/mesh2motion/human-addon-animations.glb",
+   "clip": "Meditate",
+   "rig": "ue-mannequin",
+   "compatible_rigs": [
+    "ue-mannequin",
+    "makehuman-default (via M2M_MAP)"
+   ],
+   "tags": [
+    "meditation",
+    "recovery",
+    "breathing",
+    "cooldown"
+   ],
+   "quality": 5,
+   "duration_s": 1.5
+  },
+  {
+   "id": "motion/cc0/jog",
+   "type": "motion",
+   "name": "Jog in place",
+   "source": "Mesh2Motion human animation pack, human-base-animations.glb",
+   "license": "CC0-1.0",
+   "commercial_use": true,
+   "format": "glb",
+   "file": "cc0/mesh2motion/human-base-animations.glb",
+   "clip": "Jog",
+   "rig": "ue-mannequin",
+   "compatible_rigs": [
+    "ue-mannequin",
+    "makehuman-default (via M2M_MAP)"
+   ],
+   "tags": [
+    "jog",
+    "jogging",
+    "cardio",
+    "treadmill",
+    "warmup"
+   ],
+   "quality": 6,
+   "duration_s": 1.17
+  },
+  {
+   "id": "motion/cc0/sprint",
+   "type": "motion",
+   "name": "Run / sprint",
+   "source": "Mesh2Motion human animation pack, human-base-animations.glb",
+   "license": "CC0-1.0",
+   "commercial_use": true,
+   "format": "glb",
+   "file": "cc0/mesh2motion/human-base-animations.glb",
+   "clip": "Sprint",
+   "rig": "ue-mannequin",
+   "compatible_rigs": [
+    "ue-mannequin",
+    "makehuman-default (via M2M_MAP)"
+   ],
+   "tags": [
+    "run",
+    "running",
+    "sprint",
+    "cardio",
+    "treadmill",
+    "hiit"
+   ],
+   "quality": 6,
+   "duration_s": 0.83
+  },
+  {
+   "id": "motion/cc0/walk",
+   "type": "motion",
+   "name": "Walk",
+   "source": "Mesh2Motion human animation pack, human-base-animations.glb",
+   "license": "CC0-1.0",
+   "commercial_use": true,
+   "format": "glb",
+   "file": "cc0/mesh2motion/human-base-animations.glb",
+   "clip": "Walk",
+   "rig": "ue-mannequin",
+   "compatible_rigs": [
+    "ue-mannequin",
+    "makehuman-default (via M2M_MAP)"
+   ],
+   "tags": [
+    "walk",
+    "walking",
+    "cardio",
+    "treadmill",
+    "warmup",
+    "cooldown"
+   ],
+   "quality": 6,
+   "duration_s": 1.67
+  },
+  {
+   "id": "motion/cc0/pack-index",
+   "type": "reference",
+   "name": "Mesh2Motion human packs — 162 CC0 clips available, 7 used",
+   "source": "motions/cc0/mesh2motion/human-base-animations.glb (87 clips) + human-addon-animations.glb (75 clips); list with `python3 -c` over the GLB JSON chunk or the Mesh2Motion app",
+   "license": "CC0-1.0",
+   "commercial_use": true,
+   "notes": "Fitness-relevant but unused: Chest_Open (stretch), Crouch_Idle, Jump_Start/Jump_air/Jump_Land (box jump), Roll, Swim_Fwd, Sitting_*, Idle_A (rest). Nothing for lunges, deadlifts, rows, raises, curls, bridges, wall sits, supermans, high knees — those go through the video lane."
+  },
+  {
+   "id": "motion/video/squat-demo",
+   "type": "motion",
+   "name": "Air squat (video capture, demo footage)",
+   "source": "pipeline/video_mocap.py over a public YouTube demonstration clip, seconds 26-44, auto-rep; MediaPipe Pose 0.10.21 on-device",
+   "license": "video-demo",
+   "license_note": "pose data extracted for pipeline testing; NOT for the pack — re-record with your own phone (side view, full body, 1 rep) and re-run video_mocap.py to make it 'own'",
+   "commercial_use": false,
+   "format": "opengym3d-motion/1",
+   "file": "video/squat_demo.json",
+   "rig": "driver-directions",
+   "compatible_rigs": [
+    "makehuman-default (via animate_video)"
+   ],
+   "tags": [
+    "squat",
+    "air_squat",
+    "bodyweight",
+    "quads",
+    "glutes"
+   ],
+   "quality": 5
+  },
+  {
+   "id": "motion/video/lunge-demo",
+   "type": "motion",
+   "name": "Forward lunge (video capture, demo footage)",
+   "source": "pipeline/video_mocap.py over a public YouTube demonstration clip, seconds 4-14, auto-rep; MediaPipe Pose 0.10.21 on-device",
+   "license": "video-demo",
+   "license_note": "pose data extracted for pipeline testing; NOT for the pack — re-record with your own phone to make it 'own'",
+   "commercial_use": false,
+   "format": "opengym3d-motion/1",
+   "file": "video/lunge_demo.json",
+   "rig": "driver-directions",
+   "compatible_rigs": [
+    "makehuman-default (via animate_video)"
+   ],
+   "tags": [
+    "lunge",
+    "forward_lunge",
+    "bodyweight",
+    "quads",
+    "glutes"
+   ],
+   "quality": 5,
+   "candidate_for": [
+    "lunge",
+    "reverse_lunge"
+   ],
+   "verified_exercise": {
+    "lunge": "skeleton-first verify 2026-09-15: PASS (licence video-demo, app-only)"
+   }
+  },
+  {
+   "id": "motion/mixamo/air-squat",
+   "type": "motion",
+   "name": "Air Squat",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "license_note": "usable inside a project, raw or converted files may not be redistributed; FBX lives in the private AssiamahS/opengym3d-mocap checkout",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/air_squat.fbx",
+   "rig": "mixamorig",
+   "compatible_rigs": [
+    "mixamorig",
+    "makehuman-default (via MIXAMO_MAP)"
+   ],
+   "tags": [
+    "squat",
+    "air_squat"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/air-squat-bent-arms",
+   "type": "motion",
+   "name": "Air Squat (bent arms)",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/air_squat_bent_arms.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "squat"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/back-squat",
+   "type": "motion",
+   "name": "Back Squat",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/back_squat.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "back_squat",
+    "barbell"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/bicep-curl",
+   "type": "motion",
+   "name": "Bicep Curl",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/bicep_curl.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "bicep_curl",
+    "dumbbell"
+   ],
+   "quality": 8,
+   "candidate_for": [
+    "hammer_curl"
+   ],
+   "verified_exercise": {
+    "bicep_curl": "live",
+    "hammer_curl": "REJECTED: supinated grip, a hammer curl is neutral"
+   }
+  },
+  {
+   "id": "motion/mixamo/bicycle-crunch",
+   "type": "motion",
+   "name": "Bicycle Crunch",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/bicycle_crunch.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "bicycle_crunch",
+    "core"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/burpee",
+   "type": "motion",
+   "name": "Burpee",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/burpee.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "burpee",
+    "hiit"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/circle-crunch",
+   "type": "motion",
+   "name": "Circle Crunch",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/circle_crunch.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "crunch",
+    "core"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/clean-and-jerk",
+   "type": "motion",
+   "name": "Clean And Jerk",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/clean_and_jerk.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "clean_and_jerk",
+    "barbell"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/fitness-idle",
+   "type": "motion",
+   "name": "Fitness Idle",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/fitness_idle.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "idle",
+    "rest"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/front-raises",
+   "type": "motion",
+   "name": "Front Raises",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/front_raises.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "front_raise",
+    "dumbbell"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/jump-push-up",
+   "type": "motion",
+   "name": "Jump Push Up",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/jump_push_up.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "jump_push_up",
+    "plyometric"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/jumping-jacks",
+   "type": "motion",
+   "name": "Jumping Jacks",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/jumping_jacks.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "jumping_jack"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/kettlebell-swing",
+   "type": "motion",
+   "name": "Kettlebell Swing",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/kettlebell_swing.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "kettlebell_swing"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/lifting-heavy-object",
+   "type": "motion",
+   "name": "Lifting Heavy Object",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/lifting_heavy_object.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "lift",
+    "deadlift_like"
+   ],
+   "quality": 7,
+   "candidate_for": [
+    "deadlift"
+   ],
+   "verified_exercise": {
+    "deadlift": "REJECTED spike 35000249458: hinge gate FAIL, knee 41 deg — it squats the bar"
+   }
+  },
+  {
+   "id": "motion/mixamo/overhead-squat",
+   "type": "motion",
+   "name": "Overhead Squat",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/overhead_squat.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "overhead_squat",
+    "barbell"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/pistol-squat",
+   "type": "motion",
+   "name": "Pistol Squat",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/pistol_squat.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "pistol_squat"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/plank",
+   "type": "motion",
+   "name": "Plank",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/plank.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "plank",
+    "core"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/push-up",
+   "type": "motion",
+   "name": "Push Up",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/push_up.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "push_up"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/situps",
+   "type": "motion",
+   "name": "Situps",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/situps.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "situp",
+    "core"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/snatch",
+   "type": "motion",
+   "name": "Snatch",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/snatch.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "snatch",
+    "barbell"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "motion/mixamo/sumo-high-pull",
+   "type": "motion",
+   "name": "Sumo High Pull",
+   "source": "Adobe Mixamo",
+   "license": "Mixamo",
+   "commercial_use": true,
+   "format": "fbx",
+   "file": "mixamo/sumo_high_pull.fbx",
+   "rig": "mixamorig",
+   "tags": [
+    "sumo_high_pull",
+    "barbell"
+   ],
+   "quality": 8
+  },
+  {
+   "id": "reference/cmu-mocap",
+   "type": "reference",
+   "name": "CMU Graphics Lab Motion Capture Database",
+   "source": "http://mocap.cs.cmu.edu/ (ASF/AMC, C3D; BVH conversions by cgspeed)",
+   "license": "CMU",
+   "license_note": "\"free for use in research projects; you may include this data in commercially-sold products, but you may not resell this data directly, even in converted form\" — app-only, same class as Mixamo; acknowledgement text required",
+   "commercial_use": true,
+   "notes": "squat-bearing trials: 13_29, 13_30, 14_06, 14_14 (jumping jacks / jog / squats / side twists / stretches), 22_14 + 23_14 (alternating squats), 86_02, 86_08. Not wired: needs an ASF/AMC importer and the clips are compound (trim by frame range)."
+  },
+  {
+   "id": "reference/z-anatomy",
+   "type": "reference",
+   "name": "Z-Anatomy (BodyParts3D derivative)",
+   "source": "https://github.com/Z-Anatomy/Models-of-human-anatomy, Zenodo 4953712",
+   "license": "CC-BY-SA-4.0",
+   "license_note": "share-alike is viral onto the distributed model — écorché lane only, kept behind FITX_ECORCHE=0",
+   "commercial_use": true
+  },
+  {
+   "id": "tool/mediapipe-pose",
+   "type": "reference",
+   "name": "Google MediaPipe Pose Landmarker (heavy)",
+   "source": "pip mediapipe==0.10.21 (1.0.x crashes on macOS Metal), model from storage.googleapis.com/mediapipe-models",
+   "license": "Apache-2.0",
+   "commercial_use": true,
+   "notes": "monocular 3D world landmarks, ~25 fps on an M-series CPU; no axial rotation, hip-centred (vertical travel recovered from the feet). Driven by pipeline/video_mocap.py."
+  },
+  {
+   "id": "tool/freemocap",
+   "type": "reference",
+   "name": "FreeMoCap (multi-camera, open source)",
+   "source": "https://github.com/freemocap/freemocap",
+   "license": "AGPL-3.0",
+   "commercial_use": true,
+   "notes": "upgrade path when the single-camera lane's depth is not enough: 2-3 phones, charuco board, exports BVH/CSV; data you record is yours"
+  },
+  {
+   "id": "tool/blendarmocap",
+   "type": "reference",
+   "name": "BlendArMocap (MediaPipe inside Blender)",
+   "source": "https://github.com/cgtinker/BlendArMocap",
+   "license": "GPL-3.0",
+   "commercial_use": true,
+   "notes": "same estimator as the video lane but needs the Blender UI; the headless pipeline uses MediaPipe directly instead"
+  },
+  {
+   "id": "motion/cmu/13_29",
+   "type": "motion",
+   "name": "CMU 13_29: jumping jacks, side twists, squats, jog",
+   "source": "CMU Graphics Lab Motion Capture Database, mocap.cs.cmu.edu, subject 13 (NSF EIA-0196217); ASF/AMC vendored in motions/cmu/, adapter pipeline/motion.py from_cmu",
+   "license": "CMU-mocap",
+   "license_note": "free for all uses; may be included in commercially-sold products; may NOT be resold directly even in converted form — app-only, never in the sold pack",
+   "commercial_use": false,
+   "format": "asf/amc",
+   "file": "cmu/13_29.amc",
+   "rig": "cmu-vicon-30",
+   "compatible_rigs": [
+    "opengym3d_v1 (via motion.from_cmu)"
+   ],
+   "tags": [
+    "jumping jacks",
+    "side twists",
+    "squats",
+    "jog"
+   ],
+   "candidate_for": [
+    "squat"
+   ],
+   "verified_exercise": {
+    "squat": "skeleton-first verify 2026-09-15: squat PASS (knee 36, hip drop 0.57), hinge FAIL"
+   },
+   "quality": 7
+  },
+  {
+   "id": "motion/cmu/13_30",
+   "type": "motion",
+   "name": "CMU 13_30: jumping jacks, side twists, bend over, jog",
+   "source": "CMU Graphics Lab Motion Capture Database, mocap.cs.cmu.edu, subject 13 (NSF EIA-0196217); ASF/AMC vendored in motions/cmu/, adapter pipeline/motion.py from_cmu",
+   "license": "CMU-mocap",
+   "license_note": "free for all uses; may be included in commercially-sold products; may NOT be resold directly even in converted form — app-only, never in the sold pack",
+   "commercial_use": false,
+   "format": "asf/amc",
+   "file": "cmu/13_30.amc",
+   "rig": "cmu-vicon-30",
+   "compatible_rigs": [
+    "opengym3d_v1 (via motion.from_cmu)"
+   ],
+   "tags": [
+    "jumping jacks",
+    "side twists",
+    "bend over",
+    "jog"
+   ],
+   "candidate_for": [],
+   "verified_exercise": {
+    "deadlift": "REJECTED: the bend is a bendy squat, torso 36 deg, hips to 0.45 m"
+   },
+   "quality": 7
+  }
+ ]
 }

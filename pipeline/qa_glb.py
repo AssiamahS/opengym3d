@@ -163,6 +163,11 @@ def m_mul(a, b):
             for i in range(4)]
 
 
+def m_rot(m):
+    """3x3 rotation part of a world matrix (rows)."""
+    return [[m[r][c] for c in range(3)] for r in range(3)]
+
+
 def m_pos(m):
     return (m[0][3], m[1][3], m[2][3])
 
@@ -200,7 +205,9 @@ def angle_between(u, v):
 class Clip:
     """Evaluate the GLB's node hierarchy at any time, for every animation."""
 
-    def __init__(self, gltf, blob):
+    def __init__(self, gltf, blob, animation=None):
+        """animation: None = every clip in the file (an exported exercise
+        holds one); a name or index picks one clip out of a pack."""
         self.gltf, self.blob = gltf, blob
         self.nodes = gltf["nodes"]
         self.parent = {}
@@ -210,7 +217,15 @@ class Clip:
         self.by_name = {n.get("name", ""): i for i, n in enumerate(self.nodes)}
         self.tracks = {}         # node -> path -> (times, values, interp)
         self.duration = 0.0
-        for anim in gltf.get("animations", []):
+        anims = gltf.get("animations", [])
+        if animation is not None:
+            if isinstance(animation, int):
+                anims = [anims[animation]]
+            else:
+                anims = [a for a in anims if a.get("name") == animation]
+                if not anims:
+                    raise KeyError(f"no animation named {animation!r}")
+        for anim in anims:
             for ch in anim["channels"]:
                 s = anim["samplers"][ch["sampler"]]
                 times = read_accessor(gltf, blob, s["input"])

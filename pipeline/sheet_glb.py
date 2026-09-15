@@ -92,23 +92,30 @@ def pick_frames(n_samples, n):
 
 def sheet(glb_path, n_frames=12, out=None):
     gltf, names, times, frames, _ = qa_glb.sample_clip(glb_path, samples_per_sec=30)
-    idx = pick_frames(len(frames), n_frames)
     prop_nodes = [nm for nm in names if "mesh" in gltf["nodes"][names[nm]]
                   and nm.lower().startswith(("barbell", "dumbbell", "kettlebell"))]
-
-    # one scale for the whole sheet so height reads across frames
-    pts = [p for f in frames for p in f.values()]
-    ys = [p[1] for p in pts]
-    floor, top = min(ys), max(ys)
-    height = max(top - floor, 0.5)
-    scale = (CELL - 16) / height
-
     fails = set()
     qa_path = Path(str(glb_path) + ".qa.json")
     if qa_path.exists():
         for r in json.loads(qa_path.read_text())["results"]:
             if r["status"] == "FAIL" and r["critical"] and r.get("t") is not None:
                 fails.add(r["t"])
+    out = Path(out) if out else Path(str(glb_path).replace(".glb", ".sheet.png"))
+    return draw(frames, times, out, n_frames=n_frames, prop_nodes=prop_nodes, fails=fails)
+
+
+def draw(frames, times, out, n_frames=12, prop_nodes=(), fails=()):
+    """Sheet from joint positions alone (glTF Y-up metres, MakeHuman names):
+    a GLB's sampled skeleton or a normalized motion put through the
+    canonical skeleton's FK (pipeline/motion.py) draw the same way."""
+    idx = pick_frames(len(frames), n_frames)
+    # one scale for the whole sheet so height reads across frames
+    pts = [p for f in frames for p in f.values()]
+    ys = [p[1] for p in pts]
+    floor, top = min(ys), max(ys)
+    height = max(top - floor, 0.5)
+    scale = (CELL - 16) / height
+    fails = set(fails)
 
     cv = Canvas(len(idx) * (CELL + PAD) + PAD, 2 * (CELL + PAD) + PAD, BG)
     for col, k in enumerate(idx):
@@ -144,7 +151,7 @@ def sheet(glb_path, n_frames=12, out=None):
                 cv.dot(*P(f[pn]), COL["prop"], 3)
             if any(abs(times[k] - t) < 0.5 / 15 for t in fails):
                 cv.rect(cx0, oy, CELL, CELL, COL["fail"])
-    out = Path(out) if out else Path(str(glb_path).replace(".glb", ".sheet.png"))
+    out = Path(out)
     out.write_bytes(cv.png())
     return out, idx
 

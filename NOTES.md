@@ -214,3 +214,33 @@ When something looks wrong twice, stop adjusting numbers and go measure.
   gates and is still wrong — same supinated grip, so it is a mislabeled
   bicep curl. Pulled back to draft (mocap_rejected). A pattern gate cannot
   see grip; only the sheet/strip can. Read the strip before going live.
+
+## 2026-09-15 — skeleton first: the canonical skeleton plays motion without Blender
+- The canonical skeleton already existed: the 17-bone driver rig in
+  build_exercise.BONES. The video lane's JSON (opengym3d-motion/1: world
+  directions per bone + roll references + pelvis basis + hip height) already
+  IS the normalized format — every lane converged on it in memory inside
+  transfer_pose; only the video lane wrote it to disk. pipeline/motion.py
+  now writes it from Mesh2Motion GLBs (pure glTF sampling, qa_glb.Clip with
+  one animation picked) and CMU ASF/AMC (own parser: C·M·C⁻¹ per bone, tail
+  = parent tail + W·dir·len, units inches/0.45), and plays any of them on the
+  canonical skeleton with a 60-line FK. FK output uses the MakeHuman joint
+  names so anatomy_qa and sheet_glb grade and draw it unchanged.
+- Proof it matches the renderer: the lunge capture through the FK gives
+  foot split 0.763 m / knee 90.2° — the rendered GLB gave 0.76 / 90.25.
+- CMU licence (page text): "free for all uses ... may include in
+  commercially-sold products, but may not resell this data directly, even in
+  converted form" → app-only. Subject 13: 13_29 has two deep squats at 32 s
+  and 35 s (knee 36°, hip drop 0.57 m) — squat PASS, hinge FAIL on the
+  skeleton; 13_30's "bend over" is a bendy squat (torso 36°, hips to 0.45 m),
+  NOT a hinge. No CMU hinge found yet; the search page needs a real parser
+  (its rows are not one-per-line HTML).
+- Mesh2Motion mannequin rests in a T-pose facing +Z (glTF); convert
+  (x, y, z) → (x, −z, y) and the figure faces −Y like everything else. The
+  pack GLB holds 75 clips whose channels all target the same nodes — sample
+  ONE animation or the tracks overwrite each other.
+- factory.py verify <id>: every candidate an adapter can read → FK → anatomy
+  gate → EXERCISE_VERIFIED / REJECTED / CANDIDATE (Mixamo: Blender only) and
+  a sheet, in seconds. Deadlift and hammer curl show their rejected clips
+  with the reason; lunge verifies on the demo capture. Publishing still
+  needs the CI GLB, the joint gate and eyes on the strip.

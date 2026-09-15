@@ -329,5 +329,8 @@
       }
     }
   ],
-  "status": "draft"
+  "status": "draft",
+  "mocap_rejected": {
+    "mixamo/lifting_heavy_object.fbx": "same clip rejected for deadlift (spike 35000249458): knee 41 deg, it squats; an RDL needs knee >= 120"
+  }
 }

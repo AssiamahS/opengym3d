@@ -1,0 +1,22 @@
+{
+ "format": "opengym3d-cmu-index/1",
+ "licence": "CMU Graphics Lab Motion Capture Database (mocap.cs.cmu.edu): free for all uses; may be included in commercially-sold products; may NOT be resold directly, even in converted form \u2014 so app-only, never in the sold GLB pack. Funded by NSF EIA-0196217.",
+ "trials": {
+  "13_29": {
+   "description": "jumping jacks, side twists, squats, jog",
+   "start": 31.6,
+   "end": 34.6,
+   "candidate_for": [
+    "squat"
+   ],
+   "note": "two deep squats at 32 s and 35 s; window = first rep"
+  },
+  "13_30": {
+   "description": "jumping jacks, side twists, bend over, jog",
+   "start": 12.0,
+   "end": 14.2,
+   "candidate_for": [],
+   "note": "the 'bend over' is a bendy squat: torso 36 deg, hips down to 0.45 m \u2014 not a hinge"
+  }
+ }
+}

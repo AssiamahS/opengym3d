@@ -89,7 +89,7 @@ class TestSpecs(unittest.TestCase):
             with self.subTest(stem):
                 self.assertFalse(mocap.startswith("/"))
                 vendor = mocap.split("/")[0]
-                self.assertIn(vendor, {"mixamo", "cc0", "video"})
+                self.assertIn(vendor, {"mixamo", "cc0", "video", "cmu"})
                 file, _, clip = mocap.partition("#")
                 if vendor == "mixamo":
                     self.assertTrue(file.endswith(".fbx"))
@@ -97,6 +97,9 @@ class TestSpecs(unittest.TestCase):
                 elif vendor == "cc0":
                     self.assertTrue(file.endswith((".glb", ".gltf")))
                     self.assertTrue(clip, "a CC0 pack reference needs '#Clip Name'")
+                    self.assertTrue((REPO / "motions" / file).exists(), file)
+                elif vendor == "cmu":
+                    self.assertTrue(file.endswith(".amc"))
                     self.assertTrue((REPO / "motions" / file).exists(), file)
                 else:
                     self.assertTrue(file.endswith(".json"))

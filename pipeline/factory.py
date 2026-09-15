@@ -6,6 +6,8 @@ graded GLB, with every step's answer coming from data in the repo.
     python3 pipeline/factory.py ingest lunge --video ~/Downloads/lunge.mov [--mirror]
     python3 pipeline/factory.py ingest lunge --motion motions/video/lunge.json
     python3 pipeline/factory.py grade site/assets/*.glb # joint gate + anatomy gate + sheets
+    python3 pipeline/factory.py verify deadlift          # skeleton-first: every candidate, no Blender
+    python3 pipeline/factory.py skeleton video/lunge_demo.json   # sheet from a motion, no Blender
 
 resolve walks the motion lanes in licence order — the asset library first
 (CC0 packs, own captures), then the app-only Mixamo clips the project holds,
@@ -18,6 +20,15 @@ clip (or take a motion JSON already extracted), write the motion under
 motions/video/, point the spec at it, drop its draft status, put the camera
 on the side, register the motion in the asset library, and print the spike
 command that renders and grades it in CI.
+
+verify is the skeleton-first check: every candidate motion an adapter can
+read (CC0 packs, CMU, video captures) is played on the canonical skeleton
+in pure Python, graded by the exercise's anatomy rules and drawn as a
+two-view sheet — before any Blender minute is spent. Each candidate ends
+in one state: EXERCISE_VERIFIED, REJECTED (with the failing rule), or
+CANDIDATE (Mixamo FBX, which only Blender can read — spike it). A verdict
+file verify/<id>.json records it. Publishing still needs the CI render,
+the joint gate on the GLB and your eyes on the strip.
 
 grade runs everything the deploy runs on a GLB — joint integrity, the
 exercise's anatomy rules, the two-view skeleton sheet — so a spike artifact
@@ -34,6 +45,7 @@ REPO = HERE.parent
 sys.path.insert(0, str(HERE))
 from asset_library import Library  # noqa: E402
 import anatomy_qa  # noqa: E402
+import motion as motion_fmt  # noqa: E402
 import qa_glb  # noqa: E402
 import sheet_glb  # noqa: E402
 
@@ -41,6 +53,8 @@ EXERCISES = REPO / "exercises"
 MOTIONS = REPO / "motions"
 MIXAMO = REPO / "mocap" / "mixamo"          # private clone, gitignored
 LIB_PATH = REPO / "assets" / "ASSET_LIBRARY.json"
+CMU_INDEX = MOTIONS / "cmu" / "index.json"       # trial -> description, window, licence
+VERIFY_DIR = REPO / "verify"
 
 # how hard each pattern is to capture and retarget cleanly, from what the
 # first two video captures and the Mixamo batch actually needed
@@ -143,6 +157,10 @@ def resolve(eid, lib=None):
         if f.stem.startswith(eid) or _hit(words, f.stem):
             meta = json.loads(f.read_text())
             cands.append(("video", f"video/{f.name}", meta.get("license", "?")))
+    if CMU_INDEX.exists():
+        for trial, t in json.loads(CMU_INDEX.read_text())["trials"].items():
+            if _hit(words, t.get("description", "")) or eid in t.get("candidate_for", []):
+                cands.append(("cmu", f"cmu/{trial}.amc", "CMU-mocap"))
     # dedupe, keep first sighting; skip clips a spike already rejected
     # ("mocap_rejected": {ref: why}) so the same wrong clip is not re-offered
     seen, uniq = set(spec.get("mocap_rejected", {})), []
@@ -157,6 +175,97 @@ def resolve(eid, lib=None):
                   f"one clean rep, then: python3 pipeline/factory.py ingest {eid} --video <clip>")
     return {"id": eid, "lane": None, "ref": None, "licence": None, "pack": False,
             "candidates": uniq, "action": action}
+
+
+def load_motion_ref(ref):
+    """A spec-style motion reference -> OpenGymMotion, for the lanes pure
+    Python can read. Mixamo FBX returns None (Blender only)."""
+    lane = ref.split("/")[0]
+    if lane == "video":
+        return motion_fmt.load(MOTIONS / ref)
+    if lane == "cc0":
+        file, clip = ref.split("#", 1)
+        return motion_fmt.from_m2m(MOTIONS / file, clip)
+    if lane == "cmu":
+        trial = Path(ref).stem
+        idx = json.loads(CMU_INDEX.read_text())["trials"][trial]
+        subj = trial.split("_")[0]
+        return motion_fmt.from_cmu(MOTIONS / "cmu" / f"{subj}.asf", MOTIONS / "cmu" / f"{trial}.amc",
+                                   start=idx.get("start", 0.0), end=idx.get("end"))
+    return None
+
+
+STATES = ("CANDIDATE", "INGESTED", "TECHNICALLY_VALID", "EXERCISE_VERIFIED",
+          "VISUALLY_APPROVED", "PUBLISHED", "REJECTED")
+
+
+def verify(eid, out_dir=None):
+    """Skeleton-first verdict for one exercise, every candidate, no Blender."""
+    lib = Library()
+    spec_path, spec = load_spec(eid)
+    out_dir = Path(out_dir) if out_dir else VERIFY_DIR
+    out_dir.mkdir(parents=True, exist_ok=True)
+    r = resolve(eid, lib)
+    refs = [r["ref"]] if r["ref"] else [c[1] for c in r["candidates"]]
+    refs += [x for x in spec.get("mocap_rejected", {}) if x not in refs]
+    pat = (spec.get("movement") or {}).get("pattern")
+    live = spec.get("status", "live") != "draft" and r["ref"]
+    print(f"EXERCISE: {eid}   pattern: {pat}   status: {spec.get('status', 'live')}")
+    rows = []
+    for ref in refs:
+        row = {"ref": ref, "state": "CANDIDATE", "rules": [], "sheet": None}
+        rejected = spec.get("mocap_rejected", {}).get(ref)
+        if rejected:
+            row.update(state="REJECTED", reason=rejected)
+            rows.append(row)
+            continue
+        try:
+            m = load_motion_ref(ref)
+        except Exception as e:                       # noqa: BLE001 — report, don't crash the table
+            row.update(state="CANDIDATE", reason=f"adapter error: {e}")
+            rows.append(row)
+            continue
+        if m is None:
+            row.update(state="PUBLISHED" if live else "CANDIDATE",
+                       reason="rendered on main; regrade with factory.py grade on the site GLB" if live
+                       else "Mixamo FBX: only Blender reads it — gh workflow run spike.yml")
+            rows.append(row)
+            continue
+        frames, times, names = motion_fmt.skeleton_frames(m)
+        res = anatomy_qa.evaluate(frames, times, names, spec)
+        fails = [x for x in res if not x["ok"]]
+        sheet = out_dir / f"{eid}.{ref.replace('/', '_').replace('#', '_')}.skeleton.png"
+        sheet_glb.draw(frames, times, sheet, fails=[x["t"] for x in fails if x.get("t") is not None])
+        row.update(state="REJECTED" if fails else "EXERCISE_VERIFIED",
+                   rules=[{"rule": x["rule"], "ok": x["ok"], "detail": x["detail"]} for x in res],
+                   licence=m.get("license"), frames=len(m["frames"]), sheet=str(sheet.relative_to(REPO)),
+                   reason="; ".join(x["detail"] for x in fails) if fails else None)
+        rows.append(row)
+    verified = [x for x in rows if x["state"] == "EXERCISE_VERIFIED"]
+    pending = [x for x in rows if x["state"] == "CANDIDATE"]
+    if live:
+        verdict = "PUBLISHED — on the site; the joint gate and strip already ran in CI"
+    elif verified:
+        verdict = "EXERCISE_VERIFIED — spike it for the GLB, joint gate and strip, then look"
+    elif pending:
+        verdict = "CANDIDATE — needs the CI spike (Blender-only source)"
+    elif rows:
+        verdict = "REJECTED — every candidate fails the movement; capture needed"
+    else:
+        verdict = "NO MOTION — capture needed"
+    for row in rows:
+        print(f"  {row['ref']:58s} {row['state']}")
+        if row.get("reason"):
+            print(f"      {row['reason']}")
+        if row.get("sheet"):
+            print(f"      sheet {row['sheet']}")
+    print(f"VERDICT: {verdict}")
+    report = {"id": eid, "pattern": pat, "candidates": rows, "verdict": verdict,
+              "states": STATES,
+              "publish_requires": ["EXERCISE_VERIFIED", "CI render GLB", "qa_glb joint gate PASS",
+                                   "eyes on strip + sheet", "licence known (asset library)"]}
+    (out_dir / f"{eid}.json").write_text(json.dumps(report, indent=1))
+    return 0 if (verified or live) else 1
 
 
 def status():
@@ -295,6 +404,24 @@ def main(argv):
         return 0
     if cmd == "grade":
         return grade(rest)
+    if cmd == "verify":
+        ids = rest or [s["id"] for _, s in specs() if s.get("status") == "draft"]
+        code = 0
+        for eid in ids:
+            code |= verify(eid)
+            print()
+        return code
+    if cmd == "skeleton":
+        for ref in rest:
+            m = load_motion_ref(ref) if not ref.endswith(".json") or "/" not in ref or ref.startswith("video/") \
+                else motion_fmt.load(ref)
+            if m is None:
+                sys.exit(f"{ref}: Blender-only source")
+            frames, times, _ = motion_fmt.skeleton_frames(m)
+            out = Path(ref.split("/")[-1].split("#")[-1].replace(".json", "") + ".skeleton.png")
+            sheet_glb.draw(frames, times, out)
+            print(out)
+        return 0
     print(__doc__)
     return 2
 

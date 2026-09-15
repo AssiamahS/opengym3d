@@ -17,6 +17,29 @@ exercises/<id>.json ─┬─ "mocap": <ref> ───────────�
         ▼  make_manifest.py        critical failure = not published; licence.pack stamped
 ```
 
+## Skeleton first
+
+Nothing needs Blender until the skeleton is right. Every motion source is
+converted into one file format and played on one canonical skeleton in
+pure Python:
+
+```
+Mesh2Motion GLB ─┐
+CMU ASF/AMC ─────┼─ pipeline/motion.py adapters ─► opengym3d-motion/1 ─► canonical skeleton FK
+phone video ─────┘   (Mixamo FBX: Blender only, CI spike)      │              (opengym3d_v1, 17 bones)
+                                                              ▼
+                                        anatomy gate + two-view skeleton sheet, in seconds
+```
+
+`python3 pipeline/factory.py verify <id>` runs that for every candidate
+motion of an exercise and leaves `verify/<id>.json` plus a sheet per
+candidate. States: CANDIDATE (found by name, unproven), EXERCISE_VERIFIED
+(passes the movement rules on the skeleton), REJECTED (fails them, or a
+human rejected the render — recorded on the spec as `mocap_rejected`),
+PUBLISHED (rendered on main). A filename is never evidence: Mixamo
+"lifting heavy object" was a candidate for deadlift and is REJECTED
+because it squats.
+
 ## Commands
 
 ```sh
@@ -24,6 +47,9 @@ python3 pipeline/factory.py status                  # every spec: lane, licence,
 python3 pipeline/factory.py resolve                 # all drafts: candidate clip or capture needed
 python3 pipeline/factory.py ingest lunge --video ~/Downloads/lunge.mov
 python3 pipeline/factory.py grade spike/lunge.glb   # gates 1+2 and the sheet, locally, in seconds
+python3 pipeline/factory.py verify deadlift         # skeleton-first: candidates → FK → anatomy gate → verdict
+python3 pipeline/motion.py cmu motions/cmu/13.asf motions/cmu/13_29.amc out.json --start 31.6 --end 34.6
+python3 pipeline/motion.py show motions/video/lunge_demo.json     # skeleton sheet from any motion
 python3 pipeline/anatomy_qa.py census site/assets/*.glb   # the numbers behind the bounds
 ```
 
@@ -73,8 +99,11 @@ shows what one camera saw, the sheet shows what the joints did.
 
 1. `motions/cc0/` — Mesh2Motion packs (CC0). Pack-eligible.
 2. `motions/video/` — your own phone capture (`own`). Pack-eligible.
-3. `mocap/mixamo/` — private clone, app-only, never in the sold pack.
-4. `video-demo` captures from public footage — app-only, pipeline tests.
+3. `motions/cmu/` — CMU mocap database (free for all uses, not resellable
+   even converted). App-only. `index.json` holds each trial's description,
+   rep window and what it is a candidate for.
+4. `mocap/mixamo/` — private clone, app-only, never in the sold pack.
+5. `video-demo` captures from public footage — app-only, pipeline tests.
 
 `resolve` searches all four by whole-word alias and never guesses from a
 substring. When nothing matches it says CAPTURE NEEDED and gives the shot

@@ -114,8 +114,10 @@ python3 -m http.server -d site 8000   # after copying website/* + assets into si
 
 ```
 exercises/    one JSON per exercise: metadata + pose keyframes
-pipeline/     build_exercise.py (Blender headless), qa_glb.py (joint gate), anatomy_qa.py (movement gate),
-              sheet_glb.py (skeleton sheets), factory.py (resolve / ingest / grade), make_manifest.py
+pipeline/     build_exercise.py (Blender headless), motion.py (normalized motion + canonical skeleton FK,
+              Mesh2Motion / CMU adapters), qa_glb.py (joint gate), anatomy_qa.py (movement gate),
+              sheet_glb.py (skeleton sheets), factory.py (resolve / verify / ingest / grade), make_manifest.py
+motions/      cc0/ Mesh2Motion packs · cmu/ CMU ASF/AMC + index.json · video/ phone captures
 website/      static Three.js viewer + inspect.html rig inspector (no build step)
 .github/      render & deploy workflow
 ```
