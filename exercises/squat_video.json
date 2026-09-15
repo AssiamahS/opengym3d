@@ -1,6 +1,6 @@
 {
   "fps": 30,
-  "camera": "front",
+  "camera": "side",
   "id": "squat_video",
   "name": "Air Squat (video capture)",
   "equipment": "None",

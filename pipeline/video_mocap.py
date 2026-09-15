@@ -299,8 +299,12 @@ def limb_twists(dirs, fwd_legs, fwd_arms, up, left, tl, tu):
         thigh, shin = np.array(dirs[f"thigh.{s}"]), np.array(dirs[f"shin.{s}"])
         ua, fa = np.array(dirs[f"upper_arm.{s}"]), np.array(dirs[f"forearm.{s}"])
         hand = np.array(dirs[f"hand.{s}"])
+        foot = np.array(dirs[f"foot.{s}"])
         out[f"thigh.{s}"] = hinge_twist(thigh, shin, -1.0, twist_for(thigh, fwd_legs, up, left))
         out[f"shin.{s}"] = hinge_twist(shin, thigh, +1.0, twist_for(shin, fwd_legs, up, left))
+        # a foot's roll reference is its dorsum (twist_ref picks 'up' for a
+        # bone that points forward): where the shin rises from the ankle
+        out[f"foot.{s}"] = hinge_twist(foot, shin, -1.0, twist_for(foot, up, fwd_legs, left))
         out[f"upper_arm.{s}"] = hinge_twist(ua, fa, +1.0, twist_for(ua, fwd_arms, tu, tl))
         out[f"forearm.{s}"] = hinge_twist(fa, ua, +1.0, twist_for(fa, fwd_arms, tu, tl))
         # the hand follows the forearm's roll: a monocular estimate has no

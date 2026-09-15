@@ -1,6 +1,6 @@
 {
   "fps": 30,
-  "camera": "front",
+  "camera": "side",
   "id": "lunge_video",
   "name": "Forward Lunge (video capture)",
   "equipment": "None",

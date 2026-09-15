@@ -1,6 +1,6 @@
 {
   "fps": 30,
-  "camera": "front",
+  "camera": "side",
   "id": "bear_crawl",
   "name": "Bear Crawl",
   "equipment": "None",
