@@ -3,6 +3,15 @@
   "name": "Sumo Squat",
   "equipment": "Dumbbell",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "squat",
+    "qa": {
+      "foot_spread_min_m": [
+        0.5,
+        null
+      ]
+    }
+  },
   "prop": {
     "type": "dumbbell",
     "hold": "both",

@@ -3,6 +3,9 @@
   "name": "Burpee",
   "equipment": "None",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "plyometric"
+  },
   "primary": [
     "Quads",
     "Chest"

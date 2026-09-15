@@ -3,6 +3,9 @@
   "name": "Bodyweight Squat",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "squat"
+  },
   "primary": [
     "Quads",
     "Glutes"

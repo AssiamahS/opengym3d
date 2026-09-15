@@ -3,6 +3,9 @@
   "name": "Superman",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "prone_lift"
+  },
   "primary": [
     "Lower Back"
   ],

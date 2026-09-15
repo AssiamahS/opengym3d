@@ -3,6 +3,9 @@
   "name": "High Knees",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "high_knees"
+  },
   "primary": [
     "Quads"
   ],

@@ -108,8 +108,8 @@ class TestSpecs(unittest.TestCase):
                     for fr in doc["frames"][:2]:
                         self.assertEqual(set(fr["dirs"]), VIDEO_DIRS)
                         self.assertEqual(set(fr["pelvis"]), {"left", "forward", "up"})
-                self.assertNotEqual(spec.get("status"), "draft",
-                                    "mocap specs are the live ones")
+                # a draft MAY carry mocap: that is a candidate clip waiting
+                # for its spike to pass the gates (factory.py resolve)
 
     def test_every_motion_is_in_the_asset_library(self):
         """Licensing is data: a spec's motion must be a library entry so the

@@ -3,6 +3,9 @@
   "name": "Plank",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "plank"
+  },
   "primary": [
     "Core"
   ],

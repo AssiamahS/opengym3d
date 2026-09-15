@@ -100,8 +100,14 @@ jobs:
       # hinge angles, roll flips, pops, foot slide, implement contact, loop.
       # Reports sit next to the assets for the inspector page; the manifest
       # step reads them and drops any exercise with a critical failure.
-      - name: Joint-integrity QA
+      - name: Joint-integrity + anatomy QA
         run: python3 pipeline/qa_glb.py site/assets/*.glb || echo "::warning::QA failures above — those exercises are excluded from the manifest"
+
+      # Two-view skeleton sheet straight from the GLB (front over side, 12
+      # frames, failing frames boxed red): what the joints did, not what one
+      # camera happened to see. Stdlib, ~0.2 s per exercise.
+      - name: Skeleton sheets
+        run: python3 pipeline/sheet_glb.py site/assets/*.glb
 
       - name: Assemble watch GIFs + MP4s + frame strips
         run: |

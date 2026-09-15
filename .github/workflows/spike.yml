@@ -76,6 +76,7 @@ jobs:
         if: always()
         run: |
           python3 pipeline/qa_glb.py spike_out/*.glb || echo "::warning::QA FAIL — see table above"
+          python3 pipeline/sheet_glb.py spike_out/*.glb
           sudo apt-get install -y -qq ffmpeg
           for dir in spike_out/frames_*; do
             id=$(basename "$dir" | sed 's/^frames_//')

@@ -3,6 +3,9 @@
   "name": "Calf Raise",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "calf_raise"
+  },
   "primary": [
     "Calves"
   ],

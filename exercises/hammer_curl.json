@@ -3,6 +3,9 @@
   "name": "Hammer Curl",
   "equipment": "Dumbbell",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "curl"
+  },
   "prop": {
     "type": "dumbbell",
     "axis": [
@@ -187,5 +190,6 @@
       }
     }
   ],
-  "status": "draft"
+  "status": "draft",
+  "mocap": "mixamo/bicep_curl.fbx"
 }

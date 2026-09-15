@@ -3,6 +3,9 @@
   "name": "Kettlebell Swing",
   "equipment": "Kettlebell",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "swing"
+  },
   "primary": [
     "Glutes",
     "Hamstrings"

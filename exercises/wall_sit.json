@@ -3,6 +3,9 @@
   "name": "Wall Sit",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "wall_sit"
+  },
   "primary": [
     "Quads"
   ],

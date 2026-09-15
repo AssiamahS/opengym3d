@@ -3,6 +3,9 @@
   "name": "Crunch",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "supine_curl"
+  },
   "primary": [
     "Abs"
   ],
@@ -311,5 +314,6 @@
       }
     }
   ],
-  "status": "draft"
+  "status": "draft",
+  "mocap": "mixamo/circle_crunch.fbx"
 }

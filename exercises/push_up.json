@@ -3,6 +3,9 @@
   "name": "Push-Up",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "push_up"
+  },
   "primary": [
     "Chest"
   ],

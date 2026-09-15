@@ -3,6 +3,15 @@
   "name": "Sumo High Pull",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "olympic",
+    "qa": {
+      "wrist_over_shoulder_max_m": [
+        0.0,
+        null
+      ]
+    }
+  },
   "primary": [
     "Traps",
     "Shoulders"

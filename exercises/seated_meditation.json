@@ -5,6 +5,9 @@
   "name": "Seated Meditation (Recovery)",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "seated_hold"
+  },
   "primary": [
     "Core"
   ],

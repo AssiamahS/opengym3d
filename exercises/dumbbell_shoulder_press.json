@@ -3,6 +3,9 @@
   "name": "Dumbbell Shoulder Press",
   "equipment": "Dumbbell",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "press_vertical"
+  },
   "prop": {
     "type": "dumbbell",
     "axis": [

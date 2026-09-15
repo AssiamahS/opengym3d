@@ -5,6 +5,9 @@
   "name": "Jog in Place",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "locomotion"
+  },
   "primary": [
     "Quads",
     "Calves"

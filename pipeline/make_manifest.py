@@ -48,6 +48,8 @@ def entry(spec):
         "glb": f"assets/{spec['id']}.glb",
         "thumb": f"assets/{spec['id']}.png",
         "strip": f"assets/{spec['id']}.strip.png",
+        "sheet": f"assets/{spec['id']}.sheet.png",
+        "pattern": (spec.get("movement") or {}).get("pattern"),
         "motion": "mocap" if spec.get("mocap") else "keyed",
         "camera": spec.get("camera", "front"),
     }

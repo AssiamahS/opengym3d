@@ -3,6 +3,9 @@
   "name": "Plyometric Push-Up",
   "equipment": "None",
   "difficulty": "Advanced",
+  "movement": {
+    "pattern": "plyometric"
+  },
   "primary": [
     "Chest",
     "Triceps"

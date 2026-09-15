@@ -3,6 +3,9 @@
   "name": "Glute Bridge",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "bridge"
+  },
   "primary": [
     "Glutes"
   ],

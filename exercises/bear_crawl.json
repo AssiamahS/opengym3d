@@ -5,6 +5,9 @@
   "name": "Bear Crawl",
   "equipment": "None",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "crawl"
+  },
   "primary": [
     "Core",
     "Shoulders"

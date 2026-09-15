@@ -3,6 +3,15 @@
   "name": "Pistol Squat",
   "equipment": "None",
   "difficulty": "Advanced",
+  "movement": {
+    "pattern": "squat",
+    "qa": {
+      "foot_split_m": [
+        null,
+        null
+      ]
+    }
+  },
   "primary": [
     "Quads",
     "Glutes"

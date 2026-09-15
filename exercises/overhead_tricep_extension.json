@@ -3,6 +3,9 @@
   "name": "Overhead Tricep Extension",
   "equipment": "Dumbbell",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "tricep_overhead"
+  },
   "prop": {
     "type": "dumbbell",
     "hold": "both",

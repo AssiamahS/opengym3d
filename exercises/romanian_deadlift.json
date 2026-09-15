@@ -3,6 +3,19 @@
   "name": "Romanian Deadlift",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "hinge",
+    "qa": {
+      "hands_forward_m": [
+        null,
+        0.45
+      ],
+      "knee_min_deg": [
+        120,
+        null
+      ]
+    }
+  },
   "prop": {
     "type": "barbell"
   },

@@ -3,6 +3,15 @@
   "name": "Deadlift",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "hinge",
+    "qa": {
+      "hands_forward_m": [
+        null,
+        0.45
+      ]
+    }
+  },
   "prop": {
     "type": "barbell"
   },
@@ -318,5 +327,7 @@
       }
     }
   ],
-  "status": "draft"
+  "status": "draft",
+  "mocap": "mixamo/lifting_heavy_object.fbx",
+  "camera": "side"
 }

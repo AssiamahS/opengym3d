@@ -19,6 +19,8 @@ squint at in a 240 px GIF:
   foot slide       the planted foot travels while it carries the body
   prop contact     the implement stays on the hands, every frame
   loop             last frame returns near the first (clips are looped)
+  anatomy          the movement pattern the spec declares actually happens
+                   (pipeline/anatomy_qa.py: depth, hinge, arm plane, ...)
 
 Writes <glb>.qa.json next to the GLB and prints a PASS/FAIL table. Exit 1
 when any critical check fails, so CI can gate on it.
@@ -31,7 +33,7 @@ import sys
 from pathlib import Path
 
 CRITICAL = {"bone_length", "prop_present", "prop_contact", "hinge",
-            "twist_flip"}
+            "twist_flip", "anatomy"}
 
 # joint = (name, parent segment head, child that defines the segment's tail)
 HINGES = {
@@ -274,11 +276,15 @@ class Clip:
 
 # ------------------------------------------------------------------ checks
 
-def run_qa(glb_path, spec=None):
+def sample_clip(glb_path, samples_per_sec=None):
+    """Sample the GLB's clip: (gltf, names, times, frames, locals_) where
+    frames[k] maps node name -> world position and locals_[k] maps node
+    name -> local quaternion. Shared by the joint gate, the anatomy gate
+    and the skeleton sheet so all three grade the same samples."""
     gltf, blob = load_glb(glb_path)
     clip = Clip(gltf, blob)
     names = clip.by_name
-    step = 1.0 / THRESH["samples_per_sec"]
+    step = 1.0 / (samples_per_sec or THRESH["samples_per_sec"])
     n_samples = max(2, int(round(clip.duration / step)) + 1)
     times = [i * clip.duration / (n_samples - 1) for i in range(n_samples)]
 
@@ -288,6 +294,11 @@ def run_qa(glb_path, spec=None):
         w = clip.world(t)
         frames.append({nm: m_pos(w[i]) for nm, i in names.items()})
         locals_.append({nm: clip.local(i, t)[1] for nm, i in names.items()})
+    return gltf, names, times, frames, locals_
+
+
+def run_qa(glb_path, spec=None):
+    gltf, names, times, frames, locals_ = sample_clip(glb_path)
 
     results = []
 
@@ -435,6 +446,17 @@ def run_qa(glb_path, spec=None):
     add("loop", "clip", gap <= THRESH["loop_m"] * len(WATCH),
         f"first/last pose gap {gap:.2f} m summed over {len(WATCH)} joints",
         round(gap, 3))
+
+    # 8. anatomy: does the figure perform THIS exercise's movement pattern?
+    #    A deadlift that squats, a lateral raise that swings forward, a curl
+    #    whose shoulder flies up all pass 1-7 — the joints are sound, the
+    #    exercise is wrong. Rules live in anatomy_qa.py keyed by the spec's
+    #    "movement": {"pattern": ...}; a spec without one is not graded.
+    if spec and spec.get("movement"):
+        import anatomy_qa
+        for r in anatomy_qa.evaluate(frames, times, names, spec):
+            add("anatomy", r["rule"], r["ok"], r["detail"], r.get("value"),
+                r.get("t"))
 
     return results, times
 

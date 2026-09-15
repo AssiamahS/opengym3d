@@ -3,6 +3,9 @@
   "name": "Forward Lunge",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "lunge"
+  },
   "primary": [
     "Quads",
     "Glutes"

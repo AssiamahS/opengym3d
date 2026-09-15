@@ -3,6 +3,15 @@
   "name": "Good Morning",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "hinge",
+    "qa": {
+      "knee_min_deg": [
+        130,
+        null
+      ]
+    }
+  },
   "prop": {
     "type": "barbell"
   },

@@ -3,6 +3,15 @@
   "name": "Bicycle Crunch",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "supine_curl",
+    "qa": {
+      "head_rise_m": [
+        0.05,
+        null
+      ]
+    }
+  },
   "primary": [
     "Abs"
   ],

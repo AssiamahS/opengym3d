@@ -3,6 +3,15 @@
   "name": "Overhead Squat",
   "equipment": "Barbell",
   "difficulty": "Advanced",
+  "movement": {
+    "pattern": "squat",
+    "qa": {
+      "wrist_over_head_m": [
+        0.2,
+        null
+      ]
+    }
+  },
   "primary": [
     "Quads",
     "Shoulders"

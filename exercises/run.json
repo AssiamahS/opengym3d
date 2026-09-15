@@ -5,6 +5,9 @@
   "name": "Run (Treadmill Sprint)",
   "equipment": "None",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "locomotion"
+  },
   "primary": [
     "Quads",
     "Glutes"

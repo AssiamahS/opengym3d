@@ -3,6 +3,9 @@
   "name": "Bent-Over Row",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "row"
+  },
   "prop": {
     "type": "barbell"
   },

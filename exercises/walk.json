@@ -5,6 +5,9 @@
   "name": "Walk (Treadmill)",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "locomotion"
+  },
   "primary": [
     "Calves",
     "Glutes"

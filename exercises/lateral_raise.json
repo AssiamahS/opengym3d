@@ -3,6 +3,9 @@
   "name": "Lateral Raise",
   "equipment": "Dumbbell",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "raise_lateral"
+  },
   "prop": {
     "type": "dumbbell",
     "axis": [

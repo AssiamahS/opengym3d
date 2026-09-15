@@ -5,6 +5,9 @@
   "name": "Air Squat (video capture)",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "squat"
+  },
   "primary": [
     "Quads",
     "Glutes"

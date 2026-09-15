@@ -3,6 +3,15 @@
   "name": "Clean and Jerk",
   "equipment": "Barbell",
   "difficulty": "Advanced",
+  "movement": {
+    "pattern": "olympic",
+    "qa": {
+      "wrist_over_head_m": [
+        0.2,
+        null
+      ]
+    }
+  },
   "primary": [
     "Quads",
     "Glutes",

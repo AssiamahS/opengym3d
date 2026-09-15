@@ -3,6 +3,9 @@
   "name": "Front Raise",
   "equipment": "Dumbbell",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "raise_front"
+  },
   "prop": {
     "type": "dumbbell",
     "axis": [

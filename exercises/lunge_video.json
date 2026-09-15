@@ -5,6 +5,9 @@
   "name": "Forward Lunge (video capture)",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "lunge"
+  },
   "primary": [
     "Quads",
     "Glutes"

@@ -155,6 +155,7 @@ async function load(ex) {
   $('qa').innerHTML = '<p class="muted">loading…</p>';
   $('verdict').className = 'badge NONE'; $('verdict').textContent = '…';
   $('ci-strip').innerHTML = '<p class="muted">—</p>';
+  $('ci-sheet').innerHTML = '<p class="muted">—</p>';
   $('live-strip').innerHTML = '';
 
   qa = null;
@@ -240,6 +241,9 @@ async function load(ex) {
   const img = new Image();
   img.onload = () => { $('ci-strip').innerHTML = ''; $('ci-strip').appendChild(img); };
   img.src = `assets/${ex.id}.strip.png`;
+  const sheet = new Image();
+  sheet.onload = () => { $('ci-sheet').innerHTML = ''; $('ci-sheet').appendChild(sheet); };
+  sheet.src = ex.sheet || `assets/${ex.id}.sheet.png`;
   setTimeout(shootStrip, 300);
 }
 

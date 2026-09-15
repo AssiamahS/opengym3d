@@ -3,6 +3,9 @@
   "name": "Jumping Jack",
   "equipment": "None",
   "difficulty": "Beginner",
+  "movement": {
+    "pattern": "jumping_jack"
+  },
   "primary": [
     "Shoulders"
   ],

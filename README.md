@@ -104,8 +104,9 @@ python3 -m http.server -d site 8000   # after copying website/* + assets into si
 |---|---|---|
 | v0 | Procedural capsule figure, FK pose keyframes, GLB + viewer, full CI pipeline | Blender 4.5 LTS, Three.js r170 |
 | v1 | Real anatomical human (male, muscle 1.0), MakeHuman rig, muscles painted via skin-weight territories, A-pose-proof aim retargeting | [MPFB2](https://github.com/makehumancommunity/mpfb2) — the maintained successor to MB-Lab (MB-Lab is archived) |
-| **v1.5 (this)** | Real mocap: Mixamo fitness clips retargeted onto the MakeHuman rig in CI; hand-keyed specs demoted to drafts | [Mixamo](https://www.mixamo.com/) |
-| **v2** | Record yourself doing a lift on your phone → animation, no hand-keying | [BlendArMocap](https://github.com/cgtinker/BlendArMocap) (MediaPipe → Rigify) or [freemocap](https://github.com/freemocap/freemocap) |
+| v1.5 | Real mocap: Mixamo fitness clips retargeted onto the MakeHuman rig in CI; hand-keyed specs demoted to drafts | [Mixamo](https://www.mixamo.com/) |
+| v1.6 | Asset library with licensing as data; CC0 motion lane (Mesh2Motion); phone-video lane (MediaPipe → motion JSON) | `assets/ASSET_LIBRARY.json`, `pipeline/video_mocap.py` |
+| **v2 (this)** | The exercise factory: `movement.pattern` per spec, anatomy gate (does the figure do THIS exercise?), two-view skeleton sheets, `factory.py resolve/ingest/grade` | `docs/FACTORY.md` |
 | **v3** | Anatomical muscle visualization: per-muscle activation, contraction shading | [MuSkeMo](https://github.com/PashavanBijlert/MuSkeMo) + animated normal maps |
 | **v4** | Full library: hundreds of exercises, search/filter, MP4/GIF export, embed API | this pipeline, scaled |
 
@@ -113,7 +114,8 @@ python3 -m http.server -d site 8000   # after copying website/* + assets into si
 
 ```
 exercises/    one JSON per exercise: metadata + pose keyframes
-pipeline/     build_exercise.py (Blender headless), qa_glb.py (joint QA), make_manifest.py
+pipeline/     build_exercise.py (Blender headless), qa_glb.py (joint gate), anatomy_qa.py (movement gate),
+              sheet_glb.py (skeleton sheets), factory.py (resolve / ingest / grade), make_manifest.py
 website/      static Three.js viewer + inspect.html rig inspector (no build step)
 .github/      render & deploy workflow
 ```

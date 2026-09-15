@@ -3,6 +3,9 @@
   "name": "Barbell Back Squat",
   "equipment": "Barbell",
   "difficulty": "Intermediate",
+  "movement": {
+    "pattern": "squat"
+  },
   "primary": [
     "Quads",
     "Glutes"

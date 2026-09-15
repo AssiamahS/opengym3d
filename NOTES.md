@@ -179,3 +179,27 @@ When something looks wrong twice, stop adjusting numbers and go measure.
   believable foot direction; (3) wrist→index is noise when the hand is a
   fist — hands take the forearm's roll. Both demo captures PASS the joint
   gate; CC0 push-up and jog PASS; Mixamo squat unchanged.
+
+## 2026-09-15 — the factory: three gates, not one
+- The joint gate (qa_glb) could not tell a deadlift from a squat: bones
+  intact, hinges legal, wrong exercise. pipeline/anatomy_qa.py grades the
+  MOVEMENT against the pattern the spec declares ("movement": {"pattern":
+  "hinge"}). Bounds came from a census of the 24 live GLBs (`anatomy_qa.py
+  census`), never eyeballed: squats bottom out at knee 31-48° with hips down
+  0.36-0.61 m; the kettlebell hinge keeps the knee at 111° with the torso at
+  53°; front raise peaks at 103° elevation with 0.16 lateral fraction. The
+  discrimination matrix (every GLB × every pattern) is diagonal except where
+  anatomy overlaps (burpee is a hinge + a jump; floor work overlaps).
+  Ten patterns have no live GLB yet (PROVISIONAL set) — refine from the
+  first capture's census, don't argue with them.
+- Hips-to-neck lean is measured root→neck01; hip flexion is torso vs the
+  mean thigh line. Arm plane = at peak elevation, |sideways|/(|sideways|+
+  |forward|) against the pelvis axes — lateral raise ≥ 0.65, front ≤ 0.35.
+- sheet_glb.py: stdlib PNG of the skeleton, front over side, 12 frames, red
+  box on a critical QA frame. 0.2 s. The Blender strip is one camera; this
+  is the two views a reviewer actually needs (rear foot, arm plane, bar path).
+- factory.py resolve: whole-word matching only. Substring matching found
+  "Throw Object" for row, "Pushup" for press and "Kneeling Tired" for high
+  knees. With whole words: 6 drafts have a clip on disk (deadlift → Mixamo
+  lifting_heavy_object, crunch → circle_crunch, hammer_curl → bicep_curl,
+  lunge/reverse_lunge/sumo → demo captures), 12 need a phone capture.
