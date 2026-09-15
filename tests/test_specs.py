@@ -24,6 +24,10 @@ EXERCISES = sorted((REPO / "exercises").glob("*.json"))
 PIPELINE = REPO / "pipeline" / "build_exercise.py"
 
 VALID_PROPS = {"dumbbell", "barbell", "kettlebell"}
+VIDEO_DIRS = {"spine", "chest", "neck", "head",
+              "thigh.L", "shin.L", "foot.L", "thigh.R", "shin.R", "foot.R",
+              "upper_arm.L", "forearm.L", "hand.L",
+              "upper_arm.R", "forearm.R", "hand.R"}
 VALID_DIFFICULTY = {"Beginner", "Intermediate", "Advanced"}
 
 
@@ -73,19 +77,61 @@ class TestSpecs(unittest.TestCase):
                     self.assertIn(muscle.lower(), known)
 
     def test_mocap_paths_are_well_formed(self):
-        """Mocap files live in the private mocap/ checkout (Mixamo terms forbid
-        redistributing the raw FBX), so all the public repo can check is the
-        reference itself: a relative .fbx path under a known vendor folder."""
+        """Three motion lanes. mixamo/*.fbx lives in the private mocap/
+        checkout (Adobe terms forbid redistributing the FBX), so only the
+        reference is checkable. cc0/*.glb#Clip and video/*.json are public
+        and vendored under motions/, so the file must exist and a pack clip
+        must name its animation."""
         for stem, spec in specs():
             mocap = spec.get("mocap")
             if not mocap:
                 continue
             with self.subTest(stem):
-                self.assertTrue(mocap.endswith(".fbx"))
                 self.assertFalse(mocap.startswith("/"))
-                self.assertIn(mocap.split("/")[0], {"mixamo"})
+                vendor = mocap.split("/")[0]
+                self.assertIn(vendor, {"mixamo", "cc0", "video"})
+                file, _, clip = mocap.partition("#")
+                if vendor == "mixamo":
+                    self.assertTrue(file.endswith(".fbx"))
+                    self.assertFalse(clip)
+                elif vendor == "cc0":
+                    self.assertTrue(file.endswith((".glb", ".gltf")))
+                    self.assertTrue(clip, "a CC0 pack reference needs '#Clip Name'")
+                    self.assertTrue((REPO / "motions" / file).exists(), file)
+                else:
+                    self.assertTrue(file.endswith(".json"))
+                    path = REPO / "motions" / file
+                    self.assertTrue(path.exists(), file)
+                    doc = json.loads(path.read_text())
+                    self.assertEqual(doc.get("format"), "opengym3d-motion/1")
+                    self.assertGreaterEqual(len(doc["frames"]), 2)
+                    for fr in doc["frames"][:2]:
+                        self.assertEqual(set(fr["dirs"]), VIDEO_DIRS)
+                        self.assertEqual(set(fr["pelvis"]), {"left", "forward", "up"})
                 self.assertNotEqual(spec.get("status"), "draft",
                                     "mocap specs are the live ones")
+
+    def test_every_motion_is_in_the_asset_library(self):
+        """Licensing is data: a spec's motion must be a library entry so the
+        manifest can say whether the render may ship in the pack."""
+        sys.path.insert(0, str(REPO / "pipeline"))
+        import asset_library
+        lib = asset_library.Library()
+        for stem, ref, asset, _status in lib.check_specs(REPO / "exercises"):
+            with self.subTest(stem):
+                self.assertIsNotNone(asset, f"{ref} is not in assets/ASSET_LIBRARY.json")
+                self.assertIn("license", asset)
+                self.assertIn("commercial_use", asset)
+
+    def test_asset_library_files_exist(self):
+        sys.path.insert(0, str(REPO / "pipeline"))
+        import asset_library
+        lib = asset_library.Library()
+        for a in lib.find_motion():
+            if a.get("file", "").startswith("mixamo/"):
+                continue                       # private checkout
+            with self.subTest(a.id):
+                self.assertTrue((REPO / "motions" / a["file"]).exists(), a["file"])
 
     def test_keyframes_are_a_full_normalised_rep(self):
         for stem, spec in specs():

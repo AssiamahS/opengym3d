@@ -30,17 +30,28 @@ required. Cycles is only used for the little thumbnail per exercise.
 
 ## Motion: real capture, not hand-keyed poses
 
-Every live exercise is driven by motion capture. The `"mocap"` field of a
-spec names a Mixamo FBX (exported *Without Skin*, 30 fps); CI checks the
-private `opengym3d-mocap` repo out into `mocap/`, imports the clip headless,
-and retargets it onto the MakeHuman rig by aiming each bone at the mixamorig
-bone's posed world direction, frame by frame. Specs without a `mocap` field
-are `"status": "draft"`: kept for their muscle map and form steps, hidden from
-the render and the site until they get motion.
+Every live exercise is driven by motion capture, from one of three lanes
+the spec's `"mocap"` field names (details in `docs/ASSET_PIPELINE.md`):
 
-Mixamo's terms allow the clips inside a project but not as redistributed
-files, so the FBX never enters this repo and the mocap-driven GLBs are not
-part of the sold pack.
+| Lane | Spec value | Lives in | Licence | In the sold pack? |
+|---|---|---|---|---|
+| CC0 pack | `cc0/mesh2motion/human-addon-animations.glb#Pushup` | `motions/cc0/` | CC0 | yes |
+| Your own video | `video/lunge.json` (from `pipeline/video_mocap.py`) | `motions/video/` | yours | yes |
+| Mixamo | `mixamo/air_squat.fbx` | private `opengym3d-mocap` checkout | Adobe terms | no |
+
+CI imports the clip headless and retargets it onto the MakeHuman rig by
+aiming each bone at the source bone's posed world direction, frame by frame,
+carrying the source roll so limbs never flip. A phone clip goes through
+Google MediaPipe Pose on your Mac first (`pipeline/video_mocap.py`, $0,
+on-device) and comes out as the same per-bone directions. Specs without a
+`mocap` field are `"status": "draft"`: kept for their muscle map and form
+steps, hidden from the render and the site until they get motion.
+
+`assets/ASSET_LIBRARY.json` lists every human, motion and implement with its
+licence; `python3 pipeline/asset_library.py check exercises` shows which
+renders may ship. Mixamo's terms allow the clips inside a project but not as
+redistributed files, so those renders are app-only and the pack takes the
+CC0 and own-capture ones.
 
 ## Joint QA and the rig inspector
 

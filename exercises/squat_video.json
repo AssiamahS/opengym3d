@@ -1,0 +1,23 @@
+{
+  "fps": 30,
+  "camera": "front",
+  "id": "squat_video",
+  "name": "Air Squat (video capture)",
+  "equipment": "None",
+  "difficulty": "Beginner",
+  "primary": [
+    "Quads",
+    "Glutes"
+  ],
+  "secondary": [
+    "Hamstrings",
+    "Core"
+  ],
+  "steps": [
+    "Stand with feet shoulder-width apart, toes slightly out.",
+    "Sit the hips back and down, chest up, until thighs reach parallel.",
+    "Keep the knees tracking over the toes and the heels planted.",
+    "Drive through the heels to stand tall."
+  ],
+  "mocap": "video/squat_demo.json"
+}

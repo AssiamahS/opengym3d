@@ -1,0 +1,24 @@
+{
+  "fps": 30,
+  "camera": "front",
+  "id": "run",
+  "name": "Run (Treadmill Sprint)",
+  "equipment": "None",
+  "difficulty": "Intermediate",
+  "primary": [
+    "Quads",
+    "Glutes"
+  ],
+  "secondary": [
+    "Hamstrings",
+    "Calves",
+    "Core"
+  ],
+  "steps": [
+    "Drive the knees forward and up, torso leaning slightly ahead.",
+    "Push off the ball of the foot with a full hip extension.",
+    "Pump the arms from the shoulders, hands relaxed.",
+    "Keep the cadence high and the footfalls quiet."
+  ],
+  "mocap": "cc0/mesh2motion/human-base-animations.glb#Sprint"
+}

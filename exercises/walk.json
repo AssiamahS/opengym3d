@@ -1,0 +1,23 @@
+{
+  "fps": 30,
+  "camera": "front",
+  "id": "walk",
+  "name": "Walk (Treadmill)",
+  "equipment": "None",
+  "difficulty": "Beginner",
+  "primary": [
+    "Calves",
+    "Glutes"
+  ],
+  "secondary": [
+    "Quads",
+    "Hamstrings"
+  ],
+  "steps": [
+    "Stand tall, eyes forward, shoulders back.",
+    "Step heel first and roll through to the toes.",
+    "Swing the arms naturally in opposition to the legs.",
+    "Keep the stride comfortable; the hips stay level."
+  ],
+  "mocap": "cc0/mesh2motion/human-base-animations.glb#Walk"
+}

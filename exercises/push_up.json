@@ -312,6 +312,9 @@
       }
     }
   ],
-  "mocap": "mixamo/push_up.fbx",
-  "camera": "front"
+  "mocap": "cc0/mesh2motion/human-addon-animations.glb#Pushup",
+  "camera": "front",
+  "mocap_prev": {
+    "mixamo": "mixamo/push_up.fbx"
+  }
 }

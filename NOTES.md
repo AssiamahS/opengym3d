@@ -141,3 +141,32 @@ When something looks wrong twice, stop adjusting numbers and go measure.
 - GLTFLoader strips "." from node names (wrist.L -> wristL): look up both.
 - A dead-side camera puts a barbell's near plate end-on over the hands;
   "side" is 25 deg toward the front.
+
+## 2026-09-15 — stop buying motion: the asset library + two free lanes
+- The "buy the Unity pack" plan was the wrong shape. Motion is an asset
+  lookup, and licensing is data: assets/ASSET_LIBRARY.json holds every
+  human/motion/implement with its licence, make_manifest.py stamps
+  `license.pack` per exercise from it, tests fail on a motion the library
+  doesn't know. Mixamo and CMU are the same licence class ("use in a product
+  yes, redistribute even converted no") — app-only forever. CC0 (Mesh2Motion
+  = Quaternius retargets, 162 human clips) and your own phone captures are
+  the only things that can go in the sold pack.
+- Mesh2Motion's human packs are Y-up glTF, UE-mannequin bone names, T-pose,
+  1.64 m; one GLB holds 75-87 actions. After import_scene.gltf, pick the
+  action by name and mute the NLA tracks. Directions come from bone HEAD to
+  child HEAD (M2M_MAP names the child) — never trust the importer's tail
+  heuristic for a leaf like hand_l with five finger children.
+- Video lane: MediaPipe Pose 1.0.1 aborts on macOS Metal
+  ("DrishtiMetalHelper ... Service is unavailable"); 0.10.21 + CPU delegate
+  works, ~25 fps on M-series. World landmarks are hip-centred, so vertical
+  travel is recovered as hip height above the lowest foot point; horizontal
+  travel is dropped (in-place render). No axial rotation exists in a
+  monocular estimate — twists are the body's forward carried through the
+  pelvis/torso frame, which is exactly twist_ref's rule for the rest pose.
+  Side view beats front: a 3/4 squat read the two knees 28 deg apart, the
+  side-view lunge 8 deg.
+- auto-rep: walk out from the DEEPEST frame to the last standing frame
+  before and the first after. Scanning forward from frame 0 grabbed 13 s
+  of a coach talking because his hips wobbled past the threshold.
+- zsh does not word-split `$var` in `for spec in "a b c"; set -- $spec` —
+  use `${=spec}` or separate commands.

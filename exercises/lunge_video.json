@@ -1,0 +1,24 @@
+{
+  "fps": 30,
+  "camera": "front",
+  "id": "lunge_video",
+  "name": "Forward Lunge (video capture)",
+  "equipment": "None",
+  "difficulty": "Beginner",
+  "primary": [
+    "Quads",
+    "Glutes"
+  ],
+  "secondary": [
+    "Hamstrings",
+    "Calves",
+    "Core"
+  ],
+  "steps": [
+    "Step one leg forward into a split stance.",
+    "Lower straight down until both knees are near 90\u00b0.",
+    "Keep the front knee over the ankle and the torso upright.",
+    "Push off the front heel to return."
+  ],
+  "mocap": "video/lunge_demo.json"
+}

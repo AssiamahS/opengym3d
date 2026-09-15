@@ -155,6 +155,9 @@
       }
     }
   ],
-  "mocap": "mixamo/jumping_jacks.fbx",
-  "camera": "front"
+  "mocap": "cc0/mesh2motion/human-addon-animations.glb#Jumping Jacks",
+  "camera": "front",
+  "mocap_prev": {
+    "mixamo": "mixamo/jumping_jacks.fbx"
+  }
 }

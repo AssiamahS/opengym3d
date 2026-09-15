@@ -14,9 +14,30 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from asset_library import Library  # noqa: E402
+
+LIB = Library()
+
+
+def motion_info(spec):
+    """Where the motion came from and whether the render may be sold: the
+    asset library's answer, never a guess from the path."""
+    ref = spec.get("mocap")
+    if not ref:
+        return {"lane": "keyed", "license": "MIT", "source": "hand-keyed pose JSON",
+                "pack": True}
+    asset = LIB.motion_for_ref(ref)
+    lane = ref.split("/")[0]
+    if asset is None:
+        return {"lane": lane, "license": "unknown", "source": ref, "pack": False}
+    return {"lane": lane, "license": asset["license"],
+            "source": asset.get("name", ref), "pack": LIB.redistributable(asset)}
+
 
 def entry(spec):
     return {
+        "license": motion_info(spec),
         "id": spec["id"],
         "name": spec["name"],
         "equipment": spec.get("equipment", "None"),

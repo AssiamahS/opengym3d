@@ -1,0 +1,24 @@
+{
+  "fps": 30,
+  "camera": "front",
+  "id": "bear_crawl",
+  "name": "Bear Crawl",
+  "equipment": "None",
+  "difficulty": "Intermediate",
+  "primary": [
+    "Core",
+    "Shoulders"
+  ],
+  "secondary": [
+    "Quads",
+    "Triceps",
+    "Glutes"
+  ],
+  "steps": [
+    "Start on hands and toes, knees hovering an inch off the floor.",
+    "Move the opposite hand and foot forward together.",
+    "Keep the hips low and the back flat throughout.",
+    "Take small steps; the knees never touch the floor."
+  ],
+  "mocap": "cc0/mesh2motion/human-addon-animations.glb#Crawl"
+}

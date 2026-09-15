@@ -1,0 +1,24 @@
+{
+  "fps": 30,
+  "camera": "front",
+  "id": "jog",
+  "name": "Jog in Place",
+  "equipment": "None",
+  "difficulty": "Beginner",
+  "primary": [
+    "Quads",
+    "Calves"
+  ],
+  "secondary": [
+    "Glutes",
+    "Hamstrings",
+    "Core"
+  ],
+  "steps": [
+    "Stand tall, elbows bent at 90\u00b0, shoulders relaxed.",
+    "Lift one foot then the other in a light running rhythm.",
+    "Land on the ball of the foot and let the heel kiss the floor.",
+    "Keep the arms swinging opposite to the legs."
+  ],
+  "mocap": "cc0/mesh2motion/human-base-animations.glb#Jog"
+}

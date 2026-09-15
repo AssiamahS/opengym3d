@@ -1,0 +1,21 @@
+{
+  "fps": 30,
+  "camera": "front",
+  "id": "seated_meditation",
+  "name": "Seated Meditation (Recovery)",
+  "equipment": "None",
+  "difficulty": "Beginner",
+  "primary": [
+    "Core"
+  ],
+  "secondary": [
+    "Lower Back"
+  ],
+  "steps": [
+    "Sit cross-legged, sit bones grounded, spine long.",
+    "Rest the hands on the knees, shoulders soft.",
+    "Breathe slowly through the nose for four counts in, six counts out.",
+    "Keep the chin level and the gaze soft."
+  ],
+  "mocap": "cc0/mesh2motion/human-addon-animations.glb#Meditate"
+}

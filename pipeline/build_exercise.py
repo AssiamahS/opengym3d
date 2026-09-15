@@ -839,15 +839,76 @@ MIXAMO_MAP = {
 }
 
 
+# Public, redistributable motion lives in the repo itself: CC0 clip packs
+# under motions/cc0/ and phone captures under motions/video/. Only the
+# Mixamo FBX (Adobe terms: usable, not redistributable) stays in the private
+# checkout. A spec's "mocap" string resolves against the public folder
+# first, so a file that exists in both places is the public one.
+MOTIONS_DIR = os.environ.get("FITX_MOTIONS_DIR") or os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "motions")
+
+# Mesh2Motion / Quaternius "universal" mannequin (UE-style names). Each
+# driver bone -> (source bone, the child whose head marks its far end), so
+# direction comes from joint positions and never from the importer's tail
+# heuristic.
+M2M_MAP = {
+    "spine": ("spine_01", "spine_03"), "chest": ("spine_03", "neck_01"),
+    "neck": ("neck_01", "head"), "head": ("head", "head_leaf"),
+    "thigh.L": ("thigh_l", "calf_l"), "shin.L": ("calf_l", "foot_l"),
+    "foot.L": ("foot_l", "ball_l"),
+    "upper_arm.L": ("upperarm_l", "lowerarm_l"),
+    "forearm.L": ("lowerarm_l", "hand_l"), "hand.L": ("hand_l", "middle_01_l"),
+    "thigh.R": ("thigh_r", "calf_r"), "shin.R": ("calf_r", "foot_r"),
+    "foot.R": ("foot_r", "ball_r"),
+    "upper_arm.R": ("upperarm_r", "lowerarm_r"),
+    "forearm.R": ("lowerarm_r", "hand_r"), "hand.R": ("hand_r", "middle_01_r"),
+}
+M2M_HIPS = "pelvis"
+
+
+def resolve_mocap(rel_path):
+    """'cc0/mesh2motion/human-addon-animations.glb#Pushup' -> (path, clip).
+    The '#clip' suffix names one animation inside a multi-clip GLB."""
+    rel, _, clip = rel_path.partition("#")
+    for base in (MOTIONS_DIR, MOCAP_DIR):
+        path = os.path.join(base, rel)
+        if os.path.exists(path):
+            return path, clip or None
+    raise AssertionError(f"mocap file missing: {rel} (looked in {MOTIONS_DIR}, {MOCAP_DIR})")
+
+
 def load_mocap(rel_path, yaw_deg=0.0):
-    """Import a Mixamo FBX (exported Without Skin) and return its armature
-    plus the action's frame range. The importer applies the file's cm unit
-    scale to the object, so read everything through matrix_world."""
-    path = os.path.join(MOCAP_DIR, rel_path)
-    assert os.path.exists(path), f"mocap file missing: {path}"
+    """Import a motion source and return (kind, armature-or-frames, f0, f1).
+
+    .fbx  Mixamo, exported Without Skin (private checkout). The importer
+          applies the file's cm unit scale to the object, so everything is
+          read through matrix_world.
+    .glb  a multi-clip CC0 pack (Mesh2Motion / Quaternius mannequin); the
+          '#Clip Name' suffix selects the action.
+    .json a pipeline/video_mocap.py capture: per-frame world directions,
+          no armature at all."""
+    path, clip = resolve_mocap(rel_path)
+    ext = os.path.splitext(path)[1].lower()
+    if ext == ".json":
+        with open(path) as f:
+            doc = json.load(f)
+        assert doc.get("format") == "opengym3d-motion/1", f"unknown motion format in {path}"
+        frames = doc["frames"]
+        assert len(frames) >= 2, f"{path}: needs at least two frames"
+        print(f"MOCAP {rel_path}: video capture, {len(frames)} frames @ "
+              f"{doc.get('fps')} fps, source={doc.get('source')!r}, "
+              f"license={doc.get('license')!r}")
+        return "video", frames, 1, len(frames)
+
     before = set(bpy.data.objects)
-    bpy.ops.import_scene.fbx(filepath=path, ignore_leaf_bones=True,
-                             automatic_bone_orientation=False, use_anim=True)
+    before_actions = set(bpy.data.actions)
+    if ext == ".fbx":
+        bpy.ops.import_scene.fbx(filepath=path, ignore_leaf_bones=True,
+                                 automatic_bone_orientation=False, use_anim=True)
+    elif ext in (".glb", ".gltf"):
+        bpy.ops.import_scene.gltf(filepath=path)
+    else:
+        raise AssertionError(f"unsupported motion file: {path}")
     new = [o for o in bpy.data.objects if o not in before]
     arms = [o for o in new if o.type == "ARMATURE"]
     assert arms, f"no armature in {path}"
@@ -857,14 +918,26 @@ def load_mocap(rel_path, yaw_deg=0.0):
             bpy.data.objects.remove(o, do_unlink=True)
     arm.hide_render = True
     arm.rotation_euler.z += math.radians(yaw_deg)
-    action = arm.animation_data.action if arm.animation_data else None
+    if arm.animation_data is None:
+        arm.animation_data_create()
+    if clip:
+        # a pack imports every clip; pick ours by name and silence the rest
+        actions = [a for a in bpy.data.actions if a not in before_actions]
+        match = [a for a in actions if a.name == clip or a.name.startswith(clip + ".")]
+        assert match, (f"clip {clip!r} not in {os.path.basename(path)}; have "
+                       f"{sorted(a.name for a in actions)[:40]}")
+        for track in arm.animation_data.nla_tracks:
+            track.mute = True
+        arm.animation_data.action = match[0]
+    action = arm.animation_data.action
     assert action, f"no animation in {path}"
     f0, f1 = (int(round(v)) for v in action.frame_range)
     bpy.context.view_layer.update()
     names = [pb.name for pb in arm.pose.bones]
-    print(f"MOCAP {rel_path}: {len(names)} bones, frames {f0}-{f1}, "
+    kind = "mixamo" if ext == ".fbx" else "m2m"
+    print(f"MOCAP {rel_path}: {kind}, {len(names)} bones, frames {f0}-{f1}, "
           f"scale={tuple(round(c, 3) for c in arm.scale)}")
-    return arm, f0, f1
+    return kind, arm, f0, f1
 
 
 def mocap_bone(arm, name):
@@ -891,12 +964,77 @@ def mocap_twist(arm, pb):
     return (delta @ twist_ref(rest_dir)).normalized()
 
 
-def animate_mocap(arm, driver, rig, f0, f1, prop_objs=()):
+def segment_dir(arm, pb, child):
+    """World direction from a bone's head to its child's head — joint
+    positions, so the glTF importer's tail heuristic never enters into it."""
+    m = arm.matrix_world
+    return ((m @ child.head) - (m @ pb.head)).normalized()
+
+
+def segment_twist(arm, pb, child):
+    """mocap_twist for a bone whose axis is defined by its child joint."""
+    m3 = arm.matrix_world.to_3x3()
+    rest_dir = (m3 @ (Vector(child.bone.head_local) -
+                      Vector(pb.bone.head_local))).normalized()
+    rest = m3 @ pb.bone.matrix_local.to_3x3()
+    posed = m3 @ pb.matrix.to_3x3()
+    delta = posed @ rest.inverted()
+    return (delta @ twist_ref(rest_dir)).normalized()
+
+
+# pelvis rest basis the video lane measures against: left +X, forward -Y,
+# up +Z — columns of the matrix, like the captured (left, forward, up)
+VIDEO_REST_BASIS = Matrix(((1, 0, 0), (0, -1, 0), (0, 0, 1))).transposed()
+
+
+def animate_video(frames, driver, rig, prop_objs=()):
+    """A pipeline/video_mocap.py capture: no source armature, the file
+    already holds every driver bone's world direction and roll reference
+    per frame plus a pelvis basis and the hip height above the floor."""
+    mh_root = rig.matrix_world @ Vector(rig.pose.bones["root"].bone.head_local)
+    h0 = max(frames[0].get("hip_height", 0.0), 1e-6)
+    scale = mh_root.z / h0
+    syn = driver.pose.bones["pelvis"]
+    print(f"MOCAP video hip height {h0:.3f} mh root z={mh_root.z:.3f} "
+          f"height scale={scale:.3f}")
+    for i, fr in enumerate(frames):
+        frame = 1 + i
+        p = fr["pelvis"]
+        cur = Matrix((Vector(p["left"]), Vector(p["forward"]),
+                      Vector(p["up"]))).transposed()
+        delta = (cur @ VIDEO_REST_BASIS.inverted()).to_quaternion()
+        root_offset = Vector(fr["root"]) * scale
+        overrides = {k: Vector(v).normalized() for k, v in fr["dirs"].items()}
+        twists = {k: Vector(v).normalized() for k, v in fr.get("twists", {}).items()}
+        syn.matrix = delta.to_matrix().to_4x4() @ syn.bone.matrix_local
+        bpy.context.view_layer.update()
+        if i == 0:
+            print("MOCAP f0 dirs: " + ", ".join(
+                f"{k}={tuple(round(c, 2) for c in v)}"
+                for k, v in overrides.items() if k in ("spine", "thigh.L", "upper_arm.L", "foot.L")))
+        transfer_pose(driver, rig, root_offset, frame, overrides, twists)
+        place_props(rig, prop_objs, frame)
+        grip_hands(rig, prop_objs, frame)
+    for owner in [rig] + [obj for obj, _ in prop_objs]:
+        action = owner.animation_data.action if owner.animation_data else None
+        if not action:
+            continue
+        for fcurve in action.fcurves:
+            for kp in fcurve.keyframe_points:
+                kp.interpolation = "LINEAR"
+
+
+def animate_mocap(arm, driver, rig, f0, f1, prop_objs=(), kind="mixamo"):
     scene = bpy.context.scene
     m = arm.matrix_world
-    hips = mocap_bone(arm, "Hips")
-    bones = {syn: mocap_bone(arm, mx) for syn, mx in MIXAMO_MAP.items()
-             if syn != "pelvis"}
+    if kind == "m2m":
+        hips = mocap_bone(arm, M2M_HIPS)
+        bones = {syn: (mocap_bone(arm, a), mocap_bone(arm, b))
+                 for syn, (a, b) in M2M_MAP.items()}
+    else:
+        hips = mocap_bone(arm, "Hips")
+        bones = {syn: mocap_bone(arm, mx) for syn, mx in MIXAMO_MAP.items()
+                 if syn != "pelvis"}
     rest = m @ hips.bone.matrix_local
     mh_root = rig.matrix_world @ Vector(rig.pose.bones["root"].bone.head_local)
     scale = mh_root.z / max(rest.to_translation().z, 1e-6)
@@ -906,8 +1044,14 @@ def animate_mocap(arm, driver, rig, f0, f1, prop_objs=()):
     for i, f in enumerate(range(f0, f1 + 1)):
         scene.frame_set(f)
         frame = 1 + i
-        overrides = {syn_name: mocap_dir(arm, pb) for syn_name, pb in bones.items()}
-        twists = {syn_name: mocap_twist(arm, pb) for syn_name, pb in bones.items()}
+        if kind == "m2m":
+            overrides = {syn_name: segment_dir(arm, pb, child)
+                         for syn_name, (pb, child) in bones.items()}
+            twists = {syn_name: segment_twist(arm, pb, child)
+                      for syn_name, (pb, child) in bones.items()}
+        else:
+            overrides = {syn_name: mocap_dir(arm, pb) for syn_name, pb in bones.items()}
+            twists = {syn_name: mocap_twist(arm, pb) for syn_name, pb in bones.items()}
         posed = m @ hips.matrix
         delta = (posed @ rest.inverted()).to_quaternion()
         root_offset = (posed.to_translation() - rest.to_translation()) * scale
@@ -1150,7 +1294,7 @@ def main():
     scene.render.fps = spec.get("fps", 30)
     mocap = spec.get("mocap")
     if mocap:
-        mocap_arm, f0, f1 = load_mocap(mocap, spec.get("mocap_yaw", 0.0))
+        mocap_kind, mocap_src, f0, f1 = load_mocap(mocap, spec.get("mocap_yaw", 0.0))
         frame_end = f1 - f0 + 1
     else:
         frame_end = round(spec.get("duration", 2.0) * scene.render.fps)
@@ -1190,8 +1334,10 @@ def main():
         paint_muscles(basemesh, rig, materials, primary, secondary)
         smooth_figure(basemesh)
         prop_objs = build_props(spec)
-        if mocap:
-            animate_mocap(mocap_arm, driver, rig, f0, f1, prop_objs)
+        if mocap and mocap_kind == "video":
+            animate_video(mocap_src, driver, rig, prop_objs)
+        elif mocap:
+            animate_mocap(mocap_src, driver, rig, f0, f1, prop_objs, mocap_kind)
         else:
             animate(driver, rig, spec, frame_end, prop_objs)
         bpy.data.objects.remove(driver, do_unlink=True)
