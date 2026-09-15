@@ -328,6 +328,8 @@
     }
   ],
   "status": "draft",
-  "mocap": "mixamo/lifting_heavy_object.fbx",
-  "camera": "side"
+  "camera": "side",
+  "mocap_rejected": {
+    "mixamo/lifting_heavy_object.fbx": "spike 35000249458: hinge gate FAIL, knee_min 41 deg (want >=80) \u2014 the clip squats the bar up, torso 50 deg; a deadlift needs a capture"
+  }
 }

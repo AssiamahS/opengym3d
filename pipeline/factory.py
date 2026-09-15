@@ -143,8 +143,9 @@ def resolve(eid, lib=None):
         if f.stem.startswith(eid) or _hit(words, f.stem):
             meta = json.loads(f.read_text())
             cands.append(("video", f"video/{f.name}", meta.get("license", "?")))
-    # dedupe, keep first sighting
-    seen, uniq = set(), []
+    # dedupe, keep first sighting; skip clips a spike already rejected
+    # ("mocap_rejected": {ref: why}) so the same wrong clip is not re-offered
+    seen, uniq = set(spec.get("mocap_rejected", {})), []
     for c in cands:
         if c[1] not in seen:
             seen.add(c[1])

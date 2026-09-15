@@ -203,3 +203,10 @@ When something looks wrong twice, stop adjusting numbers and go measure.
   knees. With whole words: 6 drafts have a clip on disk (deadlift → Mixamo
   lifting_heavy_object, crunch → circle_crunch, hammer_curl → bicep_curl,
   lunge/reverse_lunge/sumo → demo captures), 12 need a phone capture.
+- First catch, same day: Mixamo "lifting heavy object" for deadlift renders
+  clean through the joint gate and FAILS the hinge rule (knee 41°, want ≥80):
+  the strip shows the figure squatting the bar up, torso 50°. Exactly the
+  "deadlift becomes squat + vertical torso" case. Recorded on the spec as
+  mocap_rejected so resolve never re-offers it; deadlift needs a capture.
+  crunch (circle_crunch) and hammer_curl (bicep_curl clip, same grip as the
+  bicep curl — the rig has one dumbbell hold) passed both gates and went live.
