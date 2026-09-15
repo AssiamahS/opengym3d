@@ -170,3 +170,12 @@ When something looks wrong twice, stop adjusting numbers and go measure.
   of a coach talking because his hips wobbled past the threshold.
 - zsh does not word-split `$var` in `for spec in "a b c"; set -- $spec` —
   use `${=spec}` or separate commands.
+- 2026-09-15 video lane, three spike rounds to green: (1) roll refs from the
+  body-forward rule flipped legs 178° when the thigh came horizontal (the
+  rule switched forward→up) — read the front of a hinged segment off the
+  joint's bend plane instead, blend to body-forward as it straightens;
+  (2) the rear foot in a lunge came back with toe behind heel (pose model
+  swap under occlusion) — toes can't point behind the body, hold the last
+  believable foot direction; (3) wrist→index is noise when the hand is a
+  fist — hands take the forearm's roll. Both demo captures PASS the joint
+  gate; CC0 push-up and jog PASS; Mixamo squat unchanged.
