@@ -315,10 +315,15 @@ def limb_twists(dirs, fwd_legs, fwd_arms, up, left, tl, tu):
     return out
 
 
+FOOT_BACKWARD_DOT = -0.3   # toes more than ~107 deg from body-forward = swap
+
+
 def build_frames(pos, fps):
     h = hip_height(pos)
     h0 = h[0]
     out = []
+    last_foot = {}
+    held = 0
     for f in range(len(pos)):
         p = pos[f]
         left, fwd, up = basis(p)
@@ -332,6 +337,15 @@ def build_frames(pos, fps):
                 # no direction to read, keep the hand along the forearm
                 d = unit(centre(p, SEGMENTS[name.replace("hand", "forearm")][1]) -
                          centre(p, SEGMENTS[name.replace("hand", "forearm")][0]))
+            if name.startswith("foot"):
+                # toes cannot point behind the body: when the pose model
+                # swaps heel and toe on an occluded rear foot (the lunge
+                # capture, frames 68-75) hold the last believable direction
+                if np.dot(d, fwd) < FOOT_BACKWARD_DOT and name in last_foot:
+                    d = last_foot[name]
+                    held += 1
+                else:
+                    last_foot[name] = d
             dirs[name] = [round(float(c), 5) for c in d]
             if name.startswith("foot"):
                 tw = twist_for(d, up, fwd, left)      # feet roll about up
@@ -352,6 +366,8 @@ def build_frames(pos, fps):
             "dirs": dirs,
             "twists": twists,
         })
+    if held:
+        print(f"held {held} foot direction(s) that pointed behind the body")
     return out, h
 
 
