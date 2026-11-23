@@ -1,11 +1,11 @@
 # Forged Motion Studio
 
-Local bodyweight-squat technical milestone, based on the pinned OpenGym3D source.
+Standalone anatomical exercise-animation authoring research, derived from the pinned OpenGym3D source.
 
-Start with [studio/README.md](studio/README.md) for setup, build, viewer commands,
-output paths, provenance and known limitations. See [docs/MILESTONE_REVIEW.md](docs/MILESTONE_REVIEW.md)
-for actual findings. The original project README is preserved in
-[docs/UPSTREAM_README.md](docs/UPSTREAM_README.md), and its MIT LICENSE remains intact.
+**[Open the project home / Obsidian dashboard](docs/HOME.md)** for current work, architecture decisions and plans. The [work board](docs/knowledge/WORK.md) tracks the next action, and the [system map](docs/architecture/SYSTEM.md) distinguishes implemented tools from proposals.
 
-This milestone uses synthetic motion and is not approved for exercise instruction
-or public distribution. No weighted variants, cloud services or authoring UI are included.
+For local setup, builds, viewer commands, provenance and technical limitations, start with [studio/README.md](studio/README.md). The original upstream README is preserved in [docs/UPSTREAM_README.md](docs/UPSTREAM_README.md), and its MIT LICENSE remains intact.
+
+Current results are experimental. The MPFB and Heatsy paths can generate local synthetic squat artifacts, but the latest Heatsy skin-weight repair is **PARTIAL**: unresolved anatomical compression/attachments and a strict Blender parity failure. See [the complete deformation report](docs/HEATSY_DEFORMATION_REPAIR.md). Movement accuracy, anatomy and public redistribution are not approved.
+
+Weighted variations, cloud services, Flutter integration and a general nontechnical authoring UI are not implemented.

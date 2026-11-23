@@ -7,3 +7,5 @@ verify/
 work/
 outputs/
 node_modules/
+.obsidian/
+.trash/
