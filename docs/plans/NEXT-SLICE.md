@@ -1,6 +1,14 @@
 # Next slice | Attachment-aware, volume-preserving squat deformation
 
-**Task:** FMS-01 · **State:** Next / design proposed · **Scope:** same synthetic bodyweight source and Heatsy character · **Excluded:** weighted variations, editor, cloud, Flutter, public release.
+**Task:** FMS-01 · **State:** Bounded feasibility run PARTIAL; no candidate accepted · **Scope:** same synthetic bodyweight source and Heatsy character · **Excluded:** weighted variations, editor, cloud, Flutter, public release.
+
+The [attachment investigation](../HEATSY_ATTACHMENT_REVIEW.md) tested six influence
+contrast candidates and retained matched GLB/video/strain evidence. Reduced
+aggregate compression did not eliminate attachment failures and worsened isolated
+knee flexion. Preserve the previous repair. The next experiment needs explicit
+attachment constraints or a scoped portable corrective, not another global
+weight-contrast sweep. The plan below remains the acceptance contract; the
+original measurements are the starting checkpoint, not a newly approved result.
 
 ## Problem to solve
 The existing deterministic, supported-bone skin-weight derivative dramatically reduces tearing but worsens compression. At the bottom pose:

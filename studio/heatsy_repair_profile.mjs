@@ -2,7 +2,8 @@ import {chromium} from 'playwright';
 import {writeFile,readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {spawn} from 'node:child_process';
-const out='outputs/heatsy-repair';
+const out=process.env.FMS_HEATSY_OUTPUT||'outputs/heatsy-repair';
+const query=process.env.FMS_HEATSY_QUERY||'repair=final';
 const server=spawn('python',['-m','http.server','0','--bind','127.0.0.1'],{env:{...process.env,PYTHONUNBUFFERED:'1'},stdio:['ignore','pipe','pipe'],windowsHide:true});
 const report={method:'Warmup 8 frames, 48 requestAnimationFrame intervals with real seek/render; median/p95 wall intervals and CPU submission. No screenshot or readback in timed interval. Both mixers updated even in single-visible-model control.',runs:[]};
 report.glb_sha256=createHash('sha256').update(await readFile(out+'/heatsy-squat.glb')).digest('hex');
@@ -19,7 +20,7 @@ try{
     {name:'single-rigid-shader',options:{single:true,skinning:false}},
     {name:'empty-scenes',options:{empty:true}},
     {name:'dual-no-preserved-buffer',noPreserve:true,options:{}}]){
-    await page.goto(`http://127.0.0.1:${port}/studio/heatsy-squat/?repair=final${test.noPreserve?'&no-preserve=1':''}`);
+    await page.goto(`http://127.0.0.1:${port}/studio/heatsy-squat/?${query}${test.noPreserve?'&no-preserve=1':''}`);
     await page.waitForFunction(()=>window.heatsy?.ready||window.heatsy?.error);
     if(await page.evaluate(()=>window.heatsy.error))throw Error(await page.evaluate(()=>window.heatsy.error));
     await page.evaluate(s=>window.heatsy.quickPeek(!!s),test.small);

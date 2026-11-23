@@ -35,6 +35,13 @@ flowchart TD
 
 All working proofs are local; output bundles go to ignored `outputs/` and source/model toolchains to ignored `work/`. The root MIT license covers the inherited project code; Heatsy-derived anatomy follows CC BY-SA 4.0 and required notices. Use [the repair report](../HEATSY_DEFORMATION_REPAIR.md) for exact preservation and performance evidence.
 
+The bounded `studio/heatsy_attachment.py` experiment and its verifier/capture
+reuse those boundaries and write only `outputs/heatsy-attachment/`. They separate
+constant-weight contraction from spatial weight-gradient effects. The viewer's
+allowlisted `repair=attachment-05` route exposes an **unapproved, non-promoted**
+candidate; the previous repair remains unchanged. See [the attachment
+report](../HEATSY_ATTACHMENT_REVIEW.md) for tradeoffs and native rest-matrix probes.
+
 ## Current limitations and non-goals
 
 - Synthetic squat is an engineering fixture, **not** approved exercise instruction.

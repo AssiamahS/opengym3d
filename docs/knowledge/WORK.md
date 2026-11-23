@@ -6,8 +6,8 @@
 
 | ID | Task | State | Done when | Next action |
 | --- | --- | --- | --- | --- |
-| FMS-01 | Attachment-aware deformation / volume feasibility | **Next** | Corrected shoulder/hip/knee evidence improves without hiding stretching, compression or attachment defects; human appearance approval remains distinct | Follow [bounded next slice](../plans/NEXT-SLICE.md), inspect bottom/mid-descent images and reject bad tradeoffs |
-| FMS-02 | Native Blender parity diagnosis | **Next (independent)** | Cause of 10.0187 µm discrepancy is isolated with a regression, without loosening the 10 µm gate | Reproduce import/rest/bind reconstruction difference; keep deformation task separate |
+| FMS-01 | Attachment-aware deformation / volume feasibility | **PARTIAL: bounded candidates rejected** | Corrected shoulder/hip/knee evidence improves without hiding stretching, compression or attachment defects; human appearance approval remains distinct | Use [new attachment evidence](../HEATSY_ATTACHMENT_REVIEW.md) to scope explicit attachment constraints; do not repeat global contrast tuning |
+| FMS-02 | Native Blender parity diagnosis | **PARTIAL (independent)** | Cause of native discrepancy is isolated with a regression, without loosening the 10 µm gate | [Native rest-matrix probe](../HEATSY_ATTACHMENT_REVIEW.md#native-blender-precision-investigation) confirms thigh reconstruction non-rigidity; isolate Blender's numerical cause |
 
 ## Waiting for review or input
 
