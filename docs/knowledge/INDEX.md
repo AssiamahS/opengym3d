@@ -24,3 +24,7 @@ Useful historical evidence:
 For each small change, start with the current WORK row; verify the source and constraints, keep the change isolated, attach output evidence, then update that row and affected architecture note **in the same PR**. Use [a handoff note](handoffs/TEMPLATE.md) only when pausing before a PR.
 
 This vault intentionally has **no generated dashboards, database, documentation CI or automatically synchronized boards**. Keep the index and links honest by hand.
+
+## Model and subagent selection
+
+See [Cost-aware agent delegation](AGENT-DELEGATION.md) for when to assign routine independent work to a lower-cost model with generous capability headroom, and when to keep work with the stronger coordinator. The policy does not create subagents or configure models automatically.
