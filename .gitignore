@@ -4,3 +4,6 @@ __pycache__/
 .DS_Store
 mocap/
 verify/
+work/
+outputs/
+node_modules/

@@ -32,7 +32,7 @@ import struct
 import sys
 from pathlib import Path
 
-CRITICAL = {"bone_length", "prop_present", "prop_contact", "hinge",
+CRITICAL = {"skeleton", "animation", "bone_length", "prop_present", "prop_contact", "hinge",
             "twist_flip", "anatomy"}
 
 # joint = (name, parent segment head, child that defines the segment's tail)
@@ -324,9 +324,13 @@ def run_qa(glb_path, spec=None):
                         "detail": detail, "value": value,
                         "t": None if t is None else round(t, 3)})
 
-    missing = [b for chain in CHAINS.values() for b in chain if b not in names]
+    missing = sorted((set(WATCH) | {b for chain in CHAINS.values() for b in chain}) - set(names))
+    add("skeleton", "rig", not missing, f"missing required bones: {missing}")
     if missing:
-        add("skeleton", "rig", False, f"bones missing from GLB: {missing}")
+        return results, times
+    animated = any(a.get("channels") for a in gltf.get("animations", [])) and times[-1] > 0
+    add("animation", "clip", animated, "requires animation channels and positive duration")
+    if not animated:
         return results, times
 
     # 1. bone length constancy along every limb chain

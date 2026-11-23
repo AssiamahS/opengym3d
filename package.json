@@ -1,0 +1,8 @@
+{
+  "name": "forged-motion-studio-local",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local bodyweight technical preview; no publication workflow",
+  "dependencies": {"three": "0.170.0", "gltf-validator": "2.0.0-dev.3.10"},
+  "devDependencies": {"playwright": "1.58.2"}
+}

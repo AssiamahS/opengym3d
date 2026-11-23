@@ -9,12 +9,8 @@ on:
       exercise:
         description: exercise id to render
         default: squat
-  push:
-    paths:
-      - pipeline/ecorche.py
-      - pipeline/build_exercise.py
-      - exercises/**
-      - .github/workflows/spike.yml
+  # Local Studio progress must not trigger private mocap checkout or upload
+  # generated assets. Preserve the upstream spike as an explicit manual action.
 
 env:
   BLENDER_VERSION: 4.5.11

@@ -1,0 +1,12 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import validator from 'gltf-validator';
+const path=process.argv[2]||'outputs/bodyweight/squat-technical.glb';
+const bytes=await readFile(path);
+const report=await validator.validateBytes(new Uint8Array(bytes),{uri:path,maxIssues:1000});
+report.glb_sha256=createHash('sha256').update(bytes).digest('hex');
+report.status=report.issues.numErrors===0?'PASS':'FAIL';
+report.warning_dispositions={NODE_SKINNED_MESH_NON_ROOT:'Accepted for this local preview: no runtime parent transforms; independent browser/Python joint parity is required. Other consumers are untested.'};
+await writeFile(path+'.gltf.json',JSON.stringify(report,null,2));
+console.log(`${report.status}: ${report.issues.numErrors} errors, ${report.issues.numWarnings} warnings`);
+process.exitCode=report.issues.numErrors?1:0;

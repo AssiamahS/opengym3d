@@ -1,0 +1,15 @@
+{
+  "id": "squat-technical",
+  "name": "Bodyweight squat - synthetic technical preview",
+  "equipment": "None",
+  "difficulty": "Unreviewed",
+  "movement": {"pattern": "squat"},
+  "primary": ["Quads", "Glutes"],
+  "secondary": ["Hamstrings", "Core"],
+  "steps": [],
+  "fps": 30,
+  "duration": 3,
+  "mocap": "synthetic/squat.json",
+  "camera": "front",
+  "technical_preview": true
+}
