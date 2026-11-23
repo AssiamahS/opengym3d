@@ -58,6 +58,26 @@ existing exported-mesh contact validator. See the
 
 ## Current limitations and non-goals
 
+The separate [visual reference library](../../reference-library/INDEX.md) stores
+internal research as JSON, CSV and Markdown with source links, explicit visual
+inspection limits and unreviewed status. Its equipment configurations and grip
+IDs are research entities, not executable pose recipes or automatic mappings to
+`equipment-catalog/1`. Downloaded media remains in the ignored local cache; no
+animation importer or new runtime framework is introduced. See the [integration guide](../../reference-library/integration-guide.md)
+for the boundary between research, technical validation and human approval.
+Curated equipment-alternative groups preserve available choices for a future
+workout slot while keeping each variation's grip and configuration distinct.
+Sampled visual evidence carries frame/page locators; rejected media matches are
+retained as exclusions rather than promoted to animation input.
+Complementary references can carry a limited evidence scope, such as chair-seat
+support from a sit-to-stand with different arms. Their observations do not
+silently replace the catalog variation's setup or establish a complete cycle;
+see the [batch 03 review](../../reference-library/batches/batch-03-review.md).
+The [batch 04 review](../../reference-library/batches/batch-04-review.md) adds
+matched chair phase samples while separating decoded-frame alignment from a
+player's reported seek time. Sample coverage still does not imply continuous
+motion review or executable timing.
+
 - Synthetic squat is an engineering fixture, **not** approved exercise instruction.
 - Heatsy shoulder/back attachment, hip compression and knee attachments remain visually unacceptable. The latest repair deliberately exits **2** and fails strict Blender parity by a small margin.
 - The standard GLB does **not** encode Blender's preserve-volume modifier; its diagnostic improvement is not an exported fix.
@@ -83,3 +103,7 @@ Future bundles should carry stable variation and model IDs, real animation durat
 ## Change rules
 
 Change one boundary at a time. Keep OpenGym/MPFB and Heatsy paths separate, never degrade canonical assets to improve one experimental model, never remove anatomical identifiers for convenience, and retain failed evidence. For long-lived design choices create a short [ADR](DECISIONS.md); for the next experiment use [NEXT-SLICE](../plans/NEXT-SLICE.md).
+
+The user-approved [batch 05 scope](../../reference-library/batches/batch-05-review.md) prioritizes broad exercise-family coverage with a few variations and linked visuals for Codex retrieval. Fine-contact investigation is demand-driven; entity separation and human approval gates are unchanged.
+
+The [local reference cache](../../reference-library/local-media-policy.md) now stores user-requested third-party originals and automatic frame previews under ignored `work/reference-media/`. Tracked manifests preserve attribution, hashes and paths; cache availability never promotes movement/visual approval. No model pipeline is changed.

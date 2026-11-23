@@ -1,0 +1,549 @@
+[
+  {
+    "id": "precor-rsl0605-leg-extension",
+    "family": "leg-extension",
+    "name": "Precor Resolute RSL0605: Leg extension",
+    "category": "machine",
+    "equipment": [
+      "precor-rsl0605"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0605"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.precor.com/en-US/products/RSL0605",
+        "media_url": null,
+        "type": "manufacturer-product-page",
+        "view": "not visually inspected",
+        "phase": "equipment setup and mechanism",
+        "description": "Manufacturer text verified; no motion frames inspected.",
+        "verification": "text-verified; visual-not-verified",
+        "organization": "Precor"
+      }
+    ],
+    "guidance": "Research draft; inferential motion fields require manual and human review.",
+    "movement": {
+      "joints": [
+        "knee"
+      ],
+      "motions": "Knee extension; return flexion (inferred from exercise name).",
+      "start": "Flexed knees; exact angle unknown.",
+      "end": "Extended knees; limit unknown.",
+      "equipment_motion": "Roller linkage; axis and radius unmeasured.",
+      "feet_contact": "Not floor-supported during repetition (inferred).",
+      "hands_contact": "Unknown.",
+      "torso": "Back supported."
+    },
+    "machine": {
+      "model": "Precor Resolute RSL0605",
+      "adjustments": [
+        "start position",
+        "ankle roller",
+        "gas-assisted back pad"
+      ],
+      "supports": [
+        "seat",
+        "back pad",
+        "ankle pad"
+      ],
+      "contacts": [
+        "lower leg to roller; precise region unknown"
+      ],
+      "moving_components": [
+        "roller linkage"
+      ],
+      "constraints": [
+        "Fit roller and back support before authoring motion."
+      ]
+    },
+    "missing_evidence": [
+      "Human technique approval",
+      "Front and side start/mid/end motion",
+      "Measured pivots, limits and contact coordinates",
+      "Model-specific exercise placard/manual verification"
+    ],
+    "confidence": "medium equipment text; low motion reconstruction",
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "precor-rsl0619-leg-curl",
+    "family": "leg-curl",
+    "name": "Precor Resolute RSL0619: Seated leg curl",
+    "category": "machine",
+    "equipment": [
+      "precor-rsl0619"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0619"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.precor.com/en-US/products/RSL0619",
+        "media_url": null,
+        "type": "manufacturer-product-page",
+        "view": "not visually inspected",
+        "phase": "equipment setup and mechanism",
+        "description": "Manufacturer text verified; no motion frames inspected.",
+        "verification": "text-verified; visual-not-verified",
+        "organization": "Precor"
+      }
+    ],
+    "guidance": "Research draft; inferential motion fields require manual and human review.",
+    "movement": {
+      "joints": [
+        "knee"
+      ],
+      "motions": "Knee flexion; return extension (inferred).",
+      "start": "Knees extended; exact angle unknown.",
+      "end": "Knees flexed; limit unknown.",
+      "equipment_motion": "Leg linkage; geometry unknown.",
+      "feet_contact": "Unknown.",
+      "hands_contact": "Unknown.",
+      "torso": "Back-pad contact."
+    },
+    "machine": {
+      "model": "Precor Resolute RSL0619",
+      "adjustments": [
+        "back pad",
+        "start position",
+        "thigh stabilizer",
+        "load pin"
+      ],
+      "supports": [
+        "seat tilted 15 degrees",
+        "back pad",
+        "thigh pad"
+      ],
+      "contacts": [
+        "thigh to stabilizer; roller contact unresolved"
+      ],
+      "moving_components": [
+        "leg linkage (inferred)"
+      ],
+      "constraints": [
+        "Align knee with machine pivot."
+      ]
+    },
+    "missing_evidence": [
+      "Human technique approval",
+      "Front and side start/mid/end motion",
+      "Measured pivots, limits and contact coordinates",
+      "Model-specific exercise placard/manual verification"
+    ],
+    "confidence": "medium equipment text; low motion reconstruction",
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "precor-rsl0310-row",
+    "family": "row",
+    "name": "Precor Resolute RSL0310: Diverging seated row",
+    "category": "machine",
+    "equipment": [
+      "precor-rsl0310"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0310"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.precor.com/en-US/products/RSL0310",
+        "media_url": null,
+        "type": "manufacturer-product-page",
+        "view": "not visually inspected",
+        "phase": "equipment setup and mechanism",
+        "description": "Manufacturer text verified; no motion frames inspected.",
+        "verification": "text-verified; visual-not-verified",
+        "organization": "Precor"
+      }
+    ],
+    "guidance": "Research draft; inferential motion fields require manual and human review.",
+    "movement": {
+      "joints": [
+        "shoulder",
+        "elbow"
+      ],
+      "motions": "Shoulder extension and elbow flexion (inferred).",
+      "start": "Arms forward; angles unknown.",
+      "end": "Handles drawn back.",
+      "equipment_motion": "Independent arms diverge on pull.",
+      "feet_contact": "Unknown.",
+      "hands_contact": "Handle grip; orientation unresolved.",
+      "torso": "Chest-pad support."
+    },
+    "machine": {
+      "model": "Precor Resolute RSL0310",
+      "adjustments": [
+        "chest pad",
+        "gas-assisted seat"
+      ],
+      "supports": [
+        "seat",
+        "chest pad"
+      ],
+      "contacts": [
+        "chest to pad",
+        "hands to handles"
+      ],
+      "moving_components": [
+        "two independent arms"
+      ],
+      "constraints": [
+        "Preserve divergence and chest support."
+      ]
+    },
+    "missing_evidence": [
+      "Human technique approval",
+      "Front and side start/mid/end motion",
+      "Measured pivots, limits and contact coordinates",
+      "Model-specific exercise placard/manual verification"
+    ],
+    "confidence": "medium equipment text; low motion reconstruction",
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "precor-rsl0314-pulldown",
+    "family": "pulldown",
+    "name": "Precor Resolute RSL0314: Diverging lat pulldown",
+    "category": "machine",
+    "equipment": [
+      "precor-rsl0314"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0314"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.precor.com/en-US/products/RSL0314",
+        "media_url": null,
+        "type": "manufacturer-product-page",
+        "view": "not visually inspected",
+        "phase": "equipment setup and mechanism",
+        "description": "Manufacturer text verified; no motion frames inspected.",
+        "verification": "text-verified; visual-not-verified",
+        "organization": "Precor"
+      }
+    ],
+    "guidance": "Research draft; inferential motion fields require manual and human review.",
+    "movement": {
+      "joints": [
+        "shoulder",
+        "elbow"
+      ],
+      "motions": "Shoulder adduction/extension and elbow flexion (inferred).",
+      "start": "Arms raised; limits unknown.",
+      "end": "Handles lowered; endpoint unknown.",
+      "equipment_motion": "Independent diverging arms; rotating handles.",
+      "feet_contact": "Unknown.",
+      "hands_contact": "Rotating handles; orientation variable.",
+      "torso": "Support details unknown."
+    },
+    "machine": {
+      "model": "Precor Resolute RSL0314",
+      "adjustments": [
+        "unknown"
+      ],
+      "supports": [
+        "unknown"
+      ],
+      "contacts": [
+        "hands to handles"
+      ],
+      "moving_components": [
+        "two arms",
+        "rotating handles"
+      ],
+      "constraints": [
+        "Do not freeze handle rotation or couple both arms."
+      ]
+    },
+    "missing_evidence": [
+      "Human technique approval",
+      "Front and side start/mid/end motion",
+      "Measured pivots, limits and contact coordinates",
+      "Model-specific exercise placard/manual verification"
+    ],
+    "confidence": "medium equipment text; low motion reconstruction",
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "precor-rsl0414-chest-press",
+    "family": "chest-press",
+    "name": "Precor Resolute RSL0414: Converging chest press",
+    "category": "machine",
+    "equipment": [
+      "precor-rsl0414"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0414"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.precor.com/en-US/products/RSL0414",
+        "media_url": null,
+        "type": "manufacturer-product-page",
+        "view": "not visually inspected",
+        "phase": "equipment setup and mechanism",
+        "description": "Manufacturer text verified; no motion frames inspected.",
+        "verification": "text-verified; visual-not-verified",
+        "organization": "Precor"
+      }
+    ],
+    "guidance": "Research draft; inferential motion fields require manual and human review.",
+    "movement": {
+      "joints": [
+        "shoulder",
+        "elbow"
+      ],
+      "motions": "Horizontal shoulder adduction and elbow extension (inferred).",
+      "start": "Handles near torso; angles unknown.",
+      "end": "Hands forward and closer.",
+      "equipment_motion": "Independent converging arms.",
+      "feet_contact": "Unknown.",
+      "hands_contact": "Angle-adjustable handles.",
+      "torso": "Seated upper-body support."
+    },
+    "machine": {
+      "model": "Precor Resolute RSL0414",
+      "adjustments": [
+        "handle angle; other settings unknown"
+      ],
+      "supports": [
+        "seat",
+        "upper-body support"
+      ],
+      "contacts": [
+        "hands to handles",
+        "torso to support"
+      ],
+      "moving_components": [
+        "two arms"
+      ],
+      "constraints": [
+        "Retain convergence and independent sides."
+      ]
+    },
+    "missing_evidence": [
+      "Human technique approval",
+      "Front and side start/mid/end motion",
+      "Measured pivots, limits and contact coordinates",
+      "Model-specific exercise placard/manual verification"
+    ],
+    "confidence": "medium equipment text; low motion reconstruction",
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "precor-rsl0515-shoulder-press",
+    "family": "shoulder-press",
+    "name": "Precor Resolute RSL0515: Converging shoulder press",
+    "category": "machine",
+    "equipment": [
+      "precor-rsl0515"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0515"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.precor.com/en-US/products/RSL0515",
+        "media_url": null,
+        "type": "manufacturer-product-page",
+        "view": "not visually inspected",
+        "phase": "equipment setup and mechanism",
+        "description": "Manufacturer text verified; no motion frames inspected.",
+        "verification": "text-verified; visual-not-verified",
+        "organization": "Precor"
+      }
+    ],
+    "guidance": "Research draft; inferential motion fields require manual and human review.",
+    "movement": {
+      "joints": [
+        "shoulder",
+        "elbow"
+      ],
+      "motions": "Shoulder elevation and elbow extension (inferred).",
+      "start": "Handles lowered; angles unknown.",
+      "end": "Handles overhead; limits unknown.",
+      "equipment_motion": "Independent counterbalanced arms converge about overhead pivot.",
+      "feet_contact": "Unknown.",
+      "hands_contact": "Dual-position handles.",
+      "torso": "Support geometry unknown."
+    },
+    "machine": {
+      "model": "Precor Resolute RSL0515",
+      "adjustments": [
+        "handle position",
+        "add-on load switch"
+      ],
+      "supports": [
+        "unknown"
+      ],
+      "contacts": [
+        "hands to handles"
+      ],
+      "moving_components": [
+        "two counterbalanced arms"
+      ],
+      "constraints": [
+        "Do not substitute a vertical slider for pivot motion."
+      ]
+    },
+    "missing_evidence": [
+      "Human technique approval",
+      "Front and side start/mid/end motion",
+      "Measured pivots, limits and contact coordinates",
+      "Model-specific exercise placard/manual verification"
+    ],
+    "confidence": "medium equipment text; low motion reconstruction",
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "precor-rsl0602-leg-press",
+    "family": "leg-press",
+    "name": "Precor Resolute RSL0602: Seated leg press",
+    "category": "machine",
+    "equipment": [
+      "precor-rsl0602"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0602"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.precor.com/en-US/products/RSL0602",
+        "media_url": null,
+        "type": "manufacturer-product-page",
+        "view": "not visually inspected",
+        "phase": "equipment setup and mechanism",
+        "description": "Manufacturer text verified; no motion frames inspected.",
+        "verification": "text-verified; visual-not-verified",
+        "organization": "Precor"
+      }
+    ],
+    "guidance": "Research draft; inferential motion fields require manual and human review.",
+    "movement": {
+      "joints": [
+        "hip",
+        "knee"
+      ],
+      "motions": "Hip/knee extension; return flexion (inferred).",
+      "start": "Flexed legs; angles unknown.",
+      "end": "Legs extended; limit unknown.",
+      "equipment_motion": "Rail travel reported; moving carriage identity unverified.",
+      "feet_contact": "Foot platform; stance unknown.",
+      "hands_contact": "Unknown.",
+      "torso": "Back pad angled 35 degrees; angle datum unspecified."
+    },
+    "machine": {
+      "model": "Precor Resolute RSL0602",
+      "adjustments": [
+        "seated fit",
+        "load"
+      ],
+      "supports": [
+        "seat",
+        "back pad",
+        "foot platform"
+      ],
+      "contacts": [
+        "back to pad",
+        "feet to platform"
+      ],
+      "moving_components": [
+        "rail-guided assembly; identify before rigging"
+      ],
+      "constraints": [
+        "Do not assume platform moves instead of seat."
+      ]
+    },
+    "missing_evidence": [
+      "Human technique approval",
+      "Front and side start/mid/end motion",
+      "Measured pivots, limits and contact coordinates",
+      "Model-specific exercise placard/manual verification"
+    ],
+    "confidence": "medium equipment text; low motion reconstruction",
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "precor-rsl0204-biceps-curl",
+    "family": "biceps-curl",
+    "name": "Precor Resolute RSL0204: Seated biceps curl",
+    "category": "machine",
+    "equipment": [
+      "precor-rsl0204"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0204"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.precor.com/en-US/products/RSL0204",
+        "media_url": null,
+        "type": "manufacturer-product-page",
+        "view": "not visually inspected",
+        "phase": "equipment setup and mechanism",
+        "description": "Manufacturer text verified; no motion frames inspected.",
+        "verification": "text-verified; visual-not-verified",
+        "organization": "Precor"
+      }
+    ],
+    "guidance": "Research draft; inferential motion fields require manual and human review.",
+    "movement": {
+      "joints": [
+        "elbow"
+      ],
+      "motions": "Elbow flexion; return extension (inferred).",
+      "start": "Elbows more extended; angle unknown.",
+      "end": "Elbows flexed; limit unknown.",
+      "equipment_motion": "Handle linkage around elbow-aligned pivot (inferred).",
+      "feet_contact": "Unknown.",
+      "hands_contact": "Handles; orientation unresolved.",
+      "torso": "Upper arms supported."
+    },
+    "machine": {
+      "model": "Precor Resolute RSL0204",
+      "adjustments": [
+        "gas-assisted seat"
+      ],
+      "supports": [
+        "seat",
+        "angled arm pad"
+      ],
+      "contacts": [
+        "upper arms to pad",
+        "hands to handles"
+      ],
+      "moving_components": [
+        "handle linkage (inferred)"
+      ],
+      "constraints": [
+        "Align elbows to pivot."
+      ]
+    },
+    "missing_evidence": [
+      "Human technique approval",
+      "Front and side start/mid/end motion",
+      "Measured pivots, limits and contact coordinates",
+      "Model-specific exercise placard/manual verification"
+    ],
+    "confidence": "medium equipment text; low motion reconstruction",
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  }
+]

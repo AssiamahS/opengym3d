@@ -1,0 +1,275 @@
+[
+  {
+    "id": "kettlebell-cossack-squat",
+    "family": "squat",
+    "name": "Kettlebell goblet Cossack squat",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-horns",
+    "source_urls": [
+      "https://www.strengthlog.com/cossack-squat/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/cossack-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/10/cossack-squat.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front_oblique",
+        "phase": "intermediate_and_lowered",
+        "description": "Two inspected frames show a kettlebell at chest, one knee flexed and the other leg extended with toes lifted.",
+        "organization": "StrengthLog",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "sample 1",
+            "view": "front_oblique",
+            "phase": "intermediate",
+            "observation": "Wide stance with bell at chest.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "sample 2",
+            "view": "front_oblique",
+            "phase": "lowered",
+            "observation": "Weight shifts toward bent knee; opposite heel remains down and toes rise.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Lateral squat with one kettlebell held at chest; movement interpretation from sampled visual and source text.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "lateral shift; unilateral flexion",
+      "start": "wide standing",
+      "end": "wide standing",
+      "equipment_motion": "Kettlebell follows chest.",
+      "feet_contact": "Bent-side foot appears flat; extended-side heel grounded with toes raised.",
+      "hands_contact": "Both hands at kettlebell handle sides; exact finger contact unresolved.",
+      "torso": "upright",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Opposite-side repetition",
+      "Grip close-up",
+      "True side view and continuous cycle",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "id": "setup",
+        "description": "Wide stance, bell held at chest.",
+        "basis": "Visual/source interpretation"
+      },
+      {
+        "id": "action",
+        "description": "Flex one knee and shift toward it.",
+        "basis": "Source text"
+      },
+      {
+        "id": "extreme",
+        "description": "Opposite leg extended, toes lifted.",
+        "basis": "Inspected lowered frame"
+      },
+      {
+        "id": "return",
+        "description": "Return to wide standing stance.",
+        "basis": "Source text; return not visually sampled"
+      }
+    ],
+    "reference_status": "partial",
+    "source_conflicts": [
+      "Same source page gives general Cossack instructions but shows a loaded kettlebell demonstration."
+    ]
+  },
+  {
+    "id": "bodyweight-box-touch-and-go",
+    "family": "squat",
+    "name": "Bodyweight box touch-and-go squat",
+    "category": "bodyweight",
+    "equipment": [
+      "box"
+    ],
+    "grip_id": "none",
+    "source_urls": [
+      "https://www.nsca.com/contentassets/3d09f06f0b4c4f6fbd8cc382ed1f3d4a/ptq-10.2.1-progressive-strategies-for-teaching-fundamental-resistance-training-movement-patterns.pdf"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nsca.com/contentassets/3d09f06f0b4c4f6fbd8cc382ed1f3d4a/ptq-10.2.1-progressive-strategies-for-teaching-fundamental-resistance-training-movement-patterns.pdf",
+        "media_url": "https://www.nsca.com/contentassets/3d09f06f0b4c4f6fbd8cc382ed1f3d4a/ptq-10.2.1-progressive-strategies-for-teaching-fundamental-resistance-training-movement-patterns.pdf#page=4",
+        "type": "pdf-photo-sequence",
+        "view": "side_oblique",
+        "phase": "standing_and_bottom",
+        "description": "Figures 1A/B: standing and box-contact squat; arms forward.",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "organization": "NSCA / Lincoln, Ill and Ibrahim",
+        "observed_samples": [
+          {
+            "locator": "PDF page 4 / printed page 9, figures 1A/B",
+            "view": "side_oblique",
+            "phase": "standing_and_bottom",
+            "observation": "Figures 1A/B: standing and box-contact squat; arms forward.",
+            "limitations": "Static pair; no timing, hidden contact or movement approval."
+          }
+        ],
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Qualitative reference interpretation only; inspect the cited panel and exclusions.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Hip and knee flexion/extension; equipment/support relationship retained.",
+      "start": "Standing in front of box",
+      "end": "Standing in front of box",
+      "equipment_motion": "Box stationary",
+      "feet_contact": "Feet on floor in inspected static pair.",
+      "hands_contact": "Hands held forward without implement",
+      "torso": "Hip contact at bottom; otherwise unsupported",
+      "basis": "Qualitative interpretation of inspected photos and accompanying source text; not measured."
+    },
+    "movement_phases": [
+      {
+        "id": "setup",
+        "description": "Standing in front of box",
+        "basis": "Inspected photo"
+      },
+      {
+        "id": "action",
+        "description": "Lower through hip and knee flexion.",
+        "basis": "Source text"
+      },
+      {
+        "id": "extreme",
+        "description": "Hip contact with box at lower posture",
+        "basis": "Inspected photo"
+      },
+      {
+        "id": "return",
+        "description": "Return to standing.",
+        "basis": "Source text; no continuous playback"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent source and camera",
+      "Continuous return and transition evidence",
+      "Human movement approval",
+      "Seat-contact duration and unloading behavior"
+    ],
+    "confidence": "medium identity/static visual; low continuous kinematics",
+    "source_conflicts": [
+      "Touch-and-go box contact is not necessarily full seated rest; do not merge with chair sit-to-stand."
+    ],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "last_research_batch": "02",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "dumbbell-overhead-squat",
+    "family": "squat",
+    "name": "Two-dumbbell overhead squat",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-overhead",
+    "source_urls": [
+      "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf"
+    ],
+    "references": [
+      {
+        "source_url": "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf",
+        "media_url": "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf#page=2",
+        "type": "pdf-photo-sequence",
+        "view": "front",
+        "phase": "standing_and_bottom",
+        "description": "Level 3 double-arm images: standing and squat with both dumbbells overhead.",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "organization": "CrossFit / Michael Rutherford",
+        "observed_samples": [
+          {
+            "locator": "PDF page 2, Level 3 outer pair; exclude single-arm middle photo",
+            "view": "front",
+            "phase": "standing_and_bottom",
+            "observation": "Level 3 double-arm images: standing and squat with both dumbbells overhead.",
+            "limitations": "Static pair; no timing, hidden contact or movement approval."
+          }
+        ],
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Qualitative reference interpretation only; inspect the cited panel and exclusions.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Hip and knee flexion/extension; equipment/support relationship retained.",
+      "start": "Standing, two implements overhead",
+      "end": "Standing, two implements overhead",
+      "equipment_motion": "Dumbbells remain above shoulders",
+      "feet_contact": "Feet on floor in inspected static pair.",
+      "hands_contact": "Separate handles held overhead; thumb closure hidden",
+      "torso": "No torso support",
+      "basis": "Qualitative interpretation of inspected photos and accompanying source text; not measured."
+    },
+    "movement_phases": [
+      {
+        "id": "setup",
+        "description": "Standing, two implements overhead",
+        "basis": "Inspected photo"
+      },
+      {
+        "id": "action",
+        "description": "Lower through hip and knee flexion.",
+        "basis": "Source text"
+      },
+      {
+        "id": "extreme",
+        "description": "Lower squat with both implements overhead",
+        "basis": "Inspected photo"
+      },
+      {
+        "id": "return",
+        "description": "Return to standing.",
+        "basis": "Source text; no continuous playback"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent source and camera",
+      "Continuous return and transition evidence",
+      "Human movement approval",
+      "Overhead grip close-up and shoulder clearance"
+    ],
+    "confidence": "medium identity/static visual; low continuous kinematics",
+    "source_conflicts": [
+      "Adjacent single-arm overhead photo is a separate variation."
+    ],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "last_research_batch": "02",
+    "checked_on": "2026-11-23"
+  }
+]

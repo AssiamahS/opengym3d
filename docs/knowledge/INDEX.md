@@ -19,6 +19,7 @@ Useful historical evidence:
 - [Animated Heatsy squat investigation](../HEATSY_BODYWEIGHT_REVIEW.md)
 - [Skin-weight deformation repair](../HEATSY_DEFORMATION_REPAIR.md)
 - [Equipment library and MPFB grip refinement](../EQUIPMENT_LIBRARY_REVIEW.md)
+- [Internal visual exercise reference library](../../reference-library/INDEX.md): partial source evidence, equipment/grip catalog and continuation queue; not executable motion or human approval.
 
 ## Working practice
 

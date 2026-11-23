@@ -1,0 +1,1749 @@
+[
+  {
+    "id": "dumbbell-chest-fly",
+    "family": "chest-fly",
+    "name": "Dumbbell chest fly",
+    "aliases": [
+      "Dumbbell flyes",
+      "Flat bench fly"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell",
+      "bench"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-chest-fly/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-chest-fly/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Dumbbell-Chest-Fly.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front-oblique",
+        "phase": "Arms spread sample",
+        "description": "One browser screenshot of publisher GIF inspected on 2026-11-23; untimed frame only.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "full_cycle_verified": false,
+        "observed_samples": [
+          {
+            "locator": "Direct publisher GIF; browser screenshot 2026-11-23, untimed frame",
+            "view": "front-oblique",
+            "phase": "Arms spread sample",
+            "observation": "Performer lies on bench with feet on floor and one dumbbell per hand; elbows slightly bent and arms spread.",
+            "limitations": "One frame only; direction, cycle continuity, hidden contacts and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Open arms to sides with slight elbow bend; Bring weights together above chest.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Open arms to sides with slight elbow bend; Bring weights together above chest",
+      "start": "Supine on bench, weights above chest",
+      "end": "Supine on bench, weights above chest",
+      "equipment_motion": "Dumbbells follow lateral arcs",
+      "feet_contact": "Both feet on floor; back supported on bench",
+      "hands_contact": "One dumbbell handle per hand",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine on bench, weights above chest",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-chest-fly/"
+      },
+      {
+        "phase": "action",
+        "description": "Open arms to sides with slight elbow bend",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-chest-fly/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Arms spread beside chest; depth unspecified",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-chest-fly/"
+      },
+      {
+        "phase": "return",
+        "description": "Bring weights together above chest",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-chest-fly/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "dumbbell-pullover",
+    "family": "pullover",
+    "name": "Dumbbell pullover",
+    "aliases": [
+      "DB pullover"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell",
+      "bench"
+    ],
+    "grip_id": "bar-grip-unspecified",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-pullover/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-pullover/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Dumbbell-Pullover.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Lower dumbbell behind head with nearly straight arms; Lift weight above torso.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Lower dumbbell behind head with nearly straight arms; Lift weight above torso",
+      "start": "Supine on bench with dumbbell overhead",
+      "end": "Supine on bench with dumbbell overhead",
+      "equipment_motion": "Dumbbell arcs behind head and back",
+      "feet_contact": "Bench supports body; foot contact not inspected",
+      "hands_contact": "Hands hold dumbbell; exact head/shaft support unresolved",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine on bench with dumbbell overhead",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-pullover/"
+      },
+      {
+        "phase": "action",
+        "description": "Lower dumbbell behind head with nearly straight arms",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-pullover/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Weight behind head; depth unspecified",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-pullover/"
+      },
+      {
+        "phase": "return",
+        "description": "Lift weight above torso",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-pullover/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "band-external-shoulder-rotation",
+    "family": "shoulder-external-rotation",
+    "name": "Band external shoulder rotation",
+    "aliases": [
+      "Band external rotation",
+      "Rotator cuff external rotation"
+    ],
+    "category": "band",
+    "equipment": [
+      "resistance-band"
+    ],
+    "grip_id": "handle-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/band-external-shoulder-rotation/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/band-external-shoulder-rotation/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/12/Band-shoulder-external-rotation.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Rotate forearm away from trunk with upper arm near side; Rotate inward to setup.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Rotate forearm away from trunk with upper arm near side; Rotate inward to setup",
+      "start": "Standing sideways to elbow-height band anchor, far arm elbow bent",
+      "end": "Standing sideways to elbow-height band anchor, far arm elbow bent",
+      "equipment_motion": "Band stretches toward moving hand",
+      "feet_contact": "Both feet on floor inferred from standing setup",
+      "hands_contact": "Far-side hand holds band; closure uninspected",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing sideways to elbow-height band anchor, far arm elbow bent",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/band-external-shoulder-rotation/"
+      },
+      {
+        "phase": "action",
+        "description": "Rotate forearm away from trunk with upper arm near side",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/band-external-shoulder-rotation/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Outward rotated position; angle unspecified",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/band-external-shoulder-rotation/"
+      },
+      {
+        "phase": "return",
+        "description": "Rotate inward to setup",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/band-external-shoulder-rotation/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "cable-internal-shoulder-rotation",
+    "family": "shoulder-internal-rotation",
+    "name": "Cable internal shoulder rotation",
+    "aliases": [
+      "Cable internal rotation",
+      "Rotator cuff internal rotation"
+    ],
+    "category": "cable",
+    "equipment": [
+      "cable-station",
+      "d-handle"
+    ],
+    "grip_id": "d-handle",
+    "source_urls": [
+      "https://www.strengthlog.com/internal-shoulder-rotations/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/internal-shoulder-rotations/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/03/internal-shoulder-rotation.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Rotate forearm inward with upper arm near side; Rotate outward to setup.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Rotate forearm inward with upper arm near side; Rotate outward to setup",
+      "start": "Standing sideways to elbow-height cable, near arm elbow bent",
+      "end": "Standing sideways to elbow-height cable, near arm elbow bent",
+      "equipment_motion": "Handle arcs inward; cable follows",
+      "feet_contact": "Both feet on floor inferred from standing setup",
+      "hands_contact": "Near-side hand holds cable handle",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing sideways to elbow-height cable, near arm elbow bent",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/internal-shoulder-rotations/"
+      },
+      {
+        "phase": "action",
+        "description": "Rotate forearm inward with upper arm near side",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/internal-shoulder-rotations/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Forearm toward trunk; angle unspecified",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/internal-shoulder-rotations/"
+      },
+      {
+        "phase": "return",
+        "description": "Rotate outward to setup",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/internal-shoulder-rotations/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [
+      "Instructions specify cable while commentary mentions band; entry follows cable-specific setup, with visual confirmation pending."
+    ],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "band-pull-apart",
+    "family": "band-pull-apart",
+    "name": "Band pull-apart",
+    "aliases": [
+      "Band pull apart",
+      "Resistance band pullapart"
+    ],
+    "category": "band",
+    "equipment": [
+      "resistance-band"
+    ],
+    "grip_id": "bar-grip-unspecified",
+    "source_urls": [
+      "https://www.strengthlog.com/band-pull-apart/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/band-pull-apart/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/04/Band-Pull-Apart.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Spread arms apart; Bring hands forward together.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Spread arms apart; Bring hands forward together",
+      "start": "Band held in front on straight arms",
+      "end": "Band held in front on straight arms",
+      "equipment_motion": "Band lengthens between hands",
+      "feet_contact": "Standing support inferred; exact stance uninspected",
+      "hands_contact": "One band segment in each hand",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Band held in front on straight arms",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/band-pull-apart/"
+      },
+      {
+        "phase": "action",
+        "description": "Spread arms apart",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/band-pull-apart/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Arms extended to sides",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/band-pull-apart/"
+      },
+      {
+        "phase": "return",
+        "description": "Bring hands forward together",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/band-pull-apart/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "barbell-upright-row",
+    "family": "upright-row",
+    "name": "Barbell upright row",
+    "aliases": [
+      "Standing upright row"
+    ],
+    "category": "barbell",
+    "equipment": [
+      "barbell"
+    ],
+    "grip_id": "pronated-closed",
+    "source_urls": [
+      "https://www.strengthlog.com/barbell-upright-row/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/barbell-upright-row/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/11/Barbell-upright-row.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Raise bar along torso; Lower bar toward thighs.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "Raise bar along torso; Lower bar toward thighs",
+      "start": "Standing with bar held in front",
+      "end": "Standing with bar held in front",
+      "equipment_motion": "Bar rises close to trunk",
+      "feet_contact": "Both feet planted inferred",
+      "hands_contact": "Overhand bar grip; exact closure uninspected",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing with bar held in front",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/barbell-upright-row/"
+      },
+      {
+        "phase": "action",
+        "description": "Raise bar along torso",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/barbell-upright-row/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Raised bar; endpoint conflicts within publisher text",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/barbell-upright-row/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower bar toward thighs",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/barbell-upright-row/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [
+      "Publisher steps say chin height, while later text suggests avoiding upper arms above shoulder height; endpoint retained as unresolved."
+    ],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "dumbbell-front-raise",
+    "family": "front-raise",
+    "name": "Dumbbell front raise",
+    "aliases": [
+      "Anterior raise",
+      "DB front raise"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-pronated",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-front-raise/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-front-raise/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Dumbbell-Front-Raise.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Lift weights forward; Lower weights in front.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Lift weights forward; Lower weights in front",
+      "start": "Weights in front of hips, arms down",
+      "end": "Weights in front of hips, arms down",
+      "equipment_motion": "Dumbbells arc forward",
+      "feet_contact": "Standing feet contact inferred",
+      "hands_contact": "One handle in each hand; fine grip uninspected",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Weights in front of hips, arms down",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-front-raise/"
+      },
+      {
+        "phase": "action",
+        "description": "Lift weights forward",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-front-raise/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Weights near shoulder level",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-front-raise/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower weights in front",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-front-raise/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "dumbbell-lateral-raise",
+    "family": "lateral-raise",
+    "name": "Dumbbell lateral raise",
+    "aliases": [
+      "Side raise",
+      "DB lateral raise"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-lateral-raise/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-lateral-raise/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/12/Dumbbell-Lateral-Raise.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Raise arms outward; Lower weights to sides.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Raise arms outward; Lower weights to sides",
+      "start": "Weights beside hips",
+      "end": "Weights beside hips",
+      "equipment_motion": "Dumbbells arc laterally",
+      "feet_contact": "Standing feet contact inferred",
+      "hands_contact": "One handle in each hand; fine grip uninspected",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Weights beside hips",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lateral-raise/"
+      },
+      {
+        "phase": "action",
+        "description": "Raise arms outward",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lateral-raise/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Upper arms approximately horizontal per text",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lateral-raise/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower weights to sides",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lateral-raise/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "cable-rope-face-pull",
+    "family": "face-pull",
+    "name": "Cable rope face pull",
+    "aliases": [
+      "Facepull",
+      "Rope face pull"
+    ],
+    "category": "cable",
+    "equipment": [
+      "cable-station",
+      "rope-attachment"
+    ],
+    "grip_id": "cable-rope",
+    "source_urls": [
+      "https://www.strengthlog.com/face-pull/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/face-pull/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/05/face-pull.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front-oblique",
+        "phase": "Arms-forward sample",
+        "description": "One browser screenshot of publisher GIF inspected on 2026-11-23; untimed frame only.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "full_cycle_verified": false,
+        "observed_samples": [
+          {
+            "locator": "Direct publisher GIF; browser screenshot 2026-11-23, untimed frame",
+            "view": "front-oblique",
+            "phase": "Arms-forward sample",
+            "observation": "Performer stands with feet apart facing cable machine; both hands hold branches of rope with arms forward.",
+            "limitations": "One frame only; direction, cycle continuity, hidden contacts and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Pull rope toward face, elbows outward; Extend arms forward.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "Pull rope toward face, elbows outward; Extend arms forward",
+      "start": "Standing facing high pulley with arms forward",
+      "end": "Standing facing high pulley with arms forward",
+      "equipment_motion": "Rope travels toward face",
+      "feet_contact": "Both feet on floor in sampled frame",
+      "hands_contact": "Both hands hold rope branches; thumb detail unresolved",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing facing high pulley with arms forward",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/face-pull/"
+      },
+      {
+        "phase": "action",
+        "description": "Pull rope toward face, elbows outward",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/face-pull/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Hands near face with elbows high",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/face-pull/"
+      },
+      {
+        "phase": "return",
+        "description": "Extend arms forward",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/face-pull/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "kneeling-two-hand-landmine-press",
+    "family": "landmine-press",
+    "name": "Kneeling two-hand landmine press",
+    "aliases": [
+      "Tall kneeling landmine press",
+      "Two-arm angled barbell press"
+    ],
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "weight-plate",
+      "exercise-mat"
+    ],
+    "grip_id": "bar-grip-unspecified",
+    "source_urls": [
+      "https://www.strengthlog.com/landmine-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/landmine-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/03/landmine-press.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "side-oblique",
+        "phase": "Chest-level sample",
+        "description": "One browser screenshot of publisher GIF inspected on 2026-11-23; untimed frame only.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "full_cycle_verified": false,
+        "observed_samples": [
+          {
+            "locator": "Direct publisher GIF; browser screenshot 2026-11-23, untimed frame",
+            "view": "side-oblique",
+            "phase": "Chest-level sample",
+            "observation": "Performer kneels on both knees on mat, lower legs behind; both hands at raised bar end near chest; opposite end meets floor plate.",
+            "limitations": "One frame only; direction, cycle continuity, hidden contacts and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Press bar end upward and forward; Lower end toward chest.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "Press bar end upward and forward; Lower end toward chest",
+      "start": "Tall kneeling, bar end near chest",
+      "end": "Tall kneeling, bar end near chest",
+      "equipment_motion": "Bar pivots around floor end",
+      "feet_contact": "Both knees on mat; lower legs behind",
+      "hands_contact": "Both hands clustered at bar end; contact surfaces unresolved",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Tall kneeling, bar end near chest",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/landmine-press/"
+      },
+      {
+        "phase": "action",
+        "description": "Press bar end upward and forward",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/landmine-press/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Elbows extended along inclined bar",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/landmine-press/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower end toward chest",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/landmine-press/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval",
+      "Anchoring fixture and bar-end retention; equipment catalog lacks dedicated landmine mount"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [
+      "Publisher text allows standing or kneeling; sampled visual is kneeling and only that variant is cataloged. Floor anchoring is visible but exact retention fixture is unresolved."
+    ],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "reverse-dumbbell-fly",
+    "family": "reverse-fly",
+    "name": "Reverse dumbbell fly",
+    "aliases": [
+      "Bent-over rear delt fly",
+      "Reverse flyes"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/reverse-dumbbell-flyes/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/reverse-dumbbell-flyes/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Reverse-dumbbell-flyes.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Lift arms outward with small elbow bend; Lower weights beneath torso.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Lift arms outward with small elbow bend; Lower weights beneath torso",
+      "start": "Hinged torso with weights hanging",
+      "end": "Hinged torso with weights hanging",
+      "equipment_motion": "Dumbbells arc outward",
+      "feet_contact": "Both feet on floor inferred",
+      "hands_contact": "One dumbbell handle per hand",
+      "torso": "Forward hinge retained",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Hinged torso with weights hanging",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/reverse-dumbbell-flyes/"
+      },
+      {
+        "phase": "action",
+        "description": "Lift arms outward with small elbow bend",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/reverse-dumbbell-flyes/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Arms spread laterally",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/reverse-dumbbell-flyes/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower weights beneath torso",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/reverse-dumbbell-flyes/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "dumbbell-lying-triceps-extension",
+    "family": "triceps-extension",
+    "name": "Dumbbell lying triceps extension",
+    "aliases": [
+      "Dumbbell skull crusher",
+      "Lying DB tricep extension"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell",
+      "bench"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-lying-triceps-extension/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-lying-triceps-extension/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2023/03/Lying-Dumbbell-Triceps-Extension-1.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Bend elbows to lower weights behind head; Straighten arms upward.",
+    "movement": {
+      "joints": [
+        "elbows",
+        "shoulders"
+      ],
+      "motions": "Bend elbows to lower weights behind head; Straighten arms upward",
+      "start": "Supine, arms pointing up with weights",
+      "end": "Supine, arms pointing up with weights",
+      "equipment_motion": "Weights lower behind head and return",
+      "feet_contact": "Back on bench; foot contact uninspected",
+      "hands_contact": "One dumbbell handle per hand",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine, arms pointing up with weights",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lying-triceps-extension/"
+      },
+      {
+        "phase": "action",
+        "description": "Bend elbows to lower weights behind head",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lying-triceps-extension/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Elbows flexed; depth unspecified",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lying-triceps-extension/"
+      },
+      {
+        "phase": "return",
+        "description": "Straighten arms upward",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lying-triceps-extension/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "cable-bar-triceps-pushdown",
+    "family": "triceps-pushdown",
+    "name": "Cable bar triceps pushdown",
+    "aliases": [
+      "Tricep pressdown",
+      "Straight bar pushdown"
+    ],
+    "category": "cable",
+    "equipment": [
+      "cable-station"
+    ],
+    "grip_id": "pronated-closed",
+    "source_urls": [
+      "https://www.strengthlog.com/tricep-pushdown-with-bar/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/tricep-pushdown-with-bar/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/triceps-pushdown-with-straight-handle.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Extend elbows pressing bar down; Let bar rise with elbow flexion.",
+    "movement": {
+      "joints": [
+        "elbows"
+      ],
+      "motions": "Extend elbows pressing bar down; Let bar rise with elbow flexion",
+      "start": "Facing machine, bar near upper chest and elbows bent",
+      "end": "Facing machine, bar near upper chest and elbows bent",
+      "equipment_motion": "Bar descends against cable tension",
+      "feet_contact": "Standing feet contact inferred",
+      "hands_contact": "Overhand grip on cable bar; attachment catalog gap",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Facing machine, bar near upper chest and elbows bent",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/tricep-pushdown-with-bar/"
+      },
+      {
+        "phase": "action",
+        "description": "Extend elbows pressing bar down",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/tricep-pushdown-with-bar/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Arms extended at sides",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/tricep-pushdown-with-bar/"
+      },
+      {
+        "phase": "return",
+        "description": "Let bar rise with elbow flexion",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/tricep-pushdown-with-bar/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval",
+      "Straight cable-bar attachment is source-described but absent from current equipment catalog; dimensions and connector unknown"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "dumbbell-shrug",
+    "family": "shrug",
+    "name": "Dumbbell shrug",
+    "aliases": [
+      "DB shoulder shrug"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-shrug/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-shrug/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Dumbbell-Shrug.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Elevate shoulders; Lower shoulders.",
+    "movement": {
+      "joints": [
+        "shoulder girdle"
+      ],
+      "motions": "Elevate shoulders; Lower shoulders",
+      "start": "Standing holding weights at sides",
+      "end": "Standing holding weights at sides",
+      "equipment_motion": "Weights rise slightly with shoulders",
+      "feet_contact": "Standing feet contact inferred",
+      "hands_contact": "One dumbbell handle per hand",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing holding weights at sides",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-shrug/"
+      },
+      {
+        "phase": "action",
+        "description": "Elevate shoulders",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-shrug/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Shoulders raised",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-shrug/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower shoulders",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-shrug/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "scapular-pull-up",
+    "family": "scapular-pull-up",
+    "name": "Scapular pull-up",
+    "aliases": [
+      "Scap pull-up",
+      "Scapular depression pull-up"
+    ],
+    "category": "bodyweight",
+    "equipment": [
+      "pull-up-bar"
+    ],
+    "grip_id": "pronated-closed",
+    "source_urls": [
+      "https://www.strengthlog.com/scap-pull-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/scap-pull-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/10/scap-pull-ups.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Draw shoulder blades down and together; Allow shoulder blades to rise.",
+    "movement": {
+      "joints": [
+        "shoulder girdle"
+      ],
+      "motions": "Draw shoulder blades down and together; Allow shoulder blades to rise",
+      "start": "Hanging from overhead bar",
+      "end": "Hanging from overhead bar",
+      "equipment_motion": "Bar stationary; body rises slightly",
+      "feet_contact": "Feet suspended inferred from hanging setup",
+      "hands_contact": "Overhand grip slightly wider than shoulders per text",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Hanging from overhead bar",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/scap-pull-up/"
+      },
+      {
+        "phase": "action",
+        "description": "Draw shoulder blades down and together",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/scap-pull-up/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Shoulders away from ears",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/scap-pull-up/"
+      },
+      {
+        "phase": "return",
+        "description": "Allow shoulder blades to rise",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/scap-pull-up/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "dumbbell-wrist-curl",
+    "family": "wrist-curl",
+    "name": "Dumbbell wrist curl",
+    "aliases": [
+      "Underhand wrist curl",
+      "Forearm flexion curl"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "supinated-closed",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-wrist-curl/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-wrist-curl/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/01/Dumbbell-Wrist-Curl.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Lower hand and allow weight toward fingers; Close grip and curl wrist upward.",
+    "movement": {
+      "joints": [
+        "wrists",
+        "fingers"
+      ],
+      "motions": "Lower hand and allow weight toward fingers; Close grip and curl wrist upward",
+      "start": "Forearm supported, palm upward holding weight",
+      "end": "Forearm supported, palm upward holding weight",
+      "equipment_motion": "Dumbbell rotates with wrist",
+      "feet_contact": "Forearm supported on thigh or bench; support choice unresolved",
+      "hands_contact": "Underhand grip includes described finger roll",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Forearm supported, palm upward holding weight",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-wrist-curl/"
+      },
+      {
+        "phase": "action",
+        "description": "Lower hand and allow weight toward fingers",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-wrist-curl/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Wrist lowered; finger excursion unmeasured",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-wrist-curl/"
+      },
+      {
+        "phase": "return",
+        "description": "Close grip and curl wrist upward",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-wrist-curl/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "dumbbell-wrist-extension",
+    "family": "wrist-extension",
+    "name": "Dumbbell wrist extension",
+    "aliases": [
+      "Reverse wrist curl",
+      "Overhand wrist curl"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "pronated-closed",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-wrist-extension/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-wrist-extension/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/01/Dumbbell-Wrist-Extension.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected. Direct media fetch timed out; URL was exposed by publisher image link.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Lower hand; Extend wrist upward.",
+    "movement": {
+      "joints": [
+        "wrists"
+      ],
+      "motions": "Lower hand; Extend wrist upward",
+      "start": "Forearm supported, palm down holding weight",
+      "end": "Forearm supported, palm down holding weight",
+      "equipment_motion": "Dumbbell rotates with wrist",
+      "feet_contact": "Forearm supported on thigh or bench; support choice unresolved",
+      "hands_contact": "Overhand dumbbell grip",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Forearm supported, palm down holding weight",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-wrist-extension/"
+      },
+      {
+        "phase": "action",
+        "description": "Lower hand",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-wrist-extension/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Wrist lowered",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-wrist-extension/"
+      },
+      {
+        "phase": "return",
+        "description": "Extend wrist upward",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-wrist-extension/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "two-hand-bar-hang",
+    "family": "hang",
+    "name": "Two-hand bar hang",
+    "aliases": [
+      "Dead hang",
+      "Two-arm hang"
+    ],
+    "category": "bodyweight",
+    "equipment": [
+      "pull-up-bar"
+    ],
+    "grip_id": "bar-grip-unspecified",
+    "source_urls": [
+      "https://www.strengthlog.com/bar-hang/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/bar-hang/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/01/Two-handed-hang-for-time.gif?resize=600%2C646&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise page and its demonstration image link read; pixels not inspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Suspend body from bar; Dismount not described or inspected.",
+    "movement": {
+      "joints": [
+        "shoulder girdle",
+        "fingers"
+      ],
+      "motions": "Suspend body from bar; Dismount not described or inspected",
+      "start": "Hands on overhead bar",
+      "end": "Hands on overhead bar",
+      "equipment_motion": "Bar remains stationary",
+      "feet_contact": "Feet suspended during hold inferred",
+      "hands_contact": "Both hands on bar; grip orientation unresolved",
+      "torso": "Support and trunk posture depend on setup; no measured angles",
+      "basis": "Qualitative publisher-text interpretation; contact inferences are not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; action extreme is separate. Hang is a hold, not a cyclic repetition."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Hands on overhead bar",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bar-hang/"
+      },
+      {
+        "phase": "action",
+        "description": "Suspend body from bar",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bar-hang/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Static hanging hold; shoulder activity unspecified",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bar-hang/"
+      },
+      {
+        "phase": "return",
+        "description": "Dismount not described or inspected",
+        "basis": "Qualitative publisher-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bar-hang/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "standing-cable-chest-fly",
+    "family": "chest-fly",
+    "name": "Standing cable chest fly",
+    "aliases": [
+      "Cable crossover fly",
+      "Standing cable fly"
+    ],
+    "category": "cable",
+    "equipment": [
+      "cable-station",
+      "d-handle"
+    ],
+    "grip_id": "d-handle",
+    "source_urls": [
+      "https://www.strengthlog.com/standing-cable-chest-fly/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/standing-cable-chest-fly/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/11/standing-cable-chest-fly.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher instructions and demonstration link read; pixels uninspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Bring slightly bent arms together in front; Let arms open under control.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Bring slightly bent arms together in front; Let arms open under control",
+      "start": "Standing ahead of high pulleys holding handles apart",
+      "end": "Standing ahead of high pulleys holding handles apart",
+      "equipment_motion": "Handles follow arm arcs; cable remains attached to pulley",
+      "feet_contact": "Both feet on floor inferred from standing setup",
+      "hands_contact": "One high-pulley handle per hand",
+      "torso": "Slight forward lean per text",
+      "basis": "Qualitative source-text interpretation; not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; extreme listed separately."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing ahead of high pulleys holding handles apart",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/standing-cable-chest-fly/"
+      },
+      {
+        "phase": "action",
+        "description": "Bring slightly bent arms together in front",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/standing-cable-chest-fly/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Handles meet in front",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/standing-cable-chest-fly/"
+      },
+      {
+        "phase": "return",
+        "description": "Let arms open under control",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/standing-cable-chest-fly/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  },
+  {
+    "id": "single-arm-cable-lateral-raise",
+    "family": "lateral-raise",
+    "name": "Single-arm cable lateral raise",
+    "aliases": [
+      "Cable side raise",
+      "One-arm cable lateral raise"
+    ],
+    "category": "cable",
+    "equipment": [
+      "cable-station",
+      "d-handle"
+    ],
+    "grip_id": "d-handle",
+    "source_urls": [
+      "https://www.strengthlog.com/cable-lateral-raise/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/cable-lateral-raise/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/11/cable-lateral-raise.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher instructions and demonstration link read; pixels uninspected.",
+        "verification": "page_text_and_media_link",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_verified": false
+      }
+    ],
+    "guidance": "Raise arm outward; Lower handle toward hip.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Raise arm outward; Lower handle toward hip",
+      "start": "Standing beside low pulley holding handle with far hand",
+      "end": "Standing beside low pulley holding handle with far hand",
+      "equipment_motion": "Handles follow arm arcs; cable remains attached to pulley",
+      "feet_contact": "Both feet on floor inferred from standing setup",
+      "hands_contact": "Far hand on low-pulley handle; other hand contact unknown",
+      "torso": "Standing controlled trunk",
+      "basis": "Qualitative source-text interpretation; not measured kinematics.",
+      "endpoint_semantics": "End is repeat-ready setup; extreme listed separately."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing beside low pulley holding handle with far hand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/cable-lateral-raise/"
+      },
+      {
+        "phase": "action",
+        "description": "Raise arm outward",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/cable-lateral-raise/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Upper arm horizontal per text",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/cable-lateral-raise/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower handle toward hip",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/cable-lateral-raise/"
+      }
+    ],
+    "missing_evidence": [
+      "Full-cycle playback and independent view",
+      "Fine hand/finger/thumb contact",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Single publisher; no independent consensus review.",
+    "full_cycle_verified": false
+  }
+]

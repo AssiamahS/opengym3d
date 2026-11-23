@@ -1,0 +1,1818 @@
+[
+  {
+    "id": "squat",
+    "name": "Squat",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "air-squat",
+      "chair-squat",
+      "dumbbell-squat-sides",
+      "kettlebell-goblet-squat",
+      "kettlebell-front-squat",
+      "bodyweight-cossack-squat",
+      "dumbbell-front-squat",
+      "dumbbell-goblet-head-support",
+      "barbell-front-squat-clean-rack",
+      "barbell-box-squat",
+      "safety-bar-squat",
+      "barbell-zercher-squat",
+      "kettlebell-cossack-squat",
+      "bodyweight-box-touch-and-go",
+      "dumbbell-overhead-squat"
+    ],
+    "source_urls": [
+      "https://airedalemsk.co.uk/aiovg_videos/chair-squat-lateral-view/",
+      "https://airedalemsk.co.uk/aiovg_videos/chair-squat/",
+      "https://fitwomensweekly.com/post/10-ways-to-hold-a-kettlebell/",
+      "https://fitwomensweekly.com/post/how-to-hold-a-dumbbell-for-goblet-squats/",
+      "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf",
+      "https://mcmperformance.com/strong-in-6-the-squat/",
+      "https://vimeo.com/832454211",
+      "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/",
+      "https://www.acefitness.org/resources/everyone/exercise-library/362/goblet-squat/",
+      "https://www.crossfit.com/pro-coach/developing-the-front-squat",
+      "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+      "https://www.nasm.org/resource-center/blog/training/how-to-perform-goblet-squats",
+      "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+      "https://www.nhs.uk/live-well/exercise/strength-exercises/",
+      "https://www.nsca.com/contentassets/3d09f06f0b4c4f6fbd8cc382ed1f3d4a/ptq-10.2.1-progressive-strategies-for-teaching-fundamental-resistance-training-movement-patterns.pdf",
+      "https://www.strengthlog.com/air-squat/",
+      "https://www.strengthlog.com/box-squat/",
+      "https://www.strengthlog.com/chair-squats/",
+      "https://www.strengthlog.com/cossack-squat/",
+      "https://www.strengthlog.com/dumbbell-squat/",
+      "https://www.strengthlog.com/front-squat/",
+      "https://www.strengthlog.com/goblet-squat/",
+      "https://www.strengthlog.com/kettlebell-front-squat/",
+      "https://www.strengthlog.com/safety-bar-squat/",
+      "https://www.strengthlog.com/zercher-squat/",
+      "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+      "https://www.youtube.com/watch?v=2iIKil6wK1E",
+      "https://www.youtube.com/watch?v=gfod3jiMgl4"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "split-squat",
+    "name": "Split squat",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-bulgarian-split-squat"
+    ],
+    "source_urls": [
+      "https://trainer.nasm.org/hubfs/NASM_Free%20Guide_Squats%20and%20Deadlifts.pdf?hsLang=en",
+      "https://www.strengthlog.com/bulgarian-split-squat/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "lunge",
+    "name": "Lunge",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-forward-lunge",
+      "dumbbell-walking-lunge",
+      "dumbbell-reverse-lunge",
+      "bodyweight-side-lunge"
+    ],
+    "source_urls": [
+      "https://hortonbarbell.com/reverse-dumbbell-lunge/",
+      "https://www.strengthlog.com/dumbbell-lunge/",
+      "https://www.strengthlog.com/dumbbell-walking-lunge/",
+      "https://www.strengthlog.com/reverse-dumbbell-lunge/",
+      "https://www.strengthlog.com/side-lunges-bodyweight/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "step-up",
+    "name": "Step up",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "bodyweight-step-up",
+      "dumbbell-step-up"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/step-up/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "step-down",
+    "name": "Step down",
+    "category": "lower_body",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "deadlift",
+    "name": "Deadlift",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-deadlift",
+      "kettlebell-single-leg-deadlift",
+      "barbell-sumo-deadlift",
+      "barbell-block-pull"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-deadlift/",
+      "https://www.strengthlog.com/rack-pull/",
+      "https://www.strengthlog.com/single-leg-deadlift-with-kettlebell/",
+      "https://www.strengthlog.com/sumo-deadlift/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "romanian-deadlift",
+    "name": "Romanian deadlift",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-romanian-deadlift",
+      "barbell-romanian-deadlift"
+    ],
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/dumbbell-romanian-deadlift",
+      "https://www.strengthlog.com/dumbbell-romanian-deadlift/",
+      "https://www.strengthlog.com/romanian-deadlift/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "good-morning",
+    "name": "Good morning",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "barbell-good-morning"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/good-morning/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "hip-thrust",
+    "name": "Hip thrust",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "barbell-hip-thrust"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/hip-thrust/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "glute-bridge",
+    "name": "Glute bridge",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "bodyweight-glute-bridge"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/glute-bridge/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "leg-press",
+    "name": "Leg press",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "precor-rsl0602-leg-press"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0602"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "hack-squat",
+    "name": "Hack squat",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "machine-hack-squat"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/hack-squat-machine/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "leg-extension",
+    "name": "Leg extension",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "precor-rsl0605-leg-extension"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0605"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "leg-curl",
+    "name": "Leg curl",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "precor-rsl0619-leg-curl"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0619"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "nordic-curl",
+    "name": "Nordic curl",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "nordic-hamstring-eccentric"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/nordic-hamstring-eccentric/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "calf-raise",
+    "name": "Calf raise",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "machine-standing-calf-raise",
+      "machine-seated-calf-raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/seated-calf-raise/",
+      "https://www.strengthlog.com/standing-calf-raise/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "tibialis-raise",
+    "name": "Tibialis raise",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "wall-supported-tibialis-raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/tibialis-raise/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "hip-abduction",
+    "name": "Hip abduction",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "cable-hip-abduction",
+      "bodyweight-clamshell",
+      "bodyweight-fire-hydrant"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/cable-machine-hip-abduction/",
+      "https://www.strengthlog.com/clamshells/",
+      "https://www.strengthlog.com/fire-hydrants/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "hip-adduction",
+    "name": "Hip adduction",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "cable-hip-adduction"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/cable-machine-hip-adduction/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "hip-extension",
+    "name": "Hip extension",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "bodyweight-donkey-kick"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/donkey-kicks/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "hip-flexion",
+    "name": "Hip flexion",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kettlebell-standing-hip-flexor-raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/standing-hip-flexor-raise/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "wall-sit",
+    "name": "Wall sit",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "bodyweight-wall-sit"
+    ],
+    "source_urls": [
+      "https://uthsc.edu/studentsuccess/campus-rec/documents/wall-sit.pdf"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "reverse-hyperextension",
+    "name": "Reverse hyperextension",
+    "category": "lower_body",
+    "reference_status": "partial",
+    "variation_ids": [
+      "machine-reverse-hyperextension"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/reverse-hyperextension/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "bench-press",
+    "name": "Bench press",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "barbell-bench-press",
+      "barbell-close-grip-bench-press",
+      "barbell-incline-bench-press",
+      "barbell-pin-bench-press"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/bench-press/",
+      "https://www.strengthlog.com/close-grip-bench-press/",
+      "https://www.strengthlog.com/incline-bench-press/",
+      "https://www.strengthlog.com/pin-bench-press/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "chest-press",
+    "name": "Chest press",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-chest-press",
+      "dumbbell-incline-press",
+      "dumbbell-floor-press",
+      "precor-rsl0414-chest-press"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0414",
+      "https://www.strengthlog.com/dumbbell-chest-press/",
+      "https://www.strengthlog.com/dumbbell-floor-press/",
+      "https://www.strengthlog.com/dumbbell-incline-press/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "overhead-press",
+    "name": "Overhead press",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kettlebell-double-press",
+      "overhead-press",
+      "seated-dumbbell-shoulder-press",
+      "precor-rsl0515-shoulder-press"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0515",
+      "https://www.strengthlog.com/kettlebell-press/",
+      "https://www.strengthlog.com/overhead-press/",
+      "https://www.strengthlog.com/seated-dumbbell-shoulder-press/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "push-up",
+    "name": "Push up",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "push-up",
+      "kneeling-push-up",
+      "incline-push-up",
+      "decline-push-up",
+      "close-grip-push-up"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/close-grip-push-up/",
+      "https://www.strengthlog.com/decline-push-up/",
+      "https://www.strengthlog.com/incline-push-up/",
+      "https://www.strengthlog.com/kneeling-push-up/",
+      "https://www.strengthlog.com/push-up/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "dip",
+    "name": "Dip",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "bar-dip"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/bar-dip/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "chest-fly",
+    "name": "Chest fly",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-chest-fly",
+      "standing-cable-chest-fly"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-chest-fly/",
+      "https://www.strengthlog.com/standing-cable-chest-fly/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "triceps-extension",
+    "name": "Triceps extension",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-lying-triceps-extension"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-lying-triceps-extension/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "triceps-pushdown",
+    "name": "Triceps pushdown",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "cable-bar-triceps-pushdown"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/tricep-pushdown-with-bar/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "lateral-raise",
+    "name": "Lateral raise",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-lateral-raise",
+      "single-arm-cable-lateral-raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/cable-lateral-raise/",
+      "https://www.strengthlog.com/dumbbell-lateral-raise/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "front-raise",
+    "name": "Front raise",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-front-raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-front-raise/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "landmine-press",
+    "name": "Landmine press",
+    "category": "upper_body_push",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kneeling-two-hand-landmine-press"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/landmine-press/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "serratus-punch",
+    "name": "Serratus punch",
+    "category": "upper_body_push",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "scapular-push-up",
+    "name": "Scapular push up",
+    "category": "upper_body_push",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "row",
+    "name": "Row",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "inverted-row",
+      "inverted-row-with-underhand-grip",
+      "barbell-row",
+      "dumbbell-row",
+      "cable-close-grip-seated-row",
+      "precor-rsl0310-row"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0310",
+      "https://www.strengthlog.com/barbell-row/",
+      "https://www.strengthlog.com/cable-close-grip-seated-row/",
+      "https://www.strengthlog.com/dumbbell-row/",
+      "https://www.strengthlog.com/inverted-row-with-underhand-grip/",
+      "https://www.strengthlog.com/inverted-row/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "pulldown",
+    "name": "Pulldown",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "lat-pulldown-with-pronated-grip",
+      "precor-rsl0314-pulldown"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0314",
+      "https://www.strengthlog.com/lat-pulldown-with-pronated-grip/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "pull-up",
+    "name": "Pull up",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "pull-up"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/pull-up/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "chin-up",
+    "name": "Chin up",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "chin-up"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/chin-up/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "pullover",
+    "name": "Pullover",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-pullover"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-pullover/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "face-pull",
+    "name": "Face pull",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "cable-rope-face-pull"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/face-pull/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "biceps-curl",
+    "name": "Biceps curl",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "precor-rsl0204-biceps-curl"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0204"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "reverse-fly",
+    "name": "Reverse fly",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "reverse-dumbbell-fly"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/reverse-dumbbell-flyes/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "shrug",
+    "name": "Shrug",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-shrug"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-shrug/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "upright-row",
+    "name": "Upright row",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "barbell-upright-row"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/barbell-upright-row/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "wrist-curl",
+    "name": "Wrist curl",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-wrist-curl"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-wrist-curl/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "wrist-extension",
+    "name": "Wrist extension",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-wrist-extension"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-wrist-extension/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "forearm-pronation",
+    "name": "Forearm pronation",
+    "category": "upper_body_pull",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "forearm-supination",
+    "name": "Forearm supination",
+    "category": "upper_body_pull",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "shoulder-external-rotation",
+    "name": "Shoulder external rotation",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "band-external-shoulder-rotation"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/band-external-shoulder-rotation/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "shoulder-internal-rotation",
+    "name": "Shoulder internal rotation",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "cable-internal-shoulder-rotation"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/internal-shoulder-rotations/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "scapular-pull-up",
+    "name": "Scapular pull up",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "scapular-pull-up"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/scap-pull-up/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "band-pull-apart",
+    "name": "Band pull apart",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "band-pull-apart"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/band-pull-apart/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "hang",
+    "name": "Hang",
+    "category": "upper_body_pull",
+    "reference_status": "partial",
+    "variation_ids": [
+      "two-hand-bar-hang"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/bar-hang/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "grip-crush",
+    "name": "Grip crush",
+    "category": "upper_body_pull",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "plate-pinch",
+    "name": "Plate pinch",
+    "category": "upper_body_pull",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "crunch",
+    "name": "Crunch",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "crunch"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/crunch/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "sit-up",
+    "name": "Sit up",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "sit-up-anchored"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/sit-up/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "reverse-crunch",
+    "name": "Reverse crunch",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "reverse-crunch"
+    ],
+    "source_urls": [
+      "https://www.acefitness.org/resources/everyone/exercise-library/76/reverse-crunch/",
+      "https://www.youtube.com/watch?v=hyv14e2QDq0"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "leg-raise",
+    "name": "Leg raise",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "lying-leg-raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/lying-leg-raise/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "knee-raise",
+    "name": "Knee raise",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "hanging-knee-raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/hanging-knee-raise/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "plank",
+    "name": "Plank",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "plank"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/plank/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "side-plank",
+    "name": "Side plank",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "side-plank"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/side-plank/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "dead-bug",
+    "name": "Dead bug",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dead-bugs"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/dead-bugs/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "bird-dog",
+    "name": "Bird dog",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "bird-dog"
+    ],
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/bird-dog"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "rollout",
+    "name": "Rollout",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kneeling-ab-wheel-rollout"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/kneeling-ab-wheel-roll-out/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "pallof-press",
+    "name": "Pallof press",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "cable-pallof-press"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/pallof-press/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "wood-chop",
+    "name": "Wood chop",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "cable-high-to-low-woodchop"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/cable-machine-wood-chop-high-to-low/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "trunk-rotation",
+    "name": "Trunk rotation",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-core-twist"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/core-twist/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "back-extension",
+    "name": "Back extension",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "weighted-bench-back-extension"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/back-extension/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "hollow-hold",
+    "name": "Hollow hold",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "hollow-body-hold"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/hollow-hold/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "side-bend",
+    "name": "Side bend",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-side-bend"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-side-bend/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "carry",
+    "name": "Carry",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "farmers-walk"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/farmers-walk/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "turkish-get-up",
+    "name": "Turkish get up",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "weighted-turkish-get-up"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/turkish-get-up/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "l-sit",
+    "name": "L sit",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "floor-l-sit"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/l-sit/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "v-up",
+    "name": "V up",
+    "category": "core_stability",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "mountain-climber",
+    "name": "Mountain climber",
+    "category": "core_stability",
+    "reference_status": "partial",
+    "variation_ids": [
+      "mountain-climbers"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/mountain-climbers/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "clean",
+    "name": "Clean",
+    "category": "athletic_conditioning",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kettlebell-clean"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-clean/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "snatch",
+    "name": "Snatch",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "jerk",
+    "name": "Jerk",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "high-pull",
+    "name": "High pull",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "push-press",
+    "name": "Push press",
+    "category": "athletic_conditioning",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kettlebell-push-press"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-push-press/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "thruster",
+    "name": "Thruster",
+    "category": "athletic_conditioning",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kettlebell-thruster-double",
+      "kettlebell-thruster-single"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-thrusters/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "kettlebell-swing",
+    "name": "Kettlebell swing",
+    "category": "athletic_conditioning",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kettlebell-swing-two-hand",
+      "kettlebell-swing-one-hand"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-swing/",
+      "https://www.strengthlog.com/one-handed-kettlebell-swing/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "sled-push",
+    "name": "Sled push",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "sled-drag",
+    "name": "Sled drag",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "medicine-ball-throw",
+    "name": "Medicine ball throw",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "medicine-ball-slam",
+    "name": "Medicine ball slam",
+    "category": "athletic_conditioning",
+    "reference_status": "partial",
+    "variation_ids": [
+      "medicine-ball-slam"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/ball-slams/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "battle-rope-wave",
+    "name": "Battle rope wave",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "rope-climb",
+    "name": "Rope climb",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "jump",
+    "name": "Jump",
+    "category": "athletic_conditioning",
+    "reference_status": "partial",
+    "variation_ids": [
+      "box-jump"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/box-jump/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "hop",
+    "name": "Hop",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "bound",
+    "name": "Bound",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "burpee",
+    "name": "Burpee",
+    "category": "athletic_conditioning",
+    "reference_status": "partial",
+    "variation_ids": [
+      "burpee-push-up-jump"
+    ],
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/squat-thrust-burpees"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "jumping-jack",
+    "name": "Jumping jack",
+    "category": "athletic_conditioning",
+    "reference_status": "partial",
+    "variation_ids": [
+      "jumping-jack"
+    ],
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/jumping-jacks"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "skipping",
+    "name": "Skipping",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "sprint",
+    "name": "Sprint",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "lateral-shuffle",
+    "name": "Lateral shuffle",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "carioca",
+    "name": "Carioca",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "backpedal",
+    "name": "Backpedal",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "agility-ladder",
+    "name": "Agility ladder",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "shuttle-run",
+    "name": "Shuttle run",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "crawl",
+    "name": "Crawl",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "rowing-ergometer",
+    "name": "Rowing ergometer",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "cycling",
+    "name": "Cycling",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "treadmill-locomotion",
+    "name": "Treadmill locomotion",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "elliptical",
+    "name": "Elliptical",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "stair-climbing",
+    "name": "Stair climbing",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "ski-ergometer",
+    "name": "Ski ergometer",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "sandbag-shouldering",
+    "name": "Sandbag shouldering",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "tire-flip",
+    "name": "Tire flip",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "sledgehammer-strike",
+    "name": "Sledgehammer strike",
+    "category": "athletic_conditioning",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "lat-stretch",
+    "name": "Lat stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "pectoral-stretch",
+    "name": "Pectoral stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "partial",
+    "variation_ids": [
+      "seated-chest-stretch"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/sitting-exercises/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "hip-flexor-stretch",
+    "name": "Hip flexor stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "hamstring-stretch",
+    "name": "Hamstring stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "quadriceps-stretch",
+    "name": "Quadriceps stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "calf-stretch",
+    "name": "Calf stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "partial",
+    "variation_ids": [
+      "wall-calf-stretch"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/flexibility-exercises/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "adductor-stretch",
+    "name": "Adductor stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "glute-stretch",
+    "name": "Glute stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "shoulder-cross-body-stretch",
+    "name": "Shoulder cross body stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "triceps-stretch",
+    "name": "Triceps stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "wrist-flexor-stretch",
+    "name": "Wrist flexor stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "wrist-extensor-stretch",
+    "name": "Wrist extensor stretch",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "cat-cow",
+    "name": "Cat cow",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "thoracic-rotation",
+    "name": "Thoracic rotation",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "thoracic-extension",
+    "name": "Thoracic extension",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "ankle-dorsiflexion-mobilization",
+    "name": "Ankle dorsiflexion mobilization",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "hip-rotation-mobilization",
+    "name": "Hip rotation mobilization",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "shoulder-pass-through",
+    "name": "Shoulder pass through",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "wall-slide",
+    "name": "Wall slide",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "neck-rotation",
+    "name": "Neck rotation",
+    "category": "mobility_flexibility",
+    "reference_status": "partial",
+    "variation_ids": [
+      "seated-neck-rotation"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/flexibility-exercises/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "neck-side-flexion",
+    "name": "Neck side flexion",
+    "category": "mobility_flexibility",
+    "reference_status": "partial",
+    "variation_ids": [
+      "seated-neck-side-flexion"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/flexibility-exercises/"
+    ],
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "cobra",
+    "name": "Cobra",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "child-pose",
+    "name": "Child pose",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "leg-swing",
+    "name": "Leg swing",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "arm-circle",
+    "name": "Arm circle",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "inchworm",
+    "name": "Inchworm",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "balance-reach",
+    "name": "Balance reach",
+    "category": "mobility_flexibility",
+    "reference_status": "research_required",
+    "variation_ids": [],
+    "source_urls": [],
+    "basis": "Editorial inventory; direct technique research pending."
+  },
+  {
+    "id": "clean-and-press",
+    "name": "Clean and press",
+    "category": "kettlebell",
+    "variation_ids": [
+      "kettlebell-clean-press"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-clean-and-press/"
+    ],
+    "reference_status": "partial",
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "windmill",
+    "name": "Windmill",
+    "category": "kettlebell",
+    "variation_ids": [
+      "kettlebell-windmill"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-windmill/"
+    ],
+    "reference_status": "partial",
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "lateral-band-walk",
+    "name": "Lateral band walk",
+    "category": "band",
+    "variation_ids": [
+      "band-lateral-walk"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/lateral-walk-with-band/"
+    ],
+    "reference_status": "partial",
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "reverse-nordic",
+    "name": "Reverse nordic",
+    "category": "bodyweight",
+    "variation_ids": [
+      "bodyweight-reverse-nordic"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/reverse-nordic/"
+    ],
+    "reference_status": "partial",
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "ankle-pump",
+    "name": "Ankle pump",
+    "category": "mobility_flexibility",
+    "variation_ids": [
+      "seated-ankle-pump"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/sitting-exercises/"
+    ],
+    "reference_status": "partial",
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "sideways-walk",
+    "name": "Sideways walk",
+    "category": "balance",
+    "variation_ids": [
+      "slow-sideways-walk"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+    ],
+    "reference_status": "partial",
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "crossover-walk",
+    "name": "Crossover walk",
+    "category": "balance",
+    "variation_ids": [
+      "simple-grapevine-walk"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+    ],
+    "reference_status": "partial",
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "tandem-walk",
+    "name": "Tandem walk",
+    "category": "balance",
+    "variation_ids": [
+      "heel-to-toe-walk"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+    ],
+    "reference_status": "partial",
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  },
+  {
+    "id": "single-leg-balance",
+    "name": "Single leg balance",
+    "category": "balance",
+    "variation_ids": [
+      "wall-supported-single-leg-stand"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+    ],
+    "reference_status": "partial",
+    "basis": "Has source-indexed variations; family taxonomy is editorial."
+  }
+]

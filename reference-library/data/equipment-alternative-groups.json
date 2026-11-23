@@ -1,0 +1,250 @@
+[
+  {
+    "id": "goblet-squat",
+    "name": "Goblet squat equipment choices",
+    "variation_ids": [
+      "dumbbell-goblet-head-support",
+      "kettlebell-goblet-squat"
+    ],
+    "selection_context": "A workout slot seeking a two-hand, chest-loaded squat can offer these researched equipment choices.",
+    "shared_intent": "Bilateral squat with one implement held in front of the chest.",
+    "differences": [
+      "Dumbbell uses upper-head support; kettlebell uses horn contacts.",
+      "Hand pose, wrist posture, implement clearance and attachment points must change with the selected variation."
+    ],
+    "not_implied": [
+      "Equal load, difficulty, comfort or individualized suitability",
+      "Interchangeable GLB or skeletal keyframes",
+      "Human movement approval"
+    ],
+    "basis": "Editorial workout-selection relationship supported by each member's direct references; NASM goblet page explicitly permits dumbbell or kettlebell.",
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/goblet-squat"
+    ],
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "front-loaded-squat",
+    "name": "Front-loaded squat equipment choices",
+    "variation_ids": [
+      "dumbbell-front-squat",
+      "kettlebell-front-squat",
+      "barbell-front-squat-clean-rack"
+    ],
+    "selection_context": "Offer separately researched front-loaded squat variations when the available equipment changes.",
+    "shared_intent": "Bilateral squat with load supported near the front of the torso or shoulders.",
+    "differences": [
+      "Two independent dumbbells, two kettlebells and one barbell have different rack contacts and clearance requirements.",
+      "Clean-style barbell rack requires separate wrist/fingertip and shoulder support review.",
+      "Rack/unrack setup is specific to the selected implement."
+    ],
+    "not_implied": [
+      "Identical balance, loading, range or suitability",
+      "Automatic equipment substitution within an existing animation"
+    ],
+    "basis": "Editorial alternatives inferred from the separately sourced member variations; not a prescription or proof of interchangeability.",
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+      "https://www.strengthlog.com/kettlebell-front-squat/",
+      "https://www.strengthlog.com/front-squat/"
+    ],
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "romanian-deadlift",
+    "name": "Romanian deadlift equipment choices",
+    "variation_ids": [
+      "dumbbell-romanian-deadlift",
+      "barbell-romanian-deadlift"
+    ],
+    "selection_context": "A workout slot seeking a standing Romanian hinge can expose dumbbell and barbell choices.",
+    "shared_intent": "Hip hinge with handheld resistance and a modest knee bend.",
+    "differences": [
+      "Independent dumbbells permit separate hand paths; the rigid bar joins both hands.",
+      "Grip orientation, spacing and body clearance require variation-specific interpretation.",
+      "The existing source disagreement about the return endpoint remains unresolved."
+    ],
+    "not_implied": [
+      "Equal working weight, training effect or safe range",
+      "An approved replacement for any individual"
+    ],
+    "basis": "Editorial relationship supported by direct member sources; final selection remains a workout-level decision.",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-romanian-deadlift/",
+      "https://www.strengthlog.com/romanian-deadlift/"
+    ],
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "cossack-squat-load-choice",
+    "name": "Cossack squat optional load choices",
+    "variation_ids": [
+      "bodyweight-cossack-squat",
+      "kettlebell-cossack-squat"
+    ],
+    "selection_context": "Offer an unloaded or separately evidenced kettlebell-loaded Cossack when the workout allows a change in loading intent.",
+    "shared_intent": "Wide-stance lateral squat with one knee flexing and opposite leg extended.",
+    "differences": [
+      "Bodyweight hands are unloaded; kettlebell requires a chest-height grip and changes balance and loading.",
+      "Selecting unloaded is a loading regression/choice, not an equivalent external load; arm poses differ."
+    ],
+    "not_implied": [
+      "Equal load, difficulty, range or individual suitability",
+      "Automatic animation replacement",
+      "Human movement approval"
+    ],
+    "basis": "Editorial workout-selection relationship inferred from separately sourced member variations; not proof of equivalence.",
+    "source_urls": [
+      "https://www.strengthlog.com/cossack-squat/",
+      "https://www.youtube.com/watch?v=gfod3jiMgl4"
+    ],
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "flat-bench-press",
+    "name": "Flat bench press equipment choices",
+    "variation_ids": [
+      "dumbbell-chest-press",
+      "barbell-bench-press"
+    ],
+    "selection_context": "Offer dumbbell or barbell choices for a flat-bench pressing slot.",
+    "shared_intent": "Supine press with back supported on a flat bench.",
+    "differences": [
+      "Independent dumbbells permit separate hand paths; barbell links hands at fixed spacing.",
+      "Dumbbell entry/exit differs from rack/unrack and safety setup for barbell; do not copy either setup across."
+    ],
+    "not_implied": [
+      "Equal load, difficulty, range or individual suitability",
+      "Automatic animation replacement",
+      "Human movement approval"
+    ],
+    "basis": "Editorial workout-selection relationship inferred from separately sourced member variations; not proof of equivalence.",
+    "source_urls": [
+      "https://www.strengthlog.com/bench-press/",
+      "https://www.strengthlog.com/dumbbell-chest-press/"
+    ],
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "incline-bench-press",
+    "name": "Incline bench press equipment choices",
+    "variation_ids": [
+      "dumbbell-incline-press",
+      "barbell-incline-bench-press"
+    ],
+    "selection_context": "Offer dumbbell or barbell choices for an incline-bench pressing slot.",
+    "shared_intent": "Pressing with torso supported on an inclined bench.",
+    "differences": [
+      "Retain variation-specific bench angle, hand spacing and endpoint evidence.",
+      "Dumbbell pickup/placement and barbell rack/safety setup require different contacts."
+    ],
+    "not_implied": [
+      "Equal load, difficulty, range or individual suitability",
+      "Automatic animation replacement",
+      "Human movement approval"
+    ],
+    "basis": "Editorial workout-selection relationship inferred from separately sourced member variations; not proof of equivalence.",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-incline-press/",
+      "https://www.strengthlog.com/incline-bench-press/"
+    ],
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "standing-overhead-press",
+    "name": "Standing overhead press equipment choices",
+    "variation_ids": [
+      "overhead-press",
+      "kettlebell-double-press"
+    ],
+    "selection_context": "Offer existing barbell or double-kettlebell variants for a standing overhead-press slot when the workout allows the equipment change.",
+    "shared_intent": "Standing press from shoulder-height support to overhead, followed by controlled lowering.",
+    "differences": [
+      "Barbell joins both hands at fixed spacing; independent kettlebells use separate handles and forearm/rack contacts.",
+      "Barbell rack/unrack and kettlebell rack entry require distinct setup evidence; do not copy attachments or wrist poses.",
+      "Keep push-press leg drive separate from these pressing records; no equal-load conversion is supplied."
+    ],
+    "not_implied": [
+      "Equivalent loads, balance demands, range or personal suitability",
+      "Automatic animation substitution",
+      "Human movement approval"
+    ],
+    "basis": "Editorial relationship inferred from the already source-indexed variations. New visual review of these presses was not performed in batch 04.",
+    "source_urls": [
+      "https://www.strengthlog.com/overhead-press/",
+      "https://www.strengthlog.com/kettlebell-press/"
+    ],
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "step-up",
+    "name": "Step Up equipment choices",
+    "variation_ids": [
+      "bodyweight-step-up",
+      "dumbbell-step-up"
+    ],
+    "selection_context": "Offer separately sourced equipment options for this movement intent.",
+    "shared_intent": "Stepping onto a raised support.",
+    "differences": [
+      "Dumbbells add independent hand loads; balance, hand pose and support clearance change."
+    ],
+    "not_implied": [
+      "Equal loads, difficulty or suitability",
+      "Interchangeable animation or contact geometry",
+      "Human movement approval"
+    ],
+    "basis": "Editorial selection relationship inferred from separately sourced member variations.",
+    "source_urls": [
+      "https://www.strengthlog.com/step-up/"
+    ],
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "chest-fly",
+    "name": "Chest Fly equipment choices",
+    "variation_ids": [
+      "dumbbell-chest-fly",
+      "standing-cable-chest-fly"
+    ],
+    "selection_context": "Offer separately sourced equipment options for this movement intent.",
+    "shared_intent": "Chest fly using shoulder horizontal adduction.",
+    "differences": [
+      "Bench support with free weights differs from standing cable support and cable line of pull."
+    ],
+    "not_implied": [
+      "Equal loads, difficulty or suitability",
+      "Interchangeable animation or contact geometry",
+      "Human movement approval"
+    ],
+    "basis": "Editorial selection relationship inferred from separately sourced member variations.",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-chest-fly/",
+      "https://www.strengthlog.com/standing-cable-chest-fly/"
+    ],
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "lateral-raise",
+    "name": "Lateral Raise equipment choices",
+    "variation_ids": [
+      "dumbbell-lateral-raise",
+      "single-arm-cable-lateral-raise"
+    ],
+    "selection_context": "Offer separately sourced equipment options for this movement intent.",
+    "shared_intent": "Lateral shoulder raise.",
+    "differences": [
+      "Cable routing and resistance direction differ from free-weight loading; hand and torso setup are variation-specific."
+    ],
+    "not_implied": [
+      "Equal loads, difficulty or suitability",
+      "Interchangeable animation or contact geometry",
+      "Human movement approval"
+    ],
+    "basis": "Editorial selection relationship inferred from separately sourced member variations.",
+    "source_urls": [
+      "https://www.strengthlog.com/cable-lateral-raise/",
+      "https://www.strengthlog.com/dumbbell-lateral-raise/"
+    ],
+    "review_status": "unreviewed"
+  }
+]

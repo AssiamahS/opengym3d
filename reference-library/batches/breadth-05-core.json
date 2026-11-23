@@ -1,0 +1,1586 @@
+[
+  {
+    "id": "sit-up-anchored",
+    "family": "sit-up",
+    "name": "Sit-up, feet anchored",
+    "aliases": [
+      "situp",
+      "anchored sit-up"
+    ],
+    "category": "equipment",
+    "equipment": [
+      "foot-anchor"
+    ],
+    "grip_id": "no-hand-load",
+    "source_urls": [
+      "https://www.strengthlog.com/sit-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/sit-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Sit-up.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Raise trunk toward thighs; lower trunk to floor.",
+    "movement": {
+      "joints": [
+        "spine",
+        "hips"
+      ],
+      "motions": "Raise trunk toward thighs",
+      "start": "Supine, knees bent, feet secured",
+      "end": "Supine, knees bent, feet secured",
+      "equipment_motion": "No hand load",
+      "feet_contact": "Feet remain secured",
+      "hands_contact": "Hands in front of chest",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine, knees bent, feet secured",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/sit-up/"
+      },
+      {
+        "phase": "action",
+        "description": "Raise trunk toward thighs",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/sit-up/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Seated forward bend",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/sit-up/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower trunk to floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/sit-up/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "lying-leg-raise",
+    "family": "leg-raise",
+    "name": "Lying leg raise",
+    "aliases": [
+      "supine leg raise",
+      "straight leg raise"
+    ],
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "no-hand-load",
+    "source_urls": [
+      "https://www.strengthlog.com/lying-leg-raise/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/lying-leg-raise/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/10/lying-leg-raises.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Lift straight legs; lower legs under control.",
+    "movement": {
+      "joints": [
+        "hips"
+      ],
+      "motions": "Lift straight legs",
+      "start": "Supine with legs extended",
+      "end": "Supine with legs extended",
+      "equipment_motion": "None",
+      "feet_contact": "Feet lift clear of floor",
+      "hands_contact": "Arms alongside body",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine with legs extended",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/lying-leg-raise/"
+      },
+      {
+        "phase": "action",
+        "description": "Lift straight legs",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/lying-leg-raise/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Legs pointing upward",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/lying-leg-raise/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower legs under control",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/lying-leg-raise/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "kneeling-ab-wheel-rollout",
+    "family": "rollout",
+    "name": "Kneeling ab wheel rollout",
+    "aliases": [
+      "ab roller",
+      "ab wheel roll-out"
+    ],
+    "category": "equipment",
+    "equipment": [
+      "ab-wheel"
+    ],
+    "grip_id": "neutral-closed",
+    "source_urls": [
+      "https://www.strengthlog.com/kneeling-ab-wheel-roll-out/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kneeling-ab-wheel-roll-out/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/05/kneeling-ab-wheel.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Roll wheel away while extending body; roll wheel toward knees.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "hips"
+      ],
+      "motions": "Roll wheel away while extending body",
+      "start": "Kneeling with wheel ahead",
+      "end": "Kneeling with wheel ahead",
+      "equipment_motion": "Wheel rolls forward and back",
+      "feet_contact": "Knees supported; foot loading unspecified",
+      "hands_contact": "Both hands on wheel handles",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Kneeling with wheel ahead",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kneeling-ab-wheel-roll-out/"
+      },
+      {
+        "phase": "action",
+        "description": "Roll wheel away while extending body",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kneeling-ab-wheel-roll-out/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Farthest controlled reach",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kneeling-ab-wheel-roll-out/"
+      },
+      {
+        "phase": "return",
+        "description": "Roll wheel toward knees",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kneeling-ab-wheel-roll-out/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "cable-pallof-press",
+    "family": "pallof-press",
+    "name": "Cable Pallof press",
+    "aliases": [
+      "anti rotation press",
+      "Pallof"
+    ],
+    "category": "equipment",
+    "equipment": [
+      "cable-station",
+      "cable-handle"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "source_urls": [
+      "https://www.strengthlog.com/pallof-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/pallof-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/10/pallof-press.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Press hands forward without trunk rotation; bring handle to chest.",
+    "movement": {
+      "joints": [
+        "elbows",
+        "shoulders"
+      ],
+      "motions": "Press hands forward without trunk rotation",
+      "start": "Stand sideways to cable, handle at chest",
+      "end": "Stand sideways to cable, handle at chest",
+      "equipment_motion": "Handle moves forward/back against sideways cable pull",
+      "feet_contact": "Feet planted",
+      "hands_contact": "Both hands hold handle; closure unresolved",
+      "torso": "Resist rotation",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Stand sideways to cable, handle at chest",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/pallof-press/"
+      },
+      {
+        "phase": "action",
+        "description": "Press hands forward without trunk rotation",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/pallof-press/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Arms extended in front",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/pallof-press/"
+      },
+      {
+        "phase": "return",
+        "description": "Bring handle to chest",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/pallof-press/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "cable-high-to-low-woodchop",
+    "family": "wood-chop",
+    "name": "Cable high-to-low woodchop",
+    "aliases": [
+      "wood chop",
+      "cable chop"
+    ],
+    "category": "equipment",
+    "equipment": [
+      "cable-station",
+      "cable-handle"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "source_urls": [
+      "https://www.strengthlog.com/cable-machine-wood-chop-high-to-low/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/cable-machine-wood-chop-high-to-low/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/03/cable-high-to-low-woodchop.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Sweep hands diagonally downward; reverse toward high anchor.",
+    "movement": {
+      "joints": [
+        "spine",
+        "shoulders"
+      ],
+      "motions": "Sweep hands diagonally downward",
+      "start": "Stand sideways to high cable anchor",
+      "end": "Stand sideways to high cable anchor",
+      "equipment_motion": "Handle follows diagonal sweep",
+      "feet_contact": "Standing; pivot details unresolved",
+      "hands_contact": "Both hands on handle",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Stand sideways to high cable anchor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/cable-machine-wood-chop-high-to-low/"
+      },
+      {
+        "phase": "action",
+        "description": "Sweep hands diagonally downward",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/cable-machine-wood-chop-high-to-low/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Low diagonal finish",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/cable-machine-wood-chop-high-to-low/"
+      },
+      {
+        "phase": "return",
+        "description": "Reverse toward high anchor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/cable-machine-wood-chop-high-to-low/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "dumbbell-core-twist",
+    "family": "trunk-rotation",
+    "name": "Dumbbell seated core twist",
+    "aliases": [
+      "Russian twist",
+      "seated twist"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "contact-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/core-twist/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/core-twist/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/11/russian-twist-dumbbell.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Rotate trunk and weight toward one hip; return center and alternate.",
+    "movement": {
+      "joints": [
+        "spine"
+      ],
+      "motions": "Rotate trunk and weight toward one hip",
+      "start": "Seated, knees bent, torso leaning back",
+      "end": "Seated, knees bent, torso leaning back",
+      "equipment_motion": "Dumbbell sweeps side to side",
+      "feet_contact": "Source permits grounded or elevated feet; unresolved",
+      "hands_contact": "Two hands on dumbbell; exact contact unresolved",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Seated, knees bent, torso leaning back",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/core-twist/"
+      },
+      {
+        "phase": "action",
+        "description": "Rotate trunk and weight toward one hip",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/core-twist/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Side rotation",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/core-twist/"
+      },
+      {
+        "phase": "return",
+        "description": "Return center and alternate",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/core-twist/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "weighted-bench-back-extension",
+    "family": "back-extension",
+    "name": "Bench back extension, front-loaded",
+    "aliases": [
+      "hyperextension",
+      "Roman chair extension"
+    ],
+    "category": "equipment",
+    "equipment": [
+      "back-extension-bench",
+      "weight-plate"
+    ],
+    "grip_id": "contact-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/back-extension/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/back-extension/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/05/back-extension-frontloaded.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Raise trunk; lower trunk under control.",
+    "movement": {
+      "joints": [
+        "hips",
+        "spine"
+      ],
+      "motions": "Raise trunk",
+      "start": "Thighs on bench pad, trunk lowered",
+      "end": "Thighs on bench pad, trunk lowered",
+      "equipment_motion": "Chest load follows trunk",
+      "feet_contact": "Feet supported by bench",
+      "hands_contact": "Load held at chest; exact contact unresolved",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Thighs on bench pad, trunk lowered",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/back-extension/"
+      },
+      {
+        "phase": "action",
+        "description": "Raise trunk",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/back-extension/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Body aligned",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/back-extension/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower trunk under control",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/back-extension/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "hollow-body-hold",
+    "family": "hollow-hold",
+    "name": "Hollow body hold",
+    "aliases": [
+      "hollow hold",
+      "hollow body"
+    ],
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "no-hand-load",
+    "source_urls": [
+      "https://www.strengthlog.com/hollow-hold/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/hollow-hold/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/03/hollow-hold.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Raise shoulders and legs; lower head, shoulders and legs.",
+    "movement": {
+      "joints": [
+        "hips",
+        "spine",
+        "shoulders"
+      ],
+      "motions": "Raise shoulders and legs",
+      "start": "Supine, arms overhead, legs straight",
+      "end": "Supine, arms overhead, legs straight",
+      "equipment_motion": "None",
+      "feet_contact": "Feet elevated during hold",
+      "hands_contact": "Arms overhead, no external contact",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine, arms overhead, legs straight",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/hollow-hold/"
+      },
+      {
+        "phase": "action",
+        "description": "Raise shoulders and legs",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/hollow-hold/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Hold curved body with low back supported",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/hollow-hold/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower head, shoulders and legs",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/hollow-hold/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "dumbbell-side-bend",
+    "family": "side-bend",
+    "name": "Dumbbell side bend",
+    "aliases": [
+      "lateral trunk flexion",
+      "sidebend"
+    ],
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "neutral-closed",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-side-bend/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-side-bend/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/06/side-bend.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected. Direct media fetch timed out; availability not verified.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Bend trunk toward loaded side; return upright.",
+    "movement": {
+      "joints": [
+        "spine"
+      ],
+      "motions": "Bend trunk toward loaded side",
+      "start": "Standing with dumbbell at one side",
+      "end": "Standing with dumbbell at one side",
+      "equipment_motion": "Dumbbell descends beside leg and rises",
+      "feet_contact": "Feet planted",
+      "hands_contact": "One hand holds dumbbell",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing with dumbbell at one side",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-side-bend/"
+      },
+      {
+        "phase": "action",
+        "description": "Bend trunk toward loaded side",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-side-bend/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Comfortable lateral bend",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-side-bend/"
+      },
+      {
+        "phase": "return",
+        "description": "Return upright",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-side-bend/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "farmers-walk",
+    "family": "carry",
+    "name": "Farmer's walk, paired carry implements",
+    "aliases": [
+      "farmers carry",
+      "loaded carry"
+    ],
+    "category": "equipment",
+    "equipment": [
+      "farmer-carry-handles"
+    ],
+    "grip_id": "farmers-carry",
+    "source_urls": [
+      "https://www.strengthlog.com/farmers-walk/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/farmers-walk/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/01/Farmers-walk.gif?resize=600%2C480&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Lift implements and walk; stop and lower implements.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Lift implements and walk",
+      "start": "Standing between paired implements",
+      "end": "Standing between paired implements",
+      "equipment_motion": "Implements travel beside body",
+      "feet_contact": "Alternating steps",
+      "hands_contact": "One carry handle per hand",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End is task endpoint; walking is not a stationary repeat cycle."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing between paired implements",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/farmers-walk/"
+      },
+      {
+        "phase": "action",
+        "description": "Lift implements and walk",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/farmers-walk/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Upright loaded walking",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/farmers-walk/"
+      },
+      {
+        "phase": "return",
+        "description": "Stop and lower implements",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/farmers-walk/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "weighted-turkish-get-up",
+    "family": "turkish-get-up",
+    "name": "Weighted Turkish get-up, implement unresolved",
+    "aliases": [
+      "Turkish getup",
+      "TGU"
+    ],
+    "category": "equipment",
+    "equipment": [
+      "handheld-weight"
+    ],
+    "grip_id": "contact-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/turkish-get-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/turkish-get-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/10/turkish-getup.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected. Direct media fetch timed out; availability not verified.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Rise via elbow, hand, hip lift, kneel and lunge; reverse stages to supine.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "Rise via elbow, hand, hip lift, kneel and lunge",
+      "start": "Supine, one weight-bearing arm vertical",
+      "end": "Supine, one weight-bearing arm vertical",
+      "equipment_motion": "Weight kept above body during ascent/descent",
+      "feet_contact": "Changes from one foot to kneeling to both feet",
+      "hands_contact": "Loaded hand supports weight; other arm supports floor",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine, one weight-bearing arm vertical",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/turkish-get-up/"
+      },
+      {
+        "phase": "action",
+        "description": "Rise via elbow, hand, hip lift, kneel and lunge",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/turkish-get-up/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Standing with weight overhead",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/turkish-get-up/"
+      },
+      {
+        "phase": "return",
+        "description": "Reverse stages to supine",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/turkish-get-up/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "floor-l-sit",
+    "family": "l-sit",
+    "name": "Floor L-sit",
+    "aliases": [
+      "L sit",
+      "L hold"
+    ],
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "palm-support",
+    "source_urls": [
+      "https://www.strengthlog.com/l-sit/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/l-sit/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/03/l-sit.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Press through hands and lift hips and legs; lower to floor.",
+    "movement": {
+      "joints": [
+        "hips",
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "Press through hands and lift hips and legs",
+      "start": "Seated, legs extended, hands beside hips",
+      "end": "Seated, legs extended, hands beside hips",
+      "equipment_motion": "None",
+      "feet_contact": "Feet elevated in hold",
+      "hands_contact": "Palms support body on floor",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Seated, legs extended, hands beside hips",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/l-sit/"
+      },
+      {
+        "phase": "action",
+        "description": "Press through hands and lift hips and legs",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/l-sit/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Straight-leg L-shaped hold",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/l-sit/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower to floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/l-sit/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "medicine-ball-slam",
+    "family": "medicine-ball-slam",
+    "name": "Medicine ball overhead slam",
+    "aliases": [
+      "ball slam",
+      "slam ball"
+    ],
+    "category": "equipment",
+    "equipment": [
+      "medicine-ball"
+    ],
+    "grip_id": "contact-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/ball-slams/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/ball-slams/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/02/slam-ball.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected. Direct media fetch timed out; availability not verified.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Raise ball overhead then drive it downward; retrieve ball and stand.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "hips",
+        "knees",
+        "elbows"
+      ],
+      "motions": "Raise ball overhead then drive it downward",
+      "start": "Standing, ball at chest",
+      "end": "Standing, ball at chest",
+      "equipment_motion": "Ball rises overhead, strikes floor, is retrieved",
+      "feet_contact": "Feet on floor; heels may rise during overhead drive",
+      "hands_contact": "Two hands on ball until release",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing, ball at chest",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/ball-slams/"
+      },
+      {
+        "phase": "action",
+        "description": "Raise ball overhead then drive it downward",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/ball-slams/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Ball released toward floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/ball-slams/"
+      },
+      {
+        "phase": "return",
+        "description": "Retrieve ball and stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/ball-slams/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "box-jump",
+    "family": "jump",
+    "name": "Box jump",
+    "aliases": [
+      "plyometric box jump",
+      "boxjump"
+    ],
+    "category": "equipment",
+    "equipment": [
+      "box"
+    ],
+    "grip_id": "no-hand-load",
+    "source_urls": [
+      "https://www.strengthlog.com/box-jump/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/box-jump/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/10/box-jump.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "StrengthLog",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Dip and jump onto box; step down to floor.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Dip and jump onto box",
+      "start": "Standing before box",
+      "end": "Standing before box",
+      "equipment_motion": "Box stationary",
+      "feet_contact": "Floor takeoff; airborne; box landing",
+      "hands_contact": "Free arm swing",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing before box",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/box-jump/"
+      },
+      {
+        "phase": "action",
+        "description": "Dip and jump onto box",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/box-jump/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Landing and standing on box",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/box-jump/"
+      },
+      {
+        "phase": "return",
+        "description": "Step down to floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/box-jump/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "bird-dog",
+    "family": "bird-dog",
+    "name": "Bird dog",
+    "aliases": [
+      "quadruped opposite arm leg raise",
+      "birddog"
+    ],
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "palm-support",
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/bird-dog"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/bird-dog",
+        "media_url": "https://www.youtube.com/watch?v=ZdAHe9_HeEw",
+        "type": "video",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "NASM",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Extend opposite arm and leg; return to quadruped and alternate.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "hips"
+      ],
+      "motions": "Extend opposite arm and leg",
+      "start": "Hands and knees on floor",
+      "end": "Hands and knees on floor",
+      "equipment_motion": "None",
+      "feet_contact": "One knee supports during extension; foot loading unspecified",
+      "hands_contact": "One palm supports; opposite arm reaches",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Hands and knees on floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/bird-dog"
+      },
+      {
+        "phase": "action",
+        "description": "Extend opposite arm and leg",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/bird-dog"
+      },
+      {
+        "phase": "extreme",
+        "description": "Opposite limbs outstretched",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/bird-dog"
+      },
+      {
+        "phase": "return",
+        "description": "Return to quadruped and alternate",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/bird-dog"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "burpee-push-up-jump",
+    "family": "burpee",
+    "name": "Burpee with push-up and jump",
+    "aliases": [
+      "squat thrust burpee",
+      "burpees"
+    ],
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "palm-support",
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/squat-thrust-burpees"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/squat-thrust-burpees",
+        "media_url": "https://www.youtube.com/watch?v=Ny8JWqh4lNg",
+        "type": "video",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "NASM",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Squat, hands down, feet back, push-up, feet forward and jump; land with flexed knees.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles",
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "Squat, hands down, feet back, push-up, feet forward and jump",
+      "start": "Standing",
+      "end": "Standing",
+      "equipment_motion": "None",
+      "feet_contact": "Floor, plank toes and airborne phases",
+      "hands_contact": "Palms support during plank and push-up",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/squat-thrust-burpees"
+      },
+      {
+        "phase": "action",
+        "description": "Squat, hands down, feet back, push-up, feet forward and jump",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/squat-thrust-burpees"
+      },
+      {
+        "phase": "extreme",
+        "description": "Vertical jump",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/squat-thrust-burpees"
+      },
+      {
+        "phase": "return",
+        "description": "Land with flexed knees",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/squat-thrust-burpees"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "jumping-jack",
+    "family": "jumping-jack",
+    "name": "Jumping jack",
+    "aliases": [
+      "jumping jacks",
+      "star jack"
+    ],
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "no-hand-load",
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/jumping-jacks"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/jumping-jacks",
+        "media_url": "https://www.youtube.com/watch?v=uLVt6u15L98",
+        "type": "video",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher exercise media link discovered and source instructions read; pixels and playback not inspected.",
+        "verification": "source_link_verified_only",
+        "organization": "NASM",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Jump feet outward and raise arms; jump feet together and lower arms.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles",
+        "shoulders"
+      ],
+      "motions": "Jump feet outward and raise arms",
+      "start": "Standing feet together, arms down",
+      "end": "Standing feet together, arms down",
+      "equipment_motion": "None",
+      "feet_contact": "Alternates floor contact and flight",
+      "hands_contact": "No external contact",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing feet together, arms down",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/jumping-jacks"
+      },
+      {
+        "phase": "action",
+        "description": "Jump feet outward and raise arms",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/jumping-jacks"
+      },
+      {
+        "phase": "extreme",
+        "description": "Feet apart and arms overhead",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/jumping-jacks"
+      },
+      {
+        "phase": "return",
+        "description": "Jump feet together and lower arms",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/jumping-jacks"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  },
+  {
+    "id": "reverse-crunch",
+    "family": "reverse-crunch",
+    "name": "Reverse crunch",
+    "aliases": [
+      "reverse ab crunch",
+      "pelvic curl"
+    ],
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "palm-support",
+    "source_urls": [
+      "https://www.acefitness.org/resources/everyone/exercise-library/76/reverse-crunch/",
+      "https://www.youtube.com/watch?v=hyv14e2QDq0"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.youtube.com/watch?v=hyv14e2QDq0",
+        "media_url": "https://www.youtube.com/watch?v=hyv14e2QDq0",
+        "type": "video",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "LIVESTRONG publisher video title and metadata identify reverse crunch; ACE supplies movement text. Cross-source pose correspondence not visually checked.",
+        "verification": "source_link_verified_only",
+        "organization": "LIVESTRONG",
+        "visual_inspected": false,
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Roll pelvis toward rib cage; unroll spine and pelvis to mat.",
+    "movement": {
+      "joints": [
+        "hips",
+        "spine"
+      ],
+      "motions": "Roll pelvis toward rib cage",
+      "start": "Supine, bent knees above hips",
+      "end": "Supine, bent knees above hips",
+      "equipment_motion": "None",
+      "feet_contact": "Feet suspended",
+      "hands_contact": "Arms and palms aid balance",
+      "torso": "Source-described control; detailed alignment unresolved",
+      "basis": "Qualitative source-text interpretation; not measured kinematics or visual verification.",
+      "endpoint_semantics": "End denotes reset posture; holds and multi-stage actions are not timed cycles."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine, bent knees above hips",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/76/reverse-crunch/"
+      },
+      {
+        "phase": "action",
+        "description": "Roll pelvis toward rib cage",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/76/reverse-crunch/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Hips lifted from mat",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/76/reverse-crunch/"
+      },
+      {
+        "phase": "return",
+        "description": "Unroll spine and pelvis to mat",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/76/reverse-crunch/"
+      }
+    ],
+    "missing_evidence": [
+      "Actual visual inspection and source-to-variation match confirmation",
+      "Full-cycle playback and complementary camera view",
+      "Detailed hand contact and implement geometry",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "full_cycle_reviewed": false,
+    "source_conflicts": [],
+    "conflict_review": "Not independently cross-checked; empty conflicts is not consensus.",
+    "last_research_batch": "breadth-05"
+  }
+]

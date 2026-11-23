@@ -1,0 +1,1438 @@
+[
+  {
+    "id": "pronated-closed",
+    "name": "Pronated cylindrical grip",
+    "palm": "Both overhand; orientation is exercise-relative.",
+    "thumb": "Closed opposition is a proposed preset; source does not specify thumb pose.",
+    "fingers": "Wrap shaft; exact closure unknown.",
+    "wrist": "Unknown; task-specific.",
+    "contacts": [
+      "cylindrical shaft"
+    ],
+    "source_urls": [
+      "https://www.crossfit.com/essentials/foundational-movement-deadlift-what-is-a-deadlift",
+      "https://www.strengthlog.com/barbell-row/",
+      "https://www.strengthlog.com/barbell-upright-row/",
+      "https://www.strengthlog.com/dumbbell-wrist-extension/",
+      "https://www.strengthlog.com/inverted-row/",
+      "https://www.strengthlog.com/lat-pulldown-with-pronated-grip/",
+      "https://www.strengthlog.com/overhead-press/",
+      "https://www.strengthlog.com/pull-up/",
+      "https://www.strengthlog.com/scap-pull-up/",
+      "https://www.strengthlog.com/tricep-pushdown-with-bar/"
+    ],
+    "confidence": "medium orientation; low closure",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "review_status": "unreviewed",
+    "reference_status": "partial",
+    "variation_ids": [
+      "overhead-press",
+      "pull-up",
+      "inverted-row",
+      "barbell-row",
+      "lat-pulldown-with-pronated-grip",
+      "barbell-upright-row",
+      "cable-bar-triceps-pushdown",
+      "scapular-pull-up",
+      "dumbbell-wrist-extension"
+    ],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "reference_ids": [
+      "ref.1af4655a9243",
+      "ref.383a0c59af04"
+    ]
+  },
+  {
+    "id": "supinated-closed",
+    "name": "Supinated cylindrical grip",
+    "palm": "Underhand; toward face in pull-up context.",
+    "thumb": "Unknown; proposed closed preset.",
+    "fingers": "Wrap shaft; closure unknown.",
+    "wrist": "Unknown.",
+    "contacts": [
+      "cylindrical shaft"
+    ],
+    "source_urls": [
+      "https://www.crossfit.com/faq",
+      "https://www.strengthlog.com/chin-up/",
+      "https://www.strengthlog.com/dumbbell-wrist-curl/",
+      "https://www.strengthlog.com/inverted-row-with-underhand-grip/"
+    ],
+    "confidence": "medium orientation; low closure",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "review_status": "unreviewed",
+    "reference_status": "partial",
+    "variation_ids": [
+      "chin-up",
+      "inverted-row-with-underhand-grip",
+      "dumbbell-wrist-curl"
+    ],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "reference_ids": [
+      "ref.484a70870cbe"
+    ]
+  },
+  {
+    "id": "neutral-closed",
+    "name": "Neutral cylindrical grip",
+    "palm": "Palms parallel.",
+    "thumb": "Unknown; proposed closed preset.",
+    "fingers": "Wrap separate handles; closure unknown.",
+    "wrist": "Unknown.",
+    "contacts": [
+      "parallel handles"
+    ],
+    "source_urls": [
+      "https://www.crossfit.com/faq",
+      "https://www.strengthlog.com/dumbbell-side-bend/",
+      "https://www.strengthlog.com/kneeling-ab-wheel-roll-out/"
+    ],
+    "confidence": "medium orientation; low closure",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "review_status": "unreviewed",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kneeling-ab-wheel-rollout",
+      "dumbbell-side-bend"
+    ],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "reference_ids": [
+      "ref.3ba7471177f2"
+    ]
+  },
+  {
+    "id": "hook",
+    "name": "Hook grip",
+    "palm": "Overhand.",
+    "thumb": "Wrap bar first, beneath fingers.",
+    "fingers": "First fingers catch thumb and pull it around bar.",
+    "wrist": "Hand follows forearm angle.",
+    "contacts": [
+      "thumb web to bar",
+      "thumb to shaft",
+      "fingers over thumb"
+    ],
+    "source_urls": [
+      "https://www.crossfit.com/essentials/foundational-movement-deadlift-what-is-a-deadlift",
+      "https://www.catalystathletics.com/video/1697/Hook-Grip-How-Why/"
+    ],
+    "confidence": "high text definition; geometry unverified",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "review_status": "unreviewed",
+    "reference_status": "partial",
+    "variation_ids": [],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "reference_ids": [
+      "ref.ab9894ebc265",
+      "ref.fe17b92e18a3"
+    ]
+  },
+  {
+    "id": "mixed",
+    "name": "Mixed grip",
+    "palm": "One overhand, other underhand.",
+    "thumb": "Unknown; not automatically a hook grip.",
+    "fingers": "Shaft closure unknown.",
+    "wrist": "Unknown; left/right asymmetry requires review.",
+    "contacts": [
+      "shaft in each hand"
+    ],
+    "source_urls": [
+      "https://www.crossfit.com/essentials/foundational-movement-deadlift-what-is-a-deadlift"
+    ],
+    "confidence": "high orientation; low detailed pose",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "review_status": "unreviewed",
+    "reference_status": "partial",
+    "variation_ids": [],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "reference_ids": [
+      "ref.19a71d8c2749"
+    ]
+  },
+  {
+    "id": "dumbbell-goblet-head-support",
+    "name": "Dumbbell goblet head support",
+    "palm": "Source text: support upper head. Inspected close-up: palms cup its lower outer corners.",
+    "thumb": "Hidden surfaces not resolved by close-up; M&S permits a separate thumbless option. Do not force one thumb pose.",
+    "fingers": "Visible fingers rise along upper-head sides; full digit contact not resolved.",
+    "wrist": "Visibly extended in coach close-up; no measured angle or universal wrist prescription.",
+    "contacts": [
+      "upper head edges supported from below; source-guided interpretation",
+      "shaft contact not established"
+    ],
+    "source_urls": [
+      "https://fitwomensweekly.com/post/how-to-hold-a-dumbbell-for-goblet-squats/",
+      "https://mcmperformance.com/strong-in-6-the-squat/",
+      "https://vimeo.com/832454211",
+      "https://www.acefitness.org/resources/everyone/exercise-library/362/goblet-squat/",
+      "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+      "https://www.nasm.org/resource-center/exercise-library/goblet-squat"
+    ],
+    "confidence": "medium for coarse upper-head support; low for hidden thumb and exact finger contacts",
+    "missing_evidence": [
+      "Reverse/underside contact close-up",
+      "Separate verified thumb-closed versus thumbless examples",
+      "Human grip/anatomy approval",
+      "Fine thumb and finger contact unresolved in whole-body images."
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "claim_basis": {
+      "palm": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+          "basis": "text: setup"
+        },
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "text: instruction 1; underside interpretation"
+        }
+      ],
+      "thumb": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "text: tip 3; variant, not required"
+        },
+        {
+          "source_url": "https://mcmperformance.com/strong-in-6-the-squat/",
+          "basis": "Text cue: thumbs toward chest. Photographs do not independently resolve hidden thumb contact; not a universal rule."
+        }
+      ],
+      "fingers": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "text: instruction 1; individual fingers unspecified"
+        }
+      ],
+      "wrist": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "unknown: no measured or prescribed angle"
+        }
+      ],
+      "contacts": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+          "basis": "text: top cupped"
+        },
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "text: under edges"
+        }
+      ],
+      "visual_contact": [
+        {
+          "source_url": "https://fitwomensweekly.com/post/how-to-hold-a-dumbbell-for-goblet-squats/",
+          "basis": "Coordinator inspected source-labeled close-up; anatomical interpretation remains qualitative."
+        }
+      ]
+    },
+    "review_status": "unreviewed",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-goblet-head-support"
+    ],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "supporting_variation_reference_ids": [
+      "ref.293b4d1e67ae",
+      "ref.d6ddcb10cab2",
+      "ref.0fd400bbb338",
+      "ref.42fe86b2ee6a",
+      "ref.eb00db6a14bb",
+      "ref.aed260811d87",
+      "ref.c0d52df08af8",
+      "ref.8b582ec61d64",
+      "ref.f3fe7b69d546",
+      "ref.d2e18bf89dab"
+    ],
+    "reference_ids": [
+      "ref.8107213096ce",
+      "ref.f2a0141dca56",
+      "ref.772e3fdb4c9c",
+      "ref.92198e369a58",
+      "ref.0c2b57b67073"
+    ]
+  },
+  {
+    "id": "vertical-dumbbell-shaft",
+    "name": "Two-hand vertical dumbbell shaft hold",
+    "palm": "Exact orientation unknown.",
+    "thumb": "Unknown.",
+    "fingers": "Both hands on handle; stacking and overlap unknown.",
+    "wrist": "Unknown.",
+    "contacts": [
+      "vertical handle; head support unconfirmed"
+    ],
+    "source_urls": [
+      "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat"
+    ],
+    "confidence": "low; staff anecdote only",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles",
+      "Credible formal instruction and front/side close-ups",
+      "Not equivalent to head-supported goblet",
+      "Targeted ACE/NSCA and broader searches found no stronger formal shaft-hold source in this batch; absence is not proof of invalidity"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "claim_basis": {
+      "palm": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "staff anecdote: Roger reply 2024-01-11; no formal hand geometry"
+        }
+      ],
+      "thumb": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "staff anecdote: Roger reply 2024-01-11; no formal hand geometry"
+        }
+      ],
+      "fingers": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "staff anecdote: Roger reply 2024-01-11; no formal hand geometry"
+        }
+      ],
+      "wrist": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "staff anecdote: Roger reply 2024-01-11; no formal hand geometry"
+        }
+      ],
+      "contacts": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "staff anecdote: Roger reply 2024-01-11; no formal hand geometry"
+        }
+      ]
+    },
+    "review_status": "unreviewed",
+    "reference_status": "partial",
+    "variation_ids": [],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "reference_ids": [
+      "ref.f7d1df116288"
+    ]
+  },
+  {
+    "id": "kettlebell-horns",
+    "name": "Kettlebell horns hold",
+    "palm": "StrongFirst heavy bottom-down variant wedges palm heels upward at horn/belly junction.",
+    "thumb": "Unknown; source does not specify thumb opposition.",
+    "fingers": "Grasp horns; individual finger path and overlap unknown.",
+    "wrist": "Unknown; no angular prescription or measurement.",
+    "contacts": [
+      "palm heel at horn/belly junction for described bottom-down variant",
+      "horns distinct from upper handle and widest corners"
+    ],
+    "source_urls": [
+      "https://fitwomensweekly.com/post/10-ways-to-hold-a-kettlebell/",
+      "https://www.nasm.org/resource-center/blog/training/how-to-perform-goblet-squats",
+      "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+      "https://www.nsca.com/contentassets/3d09f06f0b4c4f6fbd8cc382ed1f3d4a/ptq-10.2.1-progressive-strategies-for-teaching-fundamental-resistance-training-movement-patterns.pdf",
+      "https://www.strengthlog.com/cossack-squat/",
+      "https://www.strengthlog.com/goblet-squat/",
+      "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+      "https://www.youtube.com/watch?v=2iIKil6wK1E"
+    ],
+    "confidence": "medium text contact definition; low-resolution collage inspected; detailed anatomy unresolved",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles",
+      "Front/side close-up resolving thumbs, fingers and equipment-specific geometry",
+      "Separate visual records for bottom-up horns, belly cup and upper-handle alternatives",
+      "Fine thumb and finger contact unresolved in whole-body images."
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "claim_basis": {
+      "palm": [
+        {
+          "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+          "basis": "text: Heavy Goblet Squats palm cue"
+        }
+      ],
+      "thumb": [
+        {
+          "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+          "basis": "text names horns; detailed digit/wrist geometry unspecified"
+        }
+      ],
+      "fingers": [
+        {
+          "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+          "basis": "text names horns; detailed digit/wrist geometry unspecified"
+        }
+      ],
+      "wrist": [
+        {
+          "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+          "basis": "text names horns; detailed digit/wrist geometry unspecified"
+        }
+      ],
+      "contacts": [
+        {
+          "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+          "basis": "text: Heavy Goblet Squats palm cue"
+        }
+      ]
+    },
+    "variants": "StrongFirst also describes bottom-up horns and belly cupping. Keep separate from bottom-down palm-heel support; upper-handle/corner grasp is not the contact described here.",
+    "review_status": "unreviewed",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kettlebell-goblet-squat",
+      "kettlebell-cossack-squat"
+    ],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "supporting_variation_reference_ids": [
+      "ref.e05dfc09da7c",
+      "ref.0aedfb213e7f",
+      "ref.bb7737b08b4b",
+      "ref.54610a7502ee",
+      "ref.0f9a31b04b00",
+      "ref.37bbb5958850",
+      "ref.0d51b6434ca1",
+      "ref.cc3612fcc373"
+    ],
+    "reference_ids": [
+      "ref.a5c57c310741",
+      "ref.7cf94a02f66e",
+      "ref.b109baaea13e",
+      "ref.953a05eb37c3"
+    ]
+  },
+  {
+    "id": "machine-handle-unspecified",
+    "name": "Unresolved machine handle grip",
+    "palm": "Model and handle dependent.",
+    "thumb": "Unknown.",
+    "fingers": "Unknown.",
+    "wrist": "Unknown.",
+    "contacts": [
+      "machine handle; inspect each model"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0204",
+      "https://www.precor.com/en-US/products/RSL0310",
+      "https://www.precor.com/en-US/products/RSL0314",
+      "https://www.precor.com/en-US/products/RSL0414",
+      "https://www.precor.com/en-US/products/RSL0515",
+      "https://www.precor.com/en-US/products/RSL0602",
+      "https://www.precor.com/en-US/products/RSL0605",
+      "https://www.precor.com/en-US/products/RSL0619",
+      "https://www.strengthlog.com/cable-machine-wood-chop-high-to-low/",
+      "https://www.strengthlog.com/hack-squat-machine/",
+      "https://www.strengthlog.com/pallof-press/",
+      "https://www.strengthlog.com/reverse-hyperextension/",
+      "https://www.strengthlog.com/seated-calf-raise/",
+      "https://www.strengthlog.com/standing-calf-raise/"
+    ],
+    "confidence": "unknown",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles",
+      "Model placard and close-up; do not reuse a free-weight pose automatically"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "review_status": "unreviewed",
+    "reference_status": "research_required",
+    "variation_ids": [
+      "precor-rsl0605-leg-extension",
+      "precor-rsl0619-leg-curl",
+      "precor-rsl0310-row",
+      "precor-rsl0314-pulldown",
+      "precor-rsl0414-chest-press",
+      "precor-rsl0515-shoulder-press",
+      "precor-rsl0602-leg-press",
+      "precor-rsl0204-biceps-curl",
+      "machine-hack-squat",
+      "machine-reverse-hyperextension",
+      "machine-standing-calf-raise",
+      "machine-seated-calf-raise",
+      "cable-pallof-press",
+      "cable-high-to-low-woodchop"
+    ],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "reference_ids": []
+  },
+  {
+    "id": "no-hand-load",
+    "name": "No loaded hand contact",
+    "palm": "Task dependent.",
+    "thumb": "Task dependent.",
+    "fingers": "Task dependent.",
+    "wrist": "Task dependent.",
+    "contacts": [
+      "none prescribed"
+    ],
+    "source_urls": [
+      "https://airedalemsk.co.uk/aiovg_videos/chair-squat-lateral-view/",
+      "https://airedalemsk.co.uk/aiovg_videos/chair-squat/",
+      "https://uthsc.edu/studentsuccess/campus-rec/documents/wall-sit.pdf",
+      "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/",
+      "https://www.nasm.org/resource-center/exercise-library/jumping-jacks",
+      "https://www.nhs.uk/live-well/exercise/balance-exercises/",
+      "https://www.nhs.uk/live-well/exercise/flexibility-exercises/",
+      "https://www.nhs.uk/live-well/exercise/sitting-exercises/",
+      "https://www.nhs.uk/live-well/exercise/strength-exercises/",
+      "https://www.nsca.com/contentassets/3d09f06f0b4c4f6fbd8cc382ed1f3d4a/ptq-10.2.1-progressive-strategies-for-teaching-fundamental-resistance-training-movement-patterns.pdf",
+      "https://www.strengthlog.com/air-squat/",
+      "https://www.strengthlog.com/box-jump/",
+      "https://www.strengthlog.com/cable-machine-hip-abduction/",
+      "https://www.strengthlog.com/cable-machine-hip-adduction/",
+      "https://www.strengthlog.com/chair-squats/",
+      "https://www.strengthlog.com/clamshells/",
+      "https://www.strengthlog.com/cossack-squat/",
+      "https://www.strengthlog.com/crunch/",
+      "https://www.strengthlog.com/dead-bugs/",
+      "https://www.strengthlog.com/glute-bridge/",
+      "https://www.strengthlog.com/hollow-hold/",
+      "https://www.strengthlog.com/lateral-walk-with-band/",
+      "https://www.strengthlog.com/lying-leg-raise/",
+      "https://www.strengthlog.com/reverse-nordic/",
+      "https://www.strengthlog.com/side-lunges-bodyweight/",
+      "https://www.strengthlog.com/sit-up/",
+      "https://www.strengthlog.com/standing-hip-flexor-raise/",
+      "https://www.strengthlog.com/step-up/",
+      "https://www.strengthlog.com/tibialis-raise/",
+      "https://www.youtube.com/watch?v=gfod3jiMgl4"
+    ],
+    "confidence": "not applicable; placeholder",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles",
+      "Confirm exercise permits unloaded hands"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "review_status": "unreviewed",
+    "reference_status": "research_required",
+    "variation_ids": [
+      "air-squat",
+      "chair-squat",
+      "bodyweight-side-lunge",
+      "bodyweight-cossack-squat",
+      "crunch",
+      "dead-bugs",
+      "bodyweight-box-touch-and-go",
+      "bodyweight-step-up",
+      "wall-supported-tibialis-raise",
+      "kettlebell-standing-hip-flexor-raise",
+      "bodyweight-glute-bridge",
+      "cable-hip-abduction",
+      "cable-hip-adduction",
+      "bodyweight-clamshell",
+      "band-lateral-walk",
+      "bodyweight-reverse-nordic",
+      "bodyweight-wall-sit",
+      "sit-up-anchored",
+      "lying-leg-raise",
+      "hollow-body-hold",
+      "box-jump",
+      "jumping-jack",
+      "seated-neck-rotation",
+      "seated-chest-stretch",
+      "slow-sideways-walk",
+      "simple-grapevine-walk",
+      "heel-to-toe-walk"
+    ],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "reference_ids": []
+  },
+  {
+    "id": "dumbbell-shoulder-rack",
+    "name": "Dumbbell shoulder-rack grip",
+    "palm": "Palms inward at shoulder height (NASM).",
+    "thumb": "Unknown; neither text specifies thumb closure.",
+    "fingers": "One dumbbell per hand; digit contact and wrap unknown.",
+    "wrist": "Unknown; high elbows do not establish wrist angle.",
+    "contacts": [
+      "dumbbells held in hands at shoulder height",
+      "primarily shoulder-supported load in CrossFit description; exact head/shoulder patch unknown"
+    ],
+    "source_urls": [
+      "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf",
+      "https://www.crossfit.com/essentials/the-dumbbell-front-squat",
+      "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+      "https://www.strengthlog.com/dumbbell-squat/"
+    ],
+    "claim_basis": {
+      "palm": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+          "basis": "text: setup"
+        }
+      ],
+      "thumb": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+          "basis": "unknown: unspecified"
+        }
+      ],
+      "fingers": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+          "basis": "text: one implement per hand; digit geometry unknown"
+        }
+      ],
+      "wrist": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+          "basis": "unknown: unspecified"
+        }
+      ],
+      "contacts": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+          "basis": "text: shoulder height"
+        },
+        {
+          "source_url": "https://www.crossfit.com/essentials/the-dumbbell-front-squat",
+          "basis": "text: shoulder load support; exact patch unknown"
+        }
+      ]
+    },
+    "confidence": "medium for coarse shoulder hold; low for exact shoulder loading patch and digit closure",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles",
+      "Front/side hand and shoulder close-ups",
+      "Confirm held-at-shoulder-height and shoulder-supported demonstrations separately"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "review_status": "unreviewed",
+    "reference_status": "partial",
+    "variation_ids": [
+      "dumbbell-front-squat"
+    ],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "reference_ids": [
+      "ref.f4d6f90d0556",
+      "ref.da1a0be6e5bc",
+      "ref.863b508b489f",
+      "ref.a98c5df1af0f",
+      "ref.ee95d95f4967"
+    ]
+  },
+  {
+    "id": "kettlebell-double-rack",
+    "name": "Double kettlebell front-rack grip",
+    "palm": "Hands support separate handles near chest; precise palm rotation unresolved.",
+    "thumb": null,
+    "fingers": "Partly obscured by handles; do not infer closed wrapping.",
+    "wrist": null,
+    "contacts": [
+      "handles",
+      "bell/forearm region; exact pressure surface unknown"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-front-squat/",
+      "https://www.strengthlog.com/kettlebell-press/",
+      "https://www.strengthlog.com/kettlebell-thrusters/"
+    ],
+    "confidence": "medium coarse visual contact; low fine geometry",
+    "missing_evidence": [
+      "Side and underside close-ups",
+      "Wrist/handle insertion review",
+      "Human approval"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "review_status": "unreviewed",
+    "reference_status": "partial",
+    "variation_ids": [
+      "kettlebell-front-squat",
+      "kettlebell-thruster-double",
+      "kettlebell-double-press"
+    ],
+    "basis": "Source-specific grip guidance; closure and contact details may remain unknown.",
+    "reference_ids": [
+      "ref.78e60f66bb39"
+    ]
+  },
+  {
+    "id": "dumbbell-neutral",
+    "name": "Dumbbell neutral",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://hortonbarbell.com/reverse-dumbbell-lunge/",
+      "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf",
+      "https://trainer.nasm.org/hubfs/NASM_Free%20Guide_Squats%20and%20Deadlifts.pdf?hsLang=en",
+      "https://www.nasm.org/resource-center/exercise-library/dumbbell-romanian-deadlift",
+      "https://www.strengthlog.com/bulgarian-split-squat/",
+      "https://www.strengthlog.com/dumbbell-chest-fly/",
+      "https://www.strengthlog.com/dumbbell-deadlift/",
+      "https://www.strengthlog.com/dumbbell-lateral-raise/",
+      "https://www.strengthlog.com/dumbbell-lunge/",
+      "https://www.strengthlog.com/dumbbell-lying-triceps-extension/",
+      "https://www.strengthlog.com/dumbbell-romanian-deadlift/",
+      "https://www.strengthlog.com/dumbbell-row/",
+      "https://www.strengthlog.com/dumbbell-shrug/",
+      "https://www.strengthlog.com/dumbbell-squat/",
+      "https://www.strengthlog.com/dumbbell-walking-lunge/",
+      "https://www.strengthlog.com/reverse-dumbbell-flyes/",
+      "https://www.strengthlog.com/reverse-dumbbell-lunge/",
+      "https://www.strengthlog.com/step-up/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "dumbbell-squat-sides",
+      "dumbbell-bulgarian-split-squat",
+      "dumbbell-forward-lunge",
+      "dumbbell-walking-lunge",
+      "dumbbell-reverse-lunge",
+      "dumbbell-deadlift",
+      "dumbbell-romanian-deadlift",
+      "dumbbell-row",
+      "dumbbell-step-up",
+      "dumbbell-chest-fly",
+      "dumbbell-lateral-raise",
+      "reverse-dumbbell-fly",
+      "dumbbell-lying-triceps-extension",
+      "dumbbell-shrug"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "kettlebell-one-hand",
+    "name": "Kettlebell one hand",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/one-handed-kettlebell-swing/",
+      "https://www.strengthlog.com/single-leg-deadlift-with-kettlebell/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "kettlebell-single-leg-deadlift",
+      "kettlebell-swing-one-hand"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "kettlebell-two-hand",
+    "name": "Kettlebell two hand",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-swing/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "kettlebell-swing-two-hand"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "kettlebell-one-hand-rack",
+    "name": "Kettlebell one hand rack",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-clean-and-press/",
+      "https://www.strengthlog.com/kettlebell-clean/",
+      "https://www.strengthlog.com/kettlebell-push-press/",
+      "https://www.strengthlog.com/kettlebell-thrusters/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "kettlebell-clean",
+      "kettlebell-clean-press",
+      "kettlebell-push-press",
+      "kettlebell-thruster-single"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "kettlebell-overhead",
+    "name": "Kettlebell overhead",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-windmill/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "kettlebell-windmill"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "palm-support",
+    "name": "Palm support",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.acefitness.org/resources/everyone/exercise-library/76/reverse-crunch/",
+      "https://www.nasm.org/resource-center/exercise-library/bird-dog",
+      "https://www.nasm.org/resource-center/exercise-library/squat-thrust-burpees",
+      "https://www.nhs.uk/live-well/exercise/flexibility-exercises/",
+      "https://www.strengthlog.com/decline-push-up/",
+      "https://www.strengthlog.com/donkey-kicks/",
+      "https://www.strengthlog.com/fire-hydrants/",
+      "https://www.strengthlog.com/incline-push-up/",
+      "https://www.strengthlog.com/kneeling-push-up/",
+      "https://www.strengthlog.com/l-sit/",
+      "https://www.strengthlog.com/mountain-climbers/",
+      "https://www.strengthlog.com/nordic-hamstring-eccentric/",
+      "https://www.strengthlog.com/push-up/",
+      "https://www.youtube.com/watch?v=hyv14e2QDq0"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "push-up",
+      "kneeling-push-up",
+      "incline-push-up",
+      "decline-push-up",
+      "mountain-climbers",
+      "nordic-hamstring-eccentric",
+      "bodyweight-donkey-kick",
+      "bodyweight-fire-hydrant",
+      "floor-l-sit",
+      "bird-dog",
+      "burpee-push-up-jump",
+      "reverse-crunch",
+      "wall-calf-stretch"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "palm-support-narrow",
+    "name": "Palm support narrow",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/close-grip-push-up/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "close-grip-push-up"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "dumbbell-pronated",
+    "name": "Dumbbell pronated",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-chest-press/",
+      "https://www.strengthlog.com/dumbbell-floor-press/",
+      "https://www.strengthlog.com/dumbbell-front-raise/",
+      "https://www.strengthlog.com/dumbbell-incline-press/",
+      "https://www.strengthlog.com/seated-dumbbell-shoulder-press/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "dumbbell-chest-press",
+      "dumbbell-incline-press",
+      "dumbbell-floor-press",
+      "seated-dumbbell-shoulder-press",
+      "dumbbell-front-raise"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "handle-neutral",
+    "name": "Handle neutral",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/band-external-shoulder-rotation/",
+      "https://www.strengthlog.com/cable-close-grip-seated-row/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "cable-close-grip-seated-row",
+      "band-external-shoulder-rotation"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "parallel-bar-neutral",
+    "name": "Parallel bar neutral",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/bar-dip/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "bar-dip"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "forearm-support",
+    "name": "Forearm support",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/plank/",
+      "https://www.strengthlog.com/side-plank/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "plank",
+      "side-plank"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "bar-grip-unspecified",
+    "name": "Bar grip unspecified",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/band-pull-apart/",
+      "https://www.strengthlog.com/bar-hang/",
+      "https://www.strengthlog.com/dumbbell-pullover/",
+      "https://www.strengthlog.com/hanging-knee-raise/",
+      "https://www.strengthlog.com/hip-thrust/",
+      "https://www.strengthlog.com/landmine-press/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "hanging-knee-raise",
+      "barbell-hip-thrust",
+      "dumbbell-pullover",
+      "band-pull-apart",
+      "kneeling-two-hand-landmine-press",
+      "two-hand-bar-hang"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "barbell-front-rack",
+    "name": "Barbell front rack",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.crossfit.com/pro-coach/developing-the-front-squat",
+      "https://www.strengthlog.com/front-squat/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "barbell-front-squat-clean-rack"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "barbell-back-support",
+    "name": "Barbell back support",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/box-squat/",
+      "https://www.strengthlog.com/good-morning/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "barbell-box-squat",
+      "barbell-good-morning"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "safety-bar-handles",
+    "name": "Safety bar handles",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/safety-bar-squat/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "safety-bar-squat"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "zercher-elbow-cradle",
+    "name": "Zercher elbow cradle",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/zercher-squat/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "barbell-zercher-squat"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "barbell-grip-unresolved",
+    "name": "Barbell grip unresolved",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/rack-pull/",
+      "https://www.strengthlog.com/romanian-deadlift/",
+      "https://www.strengthlog.com/sumo-deadlift/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "barbell-romanian-deadlift",
+      "barbell-sumo-deadlift",
+      "barbell-block-pull"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "barbell-press-grip-unresolved",
+    "name": "Barbell press grip unresolved",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/bench-press/",
+      "https://www.strengthlog.com/incline-bench-press/",
+      "https://www.strengthlog.com/pin-bench-press/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "barbell-bench-press",
+      "barbell-incline-bench-press",
+      "barbell-pin-bench-press"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "barbell-close-press-grip-unresolved",
+    "name": "Barbell close press grip unresolved",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/close-grip-bench-press/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "barbell-close-grip-bench-press"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "dumbbell-overhead",
+    "name": "Dumbbell overhead",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "dumbbell-overhead-squat"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "d-handle",
+    "name": "D handle",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/cable-lateral-raise/",
+      "https://www.strengthlog.com/internal-shoulder-rotations/",
+      "https://www.strengthlog.com/standing-cable-chest-fly/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "cable-internal-shoulder-rotation",
+      "standing-cable-chest-fly",
+      "single-arm-cable-lateral-raise"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "cable-rope",
+    "name": "Cable rope",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/face-pull/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "cable-rope-face-pull"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "contact-unresolved",
+    "name": "Contact unresolved",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/balance-exercises/",
+      "https://www.nhs.uk/live-well/exercise/flexibility-exercises/",
+      "https://www.nhs.uk/live-well/exercise/sitting-exercises/",
+      "https://www.strengthlog.com/back-extension/",
+      "https://www.strengthlog.com/ball-slams/",
+      "https://www.strengthlog.com/core-twist/",
+      "https://www.strengthlog.com/turkish-get-up/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "dumbbell-core-twist",
+      "weighted-bench-back-extension",
+      "weighted-turkish-get-up",
+      "medicine-ball-slam",
+      "seated-neck-side-flexion",
+      "seated-ankle-pump",
+      "wall-supported-single-leg-stand"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "farmers-carry",
+    "name": "Farmers carry",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/farmers-walk/"
+    ],
+    "confidence": "low; contact label only",
+    "missing_evidence": [
+      "Close-up views",
+      "Finger and thumb contact",
+      "Human approval"
+    ],
+    "basis": "Variation-derived contact category, not an anatomical preset.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [
+      "farmers-walk"
+    ],
+    "reference_ids": []
+  },
+  {
+    "id": "false-thumbless",
+    "name": "False thumbless",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [],
+    "confidence": "unknown",
+    "missing_evidence": [
+      "Primary technique source",
+      "Multiple grip close-ups",
+      "Human approval"
+    ],
+    "basis": "Requested inventory target only.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [],
+    "reference_ids": []
+  },
+  {
+    "id": "plate-pinch",
+    "name": "Plate pinch",
+    "palm": null,
+    "thumb": null,
+    "fingers": null,
+    "wrist": null,
+    "contacts": null,
+    "source_urls": [],
+    "confidence": "unknown",
+    "missing_evidence": [
+      "Primary technique source",
+      "Multiple grip close-ups",
+      "Human approval"
+    ],
+    "basis": "Requested inventory target only.",
+    "reference_status": "research_required",
+    "review_status": "unreviewed",
+    "variation_ids": [],
+    "reference_ids": []
+  }
+]

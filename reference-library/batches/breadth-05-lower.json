@@ -1,0 +1,1097 @@
+[
+  {
+    "id": "bodyweight-step-up",
+    "family": "step-up",
+    "name": "Bodyweight step-up",
+    "category": "bodyweight",
+    "equipment": [
+      "step"
+    ],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "step up"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/step-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/step-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/03/step-up-exercise.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Step onto raised support; lower under control.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Step onto raised support; lower under control.",
+      "start": "Standing before step, one foot placed on top.",
+      "end": "Elevated supporting leg straight.",
+      "equipment_motion": "None; step stationary.",
+      "feet_contact": "Leading foot on step; trailing foot leaves floor.",
+      "hands_contact": "Unspecified; no hand load.",
+      "torso": "Braced; exact lean unknown.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "machine-hack-squat",
+    "family": "hack-squat",
+    "name": "Machine hack squat",
+    "category": "machine",
+    "equipment": [
+      "hack-squat-machine"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "aliases": [
+      "hack squat machine"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/hack-squat-machine/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/hack-squat-machine/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/04/hack-squat-machine.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Flex and extend legs against sled.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Flex and extend legs against sled.",
+      "start": "Shoulders against pads; legs extended.",
+      "end": "Lowered squat; depth individually unspecified.",
+      "equipment_motion": "Sled travels along rails.",
+      "feet_contact": "Both feet on plate.",
+      "hands_contact": "Handle contact unresolved.",
+      "torso": "Supported by machine.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "nordic-hamstring-eccentric",
+    "family": "nordic-curl",
+    "name": "Nordic hamstring eccentric",
+    "category": "bodyweight",
+    "equipment": [
+      "ankle-anchor"
+    ],
+    "grip_id": "palm-support",
+    "aliases": [
+      "nordic hamstring eccentric"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/nordic-hamstring-eccentric/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/nordic-hamstring-eccentric/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/05/nordic-hamstrings-eccentric.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Knee extension lowers body; arms assist reset.",
+    "movement": {
+      "joints": [
+        "knees",
+        "hips"
+      ],
+      "motions": "Knee extension lowers body; arms assist reset.",
+      "start": "Upright kneeling; ankles restrained.",
+      "end": "Chest reaches floor.",
+      "equipment_motion": "Anchor fixed.",
+      "feet_contact": "Feet restrained; knees support pivot.",
+      "hands_contact": "Floor push for return; catch timing unresolved.",
+      "torso": "Hip stays extended during lean.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "wall-supported-tibialis-raise",
+    "family": "tibialis-raise",
+    "name": "Wall-supported tibialis raise",
+    "category": "bodyweight",
+    "equipment": [
+      "wall"
+    ],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "tibialis raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/tibialis-raise/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/tibialis-raise/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/06/tibialis-raises-ezgif.com-optimize.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Ankle dorsiflexion lifts forefeet, then lowers.",
+    "movement": {
+      "joints": [
+        "ankles"
+      ],
+      "motions": "Ankle dorsiflexion lifts forefeet, then lowers.",
+      "start": "Back supported on wall; legs straight.",
+      "end": "Toes lifted.",
+      "equipment_motion": "Wall fixed.",
+      "feet_contact": "Heels remain grounded.",
+      "hands_contact": "Unspecified.",
+      "torso": "Wall supported.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "kettlebell-standing-hip-flexor-raise",
+    "family": "hip-flexion",
+    "name": "Kettlebell standing hip flexor raise",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell",
+      "step"
+    ],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "standing hip flexor raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/standing-hip-flexor-raise/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/standing-hip-flexor-raise/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/06/standing-hip-flexor-raise.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Hip flexion raises knee and bell; lower.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees"
+      ],
+      "motions": "Hip flexion raises knee and bell; lower.",
+      "start": "One foot elevated; other through bell handle.",
+      "end": "Raised knee toward chest.",
+      "equipment_motion": "Bell rises with foot.",
+      "feet_contact": "Support foot on step; working foot within handle.",
+      "hands_contact": "Unspecified; balance support unknown.",
+      "torso": "Upright.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "bodyweight-glute-bridge",
+    "family": "glute-bridge",
+    "name": "Bodyweight glute bridge",
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "glute bridge"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/glute-bridge/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/glute-bridge/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/09/glutebridge.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Hip extension elevates pelvis; return.",
+    "movement": {
+      "joints": [
+        "hips"
+      ],
+      "motions": "Hip extension elevates pelvis; return.",
+      "start": "Supine; feet grounded.",
+      "end": "Pelvis elevated.",
+      "equipment_motion": "No implement.",
+      "feet_contact": "Feet on floor.",
+      "hands_contact": "Unspecified; palm pressure unknown.",
+      "torso": "Upper back supported by floor.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "barbell-hip-thrust",
+    "family": "hip-thrust",
+    "name": "Barbell hip thrust",
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "bench"
+    ],
+    "grip_id": "bar-grip-unspecified",
+    "aliases": [
+      "hip thrust"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/hip-thrust/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/hip-thrust/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Hip-thrust.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Extend hips to lift bar; lower.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees"
+      ],
+      "motions": "Extend hips to lift bar; lower.",
+      "start": "Back against bench; bar over hips.",
+      "end": "Hips raised.",
+      "equipment_motion": "Bar follows pelvis.",
+      "feet_contact": "Both feet grounded.",
+      "hands_contact": "Hands stabilize bar; closure unknown.",
+      "torso": "Back supported against bench.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "machine-reverse-hyperextension",
+    "family": "reverse-hyperextension",
+    "name": "Machine reverse hyperextension",
+    "category": "machine",
+    "equipment": [
+      "reverse-hyperextension-machine"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "aliases": [
+      "reverse hyperextension"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/reverse-hyperextension/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/reverse-hyperextension/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/05/reverse-hyperextension.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Raise hanging legs toward torso line; lower.",
+    "movement": {
+      "joints": [
+        "hips"
+      ],
+      "motions": "Raise hanging legs toward torso line; lower.",
+      "start": "Prone with hips at pad edge.",
+      "end": "Legs approximately in line with trunk.",
+      "equipment_motion": "Loading linkage unspecified.",
+      "feet_contact": "Feet together and suspended.",
+      "hands_contact": "Hold handles or sides; exact contact unknown.",
+      "torso": "Prone pad support; neutral back.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "cable-hip-abduction",
+    "family": "hip-abduction",
+    "name": "Cable hip abduction",
+    "category": "cable",
+    "equipment": [
+      "cable-station",
+      "ankle-strap"
+    ],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "cable machine hip abduction"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/cable-machine-hip-abduction/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/cable-machine-hip-abduction/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/04/cable-hip-abduction.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Move working leg laterally; return.",
+    "movement": {
+      "joints": [
+        "hips"
+      ],
+      "motions": "Move working leg laterally; return.",
+      "start": "Side-on; farther ankle connected to low cable.",
+      "end": "Leg out to side.",
+      "equipment_motion": "Strap and cable follow ankle.",
+      "feet_contact": "Support foot grounded; working foot moves freely.",
+      "hands_contact": "Unspecified; balance hold unknown.",
+      "torso": "Held still.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "cable-hip-adduction",
+    "family": "hip-adduction",
+    "name": "Cable hip adduction",
+    "category": "cable",
+    "equipment": [
+      "cable-station",
+      "ankle-strap"
+    ],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "cable machine hip adduction"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/cable-machine-hip-adduction/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/cable-machine-hip-adduction/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/06/cable-hip-adduction.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Draw attached leg across body; return.",
+    "movement": {
+      "joints": [
+        "hips"
+      ],
+      "motions": "Draw attached leg across body; return.",
+      "start": "Side-on; nearer ankle connected to low cable.",
+      "end": "Leg across midline.",
+      "equipment_motion": "Cable follows ankle.",
+      "feet_contact": "Support foot grounded; working foot suspended.",
+      "hands_contact": "Unspecified; balance hold unknown.",
+      "torso": "Held still.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "bodyweight-clamshell",
+    "family": "hip-abduction",
+    "name": "Bodyweight clamshell",
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "clamshells"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/clamshells/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/clamshells/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/01/clamshell.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Open upper bent leg; lower.",
+    "movement": {
+      "joints": [
+        "hips"
+      ],
+      "motions": "Open upper bent leg; lower.",
+      "start": "Side lying with knees bent.",
+      "end": "Upper knee raised.",
+      "equipment_motion": "None.",
+      "feet_contact": "Foot-to-foot contact unverified.",
+      "hands_contact": "Unspecified; support hand unknown.",
+      "torso": "Side lying; pelvic control.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "bodyweight-donkey-kick",
+    "family": "hip-extension",
+    "name": "Bodyweight donkey kick",
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "palm-support",
+    "aliases": [
+      "donkey kicks"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/donkey-kicks/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/donkey-kicks/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/11/donkey-kicks.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Raise bent leg behind; lower without grounding.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees"
+      ],
+      "motions": "Raise bent leg behind; lower without grounding.",
+      "start": "Quadruped.",
+      "end": "Working foot lifted upward.",
+      "equipment_motion": "None.",
+      "feet_contact": "Working foot suspended; support knee grounded.",
+      "hands_contact": "Hands planted beneath shoulders.",
+      "torso": "Back held flat.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "bodyweight-fire-hydrant",
+    "family": "hip-abduction",
+    "name": "Bodyweight fire hydrant",
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "palm-support",
+    "aliases": [
+      "fire hydrants"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/fire-hydrants/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/fire-hydrants/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/06/Fire-Hydrants.gif?resize=510%2C510&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Lift leg to side; lower.",
+    "movement": {
+      "joints": [
+        "hips"
+      ],
+      "motions": "Lift leg to side; lower.",
+      "start": "Quadruped.",
+      "end": "Leg abducted.",
+      "equipment_motion": "None.",
+      "feet_contact": "Working foot suspended; other knee supports.",
+      "hands_contact": "Hands support floor; fingers unverified.",
+      "torso": "Braced; gaze down.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "band-lateral-walk",
+    "family": "lateral-band-walk",
+    "name": "Lateral walk with ankle band",
+    "category": "band",
+    "equipment": [
+      "resistance-band"
+    ],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "lateral walk with band"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/lateral-walk-with-band/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/lateral-walk-with-band/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Banded-Side-Step.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Side steps against band.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Side steps against band.",
+      "start": "Standing; band around ankles.",
+      "end": "Laterally displaced stance.",
+      "equipment_motion": "Band stretches with separation.",
+      "feet_contact": "Alternating foot lift and landing.",
+      "hands_contact": "Unspecified.",
+      "torso": "Posture not detailed.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "bodyweight-reverse-nordic",
+    "family": "reverse-nordic",
+    "name": "Reverse Nordic",
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "reverse nordic"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/reverse-nordic/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/reverse-nordic/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/06/reverse-nordic.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Lean backward through knees; return.",
+    "movement": {
+      "joints": [
+        "knees",
+        "hips"
+      ],
+      "motions": "Lean backward through knees; return.",
+      "start": "Upright kneeling.",
+      "end": "Controlled backward lean.",
+      "equipment_motion": "None.",
+      "feet_contact": "Feet and knees on floor.",
+      "hands_contact": "Unspecified.",
+      "torso": "Hip extended; trunk aligned with thighs.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review",
+      "GIF fetch timed out; URL discovered from publisher link, availability not verified."
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "machine-standing-calf-raise",
+    "family": "calf-raise",
+    "name": "Machine standing calf raise",
+    "category": "machine",
+    "equipment": [
+      "standing-calf-raise-machine"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "aliases": [
+      "standing calf raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/standing-calf-raise/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/standing-calf-raise/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/calf-raise-standing.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Lower heels then plantarflex.",
+    "movement": {
+      "joints": [
+        "ankles"
+      ],
+      "motions": "Lower heels then plantarflex.",
+      "start": "Shoulders under pads; forefeet supported.",
+      "end": "Heels raised.",
+      "equipment_motion": "Pads/load follow body rise.",
+      "feet_contact": "Forefeet on support; heels free.",
+      "hands_contact": "Handle contact unresolved.",
+      "torso": "Upright under pads.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "machine-seated-calf-raise",
+    "family": "calf-raise",
+    "name": "Machine seated calf raise",
+    "category": "machine",
+    "equipment": [
+      "seated-calf-raise-machine"
+    ],
+    "grip_id": "machine-handle-unspecified",
+    "aliases": [
+      "seated calf raise"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/seated-calf-raise/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/seated-calf-raise/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/calf-raise-seated.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked exercise demonstration; pixels not inspected in this batch.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Lower heels then plantarflex.",
+    "movement": {
+      "joints": [
+        "ankles"
+      ],
+      "motions": "Lower heels then plantarflex.",
+      "start": "Seated under knee pad.",
+      "end": "Heels raised.",
+      "equipment_motion": "Knee pad/load rises.",
+      "feet_contact": "Forefeet on support; heels free.",
+      "hands_contact": "Unspecified.",
+      "torso": "Seated support.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "bodyweight-wall-sit",
+    "family": "wall-sit",
+    "name": "Bodyweight wall sit",
+    "category": "bodyweight",
+    "equipment": [
+      "wall"
+    ],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "wall squat hold"
+    ],
+    "source_urls": [
+      "https://uthsc.edu/studentsuccess/campus-rec/documents/wall-sit.pdf"
+    ],
+    "references": [
+      {
+        "source_url": "https://uthsc.edu/studentsuccess/campus-rec/documents/wall-sit.pdf",
+        "media_url": "https://uthsc.edu/studentsuccess/campus-rec/documents/wall-sit.pdf#page=1",
+        "type": "pdf-photo",
+        "view": "unknown",
+        "phase": "hold",
+        "description": "Publisher wall-sit handout with demonstration photograph; screenshot request did not expose inspectable pixels.",
+        "organization": "University of Tennessee Health Science Center",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "PDF text opened; screenshot request returned reference only, no pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Lower against wall into a supported hold.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Slide down wall; maintain flexed lower-body hold.",
+      "start": "Standing with back at wall and feet forward.",
+      "end": "Wall-supported seated posture.",
+      "equipment_motion": "Wall fixed.",
+      "feet_contact": "Both feet grounded; precise pressure unverified.",
+      "hands_contact": "Unspecified.",
+      "torso": "Back supported by wall.",
+      "basis": "Qualitative publisher text interpretation; no measured angles.",
+      "endpoint_semantics": "End describes held posture; release not documented."
+    },
+    "missing_evidence": [
+      "Pixel inspection",
+      "Hand position and release sequence",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "dumbbell-step-up",
+    "family": "step-up",
+    "name": "Dumbbell step-up",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell",
+      "step"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "aliases": [
+      "weighted step-up"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/step-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/step-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/11/step-up-m-hantlar.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Supplementary dumbbell demonstration linked below weighted-variation commentary; pixels uninspected.",
+        "organization": "StrengthLog",
+        "verification": "page_text_and_media_link",
+        "visual_inspected": false,
+        "observed_samples": [],
+        "access_date": "2026-11-23",
+        "inspection_method": "Publisher instructions read; exercise image hyperlink resolved with web click. No pixel inspection.",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Step onto raised support; lower under control.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Step onto raised support; lower under control.",
+      "start": "One foot on step; pair of dumbbells held.",
+      "end": "Elevated supporting leg straight.",
+      "equipment_motion": "Dumbbells carried with body.",
+      "feet_contact": "Leading foot on step; trailing foot leaves floor.",
+      "hands_contact": "Pair held in hands; exact grip orientation and closure unverified.",
+      "torso": "Braced; exact lean unknown.",
+      "basis": "Qualitative source-text interpretation; not measured or visually verified.",
+      "endpoint_semantics": "End describes action extreme, not a completed repetition."
+    },
+    "missing_evidence": [
+      "Pixel inspection and complete cycle",
+      "Contact details and opposite view",
+      "Human movement review",
+      "Grip archetype provisional; exact hand pose not visually checked."
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "reference_status": "partial"
+  }
+]

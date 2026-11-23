@@ -1,0 +1,1143 @@
+[
+  {
+    "id": "push-up",
+    "family": "push-up",
+    "name": "Push-up",
+    "category": "push",
+    "equipment": [],
+    "grip_id": "palm-support",
+    "source_urls": [
+      "https://www.strengthlog.com/push-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/push-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Push-up.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+"view": "oblique front-side",
+        "phase": "near upper position; motion direction unknown",
+        "description": "One GIF frame shows palms and toes on floor, elbows nearly extended; full cycle not inspected.",
+        "verification": "Page text and source-discovered media URL checked; actual browser screenshot visually inspected 2026-11-23. Single frame only; no timing or full-cycle validation.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Straight-arm plank",
+      "end": "Chest lowered between hands",
+      "equipment_motion": "None",
+      "feet_contact": "Toes fixed on floor",
+      "hands_contact": "Palms on floor",
+      "torso": "Head, trunk and legs aligned"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "kneeling-push-up",
+    "family": "push-up",
+    "name": "Kneeling push-up",
+    "category": "push",
+    "equipment": [],
+    "grip_id": "palm-support",
+    "source_urls": [
+      "https://www.strengthlog.com/kneeling-push-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kneeling-push-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Kneeling-push-ups.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Arms straight; knees grounded",
+      "end": "Chest lowered",
+      "equipment_motion": "None",
+      "feet_contact": "Knees support body; feet unloaded",
+      "hands_contact": "Palms on floor",
+      "torso": "Head-to-knee alignment"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "incline-push-up",
+    "family": "push-up",
+    "name": "Incline push-up",
+    "category": "push",
+    "equipment": [
+      "bench"
+    ],
+    "grip_id": "palm-support",
+    "source_urls": [
+      "https://www.strengthlog.com/incline-push-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/incline-push-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/03/incline-push-up-exercise-technique.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Hands elevated; arms straight",
+      "end": "Chest approaches support",
+      "equipment_motion": "Support apparatus remains fixed",
+      "feet_contact": "Toes on floor",
+      "hands_contact": "Palms on elevated support",
+      "torso": "Inclined straight body"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "decline-push-up",
+    "family": "push-up",
+    "name": "Decline push-up",
+    "category": "push",
+    "equipment": [
+      "bench"
+    ],
+    "grip_id": "palm-support",
+    "source_urls": [
+      "https://www.strengthlog.com/decline-push-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/decline-push-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/05/Decline-push-up.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Feet elevated; arms straight",
+      "end": "Chest lowered",
+      "equipment_motion": "Support apparatus remains fixed",
+      "feet_contact": "Toes on elevated support",
+      "hands_contact": "Palms on floor",
+      "torso": "Straight body slopes toward hands"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "close-grip-push-up",
+    "family": "push-up",
+    "name": "Close-grip push-up",
+    "category": "push",
+    "equipment": [],
+    "grip_id": "palm-support-narrow",
+    "source_urls": [
+      "https://www.strengthlog.com/close-grip-push-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/close-grip-push-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2022/09/close-grip-push-up.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Hands shoulder-width; arms straight",
+      "end": "Chest lowered",
+      "equipment_motion": "None",
+      "feet_contact": "Toes on floor",
+      "hands_contact": "Palms on floor",
+      "torso": "Straight body"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "dumbbell-chest-press",
+    "family": "chest-press",
+    "name": "Dumbbell chest press",
+    "category": "push",
+    "equipment": [
+      "dumbbell",
+      "bench"
+    ],
+    "grip_id": "dumbbell-pronated",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-chest-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-chest-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Dumbbell-Chest-Press.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Supine; weights beside shoulders",
+      "end": "Arms extended above chest",
+      "equipment_motion": "Held load follows hands; support furniture remains fixed",
+      "feet_contact": "Feet planted; inferred",
+      "hands_contact": "Each hand grips one dumbbell",
+      "torso": "Back supported on flat bench"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "dumbbell-incline-press",
+    "family": "chest-press",
+    "name": "Incline dumbbell press",
+    "category": "push",
+    "equipment": [
+      "dumbbell",
+      "adjustable-bench"
+    ],
+    "grip_id": "dumbbell-pronated",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-incline-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-incline-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Dumbbell-Incline-Press.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Bench inclined; weights beside shoulders",
+      "end": "Arms extended above chest",
+      "equipment_motion": "Held load follows hands; support furniture remains fixed",
+      "feet_contact": "Feet planted; inferred",
+      "hands_contact": "Each hand grips one dumbbell",
+      "torso": "Back supported on inclined bench"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "dumbbell-floor-press",
+    "family": "chest-press",
+    "name": "Dumbbell floor press",
+    "category": "push",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-pronated",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-floor-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-floor-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2022/09/dumbbell-floor-press.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Supine; arms extended",
+      "end": "Upper arms reach floor",
+      "equipment_motion": "Held load follows hands; support furniture remains fixed",
+      "feet_contact": "Feet flat; knees bent",
+      "hands_contact": "Each hand grips one dumbbell",
+      "torso": "Back on floor"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "overhead-press",
+    "family": "overhead-press",
+    "name": "Barbell overhead press",
+    "category": "push",
+    "equipment": [
+      "barbell",
+      "rack"
+    ],
+    "grip_id": "bar-pronated",
+    "source_urls": [
+      "https://www.strengthlog.com/overhead-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/overhead-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/12/Overhead-press-exercise.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Bar at front shoulders",
+      "end": "Arms extended overhead",
+      "equipment_motion": "Held load follows hands; support furniture remains fixed",
+      "feet_contact": "Both feet planted",
+      "hands_contact": "Both hands grip bar",
+      "torso": "Upright braced trunk"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "seated-dumbbell-shoulder-press",
+    "family": "overhead-press",
+    "name": "Seated dumbbell shoulder press",
+    "category": "push",
+    "equipment": [
+      "dumbbell",
+      "adjustable-bench"
+    ],
+    "grip_id": "dumbbell-pronated",
+    "source_urls": [
+      "https://www.strengthlog.com/seated-dumbbell-shoulder-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/seated-dumbbell-shoulder-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/11/Seated-dumbbell-shoulder-press.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Weights beside shoulders",
+      "end": "Arms extended overhead",
+      "equipment_motion": "Held load follows hands; support furniture remains fixed",
+      "feet_contact": "Feet planted; inferred",
+      "hands_contact": "Each hand grips one dumbbell",
+      "torso": "Seated against backrest"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "pull-up",
+    "family": "pull-up",
+    "name": "Pronated pull-up",
+    "category": "pull",
+    "equipment": [
+      "pull-up-bar"
+    ],
+    "grip_id": "bar-pronated",
+    "source_urls": [
+      "https://www.strengthlog.com/pull-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/pull-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/12/pull-ups.gif?resize=700%2C700&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text checked 2026-11-23; linked media fetch exceeded size limit; pixels not inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder adduction/extension and scapular motion",
+      "start": "Hanging with straight arms",
+      "end": "Chin above bar",
+      "equipment_motion": "Support apparatus remains fixed",
+      "feet_contact": "No floor contact",
+      "hands_contact": "Palms away; fixed overhead bar",
+      "torso": "Chest lifted without imposed swing"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "chin-up",
+    "family": "pull-up",
+    "name": "Supinated chin-up",
+    "category": "pull",
+    "equipment": [
+      "pull-up-bar"
+    ],
+    "grip_id": "bar-supinated",
+    "source_urls": [
+      "https://www.strengthlog.com/chin-up/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/chin-up/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/chin-up.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+"view": "rear oblique",
+        "phase": "lower hanging position",
+        "description": "One GIF frame shows nearly straight arms holding an overhead bar and suspended crossed feet; full cycle not inspected.",
+        "verification": "Page text and source-discovered media URL checked; actual browser screenshot visually inspected 2026-11-23. Single frame only; no timing or full-cycle validation.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder adduction/extension and scapular motion",
+      "start": "Hanging with straight arms",
+      "end": "Chin above bar",
+      "equipment_motion": "Support apparatus remains fixed",
+      "feet_contact": "No floor contact",
+      "hands_contact": "Palms toward face; fixed overhead bar",
+      "torso": "Chest lifted"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "inverted-row",
+    "family": "row",
+    "name": "Pronated inverted row",
+    "category": "pull",
+    "equipment": [
+      "barbell",
+      "rack"
+    ],
+    "grip_id": "bar-pronated",
+    "source_urls": [
+      "https://www.strengthlog.com/inverted-row/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/inverted-row/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/10/hangande-rodd-overhandsgrepp.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder adduction/extension and scapular motion",
+      "start": "Body below fixed bar; arms straight",
+      "end": "Chest approaches bar",
+      "equipment_motion": "Support apparatus remains fixed",
+      "feet_contact": "Heels on floor",
+      "hands_contact": "Overhand grip on fixed bar",
+      "torso": "Straight body suspended diagonally"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "inverted-row-with-underhand-grip",
+    "family": "row",
+    "name": "Supinated inverted row",
+    "category": "pull",
+    "equipment": [
+      "barbell",
+      "rack"
+    ],
+    "grip_id": "bar-supinated",
+    "source_urls": [
+      "https://www.strengthlog.com/inverted-row-with-underhand-grip/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/inverted-row-with-underhand-grip/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2023/03/inverted-row-with-underhand-grip-new.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder adduction/extension and scapular motion",
+      "start": "Body below fixed bar; arms straight",
+      "end": "Chest approaches bar",
+      "equipment_motion": "Support apparatus remains fixed",
+      "feet_contact": "Heels on floor",
+      "hands_contact": "Underhand grip on fixed bar",
+      "torso": "Straight body suspended diagonally"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "barbell-row",
+    "family": "row",
+    "name": "Bent-over barbell row",
+    "category": "pull",
+    "equipment": [
+      "barbell"
+    ],
+    "grip_id": "bar-pronated",
+    "source_urls": [
+      "https://www.strengthlog.com/barbell-row/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/barbell-row/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2022/03/Barbell-Row.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder adduction/extension and scapular motion",
+      "start": "Forward lean; bar hangs",
+      "end": "Bar approaches abdomen or chest",
+      "equipment_motion": "Held load follows hands; support furniture remains fixed",
+      "feet_contact": "Both feet planted",
+      "hands_contact": "Overhand bar grip",
+      "torso": "Hip-hinged trunk"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "dumbbell-row",
+    "family": "row",
+    "name": "Bench-supported dumbbell row",
+    "category": "pull",
+    "equipment": [
+      "dumbbell",
+      "bench"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-row/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-row/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Dumbbell-Row.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder adduction/extension and scapular motion",
+      "start": "One hand and knee on bench; working arm hangs",
+      "end": "Working elbow moves upward",
+      "equipment_motion": "Held load follows hands; support furniture remains fixed",
+      "feet_contact": "Opposite foot on floor",
+      "hands_contact": "One supporting palm; other grips weight",
+      "torso": "Back approximately parallel to floor"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "lat-pulldown-with-pronated-grip",
+    "family": "pulldown",
+    "name": "Pronated lat pulldown",
+    "category": "pull",
+    "equipment": [
+      "lat-pulldown-machine"
+    ],
+    "grip_id": "bar-pronated",
+    "source_urls": [
+      "https://www.strengthlog.com/lat-pulldown-with-pronated-grip/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/lat-pulldown-with-pronated-grip/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/lat-pulldown-with-pronated-grip.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder adduction/extension and scapular motion",
+      "start": "Seated with arms overhead",
+      "end": "Bar near upper chest",
+      "equipment_motion": "Cable attachment follows hands; machine base fixed",
+      "feet_contact": "Feet grounded; thighs under pad",
+      "hands_contact": "Pronated grip on cable bar",
+      "torso": "Seated chest lifted"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "cable-close-grip-seated-row",
+    "family": "row",
+    "name": "Close-grip seated cable row",
+    "category": "pull",
+    "equipment": [
+      "cable-row-machine"
+    ],
+    "grip_id": "handle-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/cable-close-grip-seated-row/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/cable-close-grip-seated-row/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/cable-row-seated-narrow-grip.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder adduction/extension and scapular motion",
+      "start": "Arms extended; slight forward lean",
+      "end": "Handle near lower abdomen",
+      "equipment_motion": "Cable attachment follows hands; machine base fixed",
+      "feet_contact": "Feet braced on machine; inferred",
+      "hands_contact": "Both hands on narrow handle",
+      "torso": "Small controlled forward/back lean"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "bar-dip",
+    "family": "dip",
+    "name": "Parallel-bar dip",
+    "category": "push",
+    "equipment": [
+      "dip-station"
+    ],
+    "grip_id": "parallel-bar-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/bar-dip/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/bar-dip/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Dips.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "shoulders, elbows, scapulothoracic articulation, wrists",
+      "motions": "Elbow flexion/extension with shoulder motion; scapular motion requires review",
+      "start": "Body supported on straight arms",
+      "end": "Body lowered to individual comfortable depth",
+      "equipment_motion": "Support apparatus remains fixed",
+      "feet_contact": "Feet suspended",
+      "hands_contact": "Both hands remain on parallel bars",
+      "torso": "Controlled trunk inclination"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "plank",
+    "family": "plank",
+    "name": "Forearm plank",
+    "category": "core",
+    "equipment": [],
+    "grip_id": "forearm-support",
+    "source_urls": [
+      "https://www.strengthlog.com/plank/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/plank/",
+        "media_url": "https://i2.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Plank.jpg?fit=1024%2C1024&ssl=1",
+        "type": "image",
+"view": "oblique side",
+        "phase": "static hold",
+        "description": "Visible still shows forearms and toes supporting an extended trunk; hands clasped.",
+        "verification": "Page text and source-discovered media URL checked; actual browser screenshot visually inspected 2026-11-23. Single frame only; no timing or full-cycle validation.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "trunk, shoulders, hips, knees",
+      "motions": "Isometric trunk stabilization",
+      "start": "Forearms and feet support trunk",
+      "end": "Same posture held",
+      "equipment_motion": "None",
+      "feet_contact": "Toes grounded; inferred",
+      "hands_contact": "Forearms support body",
+      "torso": "Resist sagging or piking"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "side-plank",
+    "family": "plank",
+    "name": "Side plank",
+    "category": "core",
+    "equipment": [],
+    "grip_id": "forearm-support",
+    "source_urls": [
+      "https://www.strengthlog.com/side-plank/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/side-plank/",
+        "media_url": "https://i1.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Side-plank.jpg?fit=1024%2C1024&ssl=1",
+        "type": "image",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "trunk, shoulders, hips, knees",
+      "motions": "Isometric trunk stabilization",
+      "start": "Side support on one elbow",
+      "end": "Same posture held",
+      "equipment_motion": "None",
+      "feet_contact": "Top foot placed in front of other",
+      "hands_contact": "One forearm supports body",
+      "torso": "Head-to-feet alignment"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "crunch",
+    "family": "trunk-flexion",
+    "name": "Crunch",
+    "category": "core",
+    "equipment": [],
+    "grip_id": "no-grip",
+    "source_urls": [
+      "https://www.strengthlog.com/crunch/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/crunch/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2023/01/Crunch.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "trunk, shoulders, hips, knees",
+      "motions": "Trunk flexion and return",
+      "start": "Supine; bent knees",
+      "end": "Upper trunk curled; low back grounded",
+      "equipment_motion": "None",
+      "feet_contact": "Feet grounded; inferred",
+      "hands_contact": "Hands in front of chest",
+      "torso": "Spinal flexion; pelvis remains grounded"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "dead-bugs",
+    "family": "anti-extension",
+    "name": "Dead bug",
+    "category": "core",
+    "equipment": [],
+    "grip_id": "no-grip",
+    "source_urls": [
+      "https://www.strengthlog.com/dead-bugs/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dead-bugs/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2023/01/deadbug.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "trunk, shoulders, hips, knees",
+      "motions": "Alternating shoulder flexion, hip extension and knee extension",
+      "start": "Supine; arms up; hips and knees bent",
+      "end": "Opposite arm and leg extended toward floor",
+      "equipment_motion": "None",
+      "feet_contact": "Feet suspended",
+      "hands_contact": "Hands move freely",
+      "torso": "Lower back remains on floor"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "hanging-knee-raise",
+    "family": "hip-flexion",
+    "name": "Hanging knee raise",
+    "category": "core",
+    "equipment": [
+      "pull-up-bar"
+    ],
+    "grip_id": "bar-grip-unspecified",
+    "source_urls": [
+      "https://www.strengthlog.com/hanging-knee-raise/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/hanging-knee-raise/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/hanging-knee-raise.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "trunk, shoulders, hips, knees",
+      "motions": "Alternating or bilateral hip and knee flexion/extension",
+      "start": "Hanging; legs down",
+      "end": "Bent knees raised in front",
+      "equipment_motion": "Support apparatus remains fixed",
+      "feet_contact": "Feet suspended",
+      "hands_contact": "Hands fixed to bar",
+      "torso": "Avoid swinging"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "mountain-climbers",
+    "family": "dynamic-plank",
+    "name": "Mountain climber",
+    "category": "core",
+    "equipment": [],
+    "grip_id": "palm-support",
+    "source_urls": [
+      "https://www.strengthlog.com/mountain-climbers/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/mountain-climbers/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2023/01/Mountain-climbers.gif?resize=600%2C600&ssl=1",
+        "type": "animated-gif",
+        "view": null,
+        "phase": null,
+        "description": "Publisher-listed technique demonstration; no frame-specific claim.",
+        "verification": "Page text and linked media URL checked 2026-11-23; web media result did not display pixels; not visually inspected.",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source-derived setup and range summary below; rig mapping is qualitative engineering inference, human unreviewed.",
+    "movement": {
+      "joints": "trunk, shoulders, hips, knees",
+      "motions": "Alternating or bilateral hip and knee flexion/extension",
+      "start": "Straight-arm plank",
+      "end": "One knee drawn forward; alternate sides",
+      "equipment_motion": "None",
+      "feet_contact": "Alternating toe contact",
+      "hands_contact": "Palms remain on floor",
+      "torso": "Flat back; hips stay low"
+    },
+    "missing_evidence": [
+      "Front and side visual review",
+      "Full-cycle timing and measured joint angles",
+      "Detailed finger contact",
+      "Human movement/anatomy approval",
+      "Redistribution permission not established"
+    ],
+    "confidence": "medium for source identity and text; low for uninspected visual and inferred rig details",
+    "review_status": "human-unreviewed",
+    "checked_on": "2026-11-23"
+  }
+]

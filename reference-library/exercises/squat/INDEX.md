@@ -1,0 +1,17 @@
+# Squat
+
+- [air-squat](air-squat.md)
+- [chair-squat](chair-squat.md)
+- [dumbbell-squat-sides](dumbbell-squat-sides.md)
+- [kettlebell-goblet-squat](kettlebell-goblet-squat.md)
+- [kettlebell-front-squat](kettlebell-front-squat.md)
+- [bodyweight-cossack-squat](bodyweight-cossack-squat.md)
+- [dumbbell-front-squat](dumbbell-front-squat.md)
+- [dumbbell-goblet-head-support](dumbbell-goblet-head-support.md)
+- [barbell-front-squat-clean-rack](barbell-front-squat-clean-rack.md)
+- [barbell-box-squat](barbell-box-squat.md)
+- [safety-bar-squat](safety-bar-squat.md)
+- [barbell-zercher-squat](barbell-zercher-squat.md)
+- [kettlebell-cossack-squat](kettlebell-cossack-squat.md)
+- [bodyweight-box-touch-and-go](bodyweight-box-touch-and-go.md)
+- [dumbbell-overhead-squat](dumbbell-overhead-squat.md)

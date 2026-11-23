@@ -1,0 +1,824 @@
+[
+  {
+    "id": "pronated-closed",
+    "name": "Pronated cylindrical grip",
+    "palm": "Both overhand; orientation is exercise-relative.",
+    "thumb": "Closed opposition is a proposed preset; source does not specify thumb pose.",
+    "fingers": "Wrap shaft; exact closure unknown.",
+    "wrist": "Unknown; task-specific.",
+    "contacts": [
+      "cylindrical shaft"
+    ],
+    "source_urls": [
+      "https://www.crossfit.com/essentials/foundational-movement-deadlift-what-is-a-deadlift"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.crossfit.com/essentials/foundational-movement-deadlift-what-is-a-deadlift",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Double-overhand definition.",
+        "verification": "text-verified",
+        "organization": "CrossFit"
+      },
+      {
+        "source_url": "https://www.crossfit.com/essentials/foundational-movement-deadlift-what-is-a-deadlift",
+        "media_url": "https://www.crossfit.com/wp-content/uploads/2023/04/04111127/GRIPS-1-1024x455.png",
+        "type": "image-link",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Grip comparison link; caption read only.",
+        "verification": "link-discovered; visual-not-verified",
+        "organization": "CrossFit"
+      }
+    ],
+    "confidence": "medium orientation; low closure",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "supinated-closed",
+    "name": "Supinated cylindrical grip",
+    "palm": "Underhand; toward face in pull-up context.",
+    "thumb": "Unknown; proposed closed preset.",
+    "fingers": "Wrap shaft; closure unknown.",
+    "wrist": "Unknown.",
+    "contacts": [
+      "cylindrical shaft"
+    ],
+    "source_urls": [
+      "https://www.crossfit.com/faq"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.crossfit.com/faq",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Pull-up palm orientation definition.",
+        "verification": "text-verified",
+        "organization": "CrossFit"
+      }
+    ],
+    "confidence": "medium orientation; low closure",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "neutral-closed",
+    "name": "Neutral cylindrical grip",
+    "palm": "Palms parallel.",
+    "thumb": "Unknown; proposed closed preset.",
+    "fingers": "Wrap separate handles; closure unknown.",
+    "wrist": "Unknown.",
+    "contacts": [
+      "parallel handles"
+    ],
+    "source_urls": [
+      "https://www.crossfit.com/faq"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.crossfit.com/faq",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Neutral grip definition.",
+        "verification": "text-verified",
+        "organization": "CrossFit"
+      }
+    ],
+    "confidence": "medium orientation; low closure",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "hook",
+    "name": "Hook grip",
+    "palm": "Overhand.",
+    "thumb": "Wrap bar first, beneath fingers.",
+    "fingers": "First fingers catch thumb and pull it around bar.",
+    "wrist": "Hand follows forearm angle.",
+    "contacts": [
+      "thumb web to bar",
+      "thumb to shaft",
+      "fingers over thumb"
+    ],
+    "source_urls": [
+      "https://www.crossfit.com/essentials/foundational-movement-deadlift-what-is-a-deadlift",
+      "https://www.catalystathletics.com/video/1697/Hook-Grip-How-Why/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.catalystathletics.com/video/1697/Hook-Grip-How-Why/",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Thumb-web and closure sequence verified in text.",
+        "verification": "text-verified",
+        "organization": "Catalyst Athletics"
+      },
+      {
+        "source_url": "https://www.crossfit.com/essentials/foundational-movement-deadlift-what-is-a-deadlift",
+        "media_url": "https://www.crossfit.com/wp-content/uploads/2023/04/04111127/GRIPS-1-1024x455.png",
+        "type": "image-link",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Grip comparison caption; image uninspected.",
+        "verification": "link-discovered; visual-not-verified",
+        "organization": "CrossFit"
+      }
+    ],
+    "confidence": "high text definition; geometry unverified",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "mixed",
+    "name": "Mixed grip",
+    "palm": "One overhand, other underhand.",
+    "thumb": "Unknown; not automatically a hook grip.",
+    "fingers": "Shaft closure unknown.",
+    "wrist": "Unknown; left/right asymmetry requires review.",
+    "contacts": [
+      "shaft in each hand"
+    ],
+    "source_urls": [
+      "https://www.crossfit.com/essentials/foundational-movement-deadlift-what-is-a-deadlift"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.crossfit.com/essentials/foundational-movement-deadlift-what-is-a-deadlift",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Alternating palm orientations described.",
+        "verification": "text-verified",
+        "organization": "CrossFit"
+      }
+    ],
+    "confidence": "high orientation; low detailed pose",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "goblet-dumbbell-head",
+    "name": "Dumbbell goblet head support",
+    "palm": "Source text: support upper head. Inspected close-up: palms cup its lower outer corners.",
+    "thumb": "Hidden surfaces not resolved by close-up; M&S permits a separate thumbless option. Do not force one thumb pose.",
+    "fingers": "Visible fingers rise along upper-head sides; full digit contact not resolved.",
+    "wrist": "Visibly extended in coach close-up; no measured angle or universal wrist prescription.",
+    "contacts": [
+      "upper head edges supported from below; source-guided interpretation",
+      "shaft contact not established"
+    ],
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+      "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+      "https://fitwomensweekly.com/post/how-to-hold-a-dumbbell-for-goblet-squats/",
+      "https://mcmperformance.com/strong-in-6-the-squat/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Vertical weight with top cupped at chest.",
+        "verification": "text-verified",
+        "organization": "NASM"
+      },
+      {
+        "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Instruction places hands under dumbbell edges.",
+        "verification": "text-verified",
+        "organization": "Muscle & Strength"
+      },
+      {
+        "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+        "media_url": "https://www.youtube.com/watch?v=5Y3KW5rWMh4",
+        "type": "video",
+        "view": "front_oblique",
+        "phase": "setup_and_sampled_squat",
+        "description": "Publisher video sampled at 0:06/0:11/0:16/0:21/0:26/0:31; upright dumbbell supported under upper head. Fine thumb contact is hidden.",
+        "organization": "Muscle & Strength",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "00:06",
+            "view": "front_oblique",
+            "phase": "setup",
+            "observation": "Dumbbell upright on floor before pickup.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:11",
+            "view": "front_oblique",
+            "phase": "pickup",
+            "observation": "Dumbbell lifted near waist; pickup path not continuously reviewed.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:16",
+            "view": "front_oblique",
+            "phase": "standing",
+            "observation": "Head supported near chin, elbows down; shaft exposed.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:21",
+            "view": "front_oblique",
+            "phase": "intermediate",
+            "observation": "Partial knee flexion with head support maintained.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:26",
+            "view": "front_oblique",
+            "phase": "lowered",
+            "observation": "Deeper knee/hip flexion; bell stays near chest.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:31",
+            "view": "front_oblique",
+            "phase": "intermediate",
+            "observation": "Partially flexed posture; direction/peak timing not established from sampled frames.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://fitwomensweekly.com/post/how-to-hold-a-dumbbell-for-goblet-squats/",
+        "media_url": "https://cdn.sanity.io/images/ie5weekx/production/d38a556d52a97770fdb16a68db70111a2f041d35-1200x680.jpg?auto=format&w=500",
+        "type": "photo",
+        "view": "front_closeup",
+        "phase": "grip_setup",
+        "description": "Palms cup the lower corners of the upper hex head; fingers rise along its sides. Wrists visibly extend; thumb surfaces are occluded.",
+        "organization": "Fit Women's Weekly / Kindal Boyle",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "image",
+            "view": "front_closeup",
+            "phase": "grip_setup",
+            "observation": "Palms cup the lower corners of the upper hex head; fingers rise along its sides. Wrists visibly extend; thumb surfaces are occluded.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false,
+        "limitations": "First-party coach contact demonstration only; reject page generalizations about pain, muscle activation, heavy loading and exact wrist angles."
+      },
+      {
+        "source_url": "https://mcmperformance.com/strong-in-6-the-squat/",
+        "media_url": null,
+        "type": "page",
+        "view": null,
+        "phase": "grip_setup",
+        "description": "First-party coaching text cues palms up and thumbs toward chest; exact hidden contact remains unresolved.",
+        "verification": "page_text",
+        "visual_inspected": false,
+        "organization": "MCM Performance"
+      }
+    ],
+    "confidence": "medium for coarse upper-head support; low for hidden thumb and exact finger contacts",
+    "missing_evidence": [
+      "Reverse/underside contact close-up",
+      "Separate verified thumb-closed versus thumbless examples",
+      "Human grip/anatomy approval"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "claim_basis": {
+      "palm": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+          "basis": "text: setup"
+        },
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "text: instruction 1; underside interpretation"
+        }
+      ],
+      "thumb": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "text: tip 3; variant, not required"
+        },
+        {
+          "source_url": "https://mcmperformance.com/strong-in-6-the-squat/",
+          "basis": "Text cue: thumbs toward chest. Photographs do not independently resolve hidden thumb contact; not a universal rule."
+        }
+      ],
+      "fingers": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "text: instruction 1; individual fingers unspecified"
+        }
+      ],
+      "wrist": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "unknown: no measured or prescribed angle"
+        }
+      ],
+      "contacts": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+          "basis": "text: top cupped"
+        },
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "text: under edges"
+        }
+      ],
+      "visual_contact": [
+        {
+          "source_url": "https://fitwomensweekly.com/post/how-to-hold-a-dumbbell-for-goblet-squats/",
+          "basis": "Coordinator inspected source-labeled close-up; anatomical interpretation remains qualitative."
+        }
+      ]
+    }
+  },
+  {
+    "id": "vertical-dumbbell-shaft",
+    "name": "Two-hand vertical dumbbell shaft hold",
+    "palm": "Exact orientation unknown.",
+    "thumb": "Unknown.",
+    "fingers": "Both hands on handle; stacking and overlap unknown.",
+    "wrist": "Unknown.",
+    "contacts": [
+      "vertical handle; head support unconfirmed"
+    ],
+    "source_urls": [
+      "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Staff reply by Roger, 2024-01-11, reports handle hold; not formal technique instruction.",
+        "verification": "text-verified",
+        "organization": "Muscle & Strength"
+      }
+    ],
+    "confidence": "low; staff anecdote only",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles",
+      "Credible formal instruction and front/side close-ups",
+      "Not equivalent to head-supported goblet",
+      "Targeted ACE/NSCA and broader searches found no stronger formal shaft-hold source in this batch; absence is not proof of invalidity"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "claim_basis": {
+      "palm": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "staff anecdote: Roger reply 2024-01-11; no formal hand geometry"
+        }
+      ],
+      "thumb": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "staff anecdote: Roger reply 2024-01-11; no formal hand geometry"
+        }
+      ],
+      "fingers": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "staff anecdote: Roger reply 2024-01-11; no formal hand geometry"
+        }
+      ],
+      "wrist": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "staff anecdote: Roger reply 2024-01-11; no formal hand geometry"
+        }
+      ],
+      "contacts": [
+        {
+          "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+          "basis": "staff anecdote: Roger reply 2024-01-11; no formal hand geometry"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kettlebell-horns",
+    "name": "Kettlebell horns hold",
+    "palm": "StrongFirst heavy bottom-down variant wedges palm heels upward at horn/belly junction.",
+    "thumb": "Unknown; source does not specify thumb opposition.",
+    "fingers": "Grasp horns; individual finger path and overlap unknown.",
+    "wrist": "Unknown; no angular prescription or measurement.",
+    "contacts": [
+      "palm heel at horn/belly junction for described bottom-down variant",
+      "horns distinct from upper handle and widest corners"
+    ],
+    "source_urls": [
+      "https://www.youtube.com/watch?v=2iIKil6wK1E",
+      "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Defines horns and palm-heel support; includes alternative holds.",
+        "verification": "text-verified",
+        "organization": "StrongFirst"
+      },
+      {
+        "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+        "media_url": "https://www.strongfirst.com/wordpress/wp-content/uploads/2022/10/heavy-goblet-squat-collage.jpg",
+        "type": "image-link",
+        "view": "front_oblique",
+        "phase": "grip_setup_and_bottom",
+        "description": "Coordinator CUA inspection 2026-11-23: 450x236 three-panel collage. Left: open hands beside handle, palms near horn/belly junction. Middle: fingers curl around handle sides. Right: bottom squat, bell near chest. Hidden thumb and individual digit contacts unresolved.",
+        "verification": "visually_inspected",
+        "organization": "StrongFirst",
+        "observed_samples": [
+          {
+            "locator": "collage panel 1",
+            "view": "front_oblique",
+            "phase": "grip_setup",
+            "observation": "left panel: open hands",
+            "limitations": "Low-resolution collage; hidden thumb and individual finger contacts not resolved."
+          },
+          {
+            "locator": "collage panel 2",
+            "view": "front_oblique",
+            "phase": "grip_setup",
+            "observation": "middle panel: curled grip",
+            "limitations": "Low-resolution collage; hidden thumb and individual finger contacts not resolved."
+          },
+          {
+            "locator": "collage panel 3",
+            "view": "front_oblique",
+            "phase": "bottom",
+            "observation": "right panel: bottom squat",
+            "limitations": "Low-resolution collage; hidden thumb and individual finger contacts not resolved."
+          }
+        ]
+      },
+      {
+        "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+        "media_url": "https://www.youtube.com/embed/s64Ss68bABQ?feature=oembed",
+        "type": "video-link",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Source embed; no inspected timestamp.",
+        "verification": "link-discovered; visual-not-verified",
+        "organization": "StrongFirst"
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=2iIKil6wK1E",
+        "media_url": "https://www.youtube.com/watch?v=2iIKil6wK1E",
+        "type": "video",
+        "organization": "StrongFirst",
+        "view": "front",
+        "phase": "shallow_squat; bottom",
+        "description": "Batch 03 background researcher inspected paused front shallow/bottom frames; no fine thumb or full-cycle claim.",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "00:40",
+            "view": "front",
+            "phase": "shallow_squat",
+            "observation": "Hands on opposite handle sides; bell hangs below.",
+            "limitations": "Sample inspected by background researcher; hands too small for hidden digit contact."
+          },
+          {
+            "locator": "00:45",
+            "view": "front",
+            "phase": "bottom",
+            "observation": "Deep squat with the same coarse two-hand handle arrangement.",
+            "limitations": "Sample inspected by background researcher; not continuous or reverse-thumb review."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false,
+        "revalidation_note": "Batch 04 buffered replay did not reproduce exact decoded-frame timestamps. Prior coarse observations are historical; no continuous or precise temporal claim."
+      }
+    ],
+    "confidence": "medium text contact definition; low-resolution collage inspected; detailed anatomy unresolved",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles",
+      "Front/side close-up resolving thumbs, fingers and equipment-specific geometry",
+      "Separate visual records for bottom-up horns, belly cup and upper-handle alternatives"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23",
+    "claim_basis": {
+      "palm": [
+        {
+          "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+          "basis": "text: Heavy Goblet Squats palm cue"
+        }
+      ],
+      "thumb": [
+        {
+          "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+          "basis": "text names horns; detailed digit/wrist geometry unspecified"
+        }
+      ],
+      "fingers": [
+        {
+          "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+          "basis": "text names horns; detailed digit/wrist geometry unspecified"
+        }
+      ],
+      "wrist": [
+        {
+          "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+          "basis": "text names horns; detailed digit/wrist geometry unspecified"
+        }
+      ],
+      "contacts": [
+        {
+          "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+          "basis": "text: Heavy Goblet Squats palm cue"
+        }
+      ]
+    },
+    "variants": "StrongFirst also describes bottom-up horns and belly cupping. Keep separate from bottom-down palm-heel support; upper-handle/corner grasp is not the contact described here."
+  },
+  {
+    "id": "machine-handle-unspecified",
+    "name": "Unresolved machine handle grip",
+    "palm": "Model and handle dependent.",
+    "thumb": "Unknown.",
+    "fingers": "Unknown.",
+    "wrist": "Unknown.",
+    "contacts": [
+      "machine handle; inspect each model"
+    ],
+    "source_urls": [],
+    "references": [],
+    "confidence": "unknown",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles",
+      "Model placard and close-up; do not reuse a free-weight pose automatically"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "no-hand-load",
+    "name": "No loaded hand contact",
+    "palm": "Task dependent.",
+    "thumb": "Task dependent.",
+    "fingers": "Task dependent.",
+    "wrist": "Task dependent.",
+    "contacts": [
+      "none prescribed"
+    ],
+    "source_urls": [],
+    "references": [],
+    "confidence": "not applicable; placeholder",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles",
+      "Confirm exercise permits unloaded hands"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "dumbbell-shoulder-rack",
+    "name": "Dumbbell shoulder-rack grip",
+    "palm": "Palms inward at shoulder height (NASM).",
+    "thumb": "Unknown; neither text specifies thumb closure.",
+    "fingers": "One dumbbell per hand; digit contact and wrap unknown.",
+    "wrist": "Unknown; high elbows do not establish wrist angle.",
+    "contacts": [
+      "dumbbells held in hands at shoulder height",
+      "primarily shoulder-supported load in CrossFit description; exact head/shoulder patch unknown"
+    ],
+    "source_urls": [
+      "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+      "https://www.crossfit.com/essentials/the-dumbbell-front-squat",
+      "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Palms inward, elbows high; digit pose unspecified.",
+        "verification": "text-verified",
+        "organization": "NASM"
+      },
+      {
+        "source_url": "https://www.crossfit.com/essentials/the-dumbbell-front-squat",
+        "media_url": null,
+        "type": "instruction-page",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Primarily shoulder-supported load; elbows forward.",
+        "verification": "text-verified",
+        "organization": "CrossFit"
+      },
+      {
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+        "media_url": "https://www.youtube.com/watch?v=hZI8Yy5elZs",
+        "type": "video-link",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Source-linked video; visual correspondence not checked.",
+        "verification": "link-discovered; visual-not-verified",
+        "organization": "NASM"
+      },
+      {
+        "source_url": "https://www.crossfit.com/essentials/the-dumbbell-front-squat",
+        "media_url": "https://www.youtube.com/embed/B86Zj72LwzA?autoplay=1&enablejsapi=1&modestbranding=1&origin=https%3A%2F%2Fwww.crossfit.com&rel=0",
+        "type": "video-link",
+        "view": "not visually inspected",
+        "phase": "grip setup",
+        "description": "Source embed; no frames inspected.",
+        "verification": "link-discovered; visual-not-verified",
+        "organization": "CrossFit"
+      },
+      {
+        "source_url": "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf",
+        "media_url": "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf#page=2",
+        "type": "pdf-photo-sequence",
+        "view": "front",
+        "phase": "standing_and_bottom",
+        "description": "Level 2 pair shows two dumbbells at shoulders; no digit detail.",
+        "organization": "CrossFit / Michael Rutherford",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "PDF page 2, Level 2",
+            "view": "front",
+            "phase": "standing_and_bottom",
+            "observation": "Shoulder-held dumbbells in paired squat poses.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "claim_basis": {
+      "palm": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+          "basis": "text: setup"
+        }
+      ],
+      "thumb": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+          "basis": "unknown: unspecified"
+        }
+      ],
+      "fingers": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+          "basis": "text: one implement per hand; digit geometry unknown"
+        }
+      ],
+      "wrist": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+          "basis": "unknown: unspecified"
+        }
+      ],
+      "contacts": [
+        {
+          "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-front-squat",
+          "basis": "text: shoulder height"
+        },
+        {
+          "source_url": "https://www.crossfit.com/essentials/the-dumbbell-front-squat",
+          "basis": "text: shoulder load support; exact patch unknown"
+        }
+      ]
+    },
+    "confidence": "medium for coarse shoulder hold; low for exact shoulder loading patch and digit closure",
+    "missing_evidence": [
+      "Human review",
+      "Measured contact locations and joint angles",
+      "Front/side hand and shoulder close-ups",
+      "Confirm held-at-shoulder-height and shoulder-supported demonstrations separately"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  },
+  {
+    "id": "kettlebell-double-rack",
+    "name": "Double kettlebell front-rack grip",
+    "palm": "Hands support separate handles near chest; precise palm rotation unresolved.",
+    "thumb": null,
+    "fingers": "Partly obscured by handles; do not infer closed wrapping.",
+    "wrist": null,
+    "contacts": [
+      "handles",
+      "bell/forearm region; exact pressure surface unknown"
+    ],
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-front-squat/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kettlebell-front-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/09/Kettlebell-frontsquat.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "front_oblique",
+        "phase": "intermediate_bottom_standing",
+        "description": "Three untimed GIF samples show two kettlebells at forearms/chest through partial squat, bottom and standing. Hands support separate handles; closure is not resolved.",
+        "organization": "StrengthLog",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "sample 1",
+            "view": "front_oblique",
+            "phase": "intermediate",
+            "observation": "Both bells remain at front rack.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "sample 2",
+            "view": "front_oblique",
+            "phase": "bottom",
+            "observation": "Elbows forward; bells adjacent to forearms.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "sample 3",
+            "view": "front_oblique",
+            "phase": "standing",
+            "observation": "Both handles held near center chest; fingers partly obscured.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "confidence": "medium coarse visual contact; low fine geometry",
+    "missing_evidence": [
+      "Side and underside close-ups",
+      "Wrist/handle insertion review",
+      "Human approval"
+    ],
+    "approval": "unreviewed",
+    "checked_on": "2026-11-23"
+  }
+]

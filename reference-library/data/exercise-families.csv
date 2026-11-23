@@ -1,0 +1,150 @@
+id,name,category,reference_status,variation_ids
+squat,Squat,lower_body,partial,"[""air-squat"", ""chair-squat"", ""dumbbell-squat-sides"", ""kettlebell-goblet-squat"", ""kettlebell-front-squat"", ""bodyweight-cossack-squat"", ""dumbbell-front-squat"", ""dumbbell-goblet-head-support"", ""barbell-front-squat-clean-rack"", ""barbell-box-squat"", ""safety-bar-squat"", ""barbell-zercher-squat"", ""kettlebell-cossack-squat"", ""bodyweight-box-touch-and-go"", ""dumbbell-overhead-squat""]"
+split-squat,Split squat,lower_body,partial,"[""dumbbell-bulgarian-split-squat""]"
+lunge,Lunge,lower_body,partial,"[""dumbbell-forward-lunge"", ""dumbbell-walking-lunge"", ""dumbbell-reverse-lunge"", ""bodyweight-side-lunge""]"
+step-up,Step up,lower_body,partial,"[""bodyweight-step-up"", ""dumbbell-step-up""]"
+step-down,Step down,lower_body,research_required,[]
+deadlift,Deadlift,lower_body,partial,"[""dumbbell-deadlift"", ""kettlebell-single-leg-deadlift"", ""barbell-sumo-deadlift"", ""barbell-block-pull""]"
+romanian-deadlift,Romanian deadlift,lower_body,partial,"[""dumbbell-romanian-deadlift"", ""barbell-romanian-deadlift""]"
+good-morning,Good morning,lower_body,partial,"[""barbell-good-morning""]"
+hip-thrust,Hip thrust,lower_body,partial,"[""barbell-hip-thrust""]"
+glute-bridge,Glute bridge,lower_body,partial,"[""bodyweight-glute-bridge""]"
+leg-press,Leg press,lower_body,partial,"[""precor-rsl0602-leg-press""]"
+hack-squat,Hack squat,lower_body,partial,"[""machine-hack-squat""]"
+leg-extension,Leg extension,lower_body,partial,"[""precor-rsl0605-leg-extension""]"
+leg-curl,Leg curl,lower_body,partial,"[""precor-rsl0619-leg-curl""]"
+nordic-curl,Nordic curl,lower_body,partial,"[""nordic-hamstring-eccentric""]"
+calf-raise,Calf raise,lower_body,partial,"[""machine-standing-calf-raise"", ""machine-seated-calf-raise""]"
+tibialis-raise,Tibialis raise,lower_body,partial,"[""wall-supported-tibialis-raise""]"
+hip-abduction,Hip abduction,lower_body,partial,"[""cable-hip-abduction"", ""bodyweight-clamshell"", ""bodyweight-fire-hydrant""]"
+hip-adduction,Hip adduction,lower_body,partial,"[""cable-hip-adduction""]"
+hip-extension,Hip extension,lower_body,partial,"[""bodyweight-donkey-kick""]"
+hip-flexion,Hip flexion,lower_body,partial,"[""kettlebell-standing-hip-flexor-raise""]"
+wall-sit,Wall sit,lower_body,partial,"[""bodyweight-wall-sit""]"
+reverse-hyperextension,Reverse hyperextension,lower_body,partial,"[""machine-reverse-hyperextension""]"
+bench-press,Bench press,upper_body_push,partial,"[""barbell-bench-press"", ""barbell-close-grip-bench-press"", ""barbell-incline-bench-press"", ""barbell-pin-bench-press""]"
+chest-press,Chest press,upper_body_push,partial,"[""dumbbell-chest-press"", ""dumbbell-incline-press"", ""dumbbell-floor-press"", ""precor-rsl0414-chest-press""]"
+overhead-press,Overhead press,upper_body_push,partial,"[""kettlebell-double-press"", ""overhead-press"", ""seated-dumbbell-shoulder-press"", ""precor-rsl0515-shoulder-press""]"
+push-up,Push up,upper_body_push,partial,"[""push-up"", ""kneeling-push-up"", ""incline-push-up"", ""decline-push-up"", ""close-grip-push-up""]"
+dip,Dip,upper_body_push,partial,"[""bar-dip""]"
+chest-fly,Chest fly,upper_body_push,partial,"[""dumbbell-chest-fly"", ""standing-cable-chest-fly""]"
+triceps-extension,Triceps extension,upper_body_push,partial,"[""dumbbell-lying-triceps-extension""]"
+triceps-pushdown,Triceps pushdown,upper_body_push,partial,"[""cable-bar-triceps-pushdown""]"
+lateral-raise,Lateral raise,upper_body_push,partial,"[""dumbbell-lateral-raise"", ""single-arm-cable-lateral-raise""]"
+front-raise,Front raise,upper_body_push,partial,"[""dumbbell-front-raise""]"
+landmine-press,Landmine press,upper_body_push,partial,"[""kneeling-two-hand-landmine-press""]"
+serratus-punch,Serratus punch,upper_body_push,research_required,[]
+scapular-push-up,Scapular push up,upper_body_push,research_required,[]
+row,Row,upper_body_pull,partial,"[""inverted-row"", ""inverted-row-with-underhand-grip"", ""barbell-row"", ""dumbbell-row"", ""cable-close-grip-seated-row"", ""precor-rsl0310-row""]"
+pulldown,Pulldown,upper_body_pull,partial,"[""lat-pulldown-with-pronated-grip"", ""precor-rsl0314-pulldown""]"
+pull-up,Pull up,upper_body_pull,partial,"[""pull-up""]"
+chin-up,Chin up,upper_body_pull,partial,"[""chin-up""]"
+pullover,Pullover,upper_body_pull,partial,"[""dumbbell-pullover""]"
+face-pull,Face pull,upper_body_pull,partial,"[""cable-rope-face-pull""]"
+biceps-curl,Biceps curl,upper_body_pull,partial,"[""precor-rsl0204-biceps-curl""]"
+reverse-fly,Reverse fly,upper_body_pull,partial,"[""reverse-dumbbell-fly""]"
+shrug,Shrug,upper_body_pull,partial,"[""dumbbell-shrug""]"
+upright-row,Upright row,upper_body_pull,partial,"[""barbell-upright-row""]"
+wrist-curl,Wrist curl,upper_body_pull,partial,"[""dumbbell-wrist-curl""]"
+wrist-extension,Wrist extension,upper_body_pull,partial,"[""dumbbell-wrist-extension""]"
+forearm-pronation,Forearm pronation,upper_body_pull,research_required,[]
+forearm-supination,Forearm supination,upper_body_pull,research_required,[]
+shoulder-external-rotation,Shoulder external rotation,upper_body_pull,partial,"[""band-external-shoulder-rotation""]"
+shoulder-internal-rotation,Shoulder internal rotation,upper_body_pull,partial,"[""cable-internal-shoulder-rotation""]"
+scapular-pull-up,Scapular pull up,upper_body_pull,partial,"[""scapular-pull-up""]"
+band-pull-apart,Band pull apart,upper_body_pull,partial,"[""band-pull-apart""]"
+hang,Hang,upper_body_pull,partial,"[""two-hand-bar-hang""]"
+grip-crush,Grip crush,upper_body_pull,research_required,[]
+plate-pinch,Plate pinch,upper_body_pull,research_required,[]
+crunch,Crunch,core_stability,partial,"[""crunch""]"
+sit-up,Sit up,core_stability,partial,"[""sit-up-anchored""]"
+reverse-crunch,Reverse crunch,core_stability,partial,"[""reverse-crunch""]"
+leg-raise,Leg raise,core_stability,partial,"[""lying-leg-raise""]"
+knee-raise,Knee raise,core_stability,partial,"[""hanging-knee-raise""]"
+plank,Plank,core_stability,partial,"[""plank""]"
+side-plank,Side plank,core_stability,partial,"[""side-plank""]"
+dead-bug,Dead bug,core_stability,partial,"[""dead-bugs""]"
+bird-dog,Bird dog,core_stability,partial,"[""bird-dog""]"
+rollout,Rollout,core_stability,partial,"[""kneeling-ab-wheel-rollout""]"
+pallof-press,Pallof press,core_stability,partial,"[""cable-pallof-press""]"
+wood-chop,Wood chop,core_stability,partial,"[""cable-high-to-low-woodchop""]"
+trunk-rotation,Trunk rotation,core_stability,partial,"[""dumbbell-core-twist""]"
+back-extension,Back extension,core_stability,partial,"[""weighted-bench-back-extension""]"
+hollow-hold,Hollow hold,core_stability,partial,"[""hollow-body-hold""]"
+side-bend,Side bend,core_stability,partial,"[""dumbbell-side-bend""]"
+carry,Carry,core_stability,partial,"[""farmers-walk""]"
+turkish-get-up,Turkish get up,core_stability,partial,"[""weighted-turkish-get-up""]"
+l-sit,L sit,core_stability,partial,"[""floor-l-sit""]"
+v-up,V up,core_stability,research_required,[]
+mountain-climber,Mountain climber,core_stability,partial,"[""mountain-climbers""]"
+clean,Clean,athletic_conditioning,partial,"[""kettlebell-clean""]"
+snatch,Snatch,athletic_conditioning,research_required,[]
+jerk,Jerk,athletic_conditioning,research_required,[]
+high-pull,High pull,athletic_conditioning,research_required,[]
+push-press,Push press,athletic_conditioning,partial,"[""kettlebell-push-press""]"
+thruster,Thruster,athletic_conditioning,partial,"[""kettlebell-thruster-double"", ""kettlebell-thruster-single""]"
+kettlebell-swing,Kettlebell swing,athletic_conditioning,partial,"[""kettlebell-swing-two-hand"", ""kettlebell-swing-one-hand""]"
+sled-push,Sled push,athletic_conditioning,research_required,[]
+sled-drag,Sled drag,athletic_conditioning,research_required,[]
+medicine-ball-throw,Medicine ball throw,athletic_conditioning,research_required,[]
+medicine-ball-slam,Medicine ball slam,athletic_conditioning,partial,"[""medicine-ball-slam""]"
+battle-rope-wave,Battle rope wave,athletic_conditioning,research_required,[]
+rope-climb,Rope climb,athletic_conditioning,research_required,[]
+jump,Jump,athletic_conditioning,partial,"[""box-jump""]"
+hop,Hop,athletic_conditioning,research_required,[]
+bound,Bound,athletic_conditioning,research_required,[]
+burpee,Burpee,athletic_conditioning,partial,"[""burpee-push-up-jump""]"
+jumping-jack,Jumping jack,athletic_conditioning,partial,"[""jumping-jack""]"
+skipping,Skipping,athletic_conditioning,research_required,[]
+sprint,Sprint,athletic_conditioning,research_required,[]
+lateral-shuffle,Lateral shuffle,athletic_conditioning,research_required,[]
+carioca,Carioca,athletic_conditioning,research_required,[]
+backpedal,Backpedal,athletic_conditioning,research_required,[]
+agility-ladder,Agility ladder,athletic_conditioning,research_required,[]
+shuttle-run,Shuttle run,athletic_conditioning,research_required,[]
+crawl,Crawl,athletic_conditioning,research_required,[]
+rowing-ergometer,Rowing ergometer,athletic_conditioning,research_required,[]
+cycling,Cycling,athletic_conditioning,research_required,[]
+treadmill-locomotion,Treadmill locomotion,athletic_conditioning,research_required,[]
+elliptical,Elliptical,athletic_conditioning,research_required,[]
+stair-climbing,Stair climbing,athletic_conditioning,research_required,[]
+ski-ergometer,Ski ergometer,athletic_conditioning,research_required,[]
+sandbag-shouldering,Sandbag shouldering,athletic_conditioning,research_required,[]
+tire-flip,Tire flip,athletic_conditioning,research_required,[]
+sledgehammer-strike,Sledgehammer strike,athletic_conditioning,research_required,[]
+lat-stretch,Lat stretch,mobility_flexibility,research_required,[]
+pectoral-stretch,Pectoral stretch,mobility_flexibility,partial,"[""seated-chest-stretch""]"
+hip-flexor-stretch,Hip flexor stretch,mobility_flexibility,research_required,[]
+hamstring-stretch,Hamstring stretch,mobility_flexibility,research_required,[]
+quadriceps-stretch,Quadriceps stretch,mobility_flexibility,research_required,[]
+calf-stretch,Calf stretch,mobility_flexibility,partial,"[""wall-calf-stretch""]"
+adductor-stretch,Adductor stretch,mobility_flexibility,research_required,[]
+glute-stretch,Glute stretch,mobility_flexibility,research_required,[]
+shoulder-cross-body-stretch,Shoulder cross body stretch,mobility_flexibility,research_required,[]
+triceps-stretch,Triceps stretch,mobility_flexibility,research_required,[]
+wrist-flexor-stretch,Wrist flexor stretch,mobility_flexibility,research_required,[]
+wrist-extensor-stretch,Wrist extensor stretch,mobility_flexibility,research_required,[]
+cat-cow,Cat cow,mobility_flexibility,research_required,[]
+thoracic-rotation,Thoracic rotation,mobility_flexibility,research_required,[]
+thoracic-extension,Thoracic extension,mobility_flexibility,research_required,[]
+ankle-dorsiflexion-mobilization,Ankle dorsiflexion mobilization,mobility_flexibility,research_required,[]
+hip-rotation-mobilization,Hip rotation mobilization,mobility_flexibility,research_required,[]
+shoulder-pass-through,Shoulder pass through,mobility_flexibility,research_required,[]
+wall-slide,Wall slide,mobility_flexibility,research_required,[]
+neck-rotation,Neck rotation,mobility_flexibility,partial,"[""seated-neck-rotation""]"
+neck-side-flexion,Neck side flexion,mobility_flexibility,partial,"[""seated-neck-side-flexion""]"
+cobra,Cobra,mobility_flexibility,research_required,[]
+child-pose,Child pose,mobility_flexibility,research_required,[]
+leg-swing,Leg swing,mobility_flexibility,research_required,[]
+arm-circle,Arm circle,mobility_flexibility,research_required,[]
+inchworm,Inchworm,mobility_flexibility,research_required,[]
+balance-reach,Balance reach,mobility_flexibility,research_required,[]
+clean-and-press,Clean and press,kettlebell,partial,"[""kettlebell-clean-press""]"
+windmill,Windmill,kettlebell,partial,"[""kettlebell-windmill""]"
+lateral-band-walk,Lateral band walk,band,partial,"[""band-lateral-walk""]"
+reverse-nordic,Reverse nordic,bodyweight,partial,"[""bodyweight-reverse-nordic""]"
+ankle-pump,Ankle pump,mobility_flexibility,partial,"[""seated-ankle-pump""]"
+sideways-walk,Sideways walk,balance,partial,"[""slow-sideways-walk""]"
+crossover-walk,Crossover walk,balance,partial,"[""simple-grapevine-walk""]"
+tandem-walk,Tandem walk,balance,partial,"[""heel-to-toe-walk""]"
+single-leg-balance,Single leg balance,balance,partial,"[""wall-supported-single-leg-stand""]"

@@ -1,0 +1,1589 @@
+[
+  {
+    "id": "dumbbell",
+    "components": [
+      "handle",
+      "two heads"
+    ],
+    "contacts": [
+      "handle",
+      "head underside"
+    ],
+    "adjustments": [],
+    "moving_parts": [
+      "whole implement"
+    ],
+    "name": "Dumbbell",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "adjustable-dumbbell",
+    "components": [
+      "handle",
+      "selected plates",
+      "selector or collars",
+      "storage cradle"
+    ],
+    "contacts": [
+      "handle"
+    ],
+    "adjustments": [
+      "selected load"
+    ],
+    "moving_parts": [
+      "whole selected implement"
+    ],
+    "limitations": "Head-support suitability must be checked for the exact locking design.",
+    "name": "Adjustable dumbbell",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "barbell",
+    "components": [
+      "shaft",
+      "sleeves",
+      "knurling"
+    ],
+    "contacts": [
+      "shaft"
+    ],
+    "adjustments": [
+      "plate load"
+    ],
+    "moving_parts": [
+      "whole bar",
+      "sleeves may rotate"
+    ],
+    "name": "Barbell",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "weight-plate",
+    "components": [
+      "disc",
+      "bore",
+      "optional hand holes"
+    ],
+    "contacts": [
+      "rim",
+      "faces",
+      "hand holes if present"
+    ],
+    "adjustments": [],
+    "moving_parts": [
+      "whole plate"
+    ],
+    "name": "Weight plate",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "collar",
+    "components": [
+      "clamp or spring",
+      "locking mechanism"
+    ],
+    "contacts": [
+      "bar sleeve"
+    ],
+    "adjustments": [
+      "clamp state"
+    ],
+    "moving_parts": [
+      "locking mechanism"
+    ],
+    "name": "Collar",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "kettlebell",
+    "components": [
+      "bell",
+      "handle",
+      "horns"
+    ],
+    "contacts": [
+      "handle",
+      "horns",
+      "bell body"
+    ],
+    "adjustments": [],
+    "moving_parts": [
+      "whole implement"
+    ],
+    "name": "Kettlebell",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "ez-bar",
+    "components": [
+      "bent shaft",
+      "sleeves"
+    ],
+    "contacts": [
+      "angled shaft segments"
+    ],
+    "adjustments": [
+      "plate load"
+    ],
+    "moving_parts": [
+      "whole bar"
+    ],
+    "name": "Ez bar",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "trap-bar",
+    "components": [
+      "frame",
+      "handles",
+      "sleeves"
+    ],
+    "contacts": [
+      "low or high handles"
+    ],
+    "adjustments": [
+      "plate load",
+      "handle choice"
+    ],
+    "moving_parts": [
+      "whole frame"
+    ],
+    "name": "Trap bar",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "cable-station",
+    "components": [
+      "frame",
+      "pulley carriage",
+      "cable",
+      "stack",
+      "attachment connector"
+    ],
+    "contacts": [
+      "attachment"
+    ],
+    "adjustments": [
+      "pulley height",
+      "selected resistance"
+    ],
+    "moving_parts": [
+      "cable",
+      "pulleys",
+      "selected stack"
+    ],
+    "name": "Cable station",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "rope-attachment",
+    "components": [
+      "rope strands",
+      "end stops",
+      "connector"
+    ],
+    "contacts": [
+      "rope",
+      "end stops"
+    ],
+    "adjustments": [],
+    "moving_parts": [
+      "flexible rope",
+      "connector"
+    ],
+    "name": "Rope attachment",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "d-handle",
+    "components": [
+      "grip",
+      "frame",
+      "connector"
+    ],
+    "contacts": [
+      "grip"
+    ],
+    "adjustments": [],
+    "moving_parts": [
+      "attachment",
+      "grip may rotate"
+    ],
+    "name": "D handle",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "lat-bar",
+    "components": [
+      "wide bar",
+      "angled ends",
+      "connector"
+    ],
+    "contacts": [
+      "bar grip zones"
+    ],
+    "adjustments": [
+      "hand spacing"
+    ],
+    "moving_parts": [
+      "whole attachment"
+    ],
+    "name": "Lat bar",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "v-handle",
+    "components": [
+      "paired neutral grips",
+      "connector"
+    ],
+    "contacts": [
+      "paired grips"
+    ],
+    "adjustments": [],
+    "moving_parts": [
+      "whole attachment"
+    ],
+    "name": "V handle",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "lat-pulldown-machine",
+    "components": [
+      "seat",
+      "thigh pads",
+      "high pulley",
+      "cable",
+      "stack"
+    ],
+    "contacts": [
+      "seat",
+      "thigh pads",
+      "attachment",
+      "floor"
+    ],
+    "adjustments": [
+      "seat or thigh pads",
+      "resistance"
+    ],
+    "moving_parts": [
+      "attachment",
+      "cable",
+      "stack"
+    ],
+    "name": "Lat pulldown machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "cable-row-machine",
+    "components": [
+      "seat",
+      "footplates",
+      "low pulley",
+      "cable",
+      "stack"
+    ],
+    "contacts": [
+      "seat",
+      "footplates",
+      "attachment"
+    ],
+    "adjustments": [
+      "resistance"
+    ],
+    "moving_parts": [
+      "attachment",
+      "cable",
+      "stack"
+    ],
+    "name": "Cable row machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "smith-machine",
+    "components": [
+      "guide rails",
+      "bar carriage",
+      "hooks",
+      "stops"
+    ],
+    "contacts": [
+      "bar",
+      "floor or bench"
+    ],
+    "adjustments": [
+      "stop height",
+      "plate load"
+    ],
+    "moving_parts": [
+      "guided carriage",
+      "rotating release bar"
+    ],
+    "limitations": "Rail angle and counterbalance are model-specific.",
+    "name": "Smith machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "rack",
+    "components": [
+      "uprights",
+      "J-cups",
+      "safeties"
+    ],
+    "contacts": [
+      "bar supports"
+    ],
+    "adjustments": [
+      "J-cup and safety height"
+    ],
+    "moving_parts": [],
+    "name": "Rack",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "power-rack",
+    "components": [
+      "four uprights",
+      "crossmembers",
+      "J-cups",
+      "safeties"
+    ],
+    "contacts": [
+      "bar supports"
+    ],
+    "adjustments": [
+      "J-cup and safety height"
+    ],
+    "moving_parts": [],
+    "name": "Power rack",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "bench",
+    "components": [
+      "flat pad",
+      "frame",
+      "feet"
+    ],
+    "contacts": [
+      "pad",
+      "floor"
+    ],
+    "adjustments": [],
+    "moving_parts": [],
+    "name": "Bench",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "adjustable-bench",
+    "components": [
+      "back pad",
+      "seat pad",
+      "frame",
+      "adjustment supports"
+    ],
+    "contacts": [
+      "back pad",
+      "seat pad"
+    ],
+    "adjustments": [
+      "back and seat inclination"
+    ],
+    "moving_parts": [
+      "pads during setup"
+    ],
+    "name": "Adjustable bench",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "decline-bench",
+    "components": [
+      "declined pad",
+      "leg restraints",
+      "frame"
+    ],
+    "contacts": [
+      "pad",
+      "leg restraints"
+    ],
+    "adjustments": [
+      "decline if supported"
+    ],
+    "moving_parts": [],
+    "name": "Decline bench",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "leg-press-machine",
+    "components": [
+      "seat",
+      "back pad",
+      "footplate",
+      "carriage or lever"
+    ],
+    "contacts": [
+      "back pad",
+      "seat",
+      "footplate",
+      "handles"
+    ],
+    "adjustments": [
+      "seat or back angle",
+      "travel stops",
+      "load"
+    ],
+    "moving_parts": null,
+    "limitations": "Moving seat, sled and pivoted footplate are different configurations, not interchangeable.",
+    "name": "Leg press machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "hack-squat-machine",
+    "components": [
+      "rails",
+      "shoulder pads",
+      "back pad",
+      "footplate",
+      "carriage"
+    ],
+    "contacts": [
+      "shoulder pads",
+      "back pad",
+      "footplate",
+      "handles"
+    ],
+    "adjustments": [
+      "stops",
+      "load"
+    ],
+    "moving_parts": [
+      "carriage"
+    ],
+    "name": "Hack squat machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "leg-extension-machine",
+    "components": [
+      "seat",
+      "back pad",
+      "shin roller",
+      "lever",
+      "stack"
+    ],
+    "contacts": [
+      "seat",
+      "back pad",
+      "shin roller",
+      "handles"
+    ],
+    "adjustments": [
+      "back pad",
+      "roller",
+      "start angle",
+      "load"
+    ],
+    "moving_parts": [
+      "knee-extension lever",
+      "stack"
+    ],
+    "name": "Leg extension machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "seated-leg-curl-machine",
+    "components": [
+      "seat",
+      "back pad",
+      "thigh restraint",
+      "ankle roller",
+      "lever"
+    ],
+    "contacts": [
+      "seat",
+      "back pad",
+      "thigh restraint",
+      "ankle roller"
+    ],
+    "adjustments": [
+      "seat",
+      "pads",
+      "start angle",
+      "load"
+    ],
+    "moving_parts": [
+      "curl lever",
+      "resistance mechanism"
+    ],
+    "name": "Seated leg curl machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "lying-leg-curl-machine",
+    "components": [
+      "prone bench",
+      "ankle roller",
+      "lever",
+      "handles"
+    ],
+    "contacts": [
+      "torso and thigh pad",
+      "ankle roller",
+      "handles"
+    ],
+    "adjustments": [
+      "roller",
+      "load"
+    ],
+    "moving_parts": [
+      "curl lever",
+      "resistance mechanism"
+    ],
+    "name": "Lying leg curl machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "chest-press-machine",
+    "components": [
+      "seat",
+      "back pad",
+      "press arms",
+      "handles"
+    ],
+    "contacts": [
+      "seat",
+      "back pad",
+      "handles",
+      "floor"
+    ],
+    "adjustments": [
+      "seat",
+      "start position if provided",
+      "load"
+    ],
+    "moving_parts": [
+      "press arms",
+      "resistance mechanism"
+    ],
+    "name": "Chest press machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "shoulder-press-machine",
+    "components": [
+      "seat",
+      "back pad",
+      "press arms",
+      "handles"
+    ],
+    "contacts": [
+      "seat",
+      "back pad",
+      "handles"
+    ],
+    "adjustments": [
+      "seat",
+      "load"
+    ],
+    "moving_parts": [
+      "press arms",
+      "resistance mechanism"
+    ],
+    "name": "Shoulder press machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "assisted-pull-up-dip-machine",
+    "components": [
+      "frame",
+      "grips",
+      "knee or foot support",
+      "counterweight"
+    ],
+    "contacts": [
+      "grips",
+      "assistance support"
+    ],
+    "adjustments": [
+      "assistance",
+      "grip choice"
+    ],
+    "moving_parts": [
+      "assistance support",
+      "counterweight"
+    ],
+    "name": "Assisted pull up dip machine",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "resistance-band",
+    "components": [
+      "elastic loop or tube",
+      "optional handles"
+    ],
+    "contacts": [
+      "hands",
+      "anchor or body"
+    ],
+    "adjustments": [
+      "anchor position",
+      "band choice"
+    ],
+    "moving_parts": [
+      "deforming band"
+    ],
+    "name": "Resistance band",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "suspension-trainer",
+    "components": [
+      "anchor",
+      "straps",
+      "buckles",
+      "handles",
+      "foot loops"
+    ],
+    "contacts": [
+      "handles",
+      "foot loops"
+    ],
+    "adjustments": [
+      "strap length"
+    ],
+    "moving_parts": [
+      "straps",
+      "handles"
+    ],
+    "name": "Suspension trainer",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "medicine-ball",
+    "components": [
+      "weighted shell"
+    ],
+    "contacts": [
+      "shell"
+    ],
+    "adjustments": [],
+    "moving_parts": [
+      "whole ball"
+    ],
+    "name": "Medicine ball",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "sandbag",
+    "components": [
+      "flexible shell",
+      "fill",
+      "optional handles"
+    ],
+    "contacts": [
+      "shell",
+      "handles",
+      "shoulder"
+    ],
+    "adjustments": [
+      "fill if supported"
+    ],
+    "moving_parts": [
+      "deforming bag and fill"
+    ],
+    "name": "Sandbag",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "weighted-vest",
+    "components": [
+      "vest",
+      "weight pockets",
+      "straps"
+    ],
+    "contacts": [
+      "torso",
+      "shoulders"
+    ],
+    "adjustments": [
+      "fit",
+      "load"
+    ],
+    "moving_parts": [
+      "vest with torso"
+    ],
+    "name": "Weighted vest",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "sled",
+    "components": [
+      "base",
+      "runners",
+      "posts",
+      "attachment points"
+    ],
+    "contacts": [
+      "posts",
+      "pulling harness or handles"
+    ],
+    "adjustments": [
+      "load"
+    ],
+    "moving_parts": [
+      "whole sled"
+    ],
+    "name": "Sled",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "battle-rope",
+    "components": [
+      "paired rope ends",
+      "anchor"
+    ],
+    "contacts": [
+      "rope ends"
+    ],
+    "adjustments": [
+      "distance to anchor"
+    ],
+    "moving_parts": [
+      "rope waves"
+    ],
+    "name": "Battle rope",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "pull-up-bar",
+    "components": [
+      "bar",
+      "mounts"
+    ],
+    "contacts": [
+      "bar"
+    ],
+    "adjustments": [
+      "hand spacing"
+    ],
+    "moving_parts": [],
+    "name": "Pull up bar",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "dip-station",
+    "components": [
+      "parallel bars",
+      "frame"
+    ],
+    "contacts": [
+      "bars"
+    ],
+    "adjustments": null,
+    "moving_parts": [],
+    "name": "Dip station",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "gymnastic-rings",
+    "components": [
+      "rings",
+      "straps",
+      "anchors"
+    ],
+    "contacts": [
+      "rings"
+    ],
+    "adjustments": [
+      "strap length"
+    ],
+    "moving_parts": [
+      "rings",
+      "straps"
+    ],
+    "name": "Gymnastic rings",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "box",
+    "components": [
+      "platform",
+      "side walls"
+    ],
+    "contacts": [
+      "top surface"
+    ],
+    "adjustments": [
+      "height if adjustable"
+    ],
+    "moving_parts": [],
+    "name": "Box",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "rowing-ergometer",
+    "components": [
+      "sliding seat",
+      "rail",
+      "handle",
+      "foot stretchers",
+      "resistance unit"
+    ],
+    "contacts": [
+      "seat",
+      "handle",
+      "foot stretchers"
+    ],
+    "adjustments": [
+      "foot position",
+      "resistance"
+    ],
+    "moving_parts": [
+      "seat",
+      "handle linkage",
+      "flywheel"
+    ],
+    "name": "Rowing ergometer",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "stationary-bike",
+    "components": [
+      "frame",
+      "saddle",
+      "handlebars",
+      "cranks",
+      "pedals",
+      "flywheel"
+    ],
+    "contacts": [
+      "saddle",
+      "handlebars",
+      "pedals"
+    ],
+    "adjustments": [
+      "seat",
+      "handlebars",
+      "resistance"
+    ],
+    "moving_parts": [
+      "cranks",
+      "pedals",
+      "flywheel"
+    ],
+    "name": "Stationary bike",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "treadmill",
+    "components": [
+      "belt",
+      "deck",
+      "rails",
+      "console"
+    ],
+    "contacts": [
+      "belt",
+      "rails during setup"
+    ],
+    "adjustments": [
+      "speed",
+      "incline"
+    ],
+    "moving_parts": [
+      "belt",
+      "incline deck"
+    ],
+    "name": "Treadmill",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "elliptical",
+    "components": [
+      "foot platforms",
+      "handle levers",
+      "linkages"
+    ],
+    "contacts": [
+      "platforms",
+      "handles"
+    ],
+    "adjustments": [
+      "resistance",
+      "incline if supported"
+    ],
+    "moving_parts": [
+      "platforms",
+      "levers",
+      "linkages"
+    ],
+    "name": "Elliptical",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "stair-climber",
+    "components": [
+      "steps or pedals",
+      "rails",
+      "drive"
+    ],
+    "contacts": [
+      "steps",
+      "rails"
+    ],
+    "adjustments": [
+      "speed or resistance"
+    ],
+    "moving_parts": null,
+    "name": "Stair climber",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "foam-roller",
+    "components": [
+      "cylinder"
+    ],
+    "contacts": [
+      "body surface",
+      "floor"
+    ],
+    "adjustments": [],
+    "moving_parts": [
+      "whole cylinder"
+    ],
+    "name": "Foam roller",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "stability-ball",
+    "components": [
+      "inflatable shell"
+    ],
+    "contacts": [
+      "body",
+      "floor"
+    ],
+    "adjustments": [
+      "inflation"
+    ],
+    "moving_parts": [
+      "rolling and deforming shell"
+    ],
+    "name": "Stability ball",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "exercise-mat",
+    "components": [
+      "flat cushioned surface"
+    ],
+    "contacts": [
+      "body support"
+    ],
+    "adjustments": [],
+    "moving_parts": [],
+    "name": "Exercise mat",
+    "basis": "Provisional equipment vocabulary; typical components are engineering hypotheses, not a verified model specification.",
+    "source_urls": [],
+    "reference_status": "research_required",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "chair",
+    "name": "Chair",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/chair-squats/",
+      "https://www.nhs.uk/live-well/exercise/strength-exercises/",
+      "https://airedalemsk.co.uk/aiovg_videos/chair-squat-lateral-view/",
+      "https://airedalemsk.co.uk/aiovg_videos/chair-squat/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "precor-rsl0605",
+    "name": "Precor Resolute RSL0605",
+    "components": null,
+    "contacts": [
+      "lower leg to roller; precise region unknown"
+    ],
+    "adjustments": [
+      "start position",
+      "ankle roller",
+      "gas-assisted back pad"
+    ],
+    "moving_parts": [
+      "roller linkage"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0605"
+    ],
+    "basis": "Manufacturer text plus explicitly marked motion inference; product geometry not measured.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "precor-rsl0619",
+    "name": "Precor Resolute RSL0619",
+    "components": null,
+    "contacts": [
+      "thigh to stabilizer; roller contact unresolved"
+    ],
+    "adjustments": [
+      "back pad",
+      "start position",
+      "thigh stabilizer",
+      "load pin"
+    ],
+    "moving_parts": [
+      "leg linkage (inferred)"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0619"
+    ],
+    "basis": "Manufacturer text plus explicitly marked motion inference; product geometry not measured.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "precor-rsl0310",
+    "name": "Precor Resolute RSL0310",
+    "components": null,
+    "contacts": [
+      "chest to pad",
+      "hands to handles"
+    ],
+    "adjustments": [
+      "chest pad",
+      "gas-assisted seat"
+    ],
+    "moving_parts": [
+      "two independent arms"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0310"
+    ],
+    "basis": "Manufacturer text plus explicitly marked motion inference; product geometry not measured.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "precor-rsl0314",
+    "name": "Precor Resolute RSL0314",
+    "components": null,
+    "contacts": [
+      "hands to handles"
+    ],
+    "adjustments": [
+      "unknown"
+    ],
+    "moving_parts": [
+      "two arms",
+      "rotating handles"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0314"
+    ],
+    "basis": "Manufacturer text plus explicitly marked motion inference; product geometry not measured.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "precor-rsl0414",
+    "name": "Precor Resolute RSL0414",
+    "components": null,
+    "contacts": [
+      "hands to handles",
+      "torso to support"
+    ],
+    "adjustments": [
+      "handle angle; other settings unknown"
+    ],
+    "moving_parts": [
+      "two arms"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0414"
+    ],
+    "basis": "Manufacturer text plus explicitly marked motion inference; product geometry not measured.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "precor-rsl0515",
+    "name": "Precor Resolute RSL0515",
+    "components": null,
+    "contacts": [
+      "hands to handles"
+    ],
+    "adjustments": [
+      "handle position",
+      "add-on load switch"
+    ],
+    "moving_parts": [
+      "two counterbalanced arms"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0515"
+    ],
+    "basis": "Manufacturer text plus explicitly marked motion inference; product geometry not measured.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "precor-rsl0602",
+    "name": "Precor Resolute RSL0602",
+    "components": null,
+    "contacts": [
+      "back to pad",
+      "feet to platform"
+    ],
+    "adjustments": [
+      "seated fit",
+      "load"
+    ],
+    "moving_parts": [
+      "rail-guided assembly; identify before rigging"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0602"
+    ],
+    "basis": "Manufacturer text plus explicitly marked motion inference; product geometry not measured.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "precor-rsl0204",
+    "name": "Precor Resolute RSL0204",
+    "components": null,
+    "contacts": [
+      "upper arms to pad",
+      "hands to handles"
+    ],
+    "adjustments": [
+      "gas-assisted seat"
+    ],
+    "moving_parts": [
+      "handle linkage (inferred)"
+    ],
+    "source_urls": [
+      "https://www.precor.com/en-US/products/RSL0204"
+    ],
+    "basis": "Manufacturer text plus explicitly marked motion inference; product geometry not measured.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "safety-squat-bar",
+    "name": "Safety squat bar",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/safety-bar-squat/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "step",
+    "name": "Step",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/step-up/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "ankle-anchor",
+    "name": "Ankle anchor",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/nordic-hamstring-eccentric/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "wall",
+    "name": "Wall",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/tibialis-raise/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "reverse-hyperextension-machine",
+    "name": "Reverse hyperextension machine",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/reverse-hyperextension/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "ankle-strap",
+    "name": "Ankle strap",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/cable-machine-hip-abduction/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "standing-calf-raise-machine",
+    "name": "Standing calf raise machine",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/standing-calf-raise/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "seated-calf-raise-machine",
+    "name": "Seated calf raise machine",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/seated-calf-raise/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "foot-anchor",
+    "name": "Foot anchor",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/sit-up/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "ab-wheel",
+    "name": "Ab wheel",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/kneeling-ab-wheel-roll-out/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "cable-handle",
+    "name": "Cable handle",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/pallof-press/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "back-extension-bench",
+    "name": "Back extension bench",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/back-extension/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "farmer-carry-handles",
+    "name": "Farmer carry handles",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/farmers-walk/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  },
+  {
+    "id": "handheld-weight",
+    "name": "Handheld weight",
+    "components": null,
+    "contacts": null,
+    "adjustments": null,
+    "moving_parts": null,
+    "source_urls": [
+      "https://www.strengthlog.com/turkish-get-up/"
+    ],
+    "basis": "Equipment identity from exercise source only; components and dimensions not researched.",
+    "reference_status": "partial",
+    "dimensions": null,
+    "review_status": "unreviewed"
+  }
+]

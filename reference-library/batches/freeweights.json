@@ -1,0 +1,2815 @@
+[
+  {
+    "id": "air-squat",
+    "family": "squat",
+    "name": "Air squat",
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "none",
+    "source_urls": [
+      "https://www.strengthlog.com/air-squat/",
+      "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/",
+        "media_url": null,
+        "type": "page",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Same unloaded squat family. ACE adds foot alignment and a depth limit based on maintained position; StrengthLog gives a general deepest-possible cue. No matching media inspected.",
+        "verification": "page_text",
+        "organization": "ACE"
+      },
+      {
+        "source_url": "https://www.strengthlog.com/air-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Air-squat.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front_oblique",
+        "phase": "standing_and_intermediate",
+        "description": "Two untimed samples: upright and partially flexed knees; hands clasped ahead of chest.",
+        "organization": "StrengthLog",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "sample 1",
+            "view": "front_oblique",
+            "phase": "intermediate",
+            "observation": "Knees flexed; feet grounded; hands clasped.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "sample 2",
+            "view": "front_oblique",
+            "phase": "standing",
+            "observation": "Upright posture; same unloaded clasp.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/",
+        "media_url": "https://ik.imagekit.io/02fmeo4exvw/exercise-library/large/135-1.jpg",
+        "type": "photo",
+        "view": "side",
+        "phase": "setup",
+        "description": "Upright side view, arms beside body.",
+        "organization": "ACE",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "image",
+            "view": "side",
+            "phase": "setup",
+            "observation": "Upright side view, arms beside body.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/",
+        "media_url": "https://ik.imagekit.io/02fmeo4exvw/exercise-library/large/135-2.jpg",
+        "type": "photo",
+        "view": "side",
+        "phase": "intermediate",
+        "description": "Shallow knee and hip flexion, torso inclines.",
+        "organization": "ACE",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "image",
+            "view": "side",
+            "phase": "intermediate",
+            "observation": "Shallow knee and hip flexion, torso inclines.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/",
+        "media_url": "https://ik.imagekit.io/02fmeo4exvw/exercise-library/large/135-3.jpg",
+        "type": "photo",
+        "view": "side",
+        "phase": "lowered",
+        "description": "Deeper flexion; hands forward and low.",
+        "organization": "ACE",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "image",
+            "view": "side",
+            "phase": "lowered",
+            "observation": "Deeper flexion; hands forward and low.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/135/bodyweight-squat/",
+        "media_url": "https://ik.imagekit.io/02fmeo4exvw/exercise-library/large/135-4.jpg",
+        "type": "photo",
+        "view": "side",
+        "phase": "bottom",
+        "description": "Deepest shown squat; heels appear grounded; hands low.",
+        "organization": "ACE",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "image",
+            "view": "side",
+            "phase": "bottom",
+            "observation": "Deepest shown squat; heels appear grounded; hands low.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Stand; squat down; stand.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "hip/knee flexion then extension",
+      "start": "standing",
+      "end": "standing",
+      "equipment_motion": "none",
+      "feet_contact": "both planted",
+      "hands_contact": "none",
+      "torso": "controlled",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Continuous return-phase playback",
+      "Exact frontal alignment view",
+      "Human movement approval; source-dependent depth and arm-position review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/air-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/air-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "deep squat; angle unspecified",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/air-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/air-squat/"
+      }
+    ],
+    "source_conflicts": [
+      "ACE sequence uses changing arm positions and shallower cue limits; StrengthLog GIF uses clasped hands. Lower-body references are complementary, not identical arm poses."
+    ],
+    "last_research_batch": "02"
+  },
+  {
+    "id": "chair-squat",
+    "family": "squat",
+    "name": "Chair squat",
+    "category": "bodyweight",
+    "equipment": [
+      "chair"
+    ],
+    "grip_id": "none",
+    "source_urls": [
+      "https://www.strengthlog.com/chair-squats/",
+      "https://www.nhs.uk/live-well/exercise/strength-exercises/",
+      "https://airedalemsk.co.uk/aiovg_videos/chair-squat-lateral-view/",
+      "https://airedalemsk.co.uk/aiovg_videos/chair-squat/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/chair-squats/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2023/03/chair-squats.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "side",
+        "phase": "standing_and_intermediate",
+        "description": "Batch 02 standing/intermediate samples plus batch 03 near-seat sample. Contact force and full unloading are unresolved; complementary NHS photos separately show seated support.",
+        "organization": "StrengthLog",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "sample 1",
+            "view": "side",
+            "phase": "standing",
+            "observation": "Feet on floor; chair behind; hands clasped forward.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "sample 2",
+            "view": "side",
+            "phase": "intermediate",
+            "observation": "Hips move toward chair; torso inclines.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "sample 3",
+            "view": "side",
+            "phase": "near-standing",
+            "observation": "Knees near extension; hands remain unloaded.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "batch 03 untimed near-seat sample",
+            "view": "side",
+            "phase": "near_seat",
+            "observation": "Pelvis approaches front seat edge with hands still clasped forward.",
+            "limitations": "Small seat/body boundary is ambiguous; do not infer full unloading or seat force."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://www.nhs.uk/live-well/exercise/strength-exercises/",
+        "media_url": "https://assets.nhs.uk/nhsuk-cms/images/STRENGTH_EXERCISES-_Sit-to-stand.width-320.jpg",
+        "type": "photo-sequence",
+        "organization": "NHS",
+        "view": "side_oblique",
+        "phase": "seated; seat_departure; standing",
+        "description": "Complementary sit-to-stand contact sequence; not proof of the original arms-forward squat or a timed return.",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Sit-to-stand image panel A",
+            "view": "side_oblique",
+            "phase": "seated",
+            "observation": "Pelvis visibly supported at chair seat edge; feet on floor; hands beside hips.",
+            "limitations": "Complementary sit-to-stand setup; different arms from original forward-clasped chair squat. Hands near seat do not establish support force."
+          },
+          {
+            "locator": "Sit-to-stand image panel B",
+            "view": "side_oblique",
+            "phase": "seat_departure",
+            "observation": "Torso inclined and pelvis lifted above seat; feet remain on floor.",
+            "limitations": "Static or sampled observation only; no measured kinematics, contact forces or human approval."
+          },
+          {
+            "locator": "Sit-to-stand image panel C",
+            "view": "side_oblique",
+            "phase": "standing",
+            "observation": "Standing ahead of chair, arms alongside body.",
+            "limitations": "Static or sampled observation only; no measured kinematics, contact forces or human approval."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false,
+        "evidence_scope": "chair-seat contact only; arm position and starting phase differ"
+      },
+      {
+        "source_url": "https://airedalemsk.co.uk/aiovg_videos/chair-squat-lateral-view/",
+        "media_url": "https://airedalemsk.co.uk/wp-content/uploads/2020/09/Chair-squat-lateral-view.mp4",
+        "type": "video",
+        "organization": "Airedale and Wharfedale MSK Consortium / Airedale NHS Foundation Trust",
+        "view": "side",
+        "phase": "standing; seat_contact_or_lowered; returned_standing",
+        "description": "Matched chair-squat phase samples from a short publisher clip; arms lift during descent and lower on return. No full unloading or continuous-cycle claim.",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "00:00.000",
+            "view": "side",
+            "phase": "standing",
+            "observation": "Standing in front of chair with arms alongside body.",
+            "limitations": "Paused samples only; no continuous playback review, measured angles or contact force. Arm position changes within this source."
+          },
+          {
+            "locator": "00:01.014",
+            "view": "side",
+            "phase": "seat_contact",
+            "observation": "Pelvis meets front seat region; hips/knees flexed, both arms reaching forward.",
+            "limitations": "Paused samples only; no continuous playback review, measured angles or contact force. Arm position changes within this source."
+          },
+          {
+            "locator": "00:01.522",
+            "view": "side",
+            "phase": "early_return",
+            "observation": "Pelvis begins rising from the seat region; forward-reaching arms begin lowering.",
+            "limitations": "Paused samples only; no continuous playback review, measured angles or contact force. Arm position changes within this source."
+          },
+          {
+            "locator": "00:02.021",
+            "view": "side",
+            "phase": "returned_standing",
+            "observation": "Standing again in front of chair, arms lowered.",
+            "limitations": "Paused samples only; no continuous playback review, measured angles or contact force. Arm position changes within this source."
+          }
+        ],
+        "full_cycle_reviewed": false,
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA: native player paused, UI seek, read-only media currentTime checked, subsequent separate screenshot inspected for stable pose; no media download.",
+        "temporal_alignment": "Paused source-media offsets recorded; screenshots inspected after seeking. Milliseconds locate samples, not measured biomechanical event onset.",
+        "evidence_scope": "Variation-matched side or front sampled phase sequence; the two clips are not synchronized."
+      },
+      {
+        "source_url": "https://airedalemsk.co.uk/aiovg_videos/chair-squat/",
+        "media_url": "https://airedalemsk.co.uk/wp-content/uploads/2021/01/Chair-squat.mp4",
+        "type": "video",
+        "organization": "Airedale and Wharfedale MSK Consortium / Airedale NHS Foundation Trust",
+        "view": "front",
+        "phase": "standing; seat_contact_or_lowered; returned_standing",
+        "description": "Matched chair-squat phase samples from a short publisher clip; arms lift during descent and lower on return. No full unloading or continuous-cycle claim.",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "00:00.000",
+            "view": "front",
+            "phase": "standing",
+            "observation": "Standing in front of chair, both feet visible and arms low.",
+            "limitations": "Paused samples only; no continuous playback review, measured angles or contact force. Arm position changes within this source."
+          },
+          {
+            "locator": "00:01.108",
+            "view": "front",
+            "phase": "lowered",
+            "observation": "Lowered with knees apart and hands reaching forward; chair behind pelvis.",
+            "limitations": "Front view obscures exact seat boundary; use lateral clip for contact, not synchronized cross-camera reconstruction."
+          },
+          {
+            "locator": "00:02.291",
+            "view": "front",
+            "phase": "returned_standing",
+            "observation": "Standing again with arms alongside body.",
+            "limitations": "Paused samples only; no continuous playback review, measured angles or contact force. Arm position changes within this source."
+          }
+        ],
+        "full_cycle_reviewed": false,
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA: native player paused, UI seek, read-only media currentTime checked, subsequent separate screenshot inspected for stable pose; no media download.",
+        "temporal_alignment": "Paused source-media offsets recorded; screenshots inspected after seeking. Milliseconds locate samples, not measured biomechanical event onset.",
+        "evidence_scope": "Variation-matched side or front sampled phase sequence; the two clips are not synchronized."
+      }
+    ],
+    "guidance": "Descend to chair contact; return upright.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "flexion then extension",
+      "start": "standing before chair",
+      "end": "standing",
+      "equipment_motion": "chair stationary",
+      "feet_contact": "both planted",
+      "hands_contact": "none",
+      "torso": "controlled",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Continuous playback and transition review; current side/front phases are paused samples",
+      "Seat load/unloading and exact contact pressure are not measured",
+      "StrengthLog constant forward-clasped arm sequence remains distinct from Airedale arms-lift-and-lower sequence",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/chair-squats/"
+      },
+      {
+        "phase": "action",
+        "description": "lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/chair-squats/"
+      },
+      {
+        "phase": "extreme",
+        "description": "chair contact",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/chair-squats/"
+      },
+      {
+        "phase": "return",
+        "description": "stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/chair-squats/"
+      }
+    ],
+    "last_research_batch": "04",
+    "source_conflicts": [
+      "NHS sequence starts seated with hands alongside hips; StrengthLog begins standing with hands clasped forward. NHS supports generic seat contact, not an identical arm/contact recipe.",
+      "Airedale side/front clips reach arms forward during descent and lower them at standing; original StrengthLog keeps hands clasped forward. Preserve source-specific arm trajectories. Clips from separate views are not synchronized."
+    ],
+    "conflict_review": "Batch 04 supplies visible side contact/return and frontal phases; no claim of identical arm motion across publishers, force measurement or complete-cycle review."
+  },
+  {
+    "id": "dumbbell-squat-sides",
+    "family": "squat",
+    "name": "Dumbbell squat, weights at sides",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-squat/",
+      "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-squat/",
+        "media_url": null,
+        "type": "page",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Text-supported variation; matching media not verified.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      },
+      {
+        "source_url": "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf",
+        "media_url": "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf#page=2",
+        "type": "pdf-photo-sequence",
+        "view": "front",
+        "phase": "standing_and_bottom",
+        "description": "Frontal standing and bottom pair: two dumbbells hang beside legs; arms stay extended.",
+        "organization": "CrossFit / Michael Rutherford",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "PDF page 2, Level 1",
+            "view": "front",
+            "phase": "standing_and_bottom",
+            "observation": "Frontal standing and bottom pair: two dumbbells hang beside legs; arms stay extended.",
+            "limitations": "Fine fingers and hidden thumb not resolved."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Hold two weights at sides through squat.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "flexion then extension",
+      "start": "standing",
+      "end": "standing",
+      "equipment_motion": "travels beside thighs",
+      "feet_contact": "both planted",
+      "hands_contact": "one handle each",
+      "torso": "braced",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Side-view full-cycle demonstration",
+      "Hand/handle close-up and clearance beside legs",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "weights at sides",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "squat bottom; angle unspecified",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-squat/"
+      }
+    ],
+    "last_research_batch": "02"
+  },
+  {
+    "id": "kettlebell-goblet-squat",
+    "family": "squat",
+    "name": "Kettlebell goblet squat, horns",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-horns",
+    "source_urls": [
+      "https://www.strengthlog.com/goblet-squat/",
+      "https://www.nasm.org/resource-center/blog/training/how-to-perform-goblet-squats",
+      "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+      "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+      "https://www.nsca.com/contentassets/3d09f06f0b4c4f6fbd8cc382ed1f3d4a/ptq-10.2.1-progressive-strategies-for-teaching-fundamental-resistance-training-movement-patterns.pdf",
+      "https://www.youtube.com/watch?v=2iIKil6wK1E",
+      "https://fitwomensweekly.com/post/10-ways-to-hold-a-kettlebell/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/goblet-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Goblet-squat.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front_oblique",
+        "phase": "standing_sample",
+        "description": "Screenshot shows hands on opposite horns with bell at chest; only one GIF frame inspected.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog"
+      },
+      {
+        "source_url": "https://www.strengthlog.com/goblet-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2022/06/Goblet-squat-bottom.jpg?resize=700%2C700&ssl=1",
+        "type": "image",
+        "view": "front_oblique",
+        "phase": "bottom",
+        "description": "Deep squat, elbows between knees, bell near chest; palms remain on horns.",
+        "verification": "visually_inspected",
+        "organization": "StrengthLog"
+      },
+      {
+        "source_url": "https://www.nasm.org/resource-center/blog/training/how-to-perform-goblet-squats",
+        "media_url": null,
+        "type": "page",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Explicitly permits kettlebell horns or ball. Only horn option matches this record; ball hold is not interchangeable. Adds controlled depth and elbows-tucked guidance; text only.",
+        "verification": "page_text",
+        "organization": "NASM"
+      },
+      {
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+        "media_url": "https://www.youtube.com/watch?v=nfX7IFK9UNI",
+        "type": "video",
+        "view": "front_and_front_oblique",
+        "phase": "bottom_and_partial_standing",
+        "description": "Actual implement is a kettlebell held at opposite handle sides; sampled video frames, not full-cycle review.",
+        "organization": "NASM",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "00:04",
+            "view": "front",
+            "phase": "bottom",
+            "observation": "Bell at chest between hands; knees and hips flexed.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:09",
+            "view": "front_oblique",
+            "phase": "near-standing",
+            "observation": "Closer upper-body view shows opposite horn contacts; hidden thumb surfaces unresolved.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:14",
+            "view": "front_oblique",
+            "phase": "intermediate",
+            "observation": "Lower-body crop; no added grip evidence.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:19",
+            "view": "front",
+            "phase": "bottom",
+            "observation": "Another lower squat frame with bell near chest.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://www.strongfirst.com/kettlebell-simple-sinister-tips-for-heavy-goblet-squats/",
+        "media_url": "https://www.strongfirst.com/wordpress/wp-content/uploads/2022/10/heavy-goblet-squat-collage.jpg",
+        "type": "photo-collage",
+        "view": "front_oblique",
+        "phase": "grip_setup_and_bottom",
+        "description": "Three panels compare open fingers beside handle, curled grip, and bottom squat; palms support near horn junction.",
+        "organization": "StrongFirst / Pavel Macek",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "left panel",
+            "view": "front_oblique",
+            "phase": "grip_setup",
+            "observation": "Open fingers and palms at horn junction.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "middle panel",
+            "view": "front_oblique",
+            "phase": "grip_setup",
+            "observation": "Fingers curled around handle sides; hidden thumb unresolved.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "right panel",
+            "view": "front_oblique",
+            "phase": "bottom",
+            "observation": "Bell near chest at squat bottom.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://www.nsca.com/contentassets/3d09f06f0b4c4f6fbd8cc382ed1f3d4a/ptq-10.2.1-progressive-strategies-for-teaching-fundamental-resistance-training-movement-patterns.pdf",
+        "media_url": "https://www.nsca.com/contentassets/3d09f06f0b4c4f6fbd8cc382ed1f3d4a/ptq-10.2.1-progressive-strategies-for-teaching-fundamental-resistance-training-movement-patterns.pdf#page=4",
+        "type": "pdf-photo-sequence",
+        "view": "side_oblique",
+        "phase": "standing_and_bottom",
+        "description": "Figures 1E/F show kettlebell goblet standing and lowered positions.",
+        "organization": "NSCA / Lincoln, Ill and Ibrahim",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "PDF page 4 / printed page 9, figures 1E/F",
+            "view": "side_oblique",
+            "phase": "standing_and_bottom",
+            "observation": "Kettlebell held near chest in paired poses.",
+            "limitations": "No digit-level view; source caption allows other implements but pictures show kettlebell."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=2iIKil6wK1E",
+        "media_url": "https://www.youtube.com/watch?v=2iIKil6wK1E",
+        "type": "video",
+        "organization": "StrongFirst",
+        "view": "front",
+        "phase": "shallow_squat; bottom",
+        "description": "Batch 03 background researcher inspected paused front shallow/bottom frames; no fine thumb or full-cycle claim.",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "00:40",
+            "view": "front",
+            "phase": "shallow_squat",
+            "observation": "Hands on opposite handle sides; bell hangs below.",
+            "limitations": "Sample inspected by background researcher; hands too small for hidden digit contact."
+          },
+          {
+            "locator": "00:45",
+            "view": "front",
+            "phase": "bottom",
+            "observation": "Deep squat with the same coarse two-hand handle arrangement.",
+            "limitations": "Sample inspected by background researcher; not continuous or reverse-thumb review."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false,
+        "revalidation_note": "Batch 04 replay at 00:50/00:55 buffered with a stale image; no new phase samples accepted. Batch 03 observations remain historical and their exact timestamp-to-decoded-frame alignment has not been independently reproduced."
+      },
+      {
+        "source_url": "https://fitwomensweekly.com/post/10-ways-to-hold-a-kettlebell/",
+        "media_url": "https://cdn.sanity.io/images/ie5weekx/production/c14065ba284f58f9cab20030d393c582b98fbd1c-1200x680.jpg?w=500&auto=format",
+        "type": "photo",
+        "organization": "Fit Women's Weekly / Kindal Boyle",
+        "view": "front_oblique",
+        "phase": "grip_setup",
+        "description": "Coarse standing horn hold corroboration only.",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Section 1 Goblet photograph",
+            "view": "front_oblique",
+            "phase": "grip_setup",
+            "observation": "Hands on opposite handle sides near bell; bell hangs below the arch.",
+            "limitations": "Background researcher inspected; not reverse/underside; both thumb contacts unresolved."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Hold horns at chest through descent and ascent.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "flexion then extension",
+      "start": "standing",
+      "end": "standing",
+      "equipment_motion": "follows chest",
+      "feet_contact": "both planted",
+      "hands_contact": "two horns",
+      "torso": "tall",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "True side complete repetition",
+      "Underside/reverse grip view for hidden thumb and finger contacts",
+      "Continuous cycle timing",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "horn hold at chest",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/goblet-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/goblet-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "squat bottom",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/goblet-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/goblet-squat/"
+      }
+    ],
+    "source_conflicts": [
+      "StrongFirst distinguishes horn-junction support from higher corner grips; preserve contact choice.",
+      "NASM generic text is not proof of the dumbbell grip shown in other publishers."
+    ],
+    "last_research_batch": "03"
+  },
+  {
+    "id": "kettlebell-front-squat",
+    "family": "squat",
+    "name": "Double kettlebell front squat",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-double-rack",
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-front-squat/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kettlebell-front-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/09/Kettlebell-frontsquat.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "front_oblique",
+        "phase": "intermediate_bottom_standing",
+        "description": "Three untimed GIF samples show two kettlebells at forearms/chest through partial squat, bottom and standing. Hands support separate handles; closure is not resolved.",
+        "organization": "StrengthLog",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "sample 1",
+            "view": "front_oblique",
+            "phase": "intermediate",
+            "observation": "Both bells remain at front rack.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "sample 2",
+            "view": "front_oblique",
+            "phase": "bottom",
+            "observation": "Elbows forward; bells adjacent to forearms.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "sample 3",
+            "view": "front_oblique",
+            "phase": "standing",
+            "observation": "Both handles held near center chest; fingers partly obscured.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Maintain two kettlebells in rack while squatting.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "flexion then extension",
+      "start": "standing rack",
+      "end": "standing rack",
+      "equipment_motion": "follows shoulders",
+      "feet_contact": "both planted",
+      "hands_contact": "two handles",
+      "torso": "braced",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Side/rear rack contact views",
+      "Close-up handle insertion and wrist position",
+      "Full-cycle timing",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "double rack standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-front-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-front-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "mobility-limited bottom",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-front-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-front-squat/"
+      }
+    ],
+    "last_research_batch": "02"
+  },
+  {
+    "id": "kettlebell-thruster-double",
+    "family": "squat-press",
+    "name": "Double kettlebell thruster",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-double-rack",
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-thrusters/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kettlebell-thrusters/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/06/kettlebell-thrusters.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Squat from rack; drive into overhead press.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles",
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "squat then overhead extension",
+      "start": "standing rack",
+      "end": "overhead; return rack",
+      "equipment_motion": "rack to overhead",
+      "feet_contact": "both planted",
+      "hands_contact": "two handles",
+      "torso": "braced",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "double rack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-thrusters/"
+      },
+      {
+        "phase": "action",
+        "description": "squat then drive",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-thrusters/"
+      },
+      {
+        "phase": "extreme",
+        "description": "overhead extension",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-thrusters/"
+      },
+      {
+        "phase": "return",
+        "description": "lower to rack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-thrusters/"
+      }
+    ]
+  },
+  {
+    "id": "dumbbell-bulgarian-split-squat",
+    "family": "lunge",
+    "name": "Dumbbell Bulgarian split squat",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell",
+      "bench"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/bulgarian-split-squat/",
+      "https://trainer.nasm.org/hubfs/NASM_Free%20Guide_Squats%20and%20Deadlifts.pdf?hsLang=en"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/bulgarian-split-squat/",
+        "media_url": null,
+        "type": "page",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Text-supported variation; matching media not verified.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      },
+      {
+        "source_url": "https://trainer.nasm.org/hubfs/NASM_Free%20Guide_Squats%20and%20Deadlifts.pdf?hsLang=en",
+        "media_url": null,
+        "type": "pdf",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Printed page 9 (PDF page 11): rear foot shoelaces down on bench and dumbbells at sides, matching this record. Text extracted; no illustration inspected.",
+        "verification": "page_text",
+        "organization": "NASM"
+      }
+    ],
+    "guidance": "Rear foot elevated; lower and extend front leg.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "split-stance flexion/extension",
+      "start": "split stance",
+      "end": "split stance",
+      "equipment_motion": "weights beside body",
+      "feet_contact": "front floor; rear bench",
+      "hands_contact": "one handle each",
+      "torso": "controlled",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval",
+      "Page lead GIF filename identifies barbell variant; excluded as dumbbell evidence.",
+      "ACE exercise 366 was inspected but describes one vertical chest-held dumbbell; excluded as exact side-held grip evidence."
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "rear foot elevated",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bulgarian-split-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bulgarian-split-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "rear knee above floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bulgarian-split-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "extend front leg",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bulgarian-split-squat/"
+      }
+    ]
+  },
+  {
+    "id": "dumbbell-forward-lunge",
+    "family": "lunge",
+    "name": "Dumbbell forward lunge",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-lunge/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-lunge/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Dumbbell-Lunge.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Step forward, lower, push back to start.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "step and flexion/extension",
+      "start": "standing",
+      "end": "standing",
+      "equipment_motion": "travels with body",
+      "feet_contact": "alternating step; rear forefoot",
+      "hands_contact": "one handle each",
+      "torso": "controlled",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lunge/"
+      },
+      {
+        "phase": "action",
+        "description": "step forward; lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lunge/"
+      },
+      {
+        "phase": "extreme",
+        "description": "lunge bottom",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lunge/"
+      },
+      {
+        "phase": "return",
+        "description": "push back",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-lunge/"
+      }
+    ]
+  },
+  {
+    "id": "dumbbell-walking-lunge",
+    "family": "lunge",
+    "name": "Dumbbell walking lunge",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-walking-lunge/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-walking-lunge/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/06/walking-dumbbell-lunges.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_link_only_media_fetch_failed",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Advance through alternating lunges.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "alternating steps and flexion",
+      "start": "standing",
+      "end": "standing forward",
+      "equipment_motion": "moves forward with body",
+      "feet_contact": "alternating contacts",
+      "hands_contact": "one handle each",
+      "torso": "braced",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-walking-lunge/"
+      },
+      {
+        "phase": "action",
+        "description": "step forward; lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-walking-lunge/"
+      },
+      {
+        "phase": "extreme",
+        "description": "rear knee above floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-walking-lunge/"
+      },
+      {
+        "phase": "return",
+        "description": "rise; advance",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-walking-lunge/"
+      }
+    ]
+  },
+  {
+    "id": "dumbbell-reverse-lunge",
+    "family": "lunge",
+    "name": "Dumbbell reverse lunge",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/reverse-dumbbell-lunge/",
+      "https://hortonbarbell.com/reverse-dumbbell-lunge/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/reverse-dumbbell-lunge/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/01/reverse-dumbbell-lunge.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_link_only_media_fetch_failed",
+        "organization": "StrengthLog"
+      },
+      {
+        "source_url": "https://hortonbarbell.com/reverse-dumbbell-lunge/",
+        "media_url": "https://www.youtube.com/watch?v=jklUSipBe28",
+        "type": "video",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Matching two-dumbbell reverse lunge in place. Adds front-foot contact and alternating-leg guidance; walking variant elsewhere on page is distinct. Video not played; direct video fetch failed.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "Horton Barbell"
+      }
+    ],
+    "guidance": "Step back, lower, return to standing.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "backward step and flexion",
+      "start": "standing",
+      "end": "standing",
+      "equipment_motion": "travels with body",
+      "feet_contact": "front planted; rear steps",
+      "hands_contact": "one handle each",
+      "torso": "controlled",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/reverse-dumbbell-lunge/"
+      },
+      {
+        "phase": "action",
+        "description": "step back; lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/reverse-dumbbell-lunge/"
+      },
+      {
+        "phase": "extreme",
+        "description": "rear knee above floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/reverse-dumbbell-lunge/"
+      },
+      {
+        "phase": "return",
+        "description": "return upright",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/reverse-dumbbell-lunge/"
+      }
+    ]
+  },
+  {
+    "id": "bodyweight-side-lunge",
+    "family": "lunge",
+    "name": "Bodyweight side lunge",
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "none",
+    "source_urls": [
+      "https://www.strengthlog.com/side-lunges-bodyweight/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/side-lunges-bodyweight/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/11/side-lunge-bw.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Step sideways, lower with heel down, return.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "lateral step; unilateral flexion",
+      "start": "standing",
+      "end": "standing",
+      "equipment_motion": "none",
+      "feet_contact": "stepping heel stays down",
+      "hands_contact": "none",
+      "torso": "braced",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/side-lunges-bodyweight/"
+      },
+      {
+        "phase": "action",
+        "description": "step sideways; lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/side-lunges-bodyweight/"
+      },
+      {
+        "phase": "extreme",
+        "description": "heel-down bottom",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/side-lunges-bodyweight/"
+      },
+      {
+        "phase": "return",
+        "description": "return",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/side-lunges-bodyweight/"
+      }
+    ]
+  },
+  {
+    "id": "dumbbell-deadlift",
+    "family": "hinge",
+    "name": "Dumbbell deadlift",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-deadlift/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-deadlift/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/10/dumbbell-deadlift.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Lower near floor using hips and knees, then stand.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees"
+      ],
+      "motions": "flexion then extension",
+      "start": "standing",
+      "end": "standing",
+      "equipment_motion": "near floor and up",
+      "feet_contact": "both planted",
+      "hands_contact": "one handle each",
+      "torso": "leans forward",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-deadlift/"
+      },
+      {
+        "phase": "action",
+        "description": "lower weights",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-deadlift/"
+      },
+      {
+        "phase": "extreme",
+        "description": "near floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-deadlift/"
+      },
+      {
+        "phase": "return",
+        "description": "stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-deadlift/"
+      }
+    ]
+  },
+  {
+    "id": "dumbbell-romanian-deadlift",
+    "family": "hinge",
+    "name": "Dumbbell Romanian deadlift",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-neutral",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-romanian-deadlift/",
+      "https://www.nasm.org/resource-center/exercise-library/dumbbell-romanian-deadlift"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-romanian-deadlift/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2022/09/romanian-deadlift-with-dumbbells.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      },
+      {
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/dumbbell-romanian-deadlift",
+        "media_url": "https://www.youtube.com/watch?v=V8Hdl1FiNt4",
+        "type": "video",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Matching two-dumbbell hinge with neutral grip and slight knee bend. NASM cues stopping short of full hip extension; StrengthLog returns to standing. Endpoint requires reviewer reconciliation. Linked video not played.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "NASM"
+      }
+    ],
+    "guidance": "Hinge with nearly straight knees; avoid back rounding.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees"
+      ],
+      "motions": "hip flexion/extension; small knee bend",
+      "start": "standing",
+      "end": "standing",
+      "equipment_motion": "lowers before body",
+      "feet_contact": "both planted",
+      "hands_contact": "one handle each",
+      "torso": "hinges as unit",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval",
+      "Reconcile NASM short-of-full-extension endpoint with StrengthLog standing-return cue; no numerical angle inferred."
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-romanian-deadlift/"
+      },
+      {
+        "phase": "action",
+        "description": "hip hinge",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-romanian-deadlift/"
+      },
+      {
+        "phase": "extreme",
+        "description": "controlled stretch; depth varies",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-romanian-deadlift/"
+      },
+      {
+        "phase": "return",
+        "description": "standing per primary source; NASM endpoint differs",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-romanian-deadlift/"
+      }
+    ]
+  },
+  {
+    "id": "kettlebell-single-leg-deadlift",
+    "family": "hinge",
+    "name": "Contralateral kettlebell single-leg deadlift",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-one-hand",
+    "source_urls": [
+      "https://www.strengthlog.com/single-leg-deadlift-with-kettlebell/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/single-leg-deadlift-with-kettlebell/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/10/single-leg-deadlift-with-kettlebell.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Opposite hand holds bell; free leg extends behind hinge.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knee"
+      ],
+      "motions": "single-leg hip hinge",
+      "start": "one-leg standing",
+      "end": "one-leg standing",
+      "equipment_motion": "toward floor",
+      "feet_contact": "one foot planted",
+      "hands_contact": "opposite hand handle",
+      "torso": "straight back",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "one-leg standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/single-leg-deadlift-with-kettlebell/"
+      },
+      {
+        "phase": "action",
+        "description": "hinge; free leg back",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/single-leg-deadlift-with-kettlebell/"
+      },
+      {
+        "phase": "extreme",
+        "description": "bell above floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/single-leg-deadlift-with-kettlebell/"
+      },
+      {
+        "phase": "return",
+        "description": "stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/single-leg-deadlift-with-kettlebell/"
+      }
+    ]
+  },
+  {
+    "id": "kettlebell-swing-two-hand",
+    "family": "hinge",
+    "name": "Two-hand kettlebell swing",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-two-hand",
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-swing/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kettlebell-swing/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Kettlebellsving.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Hike bell back; hip drive swings toward chest height.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "shoulders"
+      ],
+      "motions": "hip extension drives arc",
+      "start": "bell ahead on floor",
+      "end": "return bell to floor",
+      "equipment_motion": "pendulum between legs",
+      "feet_contact": "both planted",
+      "hands_contact": "both on handle",
+      "torso": "braced hinge",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "bell on floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-swing/"
+      },
+      {
+        "phase": "action",
+        "description": "hike; hip drive",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-swing/"
+      },
+      {
+        "phase": "extreme",
+        "description": "approximately chest height",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-swing/"
+      },
+      {
+        "phase": "return",
+        "description": "backswing; park when finished",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-swing/"
+      }
+    ]
+  },
+  {
+    "id": "kettlebell-swing-one-hand",
+    "family": "hinge",
+    "name": "One-hand kettlebell swing",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-one-hand",
+    "source_urls": [
+      "https://www.strengthlog.com/one-handed-kettlebell-swing/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/one-handed-kettlebell-swing/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/03/one-handed-kb-swing.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_link_only_media_fetch_failed",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "One-hand hike and hip-driven swing.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "shoulders"
+      ],
+      "motions": "hip extension drives arc",
+      "start": "bell ahead on floor",
+      "end": "return bell to floor",
+      "equipment_motion": "pendulum between legs",
+      "feet_contact": "both planted",
+      "hands_contact": "one handle hand",
+      "torso": "braced hinge",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "bell on floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/one-handed-kettlebell-swing/"
+      },
+      {
+        "phase": "action",
+        "description": "one-hand hike; drive",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/one-handed-kettlebell-swing/"
+      },
+      {
+        "phase": "extreme",
+        "description": "approximately chest height",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/one-handed-kettlebell-swing/"
+      },
+      {
+        "phase": "return",
+        "description": "backswing; park when finished",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/one-handed-kettlebell-swing/"
+      }
+    ]
+  },
+  {
+    "id": "kettlebell-clean",
+    "family": "hinge",
+    "name": "One-arm kettlebell clean",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-one-hand-rack",
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-clean/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kettlebell-clean/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/03/Kettlebell-Clean.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Hike then guide bell into rack as hips extend.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "shoulder",
+        "elbow"
+      ],
+      "motions": "hinge extension; elbow flexion",
+      "start": "bell ahead on floor",
+      "end": "rack",
+      "equipment_motion": "backward hike to rack",
+      "feet_contact": "both planted",
+      "hands_contact": "one handle hand",
+      "torso": "braced",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "bell on floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-clean/"
+      },
+      {
+        "phase": "action",
+        "description": "hike; hip drive",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-clean/"
+      },
+      {
+        "phase": "extreme",
+        "description": "rack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-clean/"
+      },
+      {
+        "phase": "return",
+        "description": "unknown",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-clean/"
+      }
+    ]
+  },
+  {
+    "id": "kettlebell-clean-press",
+    "family": "hinge-press",
+    "name": "One-arm kettlebell clean and press",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-one-hand-rack",
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-clean-and-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kettlebell-clean-and-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/03/kettlebellcleanpress.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_link_only_media_fetch_failed",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Clean to rack, press overhead, reverse.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "shoulder",
+        "elbow"
+      ],
+      "motions": "hinge then press",
+      "start": "bell ahead on floor",
+      "end": "overhead; reverse",
+      "equipment_motion": "hike to rack to overhead",
+      "feet_contact": "both planted",
+      "hands_contact": "one handle hand",
+      "torso": "braced",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "bell on floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-clean-and-press/"
+      },
+      {
+        "phase": "action",
+        "description": "clean; press",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-clean-and-press/"
+      },
+      {
+        "phase": "extreme",
+        "description": "overhead",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-clean-and-press/"
+      },
+      {
+        "phase": "return",
+        "description": "reverse movement",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-clean-and-press/"
+      }
+    ]
+  },
+  {
+    "id": "kettlebell-double-press",
+    "family": "press",
+    "name": "Double kettlebell press",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-double-rack",
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kettlebell-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/09/DoubleKettlebellPress.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Press from rack, then lower under control.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "elevation and elbow extension",
+      "start": "standing rack",
+      "end": "rack after press",
+      "equipment_motion": "overhead arc",
+      "feet_contact": "both planted",
+      "hands_contact": "two handles",
+      "torso": "braced upright",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "rack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-press/"
+      },
+      {
+        "phase": "action",
+        "description": "press",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-press/"
+      },
+      {
+        "phase": "extreme",
+        "description": "arms extended overhead",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-press/"
+      },
+      {
+        "phase": "return",
+        "description": "rack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-press/"
+      }
+    ]
+  },
+  {
+    "id": "kettlebell-push-press",
+    "family": "press",
+    "name": "One-arm kettlebell push press",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-one-hand-rack",
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-push-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kettlebell-push-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2025/09/kettlebell-pushpress-one-arm.gif?resize=700%2C700&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_link_only_media_fetch_failed",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Knee dip and leg drive assist overhead press.",
+    "movement": {
+      "joints": [
+        "knees",
+        "hips",
+        "shoulder",
+        "elbow"
+      ],
+      "motions": "dip then extension",
+      "start": "standing rack",
+      "end": "rack after press",
+      "equipment_motion": "rack to overhead",
+      "feet_contact": "ground contact; heel details unknown",
+      "hands_contact": "one handle hand",
+      "torso": "braced",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "rack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-push-press/"
+      },
+      {
+        "phase": "action",
+        "description": "dip; drive; press",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-push-press/"
+      },
+      {
+        "phase": "extreme",
+        "description": "arm overhead",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-push-press/"
+      },
+      {
+        "phase": "return",
+        "description": "rack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-push-press/"
+      }
+    ]
+  },
+  {
+    "id": "kettlebell-windmill",
+    "family": "hinge",
+    "name": "Kettlebell windmill",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-overhead",
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-windmill/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kettlebell-windmill/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/10/kettlebell-windmill.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Publisher-linked demonstration; not visually inspected.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Keep bell overhead while turning and lowering torso.",
+    "movement": {
+      "joints": [
+        "hips",
+        "trunk",
+        "shoulder"
+      ],
+      "motions": "hinge with torso rotation",
+      "start": "standing overhead",
+      "end": "standing overhead",
+      "equipment_motion": "stabilized above body",
+      "feet_contact": "both planted",
+      "hands_contact": "one handle hand",
+      "torso": "rotates; returns",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "standing overhead",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-windmill/"
+      },
+      {
+        "phase": "action",
+        "description": "rotate; hinge",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-windmill/"
+      },
+      {
+        "phase": "extreme",
+        "description": "lowered torso; depth unspecified",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-windmill/"
+      },
+      {
+        "phase": "return",
+        "description": "straighten torso",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-windmill/"
+      }
+    ]
+  },
+  {
+    "id": "bodyweight-cossack-squat",
+    "family": "squat",
+    "name": "Bodyweight Cossack squat",
+    "category": "bodyweight",
+    "equipment": [],
+    "grip_id": "none",
+    "source_urls": [
+      "https://www.strengthlog.com/cossack-squat/",
+      "https://www.youtube.com/watch?v=gfod3jiMgl4"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/cossack-squat/",
+        "media_url": null,
+        "type": "page",
+        "view": null,
+        "phase": null,
+        "description": "General Cossack text does not explicitly establish unloaded equipment. Linked GIF is kettlebell-loaded and excluded from this bodyweight record.",
+        "verification": "page_text_equipment_unresolved",
+        "organization": "StrengthLog",
+        "visual_inspected": false
+      },
+      {
+        "source_url": "https://www.youtube.com/watch?v=gfod3jiMgl4",
+        "media_url": "https://www.youtube.com/watch?v=gfod3jiMgl4",
+        "type": "video",
+        "organization": "Zack Henderson",
+        "view": "front",
+        "phase": "wide_standing; bottom",
+        "description": "First-party bodyweight Cossack demonstration supplies matched unloaded setup and lowered frames; editing and arm changes remain explicit.",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "00:50",
+            "view": "front",
+            "phase": "wide_standing",
+            "observation": "Standing wide with hands clasped and no held load; kettlebell remains on ground beside performer.",
+            "limitations": "Static or sampled observation only; no measured kinematics, contact forces or human approval."
+          },
+          {
+            "locator": "00:55",
+            "view": "front_oblique",
+            "phase": "bottom",
+            "observation": "Unloaded barefoot demonstration: one knee deeply flexed, opposite leg extended with toes lifted, hands clasped forward.",
+            "limitations": "Different filmed setup from 00:50; do not stitch these frames into a single repetition."
+          },
+          {
+            "locator": "01:00",
+            "view": "front",
+            "phase": "wide_standing",
+            "observation": "Unloaded wide standing on grass; arms out to sides.",
+            "limitations": "Head partly cropped; different arm position from lowered sample; no continuous-cycle claim."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Lower sideways; other leg straight with toes up.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "lateral shift; unilateral flexion",
+      "start": "wide standing",
+      "end": "wide standing",
+      "equipment_motion": "none",
+      "feet_contact": "bent side flat; other heel",
+      "hands_contact": "none",
+      "torso": "upright",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Continuous same-take unloaded descent and return on both sides",
+      "Complementary true-side view",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed; matched unloaded sampled demonstration",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "wide stance",
+        "basis": "Source-guided interpretation corroborated by unloaded samples; action/return transitions not continuously reviewed.",
+        "source_url": "https://www.youtube.com/watch?v=gfod3jiMgl4"
+      },
+      {
+        "phase": "action",
+        "description": "shift; bend one knee",
+        "basis": "Source-guided interpretation corroborated by unloaded samples; action/return transitions not continuously reviewed.",
+        "source_url": "https://www.youtube.com/watch?v=gfod3jiMgl4"
+      },
+      {
+        "phase": "extreme",
+        "description": "deep lateral position",
+        "basis": "Source-guided interpretation corroborated by unloaded samples; action/return transitions not continuously reviewed.",
+        "source_url": "https://www.youtube.com/watch?v=gfod3jiMgl4"
+      },
+      {
+        "phase": "return",
+        "description": "stand; alternate",
+        "basis": "Source-guided interpretation corroborated by unloaded samples; action/return transitions not continuously reviewed.",
+        "source_url": "https://www.youtube.com/watch?v=gfod3jiMgl4"
+      }
+    ],
+    "excluded_references": [
+      {
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/10/cossack-squat.gif?resize=600%2C600&ssl=1",
+        "reason": "Inspected performer holds kettlebell; reassigned to kettlebell-cossack-squat."
+      }
+    ],
+    "reference_status": "partial",
+    "source_conflicts": [
+      "Original StrengthLog GIF remains excluded because it is kettlebell-loaded. Batch 03 independently matches unloaded evidence from Zack Henderson; his sampled frames span different filmed setups and arm poses."
+    ],
+    "last_research_batch": "03",
+    "conflict_review": "Equipment mismatch resolved by separate unloaded source; old exclusion retained, not overwritten."
+  },
+  {
+    "id": "dumbbell-front-squat",
+    "family": "squat",
+    "name": "Double dumbbell shoulder squat",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-shoulder-rack",
+    "source_urls": [
+      "https://www.strengthlog.com/dumbbell-squat/",
+      "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/dumbbell-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/10/dumbbell-squat.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front_oblique",
+        "phase": "standing_sample",
+        "description": "Standing sample shows two dumbbells at shoulders, hands around shafts. No complete GIF cycle inspected.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog"
+      },
+      {
+        "source_url": "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf",
+        "media_url": "https://library.crossfit.com/free/pdf/49_06_Dumbbell_Squat.pdf#page=2",
+        "type": "pdf-photo-sequence",
+        "view": "front",
+        "phase": "standing_and_bottom",
+        "description": "Frontal standing and bottom pair: two dumbbells held at shoulders with elbows flexed.",
+        "organization": "CrossFit / Michael Rutherford",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "PDF page 2, Level 2",
+            "view": "front",
+            "phase": "standing_and_bottom",
+            "observation": "Frontal standing and bottom pair: two dumbbells held at shoulders with elbows flexed.",
+            "limitations": "Fine fingers and hidden thumb not resolved."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Hold two weights at shoulders through squat.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "flexion then extension",
+      "start": "standing rack",
+      "end": "standing rack",
+      "equipment_motion": "follows shoulders",
+      "feet_contact": "both planted",
+      "hands_contact": "one handle each",
+      "torso": "braced",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Side-view full-cycle demonstration",
+      "Grip/shoulder contact close-up",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "shoulder rack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "squat bottom",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/dumbbell-squat/"
+      }
+    ],
+    "last_research_batch": "02"
+  },
+  {
+    "id": "kettlebell-thruster-single",
+    "family": "squat-press",
+    "name": "Single kettlebell thruster",
+    "category": "kettlebell",
+    "equipment": [
+      "kettlebell"
+    ],
+    "grip_id": "kettlebell-one-hand-rack",
+    "source_urls": [
+      "https://www.strengthlog.com/kettlebell-thrusters/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/kettlebell-thrusters/",
+        "media_url": null,
+        "type": "page",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Text-supported variation; matching media not verified.",
+        "verification": "page_text_and_observed_media_link",
+        "organization": "StrengthLog"
+      }
+    ],
+    "guidance": "Source allows one bell: squat and press one side.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "shoulder",
+        "elbow"
+      ],
+      "motions": "squat then press",
+      "start": "standing rack",
+      "end": "overhead; return rack",
+      "equipment_motion": "rack to overhead",
+      "feet_contact": "both planted",
+      "hands_contact": "one handle hand",
+      "torso": "braced",
+      "basis": "Qualitative authoring inference from publisher instructions; not measured kinematics.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "Independent front and side views",
+      "Hand contact close-up",
+      "Full-cycle visual review",
+      "Human movement approval",
+      "Page lead GIF is not verified for one-bell variation."
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "single rack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-thrusters/"
+      },
+      {
+        "phase": "action",
+        "description": "squat then drive",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-thrusters/"
+      },
+      {
+        "phase": "extreme",
+        "description": "overhead extension",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-thrusters/"
+      },
+      {
+        "phase": "return",
+        "description": "rack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/kettlebell-thrusters/"
+      }
+    ]
+  },
+  {
+    "id": "dumbbell-goblet-head-support",
+    "family": "squat",
+    "name": "Dumbbell goblet squat, upper-head support",
+    "category": "dumbbell",
+    "equipment": [
+      "dumbbell"
+    ],
+    "grip_id": "dumbbell-goblet-head-support",
+    "source_urls": [
+      "https://www.acefitness.org/resources/everyone/exercise-library/362/goblet-squat/",
+      "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+      "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+      "https://fitwomensweekly.com/post/how-to-hold-a-dumbbell-for-goblet-squats/",
+      "https://vimeo.com/832454211",
+      "https://mcmperformance.com/strong-in-6-the-squat/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/362/goblet-squat/",
+        "media_url": "https://ik.imagekit.io/02fmeo4exvw/exercise-library/large/362-1.jpg",
+        "type": "image",
+        "view": "front_oblique",
+        "phase": "standing",
+        "description": "Vertical dumbbell at chest; hands appear beneath upper head. Shaft exposed between heads. Fine thumb placement is unresolved at this resolution.",
+        "verification": "visually_inspected",
+        "organization": "ACE"
+      },
+      {
+        "source_url": "https://www.nasm.org/resource-center/exercise-library/goblet-squat",
+        "media_url": null,
+        "type": "page",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Text permits dumbbell or kettlebell; linked video was inspected and shows a kettlebell, so it is excluded from dumbbell visual evidence.",
+        "verification": "page_text",
+        "organization": "NASM",
+        "visual_inspected": false
+      },
+      {
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/362/goblet-squat/",
+        "media_url": "https://ik.imagekit.io/02fmeo4exvw/exercise-library/large/362-2.jpg",
+        "type": "photo",
+        "view": "front_oblique",
+        "phase": "bottom",
+        "description": "Vertical dumbbell near chest at bottom; hands remain around upper-head support.",
+        "organization": "ACE",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "image",
+            "view": "front_oblique",
+            "phase": "bottom",
+            "observation": "Vertical dumbbell near chest at bottom; hands remain around upper-head support.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://www.muscleandstrength.com/exercises/dumbbell-goblet-squat",
+        "media_url": "https://www.youtube.com/watch?v=5Y3KW5rWMh4",
+        "type": "video",
+        "view": "front_oblique",
+        "phase": "setup_and_sampled_squat",
+        "description": "Publisher video sampled at 0:06/0:11/0:16/0:21/0:26/0:31; upright dumbbell supported under upper head. Fine thumb contact is hidden.",
+        "organization": "Muscle & Strength",
+        "verification": "visually_inspected_sampled_frames",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "00:06",
+            "view": "front_oblique",
+            "phase": "setup",
+            "observation": "Dumbbell upright on floor before pickup.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:11",
+            "view": "front_oblique",
+            "phase": "pickup",
+            "observation": "Dumbbell lifted near waist; pickup path not continuously reviewed.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:16",
+            "view": "front_oblique",
+            "phase": "standing",
+            "observation": "Head supported near chin, elbows down; shaft exposed.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:21",
+            "view": "front_oblique",
+            "phase": "intermediate",
+            "observation": "Partial knee flexion with head support maintained.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:26",
+            "view": "front_oblique",
+            "phase": "lowered",
+            "observation": "Deeper knee/hip flexion; bell stays near chest.",
+            "limitations": "No measured angles or hidden contact inferred."
+          },
+          {
+            "locator": "00:31",
+            "view": "front_oblique",
+            "phase": "intermediate",
+            "observation": "Partially flexed posture; direction/peak timing not established from sampled frames.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://fitwomensweekly.com/post/how-to-hold-a-dumbbell-for-goblet-squats/",
+        "media_url": "https://cdn.sanity.io/images/ie5weekx/production/d38a556d52a97770fdb16a68db70111a2f041d35-1200x680.jpg?auto=format&w=500",
+        "type": "photo",
+        "view": "front_closeup",
+        "phase": "grip_setup",
+        "description": "Palms cup the lower corners of the upper hex head; fingers rise along its sides. Wrists visibly extend; thumb surfaces are occluded.",
+        "organization": "Fit Women's Weekly / Kindal Boyle",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "image",
+            "view": "front_closeup",
+            "phase": "grip_setup",
+            "observation": "Palms cup the lower corners of the upper hex head; fingers rise along its sides. Wrists visibly extend; thumb surfaces are occluded.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false,
+        "limitations": "First-party coach contact demonstration only; reject page generalizations about pain, muscle activation, heavy loading and exact wrist angles."
+      },
+      {
+        "source_url": "https://fitwomensweekly.com/post/how-to-hold-a-dumbbell-for-goblet-squats/",
+        "media_url": "https://cdn.sanity.io/images/ie5weekx/production/07473bdb3f9604b164d8895947e19361d7de87f2-1200x680.jpg?auto=format&w=500",
+        "type": "photo",
+        "view": "high_front_oblique",
+        "phase": "bottom",
+        "description": "Same upper-head cradle in a lowered squat; opposite leg partly cropped.",
+        "organization": "Fit Women's Weekly / Kindal Boyle",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "image",
+            "view": "high_front_oblique",
+            "phase": "bottom",
+            "observation": "Same upper-head cradle in a lowered squat; opposite leg partly cropped.",
+            "limitations": "No measured angles or hidden contact inferred."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://vimeo.com/832454211",
+        "media_url": "https://vimeo.com/832454211",
+        "type": "video-poster",
+        "view": "side_oblique",
+        "phase": "standing",
+        "description": "E3 Rehab demo poster shows vertical dumbbell at chest. Player reports unable to play; no motion reviewed.",
+        "organization": "E3 Rehab",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "poster only",
+            "view": "side_oblique",
+            "phase": "standing",
+            "observation": "Standing head-support posture.",
+            "limitations": "Video playback unavailable; not a complete side-view repetition."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://mcmperformance.com/strong-in-6-the-squat/",
+        "media_url": "https://mcusercontent.com/4c1ae587e80954e1d0222bae4/images/a851768e-b6ae-7345-1ed8-ee4f4a764c1e.jpg",
+        "type": "photo",
+        "organization": "MCM Performance",
+        "view": "front",
+        "phase": "pickup_setup",
+        "description": "Vertical dumbbell at floor between feet; hands placed around its upper head before lifting.",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Set-Up section second photograph",
+            "view": "front",
+            "phase": "pickup_setup",
+            "observation": "Vertical dumbbell at floor between feet; hands placed around its upper head before lifting.",
+            "limitations": "Still photo; no timing or hidden thumb contact. First-party demonstration only; generalized clinical/load claims excluded."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://mcmperformance.com/strong-in-6-the-squat/",
+        "media_url": "https://mcusercontent.com/4c1ae587e80954e1d0222bae4/images/f8fa55f0-476c-42d6-811d-9fff75db8da1.jpg",
+        "type": "photo",
+        "organization": "MCM Performance",
+        "view": "side_oblique",
+        "phase": "bottom",
+        "description": "Lowered squat with vertical dumbbell close to chest, fingers visible along upper-head side and opposite foot partly obscured.",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Squat section second photograph",
+            "view": "side_oblique",
+            "phase": "bottom",
+            "observation": "Lowered squat with vertical dumbbell close to chest, fingers visible along upper-head side and opposite foot partly obscured.",
+            "limitations": "Still photo; no timing or hidden thumb contact. First-party demonstration only; generalized clinical/load claims excluded."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      },
+      {
+        "source_url": "https://mcmperformance.com/strong-in-6-the-squat/",
+        "media_url": "https://mcusercontent.com/4c1ae587e80954e1d0222bae4/images/74b54a4b-e568-874d-1b52-2f58676e6c33.jpg",
+        "type": "photo",
+        "organization": "MCM Performance",
+        "view": "front",
+        "phase": "standing",
+        "description": "Vertical hex dumbbell at chest; shaft exposed between heads; hands supporting upper head.",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Finish section first photograph",
+            "view": "front",
+            "phase": "standing",
+            "observation": "Vertical hex dumbbell at chest; shaft exposed between heads; hands supporting upper head.",
+            "limitations": "Still photo; no timing or hidden thumb contact. First-party demonstration only; generalized clinical/load claims excluded."
+          }
+        ],
+        "access_date": "2026-11-23",
+        "inspection_method": "CUA browser screenshots; no media downloaded",
+        "full_cycle_reviewed": false
+      }
+    ],
+    "guidance": "Keep vertical dumbbell near chest while descending and standing.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "flexion then extension",
+      "start": "standing",
+      "end": "standing",
+      "equipment_motion": "follows chest",
+      "feet_contact": "both planted",
+      "hands_contact": "two hands supporting upper head; exact thumb contact unknown",
+      "torso": "controlled upright",
+      "basis": "Qualitative source-text interpretation with inspected head-support photos and sampled video; not measured.",
+      "endpoint_semantics": "Legacy end is a cycle endpoint or described outcome; use movement_phases.extreme for the action extreme. No timing implied."
+    },
+    "missing_evidence": [
+      "True side-view complete repetition; new side-oblique bottom still is not a continuous cycle",
+      "Reverse/underside hand close-up to identify hidden thumb contact",
+      "Continuous timing and transition review",
+      "Human movement approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "head support at chest",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/362/goblet-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "lower",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/362/goblet-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "squat bottom",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/362/goblet-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/362/goblet-squat/"
+      }
+    ],
+    "excluded_references": [
+      {
+        "media_url": "https://www.youtube.com/watch?v=nfX7IFK9UNI",
+        "reason": "Actual inspected implement is kettlebell; reassigned to kettlebell-goblet-squat in batch 02."
+      }
+    ],
+    "source_conflicts": [
+      "NASM text covers two implements, but its video shows only the kettlebell variant.",
+      "Muscle & Strength permits a thumbless option; the observed pictures do not establish universal thumb closure."
+    ],
+    "last_research_batch": "03"
+  }
+]

@@ -1,0 +1,554 @@
+[
+  {
+    "id": "seated-neck-rotation",
+    "family": "neck-rotation",
+    "name": "Seated neck rotation",
+    "category": "mobility_flexibility",
+    "equipment": [
+      "chair"
+    ],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "seated neck rotation"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/flexibility-exercises/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nhs.uk/live-well/exercise/flexibility-exercises/",
+        "media_url": "https://assets.nhs.uk/nhsuk-cms/images/NHSC_0118_neck-rotation.width-320.jpg",
+        "type": "photo-collage",
+        "view": "front",
+        "phase": "sampled positions",
+        "description": "Front-facing collage shows center and both turned-head positions.",
+        "organization": "NHS",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "full_cycle_reviewed": false,
+        "inspection_method": "Source instructions read; actual browser screenshot of source-discovered image inspected 2026-11-23.",
+        "observed_samples": [
+          {
+            "locator": "Photo panels A-C",
+            "view": "front",
+            "phase": "static sampled positions",
+            "observation": "Front-facing collage shows center and both turned-head positions.",
+            "limitations": "No continuous entry/hold/return review; fine contacts unresolved."
+          }
+        ]
+      }
+    ],
+    "guidance": "Turn head left or right; return to center.",
+    "movement": {
+      "joints": [
+        "neck"
+      ],
+      "motions": "Turn head left or right; return to center.",
+      "start": "Face forward, shoulders relaxed.",
+      "end": "Action position described above; return is not timed.",
+      "equipment_motion": "Supports stationary.",
+      "feet_contact": "Feet grounded; seated.",
+      "hands_contact": "Hands unloaded.",
+      "torso": "Upright.",
+      "basis": "Qualitative source-text interpretation with static image corroboration; no measured angles."
+    },
+    "missing_evidence": [
+      "Continuous movement and timing",
+      "Fine contact and complementary-view review",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "seated-neck-side-flexion",
+    "family": "neck-side-flexion",
+    "name": "Seated neck side flexion",
+    "category": "mobility_flexibility",
+    "equipment": [
+      "chair"
+    ],
+    "grip_id": "contact-unresolved",
+    "aliases": [
+      "seated neck side flexion"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/flexibility-exercises/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nhs.uk/live-well/exercise/flexibility-exercises/",
+        "media_url": "https://assets.nhs.uk/nhsuk-cms/images/NHSC_0418_neck-stretch1.width-320.jpg",
+        "type": "photo-collage",
+        "view": "front",
+        "phase": "sampled positions",
+        "description": "Two frontal panels show shoulder contact and lateral head tilt.",
+        "organization": "NHS",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "full_cycle_reviewed": false,
+        "inspection_method": "Source instructions read; actual browser screenshot of source-discovered image inspected 2026-11-23.",
+        "observed_samples": [
+          {
+            "locator": "Photo panels A-B",
+            "view": "front",
+            "phase": "static sampled positions",
+            "observation": "Two frontal panels show shoulder contact and lateral head tilt.",
+            "limitations": "No continuous entry/hold/return review; fine contacts unresolved."
+          }
+        ]
+      }
+    ],
+    "guidance": "Tilt head away from held shoulder.",
+    "movement": {
+      "joints": [
+        "neck"
+      ],
+      "motions": "Tilt head away from held shoulder.",
+      "start": "Seated with opposite hand on shoulder.",
+      "end": "Action position described above; return is not timed.",
+      "equipment_motion": "Supports stationary.",
+      "feet_contact": "Feet grounded; seated.",
+      "hands_contact": "Opposite hand rests on shoulder.",
+      "torso": "Upright.",
+      "basis": "Qualitative source-text interpretation with static image corroboration; no measured angles."
+    },
+    "missing_evidence": [
+      "Continuous movement and timing",
+      "Fine contact and complementary-view review",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "wall-calf-stretch",
+    "family": "calf-stretch",
+    "name": "Wall-supported calf stretch",
+    "category": "mobility_flexibility",
+    "equipment": [
+      "wall"
+    ],
+    "grip_id": "palm-support",
+    "aliases": [
+      "wall-supported calf stretch"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/flexibility-exercises/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nhs.uk/live-well/exercise/flexibility-exercises/",
+        "media_url": "https://assets.nhs.uk/nhsuk-cms/images/NHSC_0518_calf-stretch.original.width-320.jpg",
+        "type": "photo-collage",
+        "view": "side",
+        "phase": "sampled positions",
+        "description": "Side panels show wall contact and grounded trailing heel; one panel crops upper body.",
+        "organization": "NHS",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "full_cycle_reviewed": false,
+        "inspection_method": "Source instructions read; actual browser screenshot of source-discovered image inspected 2026-11-23.",
+        "observed_samples": [
+          {
+            "locator": "Photo panels A-B",
+            "view": "side",
+            "phase": "static sampled positions",
+            "observation": "Side panels show wall contact and grounded trailing heel; one panel crops upper body.",
+            "limitations": "No continuous entry/hold/return review; fine contacts unresolved."
+          }
+        ]
+      }
+    ],
+    "guidance": "Bend leading knee with trailing knee straight and heel grounded.",
+    "movement": {
+      "joints": [
+        "ankles",
+        "knees"
+      ],
+      "motions": "Bend leading knee with trailing knee straight and heel grounded.",
+      "start": "Split stance facing wall.",
+      "end": "Action position described above; return is not timed.",
+      "equipment_motion": "Supports stationary.",
+      "feet_contact": "Both feet grounded.",
+      "hands_contact": "Hands on wall.",
+      "torso": "Leans toward wall.",
+      "basis": "Qualitative source-text interpretation with static image corroboration; no measured angles."
+    },
+    "missing_evidence": [
+      "Continuous movement and timing",
+      "Fine contact and complementary-view review",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "seated-chest-stretch",
+    "family": "pectoral-stretch",
+    "name": "Seated chest stretch",
+    "category": "mobility_flexibility",
+    "equipment": [
+      "chair"
+    ],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "seated chest stretch"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/sitting-exercises/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nhs.uk/live-well/exercise/sitting-exercises/",
+        "media_url": "https://assets.nhs.uk/nhsuk-cms/images/NHSC_0118_chest-stretch1.width-320.jpg",
+        "type": "photo-collage",
+        "view": "front and side",
+        "phase": "sampled positions",
+        "description": "Front and side photos show low open arms, seated support and feet on floor.",
+        "organization": "NHS",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "full_cycle_reviewed": false,
+        "inspection_method": "Source instructions read; actual browser screenshot of source-discovered image inspected 2026-11-23.",
+        "observed_samples": [
+          {
+            "locator": "Photo panels A-B",
+            "view": "front and side",
+            "phase": "static sampled positions",
+            "observation": "Front and side photos show low open arms, seated support and feet on floor.",
+            "limitations": "No continuous entry/hold/return review; fine contacts unresolved."
+          }
+        ]
+      }
+    ],
+    "guidance": "Open arms low and move chest forward/up.",
+    "movement": {
+      "joints": [
+        "shoulders"
+      ],
+      "motions": "Open arms low and move chest forward/up.",
+      "start": "Seated away from chair back.",
+      "end": "Action position described above; return is not timed.",
+      "equipment_motion": "Supports stationary.",
+      "feet_contact": "Both feet grounded.",
+      "hands_contact": "Hands open and unloaded.",
+      "torso": "Upright with chest lifted.",
+      "basis": "Qualitative source-text interpretation with static image corroboration; no measured angles."
+    },
+    "missing_evidence": [
+      "Continuous movement and timing",
+      "Fine contact and complementary-view review",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "seated-ankle-pump",
+    "family": "ankle-pump",
+    "name": "Seated ankle pump",
+    "category": "mobility_flexibility",
+    "equipment": [
+      "chair"
+    ],
+    "grip_id": "contact-unresolved",
+    "aliases": [
+      "seated ankle pump"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/sitting-exercises/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nhs.uk/live-well/exercise/sitting-exercises/",
+        "media_url": "https://assets.nhs.uk/nhsuk-cms/images/ankle-stretch.width-320.jpg",
+        "type": "photo-collage",
+        "view": "side",
+        "phase": "sampled positions",
+        "description": "Three side panels show extended leg and contrasting ankle positions.",
+        "organization": "NHS",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "full_cycle_reviewed": false,
+        "inspection_method": "Source instructions read; actual browser screenshot of source-discovered image inspected 2026-11-23.",
+        "observed_samples": [
+          {
+            "locator": "Photo panels A-C",
+            "view": "side",
+            "phase": "static sampled positions",
+            "observation": "Three side panels show extended leg and contrasting ankle positions.",
+            "limitations": "No continuous entry/hold/return review; fine contacts unresolved."
+          }
+        ]
+      }
+    ],
+    "guidance": "Point foot away, then draw toes toward shin.",
+    "movement": {
+      "joints": [
+        "ankles"
+      ],
+      "motions": "Point foot away, then draw toes toward shin.",
+      "start": "Seated with one leg extended off floor.",
+      "end": "Action position described above; return is not timed.",
+      "equipment_motion": "Supports stationary.",
+      "feet_contact": "Raised foot free; other foot grounded.",
+      "hands_contact": "Source cues holding chair sides; hands outside crop.",
+      "torso": "Seated; upper torso outside image.",
+      "basis": "Qualitative source-text interpretation with static image corroboration; no measured angles."
+    },
+    "missing_evidence": [
+      "Continuous movement and timing",
+      "Fine contact and complementary-view review",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "slow-sideways-walk",
+    "family": "sideways-walk",
+    "name": "Slow sideways walk",
+    "category": "balance",
+    "equipment": [],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "slow sideways walk"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nhs.uk/live-well/exercise/balance-exercises/",
+        "media_url": "https://assets.nhs.uk/nhsuk-cms/images/NHSC_0518_Sideways-walking_JOuFYD9.width-320.jpg",
+        "type": "photo-collage",
+        "view": "front",
+        "phase": "sampled positions",
+        "description": "Front panels show feet together, wider stance, and feet together again.",
+        "organization": "NHS",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "full_cycle_reviewed": false,
+        "inspection_method": "Source instructions read; actual browser screenshot of source-discovered image inspected 2026-11-23.",
+        "observed_samples": [
+          {
+            "locator": "Photo panels A-C",
+            "view": "front",
+            "phase": "static sampled positions",
+            "observation": "Front panels show feet together, wider stance, and feet together again.",
+            "limitations": "No continuous entry/hold/return review; fine contacts unresolved."
+          }
+        ]
+      }
+    ],
+    "guidance": "Step sideways and bring trailing foot alongside.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Step sideways and bring trailing foot alongside.",
+      "start": "Stand feet together.",
+      "end": "Action position described above; return is not timed.",
+      "equipment_motion": "Supports stationary.",
+      "feet_contact": "Alternating stepping contacts.",
+      "hands_contact": "Hands unloaded.",
+      "torso": "Upright.",
+      "basis": "Qualitative source-text interpretation with static image corroboration; no measured angles."
+    },
+    "missing_evidence": [
+      "Continuous movement and timing",
+      "Fine contact and complementary-view review",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "simple-grapevine-walk",
+    "family": "crossover-walk",
+    "name": "Simple grapevine crossover walk",
+    "category": "balance",
+    "equipment": [],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "simple grapevine crossover walk"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nhs.uk/live-well/exercise/balance-exercises/",
+        "media_url": "https://assets.nhs.uk/nhsuk-cms/images/NHSC_0518_Simple-Grapevine_tcD7bBk.width-320.jpg",
+        "type": "photo-collage",
+        "view": "front",
+        "phase": "sampled positions",
+        "description": "Front photos show crossed-leg position and feet together; no behind-body crossing demonstrated.",
+        "organization": "NHS",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "full_cycle_reviewed": false,
+        "inspection_method": "Source instructions read; actual browser screenshot of source-discovered image inspected 2026-11-23.",
+        "observed_samples": [
+          {
+            "locator": "Photo panels A-B",
+            "view": "front",
+            "phase": "static sampled positions",
+            "observation": "Front photos show crossed-leg position and feet together; no behind-body crossing demonstrated.",
+            "limitations": "No continuous entry/hold/return review; fine contacts unresolved."
+          }
+        ]
+      }
+    ],
+    "guidance": "Cross right foot over left; move left foot alongside.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Cross right foot over left; move left foot alongside.",
+      "start": "Stand with feet together.",
+      "end": "Action position described above; return is not timed.",
+      "equipment_motion": "Supports stationary.",
+      "feet_contact": "Alternating stepping contacts.",
+      "hands_contact": "Unloaded in image; optional wall fingertips in source.",
+      "torso": "Upright.",
+      "basis": "Qualitative source-text interpretation with static image corroboration; no measured angles."
+    },
+    "missing_evidence": [
+      "Continuous movement and timing",
+      "Fine contact and complementary-view review",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "heel-to-toe-walk",
+    "family": "tandem-walk",
+    "name": "Heel-to-toe walk",
+    "category": "balance",
+    "equipment": [],
+    "grip_id": "no-hand-load",
+    "aliases": [
+      "heel-to-toe walk"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nhs.uk/live-well/exercise/balance-exercises/",
+        "media_url": "https://assets.nhs.uk/nhsuk-cms/images/NHSC_0518_Heel-to-toe_walk.width-320.jpg",
+        "type": "photo-collage",
+        "view": "side",
+        "phase": "sampled positions",
+        "description": "Side photos show narrow tandem placement; static images cannot establish timing.",
+        "organization": "NHS",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "full_cycle_reviewed": false,
+        "inspection_method": "Source instructions read; actual browser screenshot of source-discovered image inspected 2026-11-23.",
+        "observed_samples": [
+          {
+            "locator": "Photo panels A-B",
+            "view": "side",
+            "phase": "static sampled positions",
+            "observation": "Side photos show narrow tandem placement; static images cannot establish timing.",
+            "limitations": "No continuous entry/hold/return review; fine contacts unresolved."
+          }
+        ]
+      }
+    ],
+    "guidance": "Place one heel immediately ahead of opposite toes; alternate.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Place one heel immediately ahead of opposite toes; alternate.",
+      "start": "Stand upright.",
+      "end": "Action position described above; return is not timed.",
+      "equipment_motion": "Supports stationary.",
+      "feet_contact": "Narrow alternating foot placement.",
+      "hands_contact": "Unloaded in image; optional wall support in source.",
+      "torso": "Upright.",
+      "basis": "Qualitative source-text interpretation with static image corroboration; no measured angles."
+    },
+    "missing_evidence": [
+      "Continuous movement and timing",
+      "Fine contact and complementary-view review",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reference_status": "partial"
+  },
+  {
+    "id": "wall-supported-single-leg-stand",
+    "family": "single-leg-balance",
+    "name": "Wall-supported single-leg stand",
+    "category": "balance",
+    "equipment": [
+      "wall"
+    ],
+    "grip_id": "contact-unresolved",
+    "aliases": [
+      "wall-supported single-leg stand"
+    ],
+    "source_urls": [
+      "https://www.nhs.uk/live-well/exercise/balance-exercises/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.nhs.uk/live-well/exercise/balance-exercises/",
+        "media_url": "https://assets.nhs.uk/nhsuk-cms/images/NHSC_0518_One-leg-stand_S9Awo5x.width-320.jpg",
+        "type": "photo-collage",
+        "view": "side",
+        "phase": "sampled positions",
+        "description": "Side photos show both feet down then one knee lifted while wall contacts remain.",
+        "organization": "NHS",
+        "verification": "visually_inspected",
+        "visual_inspected": true,
+        "full_cycle_reviewed": false,
+        "inspection_method": "Source instructions read; actual browser screenshot of source-discovered image inspected 2026-11-23.",
+        "observed_samples": [
+          {
+            "locator": "Photo panels A-B",
+            "view": "side",
+            "phase": "static sampled positions",
+            "observation": "Side photos show both feet down then one knee lifted while wall contacts remain.",
+            "limitations": "No continuous entry/hold/return review; fine contacts unresolved."
+          }
+        ]
+      }
+    ],
+    "guidance": "Raise one leg; balance on other leg, then lower.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Raise one leg; balance on other leg, then lower.",
+      "start": "Face wall with fingertips touching it.",
+      "end": "Action position described above; return is not timed.",
+      "equipment_motion": "Supports stationary.",
+      "feet_contact": "One foot supports body during hold.",
+      "hands_contact": "Fingertips contact wall.",
+      "torso": "Upright.",
+      "basis": "Qualitative source-text interpretation with static image corroboration; no measured angles."
+    },
+    "missing_evidence": [
+      "Continuous movement and timing",
+      "Fine contact and complementary-view review",
+      "Human movement review"
+    ],
+    "confidence": "partial_unreviewed",
+    "reference_status": "partial"
+  }
+]

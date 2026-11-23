@@ -1,0 +1,1135 @@
+[
+  {
+    "id": "barbell-front-squat-clean-rack",
+    "family": "squat",
+    "name": "Barbell front squat, clean-style rack",
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "rack"
+    ],
+    "grip_id": "barbell-front-rack",
+    "source_urls": [
+      "https://www.strengthlog.com/front-squat/",
+      "https://www.crossfit.com/pro-coach/developing-the-front-squat"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/front-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/09/Front-squat.gif?resize=600%2C595&ssl=1",
+        "type": "gif",
+        "view": "front-oblique",
+        "phase": "standing sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "front-oblique",
+            "phase": "standing sample",
+            "observation": "Bar lies across front shoulders; elbows point forward; hands near neck; feet apart.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      },
+      {
+        "source_url": "https://www.crossfit.com/pro-coach/developing-the-front-squat",
+        "media_url": null,
+        "type": "page",
+        "view": "unknown",
+        "phase": "unknown",
+        "description": "Complementary text favors loose clean-style rack and elevated elbows; associated photographs not inspected.",
+        "verification": "page_text",
+        "organization": "CrossFit",
+        "visual_inspected": false
+      }
+    ],
+    "guidance": "Lower through hips and knees; extend hips and knees to stand.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Lower through hips and knees; extend hips and knees to stand",
+      "start": "Standing after unrack, bar on front shoulders",
+      "end": "Standing after unrack, bar on front shoulders",
+      "equipment_motion": "Bar travels with body; support structures stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Hands at shoulder-level bar; exact fingertip/ thumb contacts unknown",
+      "torso": "Controlled trunk; posture varies through movement",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing after unrack, bar on front shoulders",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/front-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "Lower through hips and knees",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/front-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Lowest controlled squat; depth unspecified",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/front-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "Extend hips and knees to stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/front-squat/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [
+      "StrengthLog permits crossed-arm or strap alternatives; CrossFit favors clean-style rack for transfer to other lifts. This entry retains clean-style rack and does not merge alternatives."
+    ],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "barbell-box-squat",
+    "family": "squat",
+    "name": "Barbell box squat, contact mode unresolved",
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "rack",
+      "box"
+    ],
+    "grip_id": "barbell-back-support",
+    "source_urls": [
+      "https://www.strengthlog.com/box-squat/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/box-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/10/Box-Squat.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front",
+        "phase": "upright sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "front",
+            "phase": "upright sample",
+            "observation": "Bar behind shoulders; feet apart; box between and behind legs; no seated contact visible.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Squat toward box; stand.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Squat toward box; stand",
+      "start": "Standing with bar on upper back before box",
+      "end": "Standing with bar on upper back before box",
+      "equipment_motion": "Bar travels with body; support structures stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Hands stabilize bar outside shoulders; thumb closure unknown",
+      "torso": "Controlled trunk; posture varies through movement",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing with bar on upper back before box",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/box-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "Squat toward box",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/box-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Box contact; touch-only versus seated loading unresolved",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/box-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "Stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/box-squat/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [
+      "Publisher describes both light box touch and seated loading. Single upright image cannot select either contact mode."
+    ],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "safety-bar-squat",
+    "family": "squat",
+    "name": "Safety bar squat",
+    "category": "barbell",
+    "equipment": [
+      "safety-squat-bar",
+      "rack"
+    ],
+    "grip_id": "safety-bar-handles",
+    "source_urls": [
+      "https://www.strengthlog.com/safety-bar-squat/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/safety-bar-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/11/safetybar-squat.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front",
+        "phase": "standing sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "front",
+            "phase": "standing sample",
+            "observation": "Padded yoke surrounds shoulders; both hands hold forward handles; cambered loaded ends visible.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Lower through hips and knees; stand.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Lower through hips and knees; stand",
+      "start": "Standing after unrack with padded bar on upper back",
+      "end": "Standing after unrack with padded bar on upper back",
+      "equipment_motion": "Bar travels with body; support structures stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Hands on forward handles; individual fingers and pressure unknown",
+      "torso": "Controlled trunk; posture varies through movement",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing after unrack with padded bar on upper back",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/safety-bar-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "Lower through hips and knees",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/safety-bar-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Lowest controlled squat; depth unspecified",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/safety-bar-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "Stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/safety-bar-squat/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "barbell-zercher-squat",
+    "family": "squat",
+    "name": "Barbell Zercher squat",
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "rack"
+    ],
+    "grip_id": "zercher-elbow-cradle",
+    "source_urls": [
+      "https://www.strengthlog.com/zercher-squat/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/zercher-squat/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2023/11/zercher-squat.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front-oblique",
+        "phase": "standing sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "front-oblique",
+            "phase": "standing sample",
+            "observation": "Bar crosses bent elbows; both fists raised separately in front of chest; feet apart.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Bend knees and hips; stand.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Bend knees and hips; stand",
+      "start": "Unrack bar from just below elbow level into elbow crooks",
+      "end": "Unrack bar from just below elbow level into elbow crooks",
+      "equipment_motion": "Bar travels with body; support structures stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Bar supported in elbow crooks; hands separate in sample; pressure unknown",
+      "torso": "Controlled trunk; posture varies through movement",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Unrack bar from just below elbow level into elbow crooks",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/zercher-squat/"
+      },
+      {
+        "phase": "action",
+        "description": "Bend knees and hips",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/zercher-squat/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Lowest controlled squat; depth unspecified",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/zercher-squat/"
+      },
+      {
+        "phase": "return",
+        "description": "Stand",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/zercher-squat/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "barbell-romanian-deadlift",
+    "family": "romanian-deadlift",
+    "name": "Barbell Romanian deadlift",
+    "category": "barbell",
+    "equipment": [
+      "barbell"
+    ],
+    "grip_id": "barbell-grip-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/romanian-deadlift/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/romanian-deadlift/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2022/01/Romanian-deadlift.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front-oblique",
+        "phase": "standing sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "front-oblique",
+            "phase": "standing sample",
+            "observation": "Bar held in front of thighs with arms down; both feet on floor.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Hinge hips with knees nearly extended; extend hips to standing.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Hinge hips with knees nearly extended; extend hips to standing",
+      "start": "Standing holding bar after floor pickup or unrack",
+      "end": "Standing holding bar after floor pickup or unrack",
+      "equipment_motion": "Bar travels with body; support structures stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Both hands on shaft; hook versus regular closure unknown",
+      "torso": "Controlled trunk; posture varies through movement",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing holding bar after floor pickup or unrack",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/romanian-deadlift/"
+      },
+      {
+        "phase": "action",
+        "description": "Hinge hips with knees nearly extended",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/romanian-deadlift/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Forward hinge without back rounding; floor contact optional in text",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/romanian-deadlift/"
+      },
+      {
+        "phase": "return",
+        "description": "Extend hips to standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/romanian-deadlift/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "barbell-sumo-deadlift",
+    "family": "deadlift",
+    "name": "Barbell sumo deadlift",
+    "category": "barbell",
+    "equipment": [
+      "barbell"
+    ],
+    "grip_id": "barbell-grip-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/sumo-deadlift/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/sumo-deadlift/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/10/Sumo-deadlift.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front-oblique",
+        "phase": "floor-level sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "front-oblique",
+            "phase": "floor-level sample",
+            "observation": "Knees bent outward in wide stance; arms between knees; plates at floor level.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Lift bar close to body; lower bar to floor.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Lift bar close to body; lower bar to floor",
+      "start": "Wide stance at floor bar",
+      "end": "Wide stance at floor bar",
+      "equipment_motion": "Bar travels with body; support structures stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Hands on shaft between legs; thumb arrangement unknown",
+      "torso": "Controlled trunk; posture varies through movement",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Wide stance at floor bar",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/sumo-deadlift/"
+      },
+      {
+        "phase": "action",
+        "description": "Lift bar close to body",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/sumo-deadlift/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Standing with bar held",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/sumo-deadlift/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower bar to floor",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/sumo-deadlift/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "barbell-block-pull",
+    "family": "deadlift",
+    "name": "Barbell block pull, publisher rack-pull demonstration",
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "weight-plate"
+    ],
+    "grip_id": "barbell-grip-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/rack-pull/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/rack-pull/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Rack-pull.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front-oblique",
+        "phase": "lower sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "front-oblique",
+            "phase": "lower sample",
+            "observation": "Barbell plates rest on separate horizontal plate supports; torso inclines and arms hang down.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Extend hips and knees to lift; lower to supports.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Extend hips and knees to lift; lower to supports",
+      "start": "Bar elevated on supports; sample uses plates as blocks",
+      "end": "Bar elevated on supports; sample uses plates as blocks",
+      "equipment_motion": "Bar travels with body; support structures stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Both hands grip shaft; exact closure unknown",
+      "torso": "Controlled trunk; posture varies through movement",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Bar elevated on supports; sample uses plates as blocks",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/rack-pull/"
+      },
+      {
+        "phase": "action",
+        "description": "Extend hips and knees to lift",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/rack-pull/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Standing with bar held",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/rack-pull/"
+      },
+      {
+        "phase": "return",
+        "description": "Lower to supports",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/rack-pull/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [
+      "Publisher names Rack Pull and permits rack or blocks; inspected image uses horizontal plates as supports. This record identifies the demonstrated block-supported configuration."
+    ],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "barbell-good-morning",
+    "family": "good-morning",
+    "name": "Barbell good morning",
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "rack"
+    ],
+    "grip_id": "barbell-back-support",
+    "source_urls": [
+      "https://www.strengthlog.com/good-morning/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/good-morning/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Good-morning.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "front-oblique",
+        "phase": "standing sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "front-oblique",
+            "phase": "standing sample",
+            "observation": "Bar behind shoulders; both elbows bent; hands outside shoulders; feet apart.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Hinge hips backward with slight knee bend; extend hips to standing.",
+    "movement": {
+      "joints": [
+        "hips",
+        "knees",
+        "ankles"
+      ],
+      "motions": "Hinge hips backward with slight knee bend; extend hips to standing",
+      "start": "Standing after unrack, bar on upper back",
+      "end": "Standing after unrack, bar on upper back",
+      "equipment_motion": "Bar travels with body; support structures stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Hands stabilize bar outside shoulders; finger and thumb placement unknown",
+      "torso": "Controlled trunk; posture varies through movement",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Standing after unrack, bar on upper back",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/good-morning/"
+      },
+      {
+        "phase": "action",
+        "description": "Hinge hips backward with slight knee bend",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/good-morning/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Forward torso without bar rolling; angle unspecified",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/good-morning/"
+      },
+      {
+        "phase": "return",
+        "description": "Extend hips to standing",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/good-morning/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "barbell-bench-press",
+    "family": "bench-press",
+    "name": "Barbell flat bench press",
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "bench",
+      "rack"
+    ],
+    "grip_id": "barbell-press-grip-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/bench-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/bench-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/09/bench-press.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "foot-end-oblique",
+        "phase": "upper sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "foot-end-oblique",
+            "phase": "upper sample",
+            "observation": "Bar above torso; elbows nearly extended; both feet on floor; body on flat bench.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Lower bar toward chest; press to starting height.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "Lower bar toward chest; press to starting height",
+      "start": "Supine on bench with bar unracked",
+      "end": "Supine on bench with bar unracked",
+      "equipment_motion": "Bar moves with hands; supports stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Both hands on shaft wider than shoulders; thumb closure unknown",
+      "torso": "Bench-supported",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine on bench with bar unracked",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bench-press/"
+      },
+      {
+        "phase": "action",
+        "description": "Lower bar toward chest",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bench-press/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Chest touch near sternum per text",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bench-press/"
+      },
+      {
+        "phase": "return",
+        "description": "Press to starting height",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/bench-press/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "barbell-close-grip-bench-press",
+    "family": "bench-press",
+    "name": "Barbell close-grip bench press",
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "bench",
+      "rack"
+    ],
+    "grip_id": "barbell-close-press-grip-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/close-grip-bench-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/close-grip-bench-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/09/Close-grip-bench-press.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "foot-end-oblique",
+        "phase": "upper sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "foot-end-oblique",
+            "phase": "upper sample",
+            "observation": "Hands visibly closer together than flat-bench sample; arms near extension; feet planted.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Lower bar toward chest; press upward.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "Lower bar toward chest; press upward",
+      "start": "Supine after unrack with narrower grip",
+      "end": "Supine after unrack with narrower grip",
+      "equipment_motion": "Bar moves with hands; supports stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Hands roughly over shoulders or closer per text; exact width and thumb closure unknown",
+      "torso": "Bench-supported",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine after unrack with narrower grip",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/close-grip-bench-press/"
+      },
+      {
+        "phase": "action",
+        "description": "Lower bar toward chest",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/close-grip-bench-press/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Lower-chest touch per source; exact location unmeasured",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/close-grip-bench-press/"
+      },
+      {
+        "phase": "return",
+        "description": "Press upward",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/close-grip-bench-press/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "barbell-incline-bench-press",
+    "family": "bench-press",
+    "name": "Barbell incline bench press",
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "adjustable-bench",
+      "rack"
+    ],
+    "grip_id": "barbell-press-grip-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/incline-bench-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/incline-bench-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/03/Incline-Bench-Press.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "foot-end-oblique",
+        "phase": "lower sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "foot-end-oblique",
+            "phase": "lower sample",
+            "observation": "Torso rests against inclined backrest; bar near upper chest; elbows bent; feet on floor.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Lower bar toward chest; press to straight arms.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "Lower bar toward chest; press to straight arms",
+      "start": "Reclined on inclined bench, bar above shoulders",
+      "end": "Reclined on inclined bench, bar above shoulders",
+      "equipment_motion": "Bar moves with hands; supports stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Both hands on shaft; exact width and thumb closure unknown",
+      "torso": "Bench-supported",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Reclined on inclined bench, bar above shoulders",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/incline-bench-press/"
+      },
+      {
+        "phase": "action",
+        "description": "Lower bar toward chest",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/incline-bench-press/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Chest-level bar; bench angle unspecified",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/incline-bench-press/"
+      },
+      {
+        "phase": "return",
+        "description": "Press to straight arms",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/incline-bench-press/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  },
+  {
+    "id": "barbell-pin-bench-press",
+    "family": "bench-press",
+    "name": "Barbell pin bench press",
+    "category": "barbell",
+    "equipment": [
+      "barbell",
+      "bench",
+      "power-rack"
+    ],
+    "grip_id": "barbell-press-grip-unresolved",
+    "source_urls": [
+      "https://www.strengthlog.com/pin-bench-press/"
+    ],
+    "references": [
+      {
+        "source_url": "https://www.strengthlog.com/pin-bench-press/",
+        "media_url": "https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2024/02/pin-bench-press.gif?resize=600%2C600&ssl=1",
+        "type": "gif",
+        "view": "foot-end-oblique",
+        "phase": "upper sample",
+        "description": "One browser screenshot of linked GIF examined; no continuous playback or full-cycle verification.",
+        "verification": "visually_inspected_single_frame",
+        "organization": "StrengthLog",
+        "visual_inspected": true,
+        "observed_samples": [
+          {
+            "locator": "Direct media URL; browser screenshot on 2026-11-23, untimed GIF frame",
+            "view": "foot-end-oblique",
+            "phase": "upper sample",
+            "observation": "Bar above chest and safety arms; elbows near extension; arched trunk on bench; feet on floor.",
+            "limitations": "Single frame, no timestamp or direction; hidden contacts, forces and exact geometry unknown."
+          }
+        ]
+      }
+    ],
+    "guidance": "Lower bar to safety supports; press upward.",
+    "movement": {
+      "joints": [
+        "shoulders",
+        "elbows"
+      ],
+      "motions": "Lower bar to safety supports; press upward",
+      "start": "Supine after unrack, safeties adjusted above chest",
+      "end": "Supine after unrack, safeties adjusted above chest",
+      "equipment_motion": "Bar moves with hands; supports stationary",
+      "feet_contact": "Both feet on floor in inspected sample",
+      "hands_contact": "Both hands on shaft; wrist wraps visible; thumb closure unresolved",
+      "torso": "Bench-supported",
+      "basis": "Qualitative source-text interpretation; sampled visual evidence is separately identified, not measured kinematics.",
+      "endpoint_semantics": "End denotes repeat-ready posture; extreme is in movement_phases."
+    },
+    "movement_phases": [
+      {
+        "phase": "setup",
+        "description": "Supine after unrack, safeties adjusted above chest",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/pin-bench-press/"
+      },
+      {
+        "phase": "action",
+        "description": "Lower bar to safety supports",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/pin-bench-press/"
+      },
+      {
+        "phase": "extreme",
+        "description": "Bar touches safeties per text",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/pin-bench-press/"
+      },
+      {
+        "phase": "return",
+        "description": "Press upward",
+        "basis": "Qualitative source-text interpretation; not timed or measured.",
+        "source_url": "https://www.strengthlog.com/pin-bench-press/"
+      }
+    ],
+    "missing_evidence": [
+      "Complementary independent demonstration and camera view",
+      "Full-cycle start, mid, extreme and return visual review",
+      "Hand close-ups resolving thumb, fingers and wrist contact",
+      "Rack/unrack and support dimensions where relevant",
+      "Human movement and anatomy approval"
+    ],
+    "confidence": "partial_unreviewed",
+    "reviewed_at": "2026-11-23",
+    "approval": "unreviewed",
+    "source_conflicts": [],
+    "reference_status": "partial",
+    "review_status": "unreviewed",
+    "conflict_review": "Incomplete; absence of recorded conflicts is not consensus."
+  }
+]
