@@ -26,6 +26,15 @@ This is a standalone, open-source-derived exercise-animation authoring project. 
 - Dated milestone reports under `docs/HEATSY_*.md` are evidence snapshots. Link them rather than rewriting their numbers into several documents.
 - The PR description is normally the handoff. Use [the handoff template](docs/knowledge/handoffs/TEMPLATE.md) only for work paused before a PR exists.
 
+## Cost-aware subagent routing
+
+- **Delegate independent routine work to lower-cost subagents when useful**, but only choose a model that is **comfortably overqualified** for the exact task. It must have demonstrated reliability on harder adjacent tasks, not just barely meet the task's needs. If capability is uncertain, keep the stronger model.
+- The coordinator owns architecture, decomposition, integration, all final review and test claims. Keep retargeting, skin weights, deformation, glTF correctness, licenses, security, publishing and anatomical/movement approval with a strong suitable model and human decision gates.
+- Do not spawn subagents for trivial sequential work or when coordination/review costs more than it saves. Assign narrow read-only tasks by default; give write access only to disjoint files/worktrees with explicit acceptance checks.
+- Check which model choices and tools actually exist in this session. Do not invent cheaper models or claimed savings. If selecting a lower-cost model is unsupported, use the available capable model and report that limitation.
+- Verify results, escalate capability-related failures promptly, and never let subagents push, merge, deploy, publish, bypass gates or approve their own work.
+- Read [detailed delegation and model-routing rules](docs/knowledge/AGENT-DELEGATION.md).
+
 ## Minimal checks
 - Run `python -m unittest discover -s tests -v` for code changes when dependencies are present.
 - Run the relevant selected build, glTF validation and browser checks for animation/model changes; name any unavailable tools.
