@@ -1,5 +1,9 @@
 # Experimental MPFB dumbbell goblet squat
 
+Checkpoint evidence for `ad14fa7`. The subsequent [equipment library and grip
+review](EQUIPMENT_LIBRARY_REVIEW.md) records the three-item catalog and finger
+refinement; this original proof and its outputs remain preserved.
+
 This proof is independent of unresolved Heatsy deformation. It demonstrates
 equipment inspection, a variation-specific character/equipment relationship and
 separate guidance/preview presentation. It is **not approved exercise instruction**.

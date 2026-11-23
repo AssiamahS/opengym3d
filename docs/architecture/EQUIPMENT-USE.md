@@ -23,6 +23,37 @@ exercise change does not require designing new equipment geometry. Inspection
 configuration is explicitly separate from the fixed configuration of a tested
 demonstration; changing dimensions cannot silently invalidate its contacts.
 
+## Initial reusable catalog
+
+The continuation from `ad14fa7` adds dumbbell, kettlebell and barbell inspection
+assets through `studio/equipment_catalog.py`. It calls the existing procedural
+builders; it does not invoke the movement or character pipeline. A generator and
+asset hash cache preserves static GLBs across exercise builds. Thumbnail renders,
+dimensions in metres, glTF Y-up nominal contact positions, display configuration,
+MIT license and source provenance live in `equipment-catalog/1` metadata.
+`compatibleVariations` is explicit: only the dumbbell offers the experimental
+goblet fixture. Neither a new implement nor inspection scaling creates a technique.
+
+The gallery requests metadata and small WebP thumbnails first, with no GLB request
+until selection. The existing Three.js viewer owns a bounded two-asset cache,
+one active mixer and serialized loading. Superseded loads are disposed, old
+mixers are stopped and uncached, and evicted geometry/materials/textures are
+released. Returning to the gallery retains that bounded cache; leaving the page
+cleans it up. Camera framing uses selected geometry bounds. Quick Peek remains a
+separate video-only page with no 3D dependency.
+
+All continuation writes are restricted by `equipment_paths.py` to
+`outputs/equipment-library/`, including candidate subdirectories. The previous
+`outputs/equipment-use/` proof and the original 1,139-file protected manifest are
+preserved. Independent catalog validation checks exported dimensions, static
+structure, hashes, nominal handle targets and license files. Browser checks cover
+lazy loading, races, repeated transitions, resource counts and screenshot evidence.
+Integration requires current catalog, asset and viewer hashes; a stale browser
+report cannot restore a technical PASS.
+
+Executed measurements, before/after images and remaining thumb limitations are
+recorded in the [library milestone review](../EQUIPMENT_LIBRARY_REVIEW.md).
+
 ## Contracts and evidence
 
 - Equipment owns dimensions, geometry, contact frames and configuration limits.

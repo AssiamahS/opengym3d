@@ -48,6 +48,14 @@ variation attachments and presentation guidance. It does not resolve Heatsy
 deformation or approve exercise instruction. General articulated machines and
 physics remain future work.
 
+The equipment continuation reuses the same viewer and procedural builders for a
+three-item inspection catalog. `equipment_catalog.py` can rebuild its static
+assets and thumbnails without invoking an exercise build. `equipment_paths.py`
+keeps continuation artifacts under `outputs/equipment-library/`; the checkpoint
+proof remains read-only. Catalog and browser lifecycle gates complement the
+existing exported-mesh contact validator. See the
+[equipment architecture](EQUIPMENT-USE.md#initial-reusable-catalog) for ownership.
+
 ## Current limitations and non-goals
 
 - Synthetic squat is an engineering fixture, **not** approved exercise instruction.

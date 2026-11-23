@@ -18,6 +18,7 @@ Useful historical evidence:
 - [Static Heatsy import and anatomy](../HEATSY_COMPATIBILITY_REVIEW.md)
 - [Animated Heatsy squat investigation](../HEATSY_BODYWEIGHT_REVIEW.md)
 - [Skin-weight deformation repair](../HEATSY_DEFORMATION_REPAIR.md)
+- [Equipment library and MPFB grip refinement](../EQUIPMENT_LIBRARY_REVIEW.md)
 
 ## Working practice
 

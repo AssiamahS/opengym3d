@@ -8,7 +8,7 @@
 | --- | --- | --- | --- | --- |
 | FMS-01 | Attachment-aware deformation / volume feasibility | **PARTIAL: bounded candidates rejected** | Corrected shoulder/hip/knee evidence improves without hiding stretching, compression or attachment defects; human appearance approval remains distinct | Use [new attachment evidence](../HEATSY_ATTACHMENT_REVIEW.md) to scope explicit attachment constraints; do not repeat global contrast tuning |
 | FMS-02 | Native Blender parity diagnosis | **PARTIAL (independent)** | Cause of native discrepancy is isolated with a regression, without loosening the 10 µm gate | [Native rest-matrix probe](../HEATSY_ATTACHMENT_REVIEW.md#native-blender-precision-investigation) confirms thigh reconstruction non-rigidity; isolate Blender's numerical cause |
-| FMS-08 | Independent MPFB equipment-use proof | **Technical PASS; visual PARTIAL; movement/human unapproved** | Catalog inspection, goblet-specific hand/equipment interaction, exported proof and independent preview have measured statuses | [Proof and measurements](../EQUIPMENT_USE_REVIEW.md); refine procedural finger appearance and review the specific grip; preserve Heatsy gates |
+| FMS-08 | Reusable equipment library and MPFB grip | **Technical PASS; visual PARTIAL; movement/human unapproved** | Three standalone catalog items, lazy loading, bounded resources, goblet interaction and preview pass; improved finger contour has separate visual evidence | [Library and grip review](../EQUIPMENT_LIBRARY_REVIEW.md); investigate remaining thumb-web/opposition issue and obtain grip/movement review before adding techniques; preserve Heatsy gates |
 
 ## Waiting for review or input
 
