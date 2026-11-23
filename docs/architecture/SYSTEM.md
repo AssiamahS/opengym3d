@@ -42,6 +42,12 @@ allowlisted `repair=attachment-05` route exposes an **unapproved, non-promoted**
 candidate; the previous repair remains unchanged. See [the attachment
 report](../HEATSY_ATTACHMENT_REVIEW.md) for tradeoffs and native rest-matrix probes.
 
+The separately authorized MPFB equipment-use proof introduces the bounded
+[equipment-use contracts](EQUIPMENT-USE.md): standalone inspection, explicit
+variation attachments and presentation guidance. It does not resolve Heatsy
+deformation or approve exercise instruction. General articulated machines and
+physics remain future work.
+
 ## Current limitations and non-goals
 
 - Synthetic squat is an engineering fixture, **not** approved exercise instruction.
