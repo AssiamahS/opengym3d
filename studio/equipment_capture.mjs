@@ -3,7 +3,8 @@ import {chromium} from 'playwright';
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {spawn} from 'node:child_process';
-const out='outputs/equipment-use',previewOnly=process.argv.includes('--preview-only'),gripOnly=process.argv.includes('--grip-only');
+const out=process.env.FMS_EQUIPMENT_OUTPUT||'outputs/equipment-library',previewOnly=process.argv.includes('--preview-only'),gripOnly=process.argv.includes('--grip-only');
+if(out!=='outputs/equipment-library')throw Error('Capture writes only the new equipment-library output; baseline is read-only');
 const server=spawn('python',['-m','http.server','0','--bind','127.0.0.1'],{env:{...process.env,PYTHONUNBUFFERED:'1'},stdio:['ignore','pipe','pipe'],windowsHide:true});
 let browser;const report={status:'FAIL',errors:[],screenshots:[]};
 try{
@@ -12,11 +13,11 @@ try{
  const page=await browser.newPage({viewport:{width:1440,height:1100}});page.on('pageerror',e=>report.errors.push(e.message));
  const root=`http://127.0.0.1:${port}/studio/equipment/`;
  if(gripOnly){
-  await page.goto(root+'?demo');await page.waitForFunction(()=>window.equipment?.ready||window.equipment?.error);
+  await page.goto(root+'?demo&output=library');await page.waitForFunction(()=>window.equipment?.ready||window.equipment?.error);
   if(await page.evaluate(()=>window.equipment.error))throw Error(await page.evaluate(()=>window.equipment.error));
   await page.locator('#grip-view').click();await page.locator('#canvas-wrap').screenshot({path:out+'/grip-detail.png'});report.screenshots.push(out+'/grip-detail.png');
  }else if(previewOnly){
-  const requests=[];page.on('request',r=>requests.push(r.url()));await page.goto(root+'preview.html');
+  const requests=[];page.on('request',r=>requests.push(r.url()));await page.goto(root+'preview.html?output=library');
   await page.waitForFunction(()=>document.querySelector('video').readyState>=2);
   await page.locator('video').evaluate(v=>v.play());await page.waitForTimeout(500);
   if(await page.locator('video').evaluate(v=>v.currentTime<=0||!v.loop||v.clientWidth!==320||v.videoWidth!==320||v.videoHeight!==320))throw Error('Quick Peek playback, loop or dimensions failed');
@@ -51,7 +52,7 @@ try{
   const demoBefore=await page.evaluate(()=>window.equipment.state().camera);
   await page.mouse.move(box.x+box.width/2,box.y+box.height/2);await page.mouse.down();await page.mouse.move(box.x+box.width/2-90,box.y+box.height/2,{steps:8});await page.mouse.up();
   if(JSON.stringify(demoBefore)===JSON.stringify(await page.evaluate(()=>window.equipment.state().camera)))throw Error('Demo orbit failed');
-  await page.goto(root+'?capture&demo');await page.waitForFunction(()=>window.equipment?.ready||window.equipment?.error);
+  await page.goto(root+'?capture&demo&output=library');await page.waitForFunction(()=>window.equipment?.ready||window.equipment?.error);
   const duration=await page.evaluate(()=>window.equipment.duration),fps=30,count=Math.round(duration*fps);if(!(duration>0&&count>0))throw Error('Missing motion interval');
   const samples=[];
   for(const view of ['front','side']){

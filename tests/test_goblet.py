@@ -4,10 +4,31 @@ from pathlib import Path
 import unittest
 import numpy as np
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'studio'))
-from goblet_build import elbow_position,palm_rotation
+from goblet_build import elbow_position,palm_rotation,transport_finger_rotation
 
 
 class GobletReachTests(unittest.TestCase):
+    def test_finger_target_reversal_cannot_exceed_swing_limit(self):
+        for degrees in (65,85,90):
+            rotation=transport_finger_rotation(np.eye(3),[0,-1,0],degrees)
+            actual=np.degrees(np.arccos(np.clip(np.dot(rotation[:,1],[0,1,0]),-1,1)))
+            self.assertAlmostEqual(actual,degrees,places=10)
+            np.testing.assert_allclose(rotation.T@rotation,np.eye(3),atol=1e-12)
+            self.assertAlmostEqual(np.linalg.det(rotation),1,places=12)
+
+    def test_finger_aim_keeps_inherited_wrist_roll_when_direction_is_unchanged(self):
+        angle=np.radians(110)
+        current=np.array([[np.cos(angle),0,np.sin(angle)],[0,1,0],[-np.sin(angle),0,np.cos(angle)]])
+        np.testing.assert_allclose(transport_finger_rotation(current,[0,1,0]),current,atol=1e-12)
+
+    def test_finger_aim_is_equivariant_under_parent_rotation(self):
+        parent=palm_rotation([.048,-.086,-.054],[.01,.02,-.07],1)
+        target=np.array([.4,.7,.1]);target/=np.linalg.norm(target)
+        a=transport_finger_rotation(np.eye(3),target)
+        b=transport_finger_rotation(parent,parent@target)
+        np.testing.assert_allclose(b,parent@a,atol=1e-12)
+        np.testing.assert_allclose(b[:,1],parent@target,atol=1e-12)
+        self.assertAlmostEqual(np.linalg.det(b),1,places=12)
     def test_reachable_hands_preserve_both_segment_lengths(self):
         shoulder=np.array([.2,0,1.4]);wrist=np.array([.04,-.3,1.25])
         elbow=elbow_position(shoulder,wrist,.26,.27,[.3,-.1,.8])

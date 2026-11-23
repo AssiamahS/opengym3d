@@ -9,15 +9,44 @@ sys.path.insert(0,str(ROOT/'pipeline'))
 sys.path.insert(0,str(ROOT/'studio'))
 from qa_glb import Clip
 from heatsy_gltf import load,accessor
-OUT=ROOT/'outputs/equipment-use'
+from equipment_paths import OUT
 
 def cylinder_distance(x,center,half,radius):
     q=np.column_stack([abs(x[:,0]-center)-half,np.linalg.norm(x[:,1:],axis=1)-radius])
     return np.linalg.norm(np.maximum(q,0),axis=1)+np.minimum(np.max(q,axis=1),0)
 
+
+def validate_grip_preservation(candidate,blob):
+    """Pose-only continuation: preserve hand proportions, skin and other motion."""
+    baseline,base_blob=load(ROOT/'outputs/equipment-use/goblet.glb')
+    def body(g):
+        node=next(n for n in g['nodes'] if 'skin' in n)
+        return g['meshes'][node['mesh']]['primitives'][0],g['skins'][node['skin']]
+    old,old_skin=body(baseline);new,new_skin=body(candidate)
+    for attr in ('POSITION','NORMAL','JOINTS_0','WEIGHTS_0'):
+        np.testing.assert_array_equal(accessor(baseline,base_blob,old['attributes'][attr]),accessor(candidate,blob,new['attributes'][attr]))
+    np.testing.assert_array_equal(accessor(baseline,base_blob,old['indices']),accessor(candidate,blob,new['indices']))
+    assert [baseline['nodes'][i]['name'] for i in old_skin['joints']]==[candidate['nodes'][i]['name'] for i in new_skin['joints']]
+    np.testing.assert_array_equal(accessor(baseline,base_blob,old_skin['inverseBindMatrices']),accessor(candidate,blob,new_skin['inverseBindMatrices']))
+    def tracks(g,b):
+        result={}
+        for animation in g['animations']:
+            for channel in animation['channels']:
+                name=g['nodes'][channel['target']['node']]['name']
+                if name.startswith('finger'):continue
+                sampler=animation['samplers'][channel['sampler']]
+                result[(name,channel['target']['path'])]=(accessor(g,b,sampler['input']),accessor(g,b,sampler['output']))
+        return result
+    previous,current=tracks(baseline,base_blob),tracks(candidate,blob)
+    assert previous.keys()==current.keys()
+    for key in previous:
+        for before,after in zip(previous[key],current[key]):np.testing.assert_allclose(before,after,atol=1e-7,rtol=0)
+    return dict(rest_geometry_skin_bind_identical=True,nonfinger_tracks_unchanged=len(previous),tolerance=1e-7)
+
 def main():
     (OUT/'contact-validation.json').write_text(json.dumps(dict(status='BUILDING',technical_pass=False)))
     path=OUT/'goblet.glb';digest=hashlib.sha256(path.read_bytes()).hexdigest();g,b=load(path);clip=Clip(g,b)
+    preservation=validate_grip_preservation(g,b)
     original,blob=load(ROOT/'outputs/bodyweight/squat-technical.glb');source=Clip(original,blob)
     node=next(n for n in g['nodes'] if 'skin' in n);prim=g['meshes'][node['mesh']]['primitives'][0]
     attr=prim['attributes'];x=accessor(g,b,attr['POSITION']);js=accessor(g,b,attr['JOINTS_0']).astype(int);ws=accessor(g,b,attr['WEIGHTS_0'])
@@ -80,7 +109,7 @@ def main():
         glb_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),max_handle_gap_m=max_gap,max_hand_penetration_m=hand_depth,
         max_nonhand_penetration_m=body_depth,max_equipment_chest_drift=drift,mesh_seam_m=seam,
         max_source_lower_body_component_error_m=max_joint,min_grip_angle_deg=orientation_min,min_palm_plane_alignment=alignment_min,
-        visual='unapproved',movement='unapproved',human_approval='unapproved',records=records,
+        visual='unapproved',movement='unapproved',human_approval='unapproved',records=records,preservation=preservation,
         collision_scope='All body vertices against analytic generator cylinders at181 poses; head cylinders conservatively enclose polygonal heads. Does not establish absence of triangle-only crossings or all self-collisions; hand/hand surface crossings tested separately.')
     assert hashlib.sha256(path.read_bytes()).hexdigest()==digest,'Asset changed during validation'
     (OUT/'contact-validation.json').write_text(json.dumps(report,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='records'},indent=2))

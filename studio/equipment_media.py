@@ -5,8 +5,7 @@ from pathlib import Path
 import re
 import subprocess
 
-ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'outputs/equipment-use'
+from equipment_paths import ROOT, OUT
 
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()

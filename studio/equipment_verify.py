@@ -8,7 +8,7 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'pipeline'))
 from qa_glb import load_glb,Clip
-OUT=ROOT/'outputs/equipment-use'
+from equipment_paths import OUT
 
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
@@ -51,14 +51,37 @@ def main():
     assert count>100 and maximum<1e-5,(count,maximum)
     protected=json.loads((OUT/'protected.json').read_text())
     assert all(sha(ROOT/p)==h for p,h in protected.items())
+    checkpoint=json.loads((OUT/'checkpoint-files.json').read_text())
+    assert checkpoint and all(sha(ROOT/p)==h for p,h in checkpoint.items())
+    catalog=json.loads((OUT/'catalog-validation.json').read_text())
+    assert catalog['status']=='PASS' and catalog['catalog_sha256']==sha(OUT/'catalog.json')
+    for item in catalog['items']:
+        assert item['sha256']==sha(OUT/(item['id']+'.glb'))
+    browser=json.loads((OUT/'catalog-check.json').read_text())
+    validate_catalog_browser(browser)
+    visual=json.loads((OUT/'visual-regression.json').read_text())
+    assert visual['status']=='PASS' and visual['glb_sha256']==digest
+    expected_images=tuple((OUT/f'grip-{label}{suffix}.png').relative_to(ROOT).as_posix()
+                          for suffix in ('','-320') for label in ('before','after'))
+    assert visual['file_sha256']=={p:sha(ROOT/p) for p in expected_images}
     for record in reports['media']['videos']:assert sha(OUT/(record['view']+'.mp4'))==record['sha256']
     assert sha(OUT/'quick-peek.mp4')==reports['media']['quick_peek_sha256']
     quick=reports['quick-peek-check']
-    assert quick['file_sha256']=={p:sha(ROOT/p) for p in ('studio/equipment/preview.html','outputs/equipment-use/quick-front.mp4','outputs/equipment-use/quick-side.mp4')}
+    assert quick['file_sha256']=={p:sha(ROOT/p) for p in ('studio/equipment/preview.html',(OUT/'quick-front.mp4').relative_to(ROOT).as_posix(),(OUT/'quick-side.mp4').relative_to(ROOT).as_posix())}
     result=dict(status='PASS',scope='Exported joint/equipment node browser parity, media and baseline preservation; contact and visual acceptance are separate',
                 glb_sha256=digest,node_comparisons=count,max_component_error_m=maximum,protected_files_unchanged=len(protected),
+                checkpoint_files_unchanged=len(checkpoint),catalog='PASS',
                 movement_approved=False,human_approved=False)
     (OUT/'integration.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
+
+
+def validate_catalog_browser(report):
+    assert report['status']=='PASS'
+    assert report['catalog_sha256']==sha(OUT/'catalog.json') and report['glb_sha256']==sha(OUT/'goblet.glb')
+    expected_assets=('catalog.json','dumbbell.glb','kettlebell.glb','barbell.glb','goblet.glb')
+    assert report['asset_sha256']=={name:sha(OUT/name) for name in expected_assets}
+    expected_files=tuple('studio/equipment/'+name for name in ('index.html','style.css','viewer.js','preview.html'))+('studio/equipment_capture.mjs','studio/equipment_catalog_check.mjs')
+    assert report['file_sha256']=={name:sha(ROOT/name) for name in expected_files}
 
 if __name__=='__main__':
     try:main()
