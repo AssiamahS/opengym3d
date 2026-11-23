@@ -135,6 +135,13 @@ ECORCHE_RESTING = (0.30, 0.030, 0.028, 1.0)
 # ---------------------------------------------------------------- mpfb setup
 
 def ensure_mpfb():
+    # Local milestone toolchain; avoids upstream's Linux-only /tmp path.
+    local_addons = os.environ.get("FMS_ADDONS")
+    if local_addons:
+        bpy.context.preferences.extensions.repos.new(
+            name="FMS local", module="fms_local", custom_directory=local_addons)
+        bpy.ops.preferences.addon_enable(module="bl_ext.fms_local.mpfb")
+        return
     version = f"{bpy.app.version[0]}.{bpy.app.version[1]}"
     ext_root = os.path.expanduser(f"~/.config/blender/{version}/extensions/user_default")
     dest = os.path.join(ext_root, "mpfb")
@@ -1342,6 +1349,16 @@ def main():
             animate(driver, rig, spec, frame_end, prop_objs)
         bpy.data.objects.remove(driver, do_unlink=True)
 
+    if spec.get("technical_preview", False):
+        # Establish the floor from actual skinned soles at standing, once.
+        # This constant scene offset does not alter the motion or lock feet.
+        scene.frame_set(1)
+        evaluated = basemesh.evaluated_get(bpy.context.evaluated_depsgraph_get())
+        floor_z = min((evaluated.matrix_world @ v.co).z for v in evaluated.data.vertices)
+        rig.location.z -= floor_z
+        rig["fms_ground_offset_m"] = -floor_z
+        print(f"FMS standing sole alignment: {-floor_z:.6f} m")
+
     side = camera_side(primary, spec)
     cam, target = setup_render(side)
     if mocap:
@@ -1358,7 +1375,8 @@ def main():
     frame_subject(cam, target, basemesh, [still_frame], side, prop_objs=prop_objs)
     scene.frame_set(still_frame)
     scene.render.filepath = f"{out_dir}/{spec['id']}.png"
-    bpy.ops.render.render(write_still=True)
+    if not os.environ.get("FMS_EXPORT_ONLY"):
+        bpy.ops.render.render(write_still=True)
 
     # animation: frame the whole rep so the camera never drifts or clips
     frame_subject(cam, target, basemesh, key_frames, side, prop_objs=prop_objs)
@@ -1368,7 +1386,8 @@ def main():
     scene.cycles.samples = 12
     scene.frame_step = 2                     # 15 fps effective
     scene.render.filepath = f"{out_dir}/frames_{spec['id']}/"
-    bpy.ops.render.render(animation=True)
+    if not os.environ.get("FMS_EXPORT_ONLY"):
+        bpy.ops.render.render(animation=True)
 
     backdrop = bpy.data.objects.get("Backdrop")
     if backdrop:
@@ -1378,8 +1397,14 @@ def main():
     # clip the viewer would have to know about
     bpy.ops.export_scene.gltf(filepath=f"{out_dir}/{spec['id']}.glb",
                               export_animation_mode="SCENE",
+                              # Applied subdivision removes MPFB macro shape keys.
+                              # The local fixture has skeletal animation only;
+                              # exporting weights would target nonexistent morphs.
+                              export_morph=not spec.get("technical_preview", False),
+                              export_extras=spec.get("technical_preview", False),
                               export_apply=True)
     print(f"OK {spec['id']}: {frame_end} frames -> {out_dir}")
 
 
-main()
+if __name__ == "__main__":
+    main()
